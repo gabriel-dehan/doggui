@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  breed: MyString
+  birthday_date: 2018-07-11
+  lof_number: MyString
+  color: MyString
+  hair: MyString
+  size: 1
+  picture: MyString
+  video: MyString
+  nickname: MyString
+  medical_analyse: MyString
+  father_lof: MyString
+  mother_lof: MyString
+  prize: MyString
+  description: MyText
+  price: 1
+
+two:
+  user: two
+  breed: MyString
+  birthday_date: 2018-07-11
+  lof_number: MyString
+  color: MyString
+  hair: MyString
+  size: 1
+  picture: MyString
+  video: MyString
+  nickname: MyString
+  medical_analyse: MyString
+  father_lof: MyString
+  mother_lof: MyString
+  prize: MyString
+  description: MyText
+  price: 1
