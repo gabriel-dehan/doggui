@@ -1,0 +1,7 @@
+<h1> Bienvenue à l'annuaire de tous les chiens présents sur le site. Autant dire une belle floppée.</h1>
+
+<ul>
+<% @dogs.each do |dog| %>	
+<li><%= dog.nickname %>	</li>
+<% end  %>
+</ul>
