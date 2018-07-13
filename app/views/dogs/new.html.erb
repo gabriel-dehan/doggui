@@ -1,0 +1,25 @@
+<div class="container" >
+	<div class="row" >
+<%= simple_form_for [@dog] do |f| %>
+  <%= f.input :nickname %>
+  <%= f.input :description %>
+  <%= f.input :picture %>
+  <%= f.input :video %>
+  <%= f.input :size %>
+  <%= f.input :hair %>
+  <%= f.input :color %>
+  <%= f.input :breed %>
+  <%= f.input :birthday_date %>
+  <%= f.input :prize %>
+  <%= f.input :medical_analyse %>
+  <%= f.input :father_lof %>
+  <%= f.input :mother_lof %>
+  <%= f.input :lof_number %>
+  <%= f.input :price %>
+  
+  <%= f.submit "add a dog", class: "btn btn-primary" %>
+<% end %>
+
+</div>
+</div>
+ 
