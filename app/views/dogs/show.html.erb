@@ -6,4 +6,6 @@
 			<li> Race : <%= @dog.breed %></li>
 			<li> Maitre : <%= @dog.user.email %></li>
 		</ul>
-	
+	<%= link_to "Retour à l'index", dogs_path, class: "btn btn-danger"%>
+	<%= link_to "Modifier mon annonce", edit_dog_path, class: "btn btn-primary"%>
+	<%= link_to "Supprimer l'annonce", destroy_path, class: "btn btn-success"%>
