@@ -1,0 +1,11 @@
+<h1> Bienvenue sur la fiche d'un seul Dog <h1>
+	<p> voici les infos de ce chien </p>	
+		<ul> 
+			<li> Surnom <%= @dog.nickname %> </li>
+			<li> Taille : <%= @dog.size %></li>
+			<li> Race : <%= @dog.breed %></li>
+			<li> Maitre : <%= @dog.user.email %></li>
+		</ul>
+	<%= link_to "Retour à l'index", dogs_path, class: "btn btn-danger"%>
+	<%= link_to "Modifier mon annonce", edit_dog_path, class: "btn btn-primary"%>
+	<%= link_to "Supprimer l'annonce", destroy_path, class: "btn btn-success"%>
