@@ -1,25 +1,26 @@
-<div class="container" >
-	<div class="row" >
-<%= simple_form_for [@dog] do |f| %>
-  <%= f.input :nickname %>
-  <%= f.input :description %>
-  <%= f.input :picture %>
-  <%= f.input :video %>
-  <%= f.input :size %>
-  <%= f.input :hair %>
-  <%= f.input :color %>
-  <%= f.input :breed %>
-  <%= f.input :birthday_date %>
-  <%= f.input :prize %>
-  <%= f.input :medical_analyse %>
-  <%= f.input :father_lof %>
-  <%= f.input :mother_lof %>
-  <%= f.input :lof_number %>
-  <%= f.input :price %>
-  
-  <%= f.submit "add a dog", class: "btn btn-primary" %>
-<% end %>
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4 ">
+      <%= simple_form_for [@dog] do |f| %>
+        <%= f.input :picture %>
+        <%= f.input :video %>
+        <%= f.input :nickname, placeholder: 'ex : Dagobert' %>
+        <%= f.input :breed %>
+        <%= f.input :size %>
+        <%= f.input :hair %>
+        <%= f.input :color %>
+        <%= f.input :lof_number %>
+        <%= f.input :description %>
+        <%= f.input :birthday_date %>
+        <%= f.input :prize %>
+        <%= f.input :medical_analyse %>
+        <%= f.input :father_lof %>
+        <%= f.input :mother_lof %>
+        <%= f.input :price %>
+        <%= f.submit "add a dog", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 </div>
-</div>
- 
+
