@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'qui-sommes-nous', to: 'pages#', as: :quisommesnous
   delete 'dogs/:id', to: 'dogs#destroy', as: :destroy
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
- resources :dogs
-
+ resources :dogs do 
+ 	resources :bookings, only: [ :new, :create, :show]
+  end
 end
