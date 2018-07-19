@@ -31,7 +31,6 @@ gem 'faker'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass'
 gem 'simple_form'
-ruby '2.5.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
