@@ -8,5 +8,8 @@
 		</ul>
 	<%= link_to "Retour à l'index", dogs_path, class: "btn btn-danger"%>
 	<%= link_to "Modifier mon annonce", edit_dog_path, class: "btn btn-primary"%>
-	<%= link_to "Supprimer l'annonce", destroy_path, class: "btn btn-success"%>
+	<%= link_to "Supprimer l'annonce", dog_path, method: :delete,  class: "btn btn-success", data: { confirm: "Are you sure?" }%>
   <%= link_to "Book it", new_dog_booking_path(@dog), class: "btn btn-warning" %>
+  
+
+   
