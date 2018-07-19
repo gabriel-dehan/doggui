@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :user
   #####################
   #####################
+  root 'dogs#index'
   get 'legislation', to: 'pages#', as: :legislation
   get 'contact', to: 'pages#', as: :contact
   get 'qui-sommes-nous', to: 'pages#', as: :quisommesnous
