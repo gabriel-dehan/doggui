@@ -1,7 +1,20 @@
 
 <div class="container">
+	<div class="banner" style="background-image: url('https://ouafmag-dmjcomputerservi.netdna-ssl.com/wp-content/uploads/8498820_s.jpg');">
+	  <div class="banner-content">
+	    <h1>L'AMOUR AVEC UN GRAND OUAF</h1>
+	    <%= link_to "INSCRIRE SON MOLOSSE", new_dog_path, class: "big-button btn btn-reverse btn-warning"%>
+		<%= form_tag dogs_path, method: :get do %>
+		  <%= text_field_tag :query,
+   			 	params[:query],
+    			class: "form-control",
+    			placeholder: "Chercher un chien par race !" %>
+			<% end %>
+	  </div>
+	</div>
   <div class="row">
-<h1> Bienvenue à l'annuaire de tous les chiens présents sur le site. Autant dire une belle floppée.</h1>
+
+	
 
 
 
