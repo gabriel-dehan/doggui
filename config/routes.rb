@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'dogs#index'
   #####################
   #####################
+  root 'dogs#index'
   get 'legislation', to: 'pages#', as: :legislation
   get 'contact', to: 'pages#', as: :contact
   get 'qui-sommes-nous', to: 'pages#', as: :quisommesnous

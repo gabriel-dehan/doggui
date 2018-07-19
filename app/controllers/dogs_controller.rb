@@ -1,7 +1,11 @@
 class DogsController < ApplicationController
    skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy] 
   def index
-  	@dogs = Dog.all
+  	  if params[:query].present?
+        @dogs = Dog.where("breed ILIKE ?", "%#{params[:query]}%")
+      else
+        @dogs = Dog.all
+    end
   end
 
   def show
