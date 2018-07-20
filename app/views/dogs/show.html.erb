@@ -1,15 +1,18 @@
 <h1> Bienvenue sur la fiche d'un seul Dog <h1>
 	<p> voici les infos de ce chien </p>
+  <%= cl_image_tag @dog.photo, height: 100, width: 140, crop: :fill %>
 		<ul>
 			<li> Surnom <%= @dog.nickname %> </li>
 			<li> Taille : <%= @dog.size %></li>
 			<li> Race : <%= @dog.breed %></li>
 			<li> Maitre : <%= @dog.user.email %></li>
 		</ul>
+  </div>
+
 	<%= link_to "Retour à l'index", dogs_path, class: "btn btn-danger"%>
 	<%= link_to "Modifier mon annonce", edit_dog_path, class: "btn btn-primary"%>
 	<%= link_to "Supprimer l'annonce", dog_path, method: :delete,  class: "btn btn-success", data: { confirm: "Are you sure?" } %>
     <%= link_to "Book it", new_dog_booking_path(@dog), class: "btn btn-warning" %>
-  
 
-   
+
+
