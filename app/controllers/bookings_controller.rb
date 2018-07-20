@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
   def create
     @dog = Dog.find(params[:dog_id])
     @booking = Booking.new(booking_params)
-    # @booking.user = current_user
+    @booking.user = current_user
     @booking.dog = @dog
     # authorize @booking
     if @booking.save
