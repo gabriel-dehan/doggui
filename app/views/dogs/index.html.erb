@@ -5,15 +5,31 @@
 
 	  <div class="banner-content">
 	    <h1>L'AMOUR AVEC UN GRAND OUAF</h1>
+      <br>
+      <br>
 	    <%= link_to "INSCRIRE SON MOLOSSE", new_dog_path, class: "big-button btn btn-reverse btn-warning"%>
 		  <%= form_tag dogs_path, method: :get do %>
 		  <%= text_field_tag :query,
    			 	params[:query],
     			class: "form-control",
-    			placeholder: "Chercher un chien par son pedigree !" %>
+    			placeholder: "Chercher un chien par son pédigrée !" %>
 			<% end %>
 	  </div>
 	</div>
+  <div class="row">
+
+
+<% @dogs.each do |dog| %>
+ <div class="col-xs-12 col-sm-4" >
+ 	<%= link_to dog_path(dog) do %>
+ 	<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+
+
+   		<p> Dog Name : <b><%= dog.nickname %>	</b></p>
+	</div>
+   <% end  %> 
+   </div>
+   <%end%>
 
   <div class="row">
      <% @dogs.each do |dog| %>

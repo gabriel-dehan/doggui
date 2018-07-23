@@ -12,7 +12,7 @@
     <% if current_user%>
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= link_to "Créer un chien", new_dog_path, class: "btn btn-reverse btn-primary"%>
+          <%= link_to "Créer un chien", new_dog_path, class:"btn-orange"%>
 
 
           <% if user_signed_in? && current_user.avatar.present? %>
