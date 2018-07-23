@@ -10,42 +10,42 @@
 		  <%= text_field_tag :query,
    			 	params[:query],
     			class: "form-control",
-    			placeholder: "Chercher un chien par race !" %>
+    			placeholder: "Chercher un chien par son pedigree !" %>
 			<% end %>
 	  </div>
 	</div>
 
   <div class="row">
-  <% @dogs.each do |dog| %>
-   <div class="col-xs-12 col-sm-4">
-      <% if dog.picture_url %>
-      <div class="card">
-        <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path dog.picture %>');">
-        <div class="card-category"></div>
-      <div class="card-description"><h2><%= link_to dog.nickname, dog_path(dog) %></h2></div>
-      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-      </div>
-      <div class="card-footer">
-      <p><%= dog.description %> </p>
-      <p><%= dog.price %>€</p>
-      </div>
+     <% @dogs.each do |dog| %>
+        <div class="col-xs-12 col-sm-4">
+          <% if dog.picture_url  %>
+          <div class="card"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path dog.picture, height: 300, width: 400, crop: :fill %>')">
+            <div class="card-description"><h2><%= link_to dog.nickname, dog_path(dog) %>  </h2>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+          <div class="card-footer">
+            <p><%= dog.description %> </p>
+            <p><%= dog.price %>€</p>
+         </div>
+         </div>
             <!-- <a class="card-link" href="#" ></a> -->
-      </div>
-      <% else %>
-      <div class="card">
-      <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-      <div class="card-category"></div>
-        <div class="card-description"><h2><%= link_to dog.nickname, dog_path(dog) %></h2>
-        </div>
-      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-      </div>
-      <div class="card-footer">
-        <p><%= dog.description %> </p>
-        <p><%= dog.price %>€</p>
-      </div>
-            <!-- <a class="card-link" href="#" ></a> -->
-      </div>
-      <% end %>
-        </div>
+         <% else %>
+            <div class="card"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= asset_path'images-2.jpg', height: 300, width: 400, crop: :fill %>')">
+              <div class="card-description"><h2><%= link_to dog.nickname, dog_path(dog) %></h2>
+              </div>
+                <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <div class="card-footer">
+              <p><%= dog.description %> </p>
+              <p><%= dog.price %>€</p>
+            </div>
+            </div>
          <% end %>
-</div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
