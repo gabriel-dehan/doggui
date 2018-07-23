@@ -1,5 +1,6 @@
 <div class="container">
 
+<<<<<<< HEAD
   <div class="banner" style="background-image: url('https://ouafmag-dmjcomputerservi.netdna-ssl.com/wp-content/uploads/8498820_s.jpg');">
 
     <div class="banner-content">
@@ -15,6 +16,23 @@
       <% end %>
     </div>
   </div>
+=======
+	<div class="banner" style="background-image: url('https://ouafmag-dmjcomputerservi.netdna-ssl.com/wp-content/uploads/8498820_s.jpg');">
+
+	  <div class="banner-content">
+	    <h1>L'AMOUR AVEC UN GRAND OUAF</h1>
+      <br>
+      <br>
+	    <%= link_to "INSCRIRE SON MOLOSSE", new_dog_path, class: "big-button btn btn-reverse btn-warning"%>
+		  <%= form_tag dogs_path, method: :get do %>
+		  <%= text_field_tag :query,
+   			 	params[:query],
+    			class: "form-control",
+    			placeholder: "Chercher un chien par son pédigrée !" %>
+			<% end %>
+	  </div>
+	</div>
+>>>>>>> 79d42a181c5e0a959f30ccc9fcaaf42daf081fab
   <div class="row">
 
 
@@ -49,7 +67,11 @@
          <% else %>
             <div class="card"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+<<<<<<< HEAD
          url('<%= asset_path'images-3.jpg', height: 300, width: 400, crop: :fill %>')">
+=======
+         url('<%= asset_path'images-2.jpg', height: 300, width: 400, crop: :fill %>')">
+>>>>>>> 79d42a181c5e0a959f30ccc9fcaaf42daf081fab
               <div class="card-description"><h2><%= link_to dog.nickname, dog_path(dog) %></h2>
               </div>
                 <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
@@ -63,3 +85,7 @@
       <% end %>
     </div>
   </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 79d42a181c5e0a959f30ccc9fcaaf42daf081fab
