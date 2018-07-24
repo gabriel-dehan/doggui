@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-   skip_before_action :authenticate_user!, only: [:index, :show]
+   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create]
   def index
       if params[:query].present?
         @dogs = Dog.where("breed ILIKE ?", "%#{params[:query]}%")
@@ -52,7 +52,7 @@ class DogsController < ApplicationController
 
   private
     def dog_params
-      params.require(:dog).permit(:nickname, :description, :picture, :video, :size, :hair, :color, :breed, :birthday_date, :prize, :medical_analyse, :father_lof, :mother_lof, :lof_number, :price)
+      params.require(:dog).permit(:breed, :birthday_date, :lof_number, :color, :hair, :size, :photo, :video, :nickname, :medical_analyse, :father_lof, :mother_lof, :prize, :description, :price)
     end
 end
 
