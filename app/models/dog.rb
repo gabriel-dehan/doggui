@@ -4,5 +4,6 @@ class Dog < ApplicationRecord
   has_many :likes
   mount_uploader :picture, PhotoUploader
   geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   
 end

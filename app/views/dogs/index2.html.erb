@@ -13,8 +13,8 @@
      <% @dogs.each do |dog| %>
         <div class="col-xs-12 col-sm-4">
           <% if dog.picture_url  %>
-          <div class="card">
-          <div class="card-image"
+          <div class="card_small">
+          <div class="card-image_small"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('<%= cl_image_path dog.picture, height: 300, width: 400, crop: :fill %>')">
             <div class="card-description"><h2><%= link_to dog.nickname, dog_path(dog) %>  </h2>
@@ -28,8 +28,8 @@
         </div>
             <!-- <a class="card-link" href="#" ></a> -->
          <% else %>
-           <div class="card">
-          <div class="card-image"
+           <div class="card_small">
+          <div class="card-image_small"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('<%= asset_path'images-2.jpg', height: 300, width: 400, crop: :fill %>')">
               <div class="card-description"><h2><%= link_to dog.nickname, dog_path(dog) %></h2>

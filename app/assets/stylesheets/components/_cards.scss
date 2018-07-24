@@ -9,10 +9,30 @@
   display: flex;
 }
 
+.card_small {
+  margin-top: 5px;
+  height: 125px;
+  width: 180px; 
+  background-color: white; 
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15);
+  display: flex;
+}
+
 .card-image {
   height: 180px;
   background-position: center;
   width: 360px; 
+  margin: 0px auto;
+  margin: 2px 2px; 
+  border-radius: 2px;
+}
+
+.card-image_small{
+  height: 90px;
+  background-position: center;
+  width: 180px; 
   margin: 0px auto;
   margin: 2px 2px; 
   border-radius: 2px;
