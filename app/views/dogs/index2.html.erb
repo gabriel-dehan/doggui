@@ -1,19 +1,11 @@
 
 <div class="container">
-	<div class="banner" style="background-image: url('<%= asset_path'chiens-heureux-jouent-a-deux-full-13651707.jpg'%>');">
-	  <div class="banner-content">
-	    <h1>L'AMOUR AVEC UN GRAND OUAF</h1>
+  <div class="banner2" style="background-image: url('<%= asset_path'chiens-heureux-jouent-a-deux-full-13651707.jpg'%>');">
+    <div class="banner-content">
+      <h2> Voici le résultat de votre recherche" </h2>
       
-	    <%= link_to "INSCRIRE SON MOLOSSE", new_dog_path, class: "big-button btn btn-reverse btn-warning"%>
-
-      <%= form_tag index_search_path, method: :get do %>
-		  <%= text_field_tag :query,
-   			 	params[:query],
-    			class: "form-control",
-    			placeholder: "Chercher un chien par son pédigrée !" %>
-			<% end %>
-	  </div>
-	</div>
+    </div>
+  </div>
 </div>
 <div class="container">
 
@@ -54,4 +46,3 @@
       <% end %>
     </div>
   </div>
-
