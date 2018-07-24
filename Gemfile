@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 gem 'figaro'
 gem 'cloudinary'
+gem "geocoder"
 gem 'carrierwave', '~> 1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
