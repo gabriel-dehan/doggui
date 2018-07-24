@@ -1,6 +1,6 @@
 <h1> Bienvenue sur la fiche d'un seul Dog <h1>
 	<p> voici les infos de ce chien </p>
-  <%= cl_image_tag @dog.picture, height: 100, width: 140, crop: :fill %>
+  <%= cl_image_tag @dog.photo, height: 100, width: 140, crop: :fill %>
 		<ul>
 			<li> Surnom <%= @dog.nickname %> </li>
 			<li> Taille : <%= @dog.size %></li>
