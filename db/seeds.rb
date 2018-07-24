@@ -10,6 +10,7 @@ p "seeding one user"
   user = User.create!(
 	email: Faker::Internet.email,
 	password: "azerty",
+
 	)
 end
 
@@ -21,7 +22,8 @@ p "user created, let's seed dogs"
     nickname: Faker::Coffee.variety,
     size: Faker::Number.between(10, 150),
     breed: "brown",
-    user: User.all.sample
+    user: User.all.sample,
+    address: Faker::Address.full_address
     )
  end
 
