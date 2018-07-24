@@ -10,6 +10,7 @@ p "seeding one user"
   user = User.create!(
 	email: Faker::Internet.email,
 	password: "azerty",
+  address: Faker::Address.full_address
 	)
 end
 
