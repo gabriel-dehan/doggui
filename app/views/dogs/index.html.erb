@@ -11,9 +11,11 @@
    			 	params[:query],
     			class: "form-control",
     			placeholder: "Chercher un chien par son pédigrée !" %>
+          <button class="btn-search btn-warning "> search
+          </button>
 			<% end %>
 	  </div>
-	</div>
+	</div>b
 </div>
 <div class="container">
 
@@ -27,7 +29,7 @@
          url('<%= cl_image_path dog.picture, height: 300, width: 400, crop: :fill %>')">
             <div class="card-description"><h2><%= link_to dog.nickname, dog_path(dog) %>  </h2>
             </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <img class="card-user" src="<%= user.avatar %>">
           <div class="card-footer">
             <p><%= dog.description %> </p>
             <p><%= dog.price %>€</p>
@@ -42,7 +44,7 @@
          url('<%= asset_path'images-2.jpg', height: 300, width: 400, crop: :fill %>')">
               <div class="card-description"><h2><%= link_to dog.nickname, dog_path(dog) %></h2>
               </div>
-                <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+                <img class="card-user" src="cl_image_path dog.avatar">
             <div class="card-footer">
               <p><%= dog.description %> </p>
               <p><%= dog.price %>€</p>

@@ -19,9 +19,7 @@ class DogsController < ApplicationController
         lat: dog.latitude,
         lng: dog.longitude
       }
-   
-    
-  end
+    end
 end
   def show
     @dog = Dog.find(params[:id])
