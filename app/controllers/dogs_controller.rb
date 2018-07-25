@@ -23,7 +23,16 @@ class DogsController < ApplicationController
 end
   def show
     @dog = Dog.find(params[:id])
+    if @dog.latitude
+      @marker = [{
+        lat: @dog.latitude,
+        lng: @dog.longitude,
+      }
+      ]
+    end
   end
+
+   
 
   def new
    @dog = Dog.new
