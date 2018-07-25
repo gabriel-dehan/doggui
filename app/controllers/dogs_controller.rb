@@ -20,15 +20,15 @@ class DogsController < ApplicationController
         lng: dog.longitude
       }
     end
-end
+  end
+  
   def show
     @dog = Dog.find(params[:id])
     if @dog.latitude
       @marker = [{
         lat: @dog.latitude,
         lng: @dog.longitude,
-      }
-      ]
+      }]
     end
   end
 
@@ -56,8 +56,6 @@ end
 
   def update
     @dog = Dog.find(params[:id])
-    #authorize @dog
-
     if @dog.update(dog_params)
       redirect_to dog_path(@dog)
     else
@@ -73,9 +71,10 @@ end
   end
 
   private
-    def dog_params
-      params.require(:dog).permit(:picture, :video, :nickname, :breed, :size, :hair, :color, :lof_number, :description, :birthday_date, :prize, :medical_analyse, :father_lof, :mother_lof, :price)
-    end
+
+  def dog_params
+    params.require(:dog).permit(:picture, :video, :nickname, :breed, :size, :hair, :color, :lof_number, :description, :birthday_date, :prize, :medical_analyse, :father_lof, :mother_lof, :price)
+  end
 end
 
 
