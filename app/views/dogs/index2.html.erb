@@ -2,24 +2,24 @@
 <div class="container">
   <div class="banner2" style="background-image: url('<%= asset_path'chiens-heureux-jouent-a-deux-full-13651707.jpg'%>');">
     <div class="banner-content">
-      <h2> Voici le résultat de votre recherche" </h2>
+      <h1> Voici le résultat de votre recherche </h1>
       
     </div>
   </div>
 </div>
 <div class="container">
 
-  <div class="row">
+  <div class="row col-xs-6">
      <% @dogs.each do |dog| %>
         <div class="col-xs-12 col-sm-4">
           <% if dog.picture_url  %>
-          <div class="card">
-          <div class="card-image"
+          <div class="card_small">
+          <div class="card-image_small"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('<%= cl_image_path dog.picture, height: 300, width: 400, crop: :fill %>')">
             <div class="card-description"><h2><%= link_to dog.nickname, dog_path(dog) %>  </h2>
             </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <img class="card-user" src="cl_image_path dog.user.avatar">
           <div class="card-footer">
             <p><%= dog.description %> </p>
             <p><%= dog.price %>€</p>
@@ -28,13 +28,13 @@
         </div>
             <!-- <a class="card-link" href="#" ></a> -->
          <% else %>
-           <div class="card">
-          <div class="card-image"
+           <div class="card_small">
+          <div class="card-image_small"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('<%= asset_path'images-2.jpg', height: 300, width: 400, crop: :fill %>')">
               <div class="card-description"><h2><%= link_to dog.nickname, dog_path(dog) %></h2>
               </div>
-                <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+                <img class="card-user" src="cl_image_path dog.user.avatar">
             <div class="card-footer">
               <p><%= dog.description %> </p>
               <p><%= dog.price %>€</p>
@@ -45,4 +45,12 @@
         </div>
       <% end %>
     </div>
+    <div class="col-xs-6">
+      <div
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>">  
+      </div>
   </div>
+</div>
