@@ -19,10 +19,16 @@
       </div>
   </div>
 
-	<%= link_to "Retour à l'index", dogs_path, class: "btn btn-danger"%>
-	<%= link_to "Modifier mon annonce", edit_dog_path, class: "btn btn-primary"%>
-	<%= link_to "Supprimer l'annonce", dog_path, method: :delete,  class: "btn btn-success", data: { confirm: "Are you sure?" } %>
-    <%= link_to "Book it", new_dog_booking_path(@dog), class: "btn btn-warning" %>
-
+	
+        <% if policy(@dog).update? %>
+          <%= link_to 'Edit', edit_dog_path(@dog), class: "btn btn-warning list-inline" %>
+        <% else %>
+          <%= link_to "Reservation", new_dog_booking_path(@dog), class: "btn btn-success list-inline"%>
+        <% end %>
+        <% if policy(@dog).destroy? %>
+          <%= link_to 'supprimer', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger list-inline" %>
+        <% end %>
+        <%= link_to "Back to index", dogs_path, class: "btn btn-primary list-inline"%>
+     
 
  
