@@ -6,7 +6,7 @@
   border-radius: 2px;
   position: relative;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15);
-  display: flex;
+  position : relative;
 }
 
 .card_small {
@@ -24,8 +24,7 @@
   height: 180px;
   background-position: center;
   width: 360px; 
-  margin: 0px auto;
-  margin: 2px 2px; 
+  margin: 0px auto; 
   border-radius: 2px;
 }
 
@@ -47,23 +46,33 @@
 }
 .card-category {
   position: absolute;
+  background-color: white !important;
   top: 10px;
   left: 10px;
   font-size: 15px;
   text-transform: uppercase;
 }
+
+// Carte description 
+
 .card-description {
-  position: absolute;
-  bottom: 10px;
+  position: relative;
+  top: 10px;
   left: 10px;
 }
 .card-description h2 {
   font-size: 24px;
 }
+
+.card-description h2 a {
+ color: white;
+}
+
 .card-description p {
   font-size: 14px;
   opacity: 0.7;
   font-weight: lighter;
+
 }
 .card-link {
   position: absolute;
@@ -77,4 +86,12 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.card-footer {
+  position: absolute;
+  font-size: 14px;
+  bottom: 30px;
+  left: 20px;
+  color: black; 
 }
