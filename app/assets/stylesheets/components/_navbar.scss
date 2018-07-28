@@ -8,10 +8,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top : 5px;
-  position: sticky;
+  top: 0;
+  position: fixed;
   z-index: 1000;
   width: 100%;
+  border-top: 3px solid white;
 }
 
 /* Logo */
