@@ -25,6 +25,7 @@
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  z-index: 1000;
 }
 
 /* Right section */
@@ -59,7 +60,7 @@
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: #F2F2F2 !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
