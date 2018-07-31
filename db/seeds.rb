@@ -31,6 +31,7 @@ p "user created, let's seed dogs"
     user: User.all.sample,
     picture: pictures_array.shuffle.sample,
     address: addresses.sample
+    price: "100"
     )
   dog.save
  end
