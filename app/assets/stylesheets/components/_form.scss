@@ -8,9 +8,19 @@
   padding-right: 2px;
 }
 
-////// NEW-DOG //////
+////// NEW-DOG + EDIT DOG //////
 
 #new_dog {
+  background-color: #F2F2F2;
+  width: 700px;
+  margin: auto;
+  padding-left: -10px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.edit_dog{
   background-color: #F2F2F2;
   width: 700px;
   margin: auto;
@@ -31,9 +41,19 @@
   text-align: justify;
   }
 
-[attribute="description"] {
-  margin-left: 170px;
-  color: red;
+
+[for="dog_picture"] {
+  margin-left: 130px;
+}
+
+.form-control-label[for="dog_description"] {
+  margin-left: 133px;
+  
+}
+
+.form-control-label[for="dog_medical_analyse"] {
+  margin-left: 242px;
+  
 }
 
 .form-control {
@@ -45,6 +65,12 @@ border: 2px, solid, red;
 
 
 /// les différents champ //////
+
+
+
+#dog_picture {
+margin-left: 130px;
+}
 
 #dog_video {
 width: 160px;
