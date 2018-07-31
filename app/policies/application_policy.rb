@@ -18,6 +18,10 @@ class ApplicationPolicy
     false
   end
 
+  def index2?
+    false
+  end
+
   def new?
     create?
   end
