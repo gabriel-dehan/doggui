@@ -1,22 +1,24 @@
-<h1> Bienvenue sur la fiche d'un seul Dog <h1>
-
+  <div class="container">
+    <div class="row"> 
+  <h1> <%= @dog.nickname %> </h1>
 
   <div class="card-show">
-      <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_tag @dog.picture, crop: :fill %>');"">
+      <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_tag @dog.picture, crop: :fill %>');">
 
-			<div class="card-description"><%= @dog.nickname %></div>
-
-       <div class="card-footer">
+	
+      
 			<li> Taille : <%= @dog.size %></li>
 			<li> Race : <%= @dog.breed %></li>
 			<li> Maitre : <%= @dog.user.email %></li>
 			<li> Addresse du chien : <%= @dog.address %> </li>
+      <li> Nombre de fois ou le dog à été booké :<%=  @dog.bookings.count %> </li>
 
-		</ul>
-  </div>
+
  </div> 
+</div>
 
 <div class="col-xs-6">
+   <div class="row"> 
   <div
         id="map"
         style="width: 100%;
@@ -24,6 +26,13 @@
         data-markers="<%= @marker.to_json %>">  
       </div>
   </div>
+
+  <div class="col-xs-6">
+    <div class="row">
+<h2> Review of the dogs </h2>
+
+  </div>
+</div>
 
 	
         <% if policy(@dog).update? %>
@@ -35,6 +44,7 @@
           <%= link_to 'supprimer', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger list-inline" %>
         <% end %>
         <%= link_to "Back to index", dogs_path, class: "btn btn-primary list-inline"%>
-     
+     </div>
 
+</div>
  

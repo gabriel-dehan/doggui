@@ -30,7 +30,7 @@ p "user created, let's seed dogs"
     breed: "brown",
     user: User.all.sample,
     picture: pictures_array.shuffle.sample,
-    address: addresses.sample
+    address: addresses.sample,
     price: "100"
     )
   dog.save

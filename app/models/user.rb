@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-	has_many :dogs
+  has_many :dogs
   has_many :bookings
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
