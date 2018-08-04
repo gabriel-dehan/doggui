@@ -1,50 +1,91 @@
-  <div class="container">
-    <div class="row"> 
-  <h1> <%= @dog.nickname %> </h1>
-
-  <div class="card-show">
-      <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_tag @dog.picture, crop: :fill %>');">
-
-	
-      
-			<li> Taille : <%= @dog.size %></li>
-			<li> Race : <%= @dog.breed %></li>
-			<li> Maitre : <%= @dog.user.email %></li>
-			<li> Addresse du chien : <%= @dog.address %> </li>
-      <li> Nombre de fois ou le dog à été booké :<%=  @dog.bookings.count %> </li>
 
 
- </div> 
-</div>
+<div class="container">
 
-<div class="col-xs-6">
-   <div class="row"> 
-  <div
-        id="map"
-        style="width: 100%;
-        height: 60vh;"
-        data-markers="<%= @marker.to_json %>">  
+  <div class="view-show">
+
+    <div class="grid-show">
+
+      <div class="show-card-titre">
+        <%=@dog.nickname%> - <%=@dog.breed%>
+        <li> Nombre de fois ou le dog à été booké :<%=  @dog.bookings.count %> </li>
       </div>
-  </div>
+    
+      <div class="show-card-image">
 
-  <div class="col-xs-6">
-    <div class="row">
-<h2> Review of the dogs </h2>
+        <div class="image-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 300, width: 400, crop: :fill %>');">
+       </div>
+  
+        <div class="show-card-bouton">
 
-  </div>
-</div>
+          <div class="show-les-deux-bouton">
 
-	
-        <% if policy(@dog).update? %>
+          <% if policy(@dog).update? %>
           <%= link_to 'Edit', edit_dog_path(@dog), class: "btn btn-warning list-inline" %>
-        <% else %>
+          <% else %>
           <%= link_to "Reservation", new_dog_booking_path(@dog), class: "btn btn-success list-inline"%>
-        <% end %>
-        <% if policy(@dog).destroy? %>
+          <% end %>
+          <% if policy(@dog).destroy? %>
           <%= link_to 'supprimer', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger list-inline" %>
-        <% end %>
-        <%= link_to "Back to index", dogs_path, class: "btn btn-primary list-inline"%>
-     </div>
+          <% end %>
+        
+           </div> 
+           
+        </div> 
 
-</div>
+      </div> 
+
+        <div class="show-card-description">
+        
+          <div class="lof">
+             <div class="lof_number">N° LOF<%= @dog.lof_number %></div>
+             <div class="father_number">Maman LOF: <%= @dog.father_lof %></div>
+             <div class="mother_number">Papa LOF: <%=@dog.mother_lof %></div>
+          </div>
+
+           <div class="esthetique">
+            Détails esthetique: 
+            <%= @dog.hair %>
+            <%= @dog.size %>
+            <%= @dog.prize %>
+           </div>
+        
+            <div class="show-adresse"><%= @dog.address %> </div>
+            <div class="show-description"> <%= @dog.description %></div>
+
+        </div>
+
+        <div class="show-card-user">
+
+          <% if @dog.user.avatar_url %>
+          <%= cl_image_tag @dog.user.avatar_url, class: "show-card-avatar" %>
+          <% else %>
+          <%= image_tag "avatar.png", alt:"logo", class:"show-card-avatar"%>
+          <% end %>
+          <%= @dog.user.first_name %> <%= @dog.user.last_name %>
+        </div>
+        
+
+       <div class="show-bouton-retour">
+
+        <%= link_to "Revenir à la recherche", dogs_path, class: "btn btn-primary list-inline"%>
+       </div>
+
+    </div>
+    
+    <div class="map-show">
+     <div
+          id="map"
+          style="width: 100%;
+          height: 80vh;"
+          data-markers="<%= @marker.to_json %>">  
+      </div>
+    </div>
+
+  </div> 
+</div> 
+
+
+     
+
  

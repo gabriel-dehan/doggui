@@ -95,3 +95,145 @@
   left: 20px;
   color: black; 
 }
+
+//// VU SHOW /////
+
+.view-show{
+ width: 100%;
+ display: flex;
+}
+
+.grid-show {
+  display: grid;
+  width: 80%;
+  min-height: 70%;
+  grid-template-columns: 20% 40% 40%;
+  grid-template-rows: 1fr 7fr 5fr 2fr;
+  border: solid 2px;
+  margin-right: 5px;
+}
+
+.show-bouton-retour {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  border: solid 2px;
+  
+} 
+
+.show-bouton-retour a {
+  width: 100%;
+  word-wrap: break-word !important;
+}
+
+.show-card-titre {
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 1;
+  border: solid 2px;
+  color: #EAA95C;
+  font-size: 30px;
+  background-color: #F2F2F2;
+  text-transform: uppercase;
+}
+
+
+.show-card-image {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 1;
+  border: solid 2px;
+  z-index : 1; 
+}
+
+.image-show {
+  background-position: center;
+  border-radius: 2px;
+  height: 100%;
+  width: 100%; 
+  background-position: center;
+  margin: 0px auto; 
+  border-radius: 2px;
+  z-index : 1; 
+}
+
+.show-card-bouton  {
+ margin-left: 115px;
+ margin-bottom: 20px;
+ z-index: 10;
+ 
+}
+  
+.show-card-bouton a {
+ margin-left: 5px;
+ z-index: 10;
+}
+
+.show-les-deux-bouton {
+  margin: auto;
+}
+
+
+.show-card-description {
+  background-color: #F2F2F2;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15);
+  grid-column: 2 / span 2;
+  grid-row: 3 / span 1;
+  border: solid 2px;
+  padding-top:35px;
+}
+
+.lof {
+  display: flex;
+  border: solid, 2px, #eaa95c;
+  height: 20%;
+}
+
+.lof_number , .father_number , .mother_number { 
+margin: auto;
+background-color: white;
+
+}
+
+.esthetique {
+background-color: white;
+height: 20%;
+border: solid 2px #F2F2F2;
+}
+
+.show-description {
+  background-color: white;
+  height: 30%;
+  border: solid 2px #F2F2F2;
+  max-height: 100%;
+  word-wrap: break-word;
+}
+
+.show-addresse {
+  background-color: white;
+}
+
+
+.show-card-user {
+  grid-column: 1 / span 1;
+  grid-row: 2  / span 2;
+  border: solid 2px;
+}
+
+.show-card-avatar { 
+  border-radius: 50%;
+  width: 70px;  
+
+}
+
+.map-show {
+  width: 20%;
+  position: -webkit-sticky;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 1px !important;
+}
+
+
+
+
+
+
+

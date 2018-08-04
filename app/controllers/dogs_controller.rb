@@ -68,6 +68,7 @@ class DogsController < ApplicationController
         lng: dog.longitude
       }
     end
+
   end
 
   private
