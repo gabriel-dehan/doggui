@@ -6,15 +6,17 @@
     <div class="grid-show">
 
       <div class="show-card-titre">
-        <%=@dog.nickname%> - <%=@dog.breed%> @age
+        <%=@dog.nickname%> - <%=@dog.breed%>
       </div>
-
+    
       <div class="show-card-image">
 
         <div class="image-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 300, width: 400, crop: :fill %>');">
        </div>
   
         <div class="show-card-bouton">
+
+          <div class="show-les-deux-bouton">
 
           <% if policy(@dog).update? %>
           <%= link_to 'Edit', edit_dog_path(@dog), class: "btn btn-warning list-inline" %>
@@ -24,18 +26,23 @@
           <% if policy(@dog).destroy? %>
           <%= link_to 'supprimer', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger list-inline" %>
           <% end %>
-          </div> 
+        
+           </div> 
+           
+        </div> 
+
       </div> 
 
         <div class="show-card-description">
         
           <div class="lof">
-             <div class="lof_number"><%= @dog.lof_number %></div>
-             <div class="father_number"><%= @dog.father_lof %></div>
-             <div class="mother_number"><%= @dog.mother_lof %></div>
+             <div class="lof_number">N° LOF<%= @dog.lof_number %></div>
+             <div class="father_number">Maman LOF: <%= @dog.father_lof %></div>
+             <div class="mother_number">Papa LOF: <%=@dog.mother_lof %></div>
           </div>
 
            <div class="esthetique">
+            Détails esthetique: 
             <%= @dog.hair %>
             <%= @dog.size %>
             <%= @dog.prize %>
