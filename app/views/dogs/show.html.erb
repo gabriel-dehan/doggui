@@ -1,4 +1,5 @@
 
+
 <div class="container">
 
   <div class="view-show">
@@ -7,6 +8,7 @@
 
       <div class="show-card-titre">
         <%=@dog.nickname%> - <%=@dog.breed%>
+        <li> Nombre de fois ou le dog à été booké :<%=  @dog.bookings.count %> </li>
       </div>
     
       <div class="show-card-image">
