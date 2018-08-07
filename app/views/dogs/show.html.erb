@@ -9,10 +9,16 @@
       <div class="show-card-titre">
         <%=@dog.nickname%> - <%=@dog.breed%>
       </div>
-    
-      <div class="show-card-image">
 
-        <div class="image-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 300, width: 400, crop: :fill %>');">
+      <div class="show-card-image">
+          <% if @dog.picture_url  %>
+            <div class="image-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 300, width: 400, crop: :fill%>');">
+
+            <% else %>
+            <div class="image-show"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+            url('<%= asset_path'images-2.jpg', height: 300, width: 400, crop: :fill %>')">
+          <% end %>
        </div>
   
         <div class="show-card-bouton">
