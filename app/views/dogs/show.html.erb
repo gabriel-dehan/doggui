@@ -35,12 +35,6 @@
       </div> 
 
         <div class="show-card-description">
-        
-          <div class="lof">
-             <div class="lof_number">N° LOF<%= @dog.lof_number %></div>
-             <div class="father_number">Maman LOF: <%= @dog.father_lof %></div>
-             <div class="mother_number">Papa LOF: <%=@dog.mother_lof %></div>
-          </div>
 
            <div class="esthetique">
             Détails esthetique: 
@@ -48,6 +42,12 @@
             <%= @dog.size %>
             <%= @dog.prize %>
            </div>
+
+            <div class="lof">
+             <div class="lof_number">N° LOF<%= @dog.lof_number %></div>
+             <div class="father_number">Maman LOF: <%= @dog.father_lof %></div>
+             <div class="mother_number">Papa LOF: <%=@dog.mother_lof %></div>
+          </div>
         
             <div class="show-adresse"><%= @dog.address %> </div>
             <div class="show-description"> <%= @dog.description %></div>
