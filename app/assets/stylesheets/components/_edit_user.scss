@@ -1,0 +1,20 @@
+.form-edit {
+  background-color: #F2F2F2;
+  width: 650px;
+  margin: auto;
+
+}
+
+.noms, .mdp {
+  display: flex;
+  justify-content: space-around;
+}
+
+.email-edit {
+ justify-content: center;
+}
+
+[for="user_avatar"], #user_avatar {
+margin-left: 118px;
+margin-bottom: 20px;
+}
