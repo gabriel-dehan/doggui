@@ -22,7 +22,7 @@ p "user created, let's seed dogs"
 
 12.times do
  
-  pictures_array = ["dog1.jpg", "dog3.jpg", "dog4.jpg", "dog5.jpg", "dog6" ]
+  pictures_array = ["dog1", "dog3", "dog4", "dog5", "dog6" ]
    addresses = ["la ville aubert, saint guinoux", "7 rue auguste barbier, saint guinoux", "75 avenue de flandres, croix", "5 rue d'alançon, paris", "1 rue des petits carreaux, paris", "Arc de triomphe, paris", "grand place, Lille", "84 rue benoit malon, Marseille", "place de l'étoile, Paris"]
   dog = Dog.new(
     nickname: Faker::Coffee.variety,
