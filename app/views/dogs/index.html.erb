@@ -27,7 +27,7 @@
          url('<%= cl_image_path dog.picture, height: 300, width: 400, crop: :fill %>')">
             <div class="card-description"><h2><%= link_to dog.nickname, dog_path(dog) %>  </h2>
                <% if dog.user.avatar_url %>
-                <%= cl_image_tag dog.user.avatar_url, class: "card-user" %>
+                <%= cl_image_tag dog.user.avatar.default_url, class: "card-user" %>
               <% else %>
                <%= image_tag "avatar.png", alt:"logo", class:"card-user"%>
                <% end %>
@@ -42,12 +42,12 @@
             <!-- <a class="card-link" href="#" ></a> -->
          <% else %>
            <div class="card">
-          <div class="card-image"
+            <div class="card-image"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= asset_path'images-2.jpg', height: 300, width: 400, crop: :fill %>')">
+            url('<%= asset_path'dog.png', height: 300, width: 400, crop: :scale %>')">
               <div class="card-description"><h2><%= link_to dog.nickname, dog_path(dog) %></h2>
               <% if dog.user.avatar_url %>
-                <%= cl_image_tag dog.user.avatar_url, class: "card-user" %>
+                <%= cl_image_tag dog.user.avatar.default_url, class: "card-user" %>
               <% else %>
                <%= image_tag "avatar.png", alt:"logo", class:"card-user"%>
                <% end %>
