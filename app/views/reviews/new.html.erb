@@ -1,5 +1,15 @@
-<h4> Voici toutes les reviews de cet user </h4>
+<h4> Il est temps de laisser une review pour </h4>
 
-<% @reviews.each do |review| %>
+<div class="container">
+      
+      <%=  simple_form_for (@review) do |f| %>
 
-	
+        <br>
+
+      <div class="row">
+         <div class="col-sm-4"> <%= f.input :content %>
+         <div class="col-sm-4"> <%= f.submit "add a review", class: "btn-form-new btn btn-warning " %></div></div>
+ 	     </div>
+ 	     <%end%>
+	  </div>
+</div>
