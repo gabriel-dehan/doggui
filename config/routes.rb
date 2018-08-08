@@ -18,6 +18,6 @@ end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
  resources :dogs do 
- 	resources :bookings, only: [ :new, :create, :show]
+ 	resources :bookings, only: [:new, :create, :show]
   end
 end
