@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
-  has_many :bookings
+  belong_to :bookings
   has_many :reviews, through: :bookings
 end

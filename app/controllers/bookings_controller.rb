@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
- skip_before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+ skip_before_action :authenticate_user!, only: [:new, :create, :show]
 
   def new
     @dog = Dog.find(params[:dog_id])
@@ -8,17 +8,15 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @dog = Dog.find(params[:dog_id])
     @booking = Booking.new(booking_params)
+    authorize @booking
+    @dog = Dog.find(params[:dog_id])
     @booking.user = current_user
     @booking.dog = @dog
-    authorize @booking
-    if @booking.save
-      redirect_to dog_booking_path(@dog, @booking)
-    else
-      render :new
-    end
-  end
+    @booking.save!
+    redirect_to dog_booking_path(@dog, @booking)
+    
+   end
 
   def show
     @booking = Booking.find(params[:id])
