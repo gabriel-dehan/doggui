@@ -5,11 +5,11 @@ class ReviewsController < ApplicationController
 
   def create
   	@review = Review.new(review_params)
-  	@review.save
+  	@review.save!
   end
   
-  def index_user
-    @reviews = Review.all
+  def show
+
   end 
 
 private
