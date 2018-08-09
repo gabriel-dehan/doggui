@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
-  def new
 
+  def new
+    @booking = Booking.find(params[:booking_id])
+    raise
   	@review = Review.new
     authorize @review
   end

@@ -7,12 +7,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :avatar, required: false, autofocus: true %>
     <%= f.input :email, required: true, autofocus: true,
                  placeholder: 'pierre.paul.jaques@gmail.com' %>
     <%= f.input :first_name, required: false, autofocus: true %>
     <%= f.input :last_name, required: false, autofocus: true %>
     <%= f.input :telephone, required: false, autofocus: true %>
-    <%= f.input :avatar, required: false, autofocus: true %>
+    <%= f.input :introduction, required: false, autofocus: true %>
      <%= f.input :avatar_cache, as: :hidden %>
     <%= f.input :address, required: false, autofocus: true %>
     <%= f.input :siret, required: false, autofocus: true %>
