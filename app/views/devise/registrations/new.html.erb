@@ -1,32 +1,72 @@
 <div class="container">
-<div class="col-xs-12 col-sm-offset-3 col-sm-6">
+
   <h2>Enregristez-vous </h2>
   <h6>(en quelques clics)</h6>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <div class="form-edit">
 
-  <div class="form-inputs">
-    <%= f.input :avatar, required: false, autofocus: true %>
-    <%= f.input :email, required: true, autofocus: true,
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+   <div class="form-inputs form-edit-avatar">
+     <div class="row bg-grey">
+       <div class="col-sm-4">
+         <%= f.input :avatar, required: false, autofocus: true %>
+          <%= f.input :avatar_cache, as: :hidden %>
+      </div> 
+    </div>
+    <div class="row bg-grey">
+       <div class="col-sm-4">
+          <%= f.input :email, required: true, autofocus: true,
                  placeholder: 'pierre.paul.jaques@gmail.com' %>
-    <%= f.input :first_name, required: false, autofocus: true %>
-    <%= f.input :last_name, required: false, autofocus: true %>
-    <%= f.input :telephone, required: false, autofocus: true %>
-    <%= f.input :introduction, required: false, autofocus: true %>
-     <%= f.input :avatar_cache, as: :hidden %>
-    <%= f.input :address, required: false, autofocus: true %>
-    <%= f.input :siret, required: false, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-  </div>
+      </div> 
+      <div class="col-sm-4">
+          <%= f.input :telephone, required: false, autofocus: true %>
+      </div> 
+    </div>
+    <div class="row bg-grey">
+       <div class="col-sm-4">
+          <%= f.input :first_name, required: false, autofocus: true %>
+      </div> 
+       <div class="col-sm-4">
+          <%= f.input :last_name, required: false, autofocus: true %>
+      </div> 
+    </div>
+    <div class="row bg-grey">
+       <div class="col-sm-4">
+           <%= f.input :siret, required: false, autofocus: true %>
+      </div> 
+    </div>
 
-<div class="form-actions">
-   <%= f.button :button, "Sign up", type: :submit, class: :'btn-warning btn-sm' %>
-</div>
-<% end %>
+    <div class="row bg-grey">
+    <div class="col-sm-4">
+          <%= f.input :address, required: false, autofocus: true %>
+      </div> 
+    </div>
+
+    <div class="row bg-grey">
+       <div class="col-sm-4">
+           <%= f.input :introduction, required: false, autofocus: true %>
+      </div> 
+    </div>
+   
+    <div class="row bg-grey">
+      <div class="col-sm-4">
+        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        </div>
+        <div class="col-sm-4">
+         <%= f.input :password_confirmation, required: true %>
+      </div>
+    </div> 
+
+    <div class="form-actions">
+      <%= f.button :button, "Sign up", type: :submit, class: :'btn-form-new btn btn-warning' %>
+    </div>
+    
+    <% end %>
 
   </div>
+  
 </div>
 
 
