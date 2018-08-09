@@ -1,19 +1,19 @@
 class ReviewsController < ApplicationController
   def new
-
   	@review = Review.new
     authorize @review
+    @dog = Dog.find(params[:dog_id])
+    @booking = Booking.find(params[:booking_id])
   end
 
   def create
   	@review = Review.new(review_params)
-    @booking = Booking.find(params[:booking_id])
-    @dog = @booking.dog
-    @review.booking = @booking
     authorize @review
+    @dog = @review.booking.dog 
+    @booking = @review.booking
     @review.save!
   	if @review.save
-     redirect_to new_dog_booking_review(@review)
+     redirect_to dogs_path(@review)
    else
      render :new
    end
