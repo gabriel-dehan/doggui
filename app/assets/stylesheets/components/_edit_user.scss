@@ -6,68 +6,30 @@
   margin-left: 20%;
 }
 
-// La 1ere partie avatar du form 
-.form-edit-avatar {
- display: flex;
- margin-bottom: 2px;
- width: 100%; 
- height: 135px;
- background-color: #F2F2F2; 
-}
-
+//Premer champ photo
 .edit-avatar {
-  width: 25%;
-  margin-left: 180px;
+  width: 120px;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
-.edit-avatar-actuelle {
-  width: 50%;
-}
-
-.edit-avatar-changement {
-  width: 50%;
-}
-
-#user_avatar {
-  margin-top: 62px !important;
-  
-}
-
-[for="user_avatar"], #user_avatar {
-margin-left: 174px;
-margin-bottom: 20px;
-}
-
-#label-avatar {
- margin-left: 72px;
- padding-bottom: 5px;
-}
-
-// La 2nde partie nom du form 
-.noms-edit {
-  display: flex;
-  justify-content: space-around;
-  background-color: #F2F2F2; 
+//background for all 
+.bg-grey {
+  background: #F2F2F2;
   margin-bottom: 2px;
-  padding-top: 5px;
+  width: 100%;
 }
 
-// La 3eme partie Email du form 
-.email-edit {
- justify-content: center;
- background-color: #F2F2F2; 
- padding-top: 5px;
- padding-bottom: 5px;
-
+//ça ne marche pas faire varier la taille des champs
+#user_introduction {
+  max-width: 80%;
+  min-width: 30%;
 }
 
-//label user-email : 
-[for="user_email"] {
- margin-left: 175px !important;
+//bouton changement avatar
+#user_avatar {
+  margin-left: 117px;
+  margin-top: 51px;
 }
-
-
-#user_email {
-  margin-left: 175px !important;
-}
-
