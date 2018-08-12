@@ -1,35 +1,49 @@
 <div class="navbar-wagon">
-  <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <%= image_tag "logo.png", alt: "coworking", size: "150x500" %>
+
+   <div class="nav-left">
+    <a href="/" class="navbar-wagon-brand">
+    <%= image_tag "logo.png", alt: "coworking", size: "150x500" %></a>
     <!-- <img src="../../assets/images/logo.png" alt="logo"> -->
-  </a>
-
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+   </div>
 
-    <% if current_user%>
-      <div class="navbar-wagon-item">
+    <div class="nav-middle">
+    <%= link_to "Legislation", legislation_path, class: 'link-to-nav'%>
+    <%= link_to "Qui sommes-nous", new_dog_path, class: 'link-to-nav'%>
+    </div>
+
+    <div class="navbar-wagon-right">
+
+      <% if current_user%>
+
         <div class="dropdown">
-          <%= link_to "Ajouter votre chien", new_dog_path, class:"btn-orange"%>
         <% if user_signed_in? && current_user.avatar.present? %>
           <img src="<%= cl_image_path current_user.avatar %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" role="button">
         <% else %>
             <img src="https://media.istockphoto.com/photos/businessman-silhouette-as-avatar-or-default-profile-picture-picture-id476085198" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
          <% end %>
 
+         <%= link_to "Ajouter votre chien", new_dog_path, class:"btn-orange"%>
+
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to 'profile',profile_path%></li>
-          <li><%= link_to 'edit_profile',edit_user_registration_path%></li>
-          <li><%= link_to 'Logout',destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          <li class="menu-profil"><%= link_to 'profile',profile_path%></li>
+          <li class="menu-edit-profile"><%= link_to 'edit_profile',edit_user_registration_path%></li>
+          <li class="menu-logout"><%= link_to 'Logout',destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></li>
           </ul>
         </div>
+
+          <% else %>
+
+        <div class="nav-connexion">
+           <%= link_to "Se connecter",new_user_session_path, class: "btn-sple-or"%>
+           <div><hr class="barre-nav" /></div>
+             <%= link_to "S'inscrire",new_user_registration_path, class: "btn-sple-or"%>
+           <% end %>
+         </div>
       </div>
-    
-    <% else %>
-      <%= link_to "Se connecter",new_user_session_path, class: "btn btn-reverse btn-primary"%>
-      <%= link_to "S'inscrire",new_user_registration_path, class: "btn btn-reverse btn-primary"%>
-      <% end %>
+
   </div>
-</div>
-x
+    
+
+
+
