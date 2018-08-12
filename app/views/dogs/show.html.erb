@@ -12,7 +12,7 @@
 
       <div class="show-card-image">
           <% if @dog.picture_url  %>
-            <div class="image-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 300, width: 400, crop: :fill%>');">
+            <div class="image-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 500, width: 700, crop: :fill%>');">
 
             <% else %>
             <div class="image-show"
@@ -68,6 +68,8 @@
           <%= image_tag "avatar.png", alt:"logo", class:"show-card-avatar"%>
           <% end %>
           <%= @dog.user.first_name %> <%= @dog.user.last_name %>
+          <%= @dog.user.introduction %> 
+
         </div>
 
         <div class="show-review">
