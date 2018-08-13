@@ -20,7 +20,7 @@
         <% if user_signed_in? && current_user.avatar.present? %>
           <img src="<%= cl_image_path current_user.avatar %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" role="button">
         <% else %>
-            <img src="https://media.istockphoto.com/photos/businessman-silhouette-as-avatar-or-default-profile-picture-picture-id476085198" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+            <img src="<%= image_path "avatar.png" %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
          <% end %>
 
          <%= link_to "Ajouter votre chien", new_dog_path, class:"btn-orange"%>
