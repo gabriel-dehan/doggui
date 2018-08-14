@@ -58,8 +58,10 @@ class DogsController < ApplicationController
   def index2
      if params[:query].present?
         @dogs = Dog.where("breed ILIKE ?", "%#{params[:query]}%")
+
       else
         @dogs = Dog.all
+        
     end
     @dogsmarkers = Dog.where.not(latitude: nil, longitude: nil)
     @markers = @dogsmarkers.map do |dog|
@@ -68,6 +70,7 @@ class DogsController < ApplicationController
         lng: dog.longitude
       }
     end
+
 
   end
 
