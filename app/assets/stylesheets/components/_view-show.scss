@@ -94,9 +94,19 @@ background-color: white;
 }
 
 .esthetique {
+display: flex;
 background-color: white;
-height: 20%;
+height: 150px;
+width: 100%;
 border: solid 2px #F2F2F2;
+
+}
+
+.esthetique2 {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+width: 33%;
 }
 
 .show-description {
@@ -132,7 +142,6 @@ border: solid 2px #F2F2F2;
 
 }
 
-
 .map-show {
   width: 20%;
   position: -webkit-sticky;
@@ -140,4 +149,9 @@ border: solid 2px #F2F2F2;
   top: 1px !important;
 }
 
+.icon {
+  border-radius: 50%;
+  width: 45px;
+  border: solid 1px;
+}
 

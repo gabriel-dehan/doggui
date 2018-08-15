@@ -43,18 +43,25 @@
         <div class="show-card-description">
 
            <div class="esthetique">
-            Détails esthetique: 
-            <%= @dog.hair %>
-            <%= @dog.size %>
-            <%= @dog.prize %>
-           </div>
 
-            <div class="lof">
-             <div class="lof_number">N° LOF<%= @dog.lof_number %></div>
-             <div class="father_number">Maman LOF: <%= @dog.father_lof %></div>
-             <div class="mother_number">Papa LOF: <%=@dog.mother_lof %></div>
-          </div>
-        
+              <div class="esthetique2">
+                <%= image_tag "robe.png", class: "icon"%> : <%= @dog.color %>
+                <%= image_tag "brosse.jpg", class: "icon"%> : <%= @dog.hair.capitalize %>
+              </div>  
+
+               <div class="esthetique2">
+                <%= image_tag "mesure.jpg", class: "icon"%> : <%=@dog.size%> cm 
+                <%= image_tag "poids.jpg", class: "icon"%>
+              </div> 
+
+              <div class="esthetique2">
+              <%= image_tag "medaille.png", class: "icon"%> : <%= @dog.prize %>
+              <%= image_tag "analyse.png", class: "icon"%> : <%= @dog.medical_analyse%>
+              </div> 
+
+           </div>
+                       
+            <br>
             <div class="show-adresse"><%= @dog.address %> </div>
             <div class="show-description"> <%= @dog.description %></div>
 
