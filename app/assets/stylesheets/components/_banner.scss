@@ -10,13 +10,14 @@
   border-radius : 5px;
   margin-bottom : 10px;
   margin-top : 10px;
-  
+  opacity: 0.95;
+  //rajouter un lineargraduent?
 }
 
 .banner2 {
   color: white;
   text-align: center;
-  height: 20vh;
+  height: 15vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -29,6 +30,8 @@
 }
 
 .banner h1 {
+  margin-top: 104px; //faire descendre le titre//
+  margin-bottom: 210px;
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);

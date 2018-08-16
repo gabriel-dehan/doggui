@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   def contact
   end
 
-  def quisommesnous
+  def qui_sommes_nous
   end
+
 end

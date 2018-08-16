@@ -1,12 +1,12 @@
 .card {
   margin-top: 5px;
-  height: 250px;
   width: 360px; 
+  height: 280px;
   background-color: white; 
   border-radius: 2px;
   position: relative;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15);
-  position : relative;
+  
 }
 
 .card_small {
@@ -21,6 +21,7 @@
 }
 
 .card-image {
+  margin-right: 5px;
   height: 180px;
   background-position: center;
   width: 360px; 
@@ -39,8 +40,8 @@
 
 .card-user {
   position: absolute;
-  right: 16px;
-  top: -5px;
+  left: -4px;
+  bottom: -168px;
   width: 40px;
   border-radius: 50%;
 }
@@ -66,6 +67,10 @@
 
 .card-description h2 a {
  color: white;
+ position: absolute;
+ left: -4px;
+ top: -5px;
+
 }
 
 .card-description p {

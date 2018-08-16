@@ -61,13 +61,16 @@ class DogsController < ApplicationController
       else
         @dogs = Dog.all
     end
+    authorize @dogs
     @dogsmarkers = Dog.where.not(latitude: nil, longitude: nil)
     @markers = @dogsmarkers.map do |dog|
       {
         lat: dog.latitude,
         lng: dog.longitude
       }
+
     end
+
 
   end
 

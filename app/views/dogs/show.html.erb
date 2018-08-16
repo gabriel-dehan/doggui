@@ -12,7 +12,7 @@
 
       <div class="show-card-image">
           <% if @dog.picture_url  %>
-            <div class="image-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 300, width: 400, crop: :fill%>');">
+            <div class="image-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 500, width: 700, crop: :fill%>');">
 
             <% else %>
             <div class="image-show"
@@ -43,18 +43,25 @@
         <div class="show-card-description">
 
            <div class="esthetique">
-            Détails esthetique: 
-            <%= @dog.hair %>
-            <%= @dog.size %>
-            <%= @dog.prize %>
-           </div>
 
-            <div class="lof">
-             <div class="lof_number">N° LOF<%= @dog.lof_number %></div>
-             <div class="father_number">Maman LOF: <%= @dog.father_lof %></div>
-             <div class="mother_number">Papa LOF: <%=@dog.mother_lof %></div>
-          </div>
-        
+              <div class="esthetique2">
+                <%= image_tag "robe.png", class: "icon"%> : <%= @dog.color %>
+                <%= image_tag "brosse.jpg", class: "icon"%> : <%= @dog.hair.capitalize %>
+              </div>  
+
+               <div class="esthetique2">
+                <%= image_tag "mesure.jpg", class: "icon"%> : <%=@dog.size%> cm 
+                <%= image_tag "poids.jpg", class: "icon"%>
+              </div> 
+
+              <div class="esthetique2">
+              <%= image_tag "medaille.png", class: "icon"%> : <%= @dog.prize %>
+              <%= image_tag "analyse.png", class: "icon"%> : <%= @dog.medical_analyse%>
+              </div> 
+
+           </div>
+                       
+            <br>
             <div class="show-adresse"><%= @dog.address %> </div>
             <div class="show-description"> <%= @dog.description %></div>
 
@@ -68,6 +75,8 @@
           <%= image_tag "avatar.png", alt:"logo", class:"show-card-avatar"%>
           <% end %>
           <%= @dog.user.first_name %> <%= @dog.user.last_name %>
+          <%= @dog.user.introduction %> 
+
         </div>
 
         <div class="show-review">
