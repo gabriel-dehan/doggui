@@ -1,7 +1,19 @@
-.container-card {
-  min-width: 70%;
-}
-
 .index2 {
   display: flex;
+}
+
+.container-card {
+  width: 70%;
+}
+
+.recherche {
+align-items: center;
+background-color: grey;
+}
+
+.wording-recherche {
+min-width: 20%;
+text-align: center;
+display: inline;
+background-color:red;
 }
