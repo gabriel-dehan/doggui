@@ -1,112 +1,99 @@
 
-
 <div class="container">
 
   <div class="view-show">
 
     <div class="grid-show">
-
-      <div class="show-card-titre">
-        <%=@dog.nickname%> - <%=@dog.breed%>
-      </div>
-
-      <div class="show-card-image">
-          <% if @dog.picture_url  %>
-            <div class="image-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 500, width: 700, crop: :fill%>');">
-
-            <% else %>
-            <div class="image-show"
-            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-            url('<%= asset_path'dog.png', height: 300, width: 400, crop: :fill %>')">
-          <% end %>
-       </div>
-  
-        <div class="show-card-bouton">
-
-          <div class="show-les-deux-bouton">
-
-          <% if policy(@dog).update? %>
-          <%= link_to 'Edit', edit_dog_path(@dog), class: "btn btn-warning list-inline" %>
-          <% else %>
-          <%= link_to "Reservation", new_dog_booking_path(@dog), class: "btn btn-success list-inline"%>
-          <% end %>
-          <% if policy(@dog).destroy? %>
-          <%= link_to 'supprimer', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger list-inline" %>
-          <% end %>
         
-           </div> 
-           
-        </div> 
-
-      </div> 
-
-        <div class="show-card-description">
-
-           <div class="esthetique">
-
-              <div class="esthetique2">
-                <%= image_tag "robe.png", class: "icon"%> : <%= @dog.color %>
-                <%= image_tag "brosse.jpg", class: "icon"%> : <%= @dog.hair.capitalize %>
-              </div>  
-
-               <div class="esthetique2">
-                <%= image_tag "mesure.jpg", class: "icon"%> : <%=@dog.size%> cm 
-                <%= image_tag "poids.jpg", class: "icon"%>
-              </div> 
-
-              <div class="esthetique2">
-              <%= image_tag "medaille.png", class: "icon"%> : <%= @dog.prize %>
-              <%= image_tag "analyse.png", class: "icon"%> : <%= @dog.medical_analyse%>
-              </div> 
-
-           </div>
-                       
-            <br>
-            <div class="show-adresse"><%= @dog.address %> </div>
-            <div class="show-description"> <%= @dog.description %></div>
-
+        <div class="grid-retour">
+          <%= link_to 'Retour', index_search_path, class: "btn btn-warning" %>
         </div>
 
-        <div class="show-card-user">
-
-          <% if @dog.user.avatar_url %>
-          <%= cl_image_tag @dog.user.avatar_url, class: "show-card-avatar" %>
-          <% else %>
-          <%= image_tag "avatar.png", alt:"logo", class:"show-card-avatar"%>
-          <% end %>
-          <%= @dog.user.first_name %> <%= @dog.user.last_name %>
-          <%= @dog.user.introduction %> 
-
+        <div class="grid-name">
+          <%=@dog.nickname%> - <%=@dog.breed%>
         </div>
 
-        <div class="show-review">
-        Nombre de fois ou le dog à été booké :<%=  @dog.bookings.count %>
-        </div>
-
-
-       <div class="show-bouton-retour">
-
-        <%= link_to "Revenir à la recherche", dogs_path, class: "btn btn-primary list-inline"%>
-       </div>
-
-
-       
-
-    </div>
+        <div class="grid-image">
+            <% if @dog.picture_url  %>
+              <div class="image-show" 
+              style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 300, width: 400, crop: :fill%>');">
+              </div>
+              <% else %>
+              <div class="image-show"
+              style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+              url('<%= asset_path'dog.png', height: 300, width: 400, crop: :fill %>')">
+              </div>
+             <% end %>
+         </div>
     
-    <div class="map-show">
-     <div
-          id="map"
-          style="width: 100%;
-          height: 80vh;"
-          data-markers="<%= @marker.to_json %>">  
-      </div>
-    </div>
+          <div class="grid-bouton">
+              <% if policy(@dog).update? %>
+              <%= link_to 'Edit', edit_dog_path(@dog), class: "btn btn-warning list-inline" %>
+              <% else %>
+              <%= link_to "Reservation", new_dog_booking_path(@dog), class: "btn btn-success list-inline"%>
+              <% end %>
+              <% if policy(@dog).destroy? %>
+              <%= link_to 'supprimer', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger list-inline" %>
+              <% end %>
+              
+          </div> 
 
-  </div> 
+          <div class="grid-logo">
+            <%= image_tag "robe.png", class: "icon"%> : <%= @dog.color %>
+            <%= image_tag "brosse.jpg", class: "icon"%> : <%= @dog.hair %>
+            <%= image_tag "mesure.jpg", class: "icon"%> : <%=@dog.size%> cm 
+            <%= image_tag "poids.jpg", class: "icon"%>
+            <%= image_tag "medaille.png", class: "icon"%> : <%= @dog.prize %>
+            <%= image_tag "analyse.png", class: "icon"%> :
+          </div>
+                         
+          <div class="grid-adresse">
+            <%= @dog.address %> 
+          </div>
+
+          <div class="grid-description"> 
+            <%= @dog.description %>
+          </div>
+
+          <div class="grid-user">
+            <% if @dog.user.avatar_url %>
+            <%= cl_image_tag @dog.user.avatar_url, class: "grid-user-avatar" %>
+            <% else %>
+            <%= image_tag "avatar.png", alt:"logo", class:"grid-user-avatar"%>
+            <% end %>
+            <%= @dog.user.first_name %> <%= @dog.user.last_name %>
+            <%= @dog.user.introduction %> 
+          </div>
+
+          <div class="grid-map">
+             <div
+            id="map"
+            style="width: 100%;
+            height: 100%;"
+            data-markers="<%= @marker.to_json %>">  
+            </div>
+          </div>
+
+          <div class="grid-review">
+          Nombre de fois ou le dog à été booké :<%=  @dog.bookings.count %>
+          </div>
+
+        </div> 
 </div> 
 
 
-     
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
