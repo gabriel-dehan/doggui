@@ -9,23 +9,17 @@
 
     <br>
 
-  <div class="recherche row">
-
-    <div class="col-xs-12 col-md-6">
-    <div class="wording-recherche"> nouvelle recherche </div>
-    <div>
-      <%= form_tag index_search_path, method: :get do %>
+  <div class="search-index2">
+        <div class= "search-bar">
+        <%= form_tag index_search_path, method: :get do %>
         <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Chercher un chien par son pédigrée !" %>
-      </div>
-      <div>
-       <button class="btn-search btn-warning "> search </button>
-        <% end %>
-      </div>
-      </div>
-    </div>
+         </div>
+         <button class="btn-warning btn-search-index2"> Go ! </button>
+          <% end %>
+  </div>
 
   <div class="index2">
 
@@ -44,7 +38,7 @@
                <%= image_tag "avatar.png", alt:"logo", class:"card-user"%>
                <% end %>
             </div>
-          
+
           <div class="card-footer">
             <p>Dogs booked : <%= dog.bookings.count %> times </p>
             <p><%= dog.price %>€ / saillie</p>
@@ -64,12 +58,12 @@
                <%= image_tag "avatar.png", alt:"logo", class:"card-user"%>
                <% end %>
               </div>
-                
+
              <div class="card-footer">
               <p> Dogs booked : <%= dog.bookings.count %> times </p>
               <p><%= dog.price %>€</p>
-              
-             </div > 
+
+             </div >
             </div>
           </div>
          <% end %>
@@ -83,7 +77,7 @@
         margin-left: 15px;
         margin-right: 0px;
         margin-top: 19px;"
-        data-markers="<%= @markers.to_json %>">  
+        data-markers="<%= @markers.to_json %>">
        </div>
    </div>
   </div>
