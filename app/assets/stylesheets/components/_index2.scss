@@ -1,25 +1,38 @@
+//  Banner :
+
+.banner-content {
+  background-color: red;
+}
+
+.search-index2 {
+  display: flex ;
+  text-align: center;
+}
+
+.search-bar {
+  margin-left: -111px !important;
+  width: 100%;
+  background-color: white;
+
+}
+
+.btn-search-index2{
+background-color: #ea9632;
+height: 35px;
+weight: 40px;
+border-radius: 10%;
+background-image: url(loupe.png);
+background-repeat: no-repeat;
+padding-right: 2px;
+}
+
+
+// contenu :
+
 .index2 {
   display: flex;
 }
 
 .container-card {
   width: 70%;
-}
-
-.search-index2 {
-  display: flex;
-}
-
-
-.search-bar {
-margin-top: -29px;
-margin-left: -160px !important;
-}
-
-.btn-search-index2{
-margin-top:-24px;
-margin-left: 4px;
-height: 35px;
-border-radius: 10%;
-
 }
