@@ -1,7 +1,7 @@
 //  Banner :
 
 .banner-content {
-  background-color: red;
+  width: 600px;
 }
 
 .search-index2 {
@@ -9,21 +9,19 @@
   text-align: center;
 }
 
-.search-bar {
-  margin-left: -111px !important;
-  width: 100%;
-  background-color: white;
-
+#query {
+  margin-left: 15px;
 }
 
+
 .btn-search-index2{
-background-color: #ea9632;
-height: 35px;
-weight: 40px;
-border-radius: 10%;
-background-image: url(loupe.png);
+margin-top:5px;
+width: 37px;
+height: 34px;
+background-image: url(loupe2.jpg);
+background-size: 33px 34px;
 background-repeat: no-repeat;
-padding-right: 2px;
+
 }
 
 
