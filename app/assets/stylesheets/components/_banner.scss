@@ -1,7 +1,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 70vh;
+  height: 72vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -17,7 +17,7 @@
 .banner2 {
   color: white;
   text-align: center;
-  height: 15vh;
+  height: 20%;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -26,16 +26,16 @@
   border-radius : 5px;
   margin-bottom : 10px;
   margin-top : 10px;
-  opacity: 0.75;
+  opacity: 0.70;
 }
 
 .banner h1 {
-  margin-top: 104px; //faire descendre le titre//
-  margin-bottom: 210px;
+  margin-top: 130px; //faire descendre le titre//
+  margin-bottom: 100px;
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  font-color: white
+  font-color: white;
 }
 .banner p {
   font-size: 25px;
@@ -44,3 +44,11 @@
   opacity: 0.6;
   margin-bottom: 30px;
 }
+
+
+
+
+
+
+
+

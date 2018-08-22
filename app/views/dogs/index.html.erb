@@ -1,20 +1,22 @@
 
 <div class="container">
-	<div class="banner" style="background-image: url('<%= asset_path'chiens-heureux-jouent-a-deux-full-13651707.jpg', height: 200, width: 300%>');">
+	<div class="banner" style="background-image: url('<%= asset_path'Chien.landing.jpg', height: 200, width: 300%>');">
 	  <div class="banner-content">
 	    <h1>L'AMOUR AVEC UN GRAND OUAF</h1>
-      
-	    <%= link_to "INSCRIRE SON MOLOSSE", new_dog_path, class: "big-button btn btn-reverse btn-warning"%>
 
+	    <%= link_to "INSCRIRE SON MOLOSSE", new_dog_path, class: "big-button btn btn-reverse btn-warning"%>
+      <div class="search-index2">
+      <div class= "search-bar">
       <%= form_tag index_search_path, method: :get do %>
 		  <%= text_field_tag :query,
    			 	params[:query],
     			class: "form-control",
     			placeholder: "Chercher un chien par son pédigrée !" %>
-          <button class="btn-search btn-warning "> search
-          </button>
-			<% end %>
-	  </div>
+       </div>
+          <button class="btn-search-index2"> </button>
+			   <% end %>
+	    </div>
+    </div>
 	</div>
 
   <div class="row">
@@ -32,7 +34,7 @@
                <%= image_tag "avatar.png", alt:"logo", class:"card-user"%>
                <% end %>
             </div>
-          
+
           <div class="card-footer">
             <p>Dogs booked : <%= dog.bookings.count %> times </p>
             <p><%= dog.price %>€ / saillie</p>
@@ -52,12 +54,12 @@
                <%= image_tag "avatar.png", alt:"logo", class:"card-user"%>
                <% end %>
               </div>
-                
+
             <div class="card-footer">
             <p> Dogs booked : <%= dog.bookings.count %> times </p>
               <p><%= dog.price %>€</p>
-              
-            </div > 
+
+            </div >
             </div>
             </div>
          <% end %>

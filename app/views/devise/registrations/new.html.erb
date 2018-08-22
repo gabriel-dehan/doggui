@@ -10,63 +10,63 @@
 
    <div class="form-inputs form-edit-avatar">
      <div class="row bg-grey">
-       <div class="col-sm-4">
+       <div class="col-xs-4">
          <%= f.input :avatar, required: false, autofocus: true %>
           <%= f.input :avatar_cache, as: :hidden %>
-      </div> 
+      </div>
     </div>
     <div class="row bg-grey">
-       <div class="col-sm-4">
+       <div class="col-sm-3">
           <%= f.input :email, required: true, autofocus: true,
                  placeholder: 'pierre.paul.jaques@gmail.com' %>
-      </div> 
-      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-3">
           <%= f.input :telephone, required: false, autofocus: true %>
-      </div> 
+      </div>
     </div>
     <div class="row bg-grey">
-       <div class="col-sm-4">
+       <div class="col-sm-3">
           <%= f.input :first_name, required: false, autofocus: true %>
-      </div> 
-       <div class="col-sm-4">
+      </div>
+       <div class="col-sm-3">
           <%= f.input :last_name, required: false, autofocus: true %>
-      </div> 
+      </div>
     </div>
     <div class="row bg-grey">
-       <div class="col-sm-4">
+       <div class="col-sm-3">
            <%= f.input :siret, required: false, autofocus: true %>
-      </div> 
+      </div>
     </div>
 
     <div class="row bg-grey">
-    <div class="col-sm-4">
+    <div class="col-sm-3">
           <%= f.input :address, required: false, autofocus: true %>
-      </div> 
+      </div>
     </div>
 
     <div class="row bg-grey">
-       <div class="col-sm-4">
+       <div class="col-sm-6">
            <%= f.input :introduction, required: false, autofocus: true %>
-      </div> 
+      </div>
     </div>
-   
+
     <div class="row bg-grey">
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
          <%= f.input :password_confirmation, required: true %>
       </div>
-    </div> 
+    </div>
 
     <div class="form-actions">
       <%= f.button :button, "Sign up", type: :submit, class: :'btn-form-new btn btn-warning' %>
     </div>
-    
+
     <% end %>
 
   </div>
-  
+
 </div>
 
 

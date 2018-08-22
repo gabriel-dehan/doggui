@@ -1,8 +1,8 @@
 <div class="container">
- 
+
     <%= simple_form_for (@dog) do |f| %>
-      
-      <div class="form-for-edit-dog"> 
+
+      <div class="form-for-edit-dog">
       <div class= "head-form-for row">
 
         <div class="col-sm-6"><%= f.input :picture, placeholder: 'Photo'%> </div>
@@ -18,12 +18,12 @@
       </div>
 
       <div class= "body-form-for row">
-        
+
         <div class="col-sm-4"><%= f.input :size %></div>
         <div class="col-sm-4"> <%= f.input :hair %></div>
         <div class="col-sm-4"> <%= f.input :color %></div>
       </div>
-      
+
       <div class= "details-form-for row">
          <div class="col-sm-4"><%= f.input :lof_number %></div>
          <div class="col-sm-4"><%= f.input :father_lof %></div>
@@ -34,7 +34,7 @@
          <div class="col-sm-6"><%= f.input :medical_analyse %></div>
          <div class="col-sm-6"><%= f.input :prize, label: "Won prize" %></div>
        </div>
-        
+
       <div class="row">
         <div class="col-sm-6"> <%= f.input :address %> </div>
       </div>
@@ -43,14 +43,13 @@
       <div class="description-form-for"><%= f.input :description, label: " Description" %></div>
       </div>
 
-      <div class="row">   
+      <div class="row">
         <div class="col-sm-6"> <%= f.input :price %></div>
         <div class="col-sm-6"> <%= f.submit "Mettre à jour", class: "btn-form-new btn btn-warning " %></div></div>
       <% end %>
     </div>
-      
+
   </div>
-      
 
 
 
@@ -61,4 +60,5 @@
 
 
 
- 
+
+

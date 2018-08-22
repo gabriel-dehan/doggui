@@ -1,19 +1,36 @@
+//  Banner :
+
+.banner-content {
+  width: 600px;
+}
+
+.search-index2 {
+  display: flex ;
+  text-align: center;
+}
+
+#query {
+  margin-left: 49px;
+  width: 463px;
+}
+
+
+.btn-search-index2{
+margin-top:5px;
+width: 37px;
+height: 34px;
+background-image: url(loupe2.jpg);
+background-size: 33px 34px;
+background-repeat: no-repeat;
+}
+
+
+// contenu :
+
 .index2 {
   display: flex;
 }
 
 .container-card {
   width: 70%;
-}
-
-.recherche {
-align-items: center;
-background-color: grey;
-}
-
-.wording-recherche {
-min-width: 20%;
-text-align: center;
-display: inline;
-background-color:red;
 }
