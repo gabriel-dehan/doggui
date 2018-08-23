@@ -16,6 +16,16 @@
 		 
 		  <%end%>
 	</div>
+	<div class="col-xs-6 ">
+		<h3> What FDP thought about you and your F****ing dogs</h3>
+		<% current_user.bookings.reviews.each do |review| %>
+			<ul>
+				<li> Review id : <%= review.id %></li>
+				<li> Review content : <%= review.content %></li>
+			</ul>
+
+		<%end%>
+	</div>
 
 </div>
 </div>
