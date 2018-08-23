@@ -37,13 +37,16 @@
 
           <div class="card-footer">
             <p>Dogs booked : <%= dog.bookings.count %> times </p>
-            <p><%= dog.price %>€ / saillie</p>
+             <div class="card-footer-price">
+            <p><%= dog.price %>€ / Saillie</p>
+             </div>
          </div>
          </div>
         </div>
             <!-- <a class="card-link" href="#" ></a> -->
          <% else %>
            <div class="card">
+
             <div class="card-image"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
             url('<%= asset_path'dog.png', height: 300, width: 400, crop: :scale %>')">
@@ -55,12 +58,13 @@
                <% end %>
               </div>
 
-            <div class="card-footer">
-            <p> Dogs booked : <%= dog.bookings.count %> times </p>
-              <p><%= dog.price %>€</p>
-
-            </div >
-            </div>
+               <div class="card-footer">
+                   Dogs booked : <%= dog.bookings.count %> times
+                   <div class="card-footer-price">
+                   <%= dog.price %>€ / Saillie</p>
+                   </div>
+              </div >
+             </div>
             </div>
          <% end %>
         </div>
