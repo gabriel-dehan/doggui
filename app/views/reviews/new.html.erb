@@ -1,7 +1,4 @@
-
-=======
-<%= simple_form_for @review, url: dog_booking_reviews_path(:dog_id, :booking_id, @review) do |f| %>
-  <%= f.input :content %>
+<%= simple_form_for [@dog, @booking, @review], url: dog_booking_reviews_path do |f| %>
+  <%= f.input :content, label: 'Your username please', error: 'Username is mandatory, please specify one' %>
   <%= f.button :submit %>
 <% end %>
-
