@@ -1,11 +1,11 @@
 class DogsController < ApplicationController
    skip_before_action :authenticate_user!, only: [:index, :show, :create, :edit, :destroy, :index2]
-   
+
   def index
    # @dogs = Dog.all
    @dogs = policy_scope(Dog)
   end
-  
+
   def show
     @dog = Dog.find(params[:id])
     authorize @dog
@@ -18,7 +18,7 @@ class DogsController < ApplicationController
   end
 
   def new
-   @dog = Dog.new 
+   @dog = Dog.new
    authorize @dog
   end
 
@@ -40,7 +40,7 @@ class DogsController < ApplicationController
 
   def update
     @dog = Dog.find(params[:id])
-    authorize @dog 
+    authorize @dog
     if @dog.update(dog_params)
       redirect_to dog_path(@dog)
     else
