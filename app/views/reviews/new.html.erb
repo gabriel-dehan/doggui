@@ -1,4 +1,4 @@
-<%= simple_form_for [@dog, @booking, @review], url: dog_booking_reviews_path do |f| %>
-  <%= f.input :content, label: 'Your username please', error: 'Username is mandatory, please specify one' %>
-  <%= f.button :submit %>
+<%= simple_form_for [@dog, @review], url:  dog_create_review_path do |f| %>
+  <%= f.input :content, label: 'Your review FDP'%>
+  <%= f.submit "add a review", class: "btn btn-primary" %>
 <% end %>

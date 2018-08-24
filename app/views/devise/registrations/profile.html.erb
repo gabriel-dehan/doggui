@@ -11,7 +11,7 @@
 			  <li> Maitre : <%= booking.dog.user.email %> </li> 
 			  <li> Start_date : <%= booking.start_date %> </li> 
 			  <li> End_date : <%= booking.end_date %> </li> 
-			  <li> Your dog have already fucked ? Please, <%= link_to "laisse une review",  new_dog_review_path(@dog), class: "btn btn-primary list-inline"%> </li> 
+			  <li> Your dog have already fucked ? Please, <%= link_to "laisse une review",  new_dog_review_path(booking.dog), class: "btn btn-primary list-inline"%> </li> 
 			</ul>
 		 
 		  <%end%>

@@ -1,3 +1,3 @@
 class Review < ApplicationRecord
-  belongs_to :dogs
+  belongs_to :dogs,  optional: true
 end
