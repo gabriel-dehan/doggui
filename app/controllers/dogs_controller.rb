@@ -5,7 +5,7 @@ class DogsController < ApplicationController
   def index
    # @dogs = Dog.all
    # @dogs = Dog.order(:nickname).page params[:page]
-   @dogs = policy_scope(Dog).order(:nickname).page params[:page]
+   @dogs = policy_scope(Dog).page params[:page]
 
   # @records = policy_scope(Record).paginate(params[:page])
   end
