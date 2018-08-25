@@ -19,9 +19,9 @@
 	    </div>
     </div>
 	</div>
-
+   
   <div class="row">
-
+ 
      <% @dogs.each do |dog| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <% if dog.picture_url  %>
@@ -67,8 +67,9 @@
          <% end %>
         </div>
       <% end %>
+
     </div>
-    <%= paginate @dogs %>
+<div> <%   paginate @dogs%> </div>
   </div>
 
 
