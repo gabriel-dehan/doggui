@@ -74,8 +74,15 @@
             <% else %>
             <%= image_tag "avatar.png", alt:"logo", class:"grid-user-avatar"%>
             <% end %>
+
             <%= @dog.user.first_name %> <%= @dog.user.last_name %>
             <%= @dog.user.introduction %>
+            <p> voici les review de ce chien <p>
+            <% @dog.reviews.each do |review| %>
+            <ul>
+              <li> <%=  review.content %> </li>
+            </ul>
+            <%end%>
           </div>
 
           <div class="grid-map">

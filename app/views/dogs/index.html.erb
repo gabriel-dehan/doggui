@@ -1,5 +1,6 @@
 
 <div class="container">
+
 	<div class="banner" style="background-image: url('<%= asset_path'Chien.landing.jpg', height: 200, width: 300%>');">
 	  <div class="banner-content">
 	    <h1>L'AMOUR AVEC UN GRAND OUAF</h1>
@@ -18,8 +19,9 @@
 	    </div>
     </div>
 	</div>
-
+   
   <div class="row">
+ 
      <% @dogs.each do |dog| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <% if dog.picture_url  %>
@@ -85,7 +87,9 @@
          <% end %>
         </div>
       <% end %>
+
     </div>
+<div> <%= paginate @dogs%> </div>
   </div>
 
 
