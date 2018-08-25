@@ -10,7 +10,6 @@ class DogsController < ApplicationController
   # @records = policy_scope(Record).paginate(params[:page])
   end
 
-
   def show
     @dog = Dog.find(params[:id])
     authorize @dog
@@ -79,7 +78,6 @@ class DogsController < ApplicationController
 
   def upvote
     @dog.upvote_from current_user
-    redirect_to dogs_path
   end
 
   private
