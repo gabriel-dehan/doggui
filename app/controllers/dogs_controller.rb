@@ -1,10 +1,14 @@
 class DogsController < ApplicationController
    skip_before_action :authenticate_user!, only: [:index, :show, :create, :edit, :destroy, :index2]
-   
+   paginate_per 5
+
   def index
    # @dogs = Dog.all
    @dogs = policy_scope(Dog)
+   @dogs = Dog.order(:nickname).page params[:page]
+
   end
+
   
   def show
     @dog = Dog.find(params[:id])
