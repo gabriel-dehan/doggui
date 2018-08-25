@@ -9,12 +9,13 @@ end
   get 'qui-sommes-nous', to: 'pages#', as: :quisommesnous
   get 'index2', to: 'dogs#index2', as: :index_search
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
- resources :dogs do 
+ resources :dogs do
+    member do 
+      put 'like', to: 'dogs#upvote', as: :upvote
+    end
   resources :reviews, only: [:new, :show, :index]
-  post 'reviews', to: 'reviews#create', as: :create_review
- 	 end
- resources :dogs do 
+    post 'reviews', to: 'reviews#create', as: :create_review
+ 	end
   resources :bookings, only: [:new, :create, :show] 
-  end
 end
 

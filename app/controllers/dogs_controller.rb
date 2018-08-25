@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-   skip_before_action :authenticate_user!, only: [:index, :show, :create, :edit, :destroy, :index2]
+   skip_before_action :authenticate_user!, only: [:index, :show, :create, :edit, :destroy, :index2, :upvote]
 
 
   def index
@@ -74,9 +74,12 @@ class DogsController < ApplicationController
         lat: dog.latitude,
         lng: dog.longitude
       }
-
+    end
   end
 
+  def upvote
+    @dog.upvote_from current_user
+    redirect_to dogs_path
   end
 
   private

@@ -35,6 +35,7 @@
               <% else %>
                <%= image_tag "avatar.png", alt:"logo", class:"card-user"%>
                <% end %>
+               <%link_to upvote_path(dog), class: btn-medium, method: :put %>
             </div>
 
           <div class="card-footer">
