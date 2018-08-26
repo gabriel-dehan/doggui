@@ -36,27 +36,32 @@
                 <%= cl_image_tag dog.user.avatar_url, class: "card-user" %>
                <% else %>
                <%= image_tag "avatar.png", alt:"logo", class:"card-user"%>
-                
+
                <% end %>
-           
+
             </div>
             <div class="card-description">
-                  <div class="card-description-breed"><%= dog.breed %> - </div>
+                  <div class="card-description-breed"><%= dog.breed %></div>
                   <div class="card-description-version"><%= dog.version %> - </div>
                  <div class="card-description-color"> <%= dog.color %></div>
             </div>
 
 
-          <div class="card-footer">
-            <p>Dogs booked : <%= dog.bookings.count %> times </p>
-            <p><%= dog.price %>€ / saillie</p>
+             <div class="card-footer">
+                 <div class="card-footer-times">
+                 <p>Dogs booked : <%= dog.bookings.count %> times</p>
+                 </div>
+                 <div class="card-footer-price">
+                 <%= dog.price %>€ / Saillie
+                </div>
+             </div>
            <%#= link_to upvote_dog_path(dog), class: "btn-medium", method: :put do %>
              <!--  <button type="button", class="btn-medium"> -->
                <!--  <span class="badge"> --> <%#= dogs.get_upvotes.size %> <!-- </span> -->
                 <%#end%>
-         </div>
 
-           
+
+
 
          </div>
         </div>
@@ -73,7 +78,7 @@
                 <%= cl_image_tag dog.user.avatar.default_url, class: "card-user" %>
               <% else %>
                <%= image_tag "avatar.png", alt:"logo", class:"card-user"%>
-               
+
                <% end %>
                </div>
 
@@ -84,15 +89,19 @@
                  <div class="card-description-color"> <%= dog.color %></div>
                 </div>
 
-            <div class="card-footer">
-            <p> Dogs booked : <%= dog.bookings.count %> times </p>
-              <p><%= dog.price %>€</p>
-              
+               <div class="card-footer">
+                 <div class="card-footer-times">
+                 <p>Dogs booked : <%= dog.bookings.count %> times</p>
+                 </div>
+                 <div class="card-footer-price">
+                 <%= dog.price %>€ / Saillie
+                </div>
+              </div>
+
                <%#= link_to upvote_dog_path(dog), class: "btn-medium", method: :put do %>
              <!--  <button type="button", class="btn-medium"> -->
                <!--  <span class="badge"> --> <%#= dogs.get_upvotes.size %> <!-- </span> -->
                 <%#end%>
-            </div >
             </div>
             </div>
          <% end %>

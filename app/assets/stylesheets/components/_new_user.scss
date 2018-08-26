@@ -1,0 +1,33 @@
+.form-new-user {
+  width: 650px;
+  margin-bottom: 20px;
+  margin-left: 20%;
+  height: 650px;
+}
+
+//taille des champs
+#user_first_name,  #user_siret, #user_last_name, #user_email, #user_telephone, #user_password,  #user_password_confirmation{
+width: 220px;
+margin-left: 115px;
+}
+
+//taille des champs
+#user_address,  #user_introduction, #user_avatar{
+margin-left: 115px;
+}
+
+//cadre gris
+.bg-grey {
+  background: #F2F2F2;
+  margin-bottom: 2px;
+  width: 100%;
+}
+
+//position label
+[for="user_avatar"] {
+  margin-left: 121px;
+}
+
+.text-muted {
+ margin-left: 121px;
+}
