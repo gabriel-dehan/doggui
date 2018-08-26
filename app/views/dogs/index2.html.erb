@@ -63,14 +63,11 @@
               </div>
 
               <div class="card-footer">
-                 <div class="card-footer-times">
-                 <p>Dogs booked : <%= dog.bookings.count %> times</p>
-                 </div>
-                 <div class="card-footer-price">
-                 <%= dog.price %>€ / Saillie
-                </div>
-              </div>
+              <p> Dogs booked : <%= dog.bookings.count %> times </p>
+              <p><%= dog.price %>€</p>
 
+             </div >
+            </div>
           </div>
          <% end %>
         </div>
@@ -88,3 +85,4 @@
    </div>
     <div> <%= paginate @dogs %></div>
   </div>
+
