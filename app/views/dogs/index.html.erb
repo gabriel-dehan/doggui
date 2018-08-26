@@ -50,10 +50,10 @@
           <div class="card-footer">
             <p>Dogs booked : <%= dog.bookings.count %> times </p>
             <p><%= dog.price %>€ / saillie</p>
-           <%= link_to upvote_dog_path(dog), class: "btn-medium", method: :put do %>
-              <button type="button", class="btn-medium">
-                <span class="badge"> <%= dogs.get_upvotes.size %> </span>
-                <%end%>
+           <%#= link_to upvote_dog_path(dog), class: "btn-medium", method: :put do %>
+             <!--  <button type="button", class="btn-medium"> -->
+               <!--  <span class="badge"> --> <%#= dogs.get_upvotes.size %> <!-- </span> -->
+                <%#end%>
          </div>
 
            
@@ -86,10 +86,11 @@
             <div class="card-footer">
             <p> Dogs booked : <%= dog.bookings.count %> times </p>
               <p><%= dog.price %>€</p>
-              <%= link_to upvote_dog_path(dog), class: "btn-medium", method: :put do %>
-              <button type="button", class="btn-medium">
-                <span class="badge"> <%= dog.get_upvotes.size %> </span>
-                <%end%>
+              
+               <%#= link_to upvote_dog_path(dog), class: "btn-medium", method: :put do %>
+             <!--  <button type="button", class="btn-medium"> -->
+               <!--  <span class="badge"> --> <%#= dogs.get_upvotes.size %> <!-- </span> -->
+                <%#end%>
             </div >
             </div>
             </div>
