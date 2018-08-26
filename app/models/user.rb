@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+  acts_as_voter
   has_many :dogs
   has_many :bookings
   # Include default devise modules. Others available are:
