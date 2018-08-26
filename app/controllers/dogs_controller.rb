@@ -1,7 +1,5 @@
 class DogsController < ApplicationController
-   skip_before_action :authenticate_user!, only: [:index, :show, :create, :edit, :destroy, :index2, :upvote]
-
-
+ skip_before_action :authenticate_user!, only: [:index, :show, :create, :edit, :destroy, :index2, :upvote]
   def index
    # @dogs = Dog.all
    # @dogs = Dog.order(:nickname).page params[:page]
@@ -22,7 +20,7 @@ class DogsController < ApplicationController
   end
 
   def new
-   @dog = Dog.new 
+   @dog = Dog.new
    authorize @dog
   end
 
@@ -44,7 +42,7 @@ class DogsController < ApplicationController
 
   def update
     @dog = Dog.find(params[:id])
-    authorize @dog 
+    authorize @dog
     if @dog.update(dog_params)
       redirect_to dog_path(@dog)
     else
