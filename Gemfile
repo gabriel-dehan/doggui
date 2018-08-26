@@ -10,7 +10,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'pundit'
 gem 'jquery-rails'
 gem 'kaminari'
-gem 'acts_as_votable', '~> 0.11.1'
+gem 'acts_as_votable', '~> 0.11.1' 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use postgresql as the database for Active Record
