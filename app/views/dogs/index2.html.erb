@@ -39,7 +39,7 @@
             </div>
 
           <div class="card-description">
-                  <div class="card-description-breed"><%= dog.breed %> - </div>
+                  <div class="card-description-breed"><%= dog.breed %></div>
                   <div class="card-description-version"><%= dog.version %> - </div>
                  <div class="card-description-color"> <%= dog.color %></div>
           </div>
@@ -69,16 +69,19 @@
               </div>
 
               <div class="card-description">
-                  <div class="card-description-breed"><%= dog.breed %> - </div>
+                  <div class="card-description-breed"><%= dog.breed %></div>
                   <div class="card-description-version"><%= dog.version %> - </div>
                  <div class="card-description-color"> <%= dog.color %></div>
               </div>
 
               <div class="card-footer">
-              <p> Dogs booked : <%= dog.bookings.count %> times </p>
-              <p><%= dog.price %>€</p>
-
-             </div >
+                 <div class="card-footer-times">
+                 <p>Dogs booked : <%= dog.bookings.count %> times</p>
+                 </div>
+                 <div class="card-footer-price">
+                 <%= dog.price %>€ / Saillie
+                </div>
+              </div>
             </div>
           </div>
          <% end %>
