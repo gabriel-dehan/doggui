@@ -1,6 +1,5 @@
 class DogsController < ApplicationController
-   skip_before_action :authenticate_user!, only: [:index, :show, :create, :edit, :destroy, :index2]
-  
+ skip_before_action :authenticate_user!, only: [:index, :show, :create, :edit, :destroy, :index2, :upvote]
   def index
    # @dogs = Dog.all
    # @dogs = Dog.order(:nickname).page params[:page]
@@ -8,7 +7,6 @@ class DogsController < ApplicationController
 
   # @records = policy_scope(Record).paginate(params[:page])
   end
-
 
   def show
     @dog = Dog.find(params[:id])
@@ -73,9 +71,11 @@ class DogsController < ApplicationController
         lat: dog.latitude,
         lng: dog.longitude
       }
-
+    end
   end
 
+  def upvote
+    @dog.upvote_from current_user
   end
 
   private
