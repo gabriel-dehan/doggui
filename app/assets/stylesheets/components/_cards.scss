@@ -97,19 +97,18 @@
 
 .card-description {
   position: absolute;
-  background-color: red;
   width: 100%;
   display: flex;
   justify-content: space-around;
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
-  color: black;
+  color: #918c8c;
   margin-top: 190px;
 }
 
 .card-description-breed, .card-description-size, .card-description-color {
   min-width: 30%;
-  border: 2px solid;
+
 }
 
 // Footer

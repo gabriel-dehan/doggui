@@ -38,6 +38,12 @@
                <% end %>
             </div>
 
+          <div class="card-description">
+                  <div class="card-description-breed"><%= dog.breed %> - </div>
+                  <div class="card-description-version"><%= dog.version %> - </div>
+                 <div class="card-description-color"> <%= dog.color %></div>
+          </div>
+
           <div class="card-footer">
                  <div class="card-footer-times">
                  <p>Dogs booked : <%= dog.bookings.count %> times</p>
@@ -60,6 +66,12 @@
               <% else %>
                <%= image_tag "avatar.png", alt:"logo", class:"card-user"%>
                <% end %>
+              </div>
+
+              <div class="card-description">
+                  <div class="card-description-breed"><%= dog.breed %> - </div>
+                  <div class="card-description-version"><%= dog.version %> - </div>
+                 <div class="card-description-color"> <%= dog.color %></div>
               </div>
 
               <div class="card-footer">
