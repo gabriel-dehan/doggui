@@ -8,5 +8,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
  
   mount_uploader :avatar, PhotoUploader
-    acts_as_voter
+  
 end
