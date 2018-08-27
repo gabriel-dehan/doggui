@@ -44,6 +44,15 @@
                   <div class="card-description-breed"><%= dog.breed %></div>
                   <div class="card-description-version"><%= dog.version %> - </div>
                  <div class="card-description-color"> <%= dog.color %></div>
+                  
+                <%= link_to like_dog_path(dog), method: :put do %>
+            
+                <p><%= dog.get_upvotes.size %> <p>
+                <%end%>
+                <%= link_to dislike_dog_path(dog), method: :put do %>
+            
+                <p><%= dog.get_downvotes.size %> <p>
+                <%end%>
             </div>
 
 
@@ -55,12 +64,7 @@
                  <%= dog.price %>€ / Saillie
                 </div>
              </div>
-           <%#= link_to upvote_dog_path(dog), class: "btn-medium", method: :put do %>
-             <!--  <button type="button", class="btn-medium"> -->
-               <!--  <span class="badge"> --> <%#= dogs.get_upvotes.size %> <!-- </span> -->
-                <%#end%>
-
-
+            
 
 
          </div>
@@ -87,6 +91,15 @@
                   <div class="card-description-breed"><%= dog.breed %> - </div>
                   <div class="card-description-version"><%= dog.version %> - </div>
                  <div class="card-description-color"> <%= dog.color %></div>
+                   <%= link_to like_dog_path(dog), method: :put do %>
+            
+                <p><%= dog.get_upvotes.size %> <p>
+                <%end%>
+                <%= link_to dislike_dog_path(dog), method: :put do %>
+            
+                <p><%= dog.get_downvotes.size %> <p>
+                <%end%>
+
                 </div>
 
                <div class="card-footer">
@@ -98,10 +111,7 @@
                 </div>
               </div>
 
-               <%#= link_to upvote_dog_path(dog), class: "btn-medium", method: :put do %>
-             <!--  <button type="button", class="btn-medium"> -->
-               <!--  <span class="badge"> --> <%#= dogs.get_upvotes.size %> <!-- </span> -->
-                <%#end%>
+             
             </div>
             </div>
          <% end %>
@@ -109,7 +119,6 @@
       <% end %>
 
     </div>
-<div> <%= paginate @dogs%> </div>
   </div>
 
 

@@ -1,6 +1,7 @@
 class Dog < ApplicationRecord
   
   belongs_to :user
+  acts_as_votable
   has_many :likes
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy

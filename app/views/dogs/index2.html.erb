@@ -42,6 +42,14 @@
                   <div class="card-description-breed"><%= dog.breed %></div>
                   <div class="card-description-version"><%= dog.version %> - </div>
                  <div class="card-description-color"> <%= dog.color %></div>
+                   <%= link_to like_dog_path(dog), method: :put do %>
+            
+                <p><%= dog.get_upvotes.size %> <p>
+                <%end%>
+                <%= link_to dislike_dog_path(dog), method: :put do %>
+            
+                <p><%= dog.get_downvotes.size %> <p>
+                <%end%>
           </div>
 
           <div class="card-footer">
@@ -72,6 +80,14 @@
                   <div class="card-description-breed"><%= dog.breed %></div>
                   <div class="card-description-version"><%= dog.version %> - </div>
                  <div class="card-description-color"> <%= dog.color %></div>
+                   <%= link_to like_dog_path(dog), method: :put do %>
+            
+                <p><%= dog.get_upvotes.size %> <p>
+                <%end%>
+                <%= link_to dislike_dog_path(dog), method: :put do %>
+            
+                <p><%= dog.get_downvotes.size %> <p>
+                <%end%>
               </div>
 
               <div class="card-footer">

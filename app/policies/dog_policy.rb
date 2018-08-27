@@ -25,5 +25,13 @@ class DogPolicy < ApplicationPolicy
     record.user == user
     end
 
+    def upvote?
+      record.user == user
+    end
+
+    def downvote?
+     record.user == user
+    end
+
 
 end
