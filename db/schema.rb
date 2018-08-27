@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2018_08_25_153356) do
     t.string "color"
     t.string "hair"
     t.integer "size"
-    t.text "picture"
+    t.string "picture"
     t.string "video"
     t.string "nickname"
     t.string "medical_analyse"
