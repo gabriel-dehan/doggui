@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
- skip_before_action :authenticate_user!, only: [:index, :show, :create, :edit, :destroy, :index2, :upvote]
+ skip_before_action :authenticate_user!, only: [:index, :show, :create, :edit, :destroy, :index2, :upvote, :downvote]
   def index
   # @dogs = Dog.order(:nickname).page params[:page]
    @dogs = policy_scope(Dog).page params[:page]
@@ -73,9 +73,18 @@ class DogsController < ApplicationController
     end
   end
 
-  def upvote
-    @dog.upvote_from current_user
-  end
+def upvote 
+  @dog = Dog.find(params[:id])
+  @dog.upvote_by current_user
+  authorize @dog
+  redirect_to dogs_path
+end
+def downvote
+  @dog = Dog.find(params[:id])
+  @dog.downvote_by current_user
+    authorize @dog
+  redirect_to dogs_path
+end
 
   private
   def dog_params
