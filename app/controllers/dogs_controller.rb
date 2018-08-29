@@ -55,7 +55,7 @@ class DogsController < ApplicationController
     @dog.destroy
     redirect_to dogs_path
   end
-  
+
   def index2
      if params[:query].present?
         @dogs = Dog.where("breed ILIKE ?", "%#{params[:query]}%").page params[:dog]
@@ -73,12 +73,13 @@ class DogsController < ApplicationController
     end
   end
 
-def upvote 
+def upvote
   @dog = Dog.find(params[:id])
   @dog.upvote_by current_user
   authorize @dog
   redirect_to dogs_path
 end
+
 def downvote
   @dog = Dog.find(params[:id])
   @dog.downvote_by current_user
