@@ -16,7 +16,7 @@
         <div class="grid-image">
             <% if @dog.picture_url  %>
               <div class="image-show"
-              style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 300, width: 400, crop: :fill%>');">
+              style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 400, width: 750, crop: :fill%>');">
               </div>
               <% else %>
               <div class="image-show"
