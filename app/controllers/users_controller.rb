@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
-
-
   def index
-    @user = User.all
-    authorize @user
+    @users = policy_scope(User).order(created_at: :desc)
+
   end
 
   def show

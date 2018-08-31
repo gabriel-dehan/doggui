@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 devise_for :users, controllers: { registrations: 'registrations' }
   devise_scope :user do
  get 'user/profile', to: 'devise/registrations#profile', as: :profile
+ get '/users',   to: 'users#index',   via: 'get'
+ get '/users/:user_id', to: 'users#show', as: :showprofile
 end
 
   root 'dogs#index'
@@ -23,5 +25,6 @@ end
   end
 
 end
+
 end
 
