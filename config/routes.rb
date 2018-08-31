@@ -24,8 +24,5 @@ end
 
 end
 
-resources :users, only [:show, :index] do
-  post "users", to: "users#index"
-end
 end
 
