@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_135703) do
+ActiveRecord::Schema.define(version: 2018_08_31_083334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2018_08_28_135703) do
     t.string "picture"
     t.string "video"
     t.string "nickname"
-    t.string "medical_analyse"
     t.string "father_lof"
     t.string "mother_lof"
     t.text "description"
@@ -51,6 +50,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_135703) do
     t.string "version"
     t.string "eye_color"
     t.boolean "prize"
+    t.boolean "medical_analyse"
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 

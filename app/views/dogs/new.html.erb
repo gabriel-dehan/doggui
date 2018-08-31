@@ -11,21 +11,21 @@
         <br>
 
       <div class="row">
-         <div class="col-sm-5"> <%= f.input :nickname %></div>
+         <div class="col-sm-5"> <%= f.input :nickname, placeholder: 'ex: Elvis' %></div>
          <div class="col-sm-5"> <%= f.input :birthday_date %> </div>
      </div>
 
        <div class="row">
-         <div class="col-sm-4"> <%= f.input :breed %></div>
-         <div class="col-sm-4"> <%= f.input :version %></div>
-         <div class="col-sm-4"><%= f.input :size %></div>
+         <div class="col-sm-4"> <%= f.input :breed, placeholder: 'ex: Teckel' %></div>
+         <div class="col-sm-4"> <%= f.input :version, placeholder: 'ex: kaninchen'%></div>
+         <div class="col-sm-4"> <%= f.input :size, placeholder: 'ex: 120cm' %></div>
       </div>
 
       <div class= "row">
 
-        <div class="col-sm-4"> <%= f.input :hair %></div>
-        <div class="col-sm-4"> <%= f.input :color %></div>
-        <div class="col-sm-4"> <%= f.input :eye_color %></div>
+        <div class="col-sm-4"> <%= f.input :hair, placeholder: 'ex: Frisé'  %></div>
+        <div class="col-sm-4"> <%= f.input :color, placeholder: 'ex: Arlequin' %></div>
+        <div class="col-sm-4"> <%= f.input :eye_color, placeholder: 'ex: Vert' %></div>
 
       </div>
 
@@ -45,11 +45,11 @@
       </div>
 
       <div class="row">
-      <div class="description-form-for"><%= f.input :description, label: " Description" %></div>
+      <div class="description-form-for"><%= f.input :description, label: " Description", placeholder: 'ex: Annimal très joueur, à remporter un prix canin' %></div>
       </div>
 
       <div class="row">
-        <div class="col-sm-6"> <%= f.input :price %></div>
+        <div class="col-sm-6"> <%= f.input :price, placeholder: '€' %></div>
         <div class="col-sm-6"> <%= f.submit "add a dog", class: "btn-form-new btn btn-warning " %></div></div>
       <% end %>
 
