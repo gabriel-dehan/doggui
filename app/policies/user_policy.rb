@@ -1,15 +1,8 @@
-class ReviewPolicy < ApplicationPolicy
+class UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
+
+     end
     end
-  end
-
-  def index?
-    true
-  end
-
-  def show?
-    true
-  end
-end
+ end
