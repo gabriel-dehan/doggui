@@ -14,6 +14,7 @@ class DogsController < ApplicationController
       @marker = [{
         lat: @dog.latitude,
         lng: @dog.longitude,
+        label: "#{@dog.nickname}"
       }]
     end
   end
@@ -59,16 +60,19 @@ class DogsController < ApplicationController
   def index2
      if params[:query].present?
         @dogs = Dog.where("breed ILIKE ?", "%#{params[:query]}%").page params[:dog]
+        @dogs_geo = @dogs.where.not(latitude: nil, longitude: nil)
       else
         @dogs = Dog.all.page params[:page]
+        @dogs_geo = @dogs.where.not(latitude: nil, longitude: nil)
     end
 
     authorize @dogs
-    @dogsmarkers = Dog.where.not(latitude: nil, longitude: nil)
-    @markers = @dogsmarkers.map do |dog|
+    @markers = @dogs_geo.map do |dog|
       {
         lat: dog.latitude,
-        lng: dog.longitude
+        lng: dog.longitude,
+        label: "#{dog.nickname}",
+        id: dog.id,
       }
     end
   end
