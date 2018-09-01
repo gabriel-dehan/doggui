@@ -32,6 +32,11 @@ background-repeat: no-repeat;
   display: flex;
 }
 
-.container-card {
-  width: 70%;
+.map-container {
+  margin-top: 19px;
+  height: 70vh;
+  flex: 0 0 350px;
+  position: sticky !important;
+  top: 0 !important;
+  margin-left: 20px;
 }
