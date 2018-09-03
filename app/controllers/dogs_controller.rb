@@ -71,7 +71,7 @@ class DogsController < ApplicationController
       {
         lat: dog.latitude,
         lng: dog.longitude,
-        label: "#{dog.nickname}"
+        
 
 
       }
