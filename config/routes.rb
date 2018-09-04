@@ -1,11 +1,15 @@
 
 Rails.application.routes.draw do
+  get 'contact_form/new'
+  get 'contact_form/create'
 devise_for :users, controllers: { registrations: 'registrations' }
   devise_scope :user do
  get 'user/profile', to: 'devise/registrations#profile', as: :profile
  get '/users',   to: 'users#index',   via: 'get'
  get '/users/:user_id', to: 'users#show', as: :showprofile
 end
+
+resources "contacts", only: [:new, :create]
 
   root 'dogs#index'
   get 'legislation', to: 'pages#', as: :legislation

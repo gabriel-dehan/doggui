@@ -32,6 +32,10 @@ background-repeat: no-repeat;
   display: flex;
 }
 
+.container-card {
+min-width: 125vh;
+}
+
 .map-container {
   margin-top: 19px;
   height: 70vh;
