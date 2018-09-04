@@ -1,4 +1,4 @@
-class Contact < ApplicationRecord
+class Contact < MailForm::Base
   attribute :name,      :validate => true
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :message
@@ -10,7 +10,7 @@ class Contact < ApplicationRecord
     {
       :subject => "My Contact Form",
       :to => "guillaume.aa@gmail.com",
-      :from => %("#{Equipe LesMolosses}" <#{contact@lesmolosses.com}>)
+       :from => %("#{name}" <#{email}>)
     }
   end
 end
