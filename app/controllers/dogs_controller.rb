@@ -71,9 +71,7 @@ class DogsController < ApplicationController
       {
         lat: dog.latitude,
         lng: dog.longitude,
-        label: "#{dog.nickname}"
-
-
+        infoWindow: { content: render_to_string(partial: "/dogs/map", locals: { dog: dog }) }
       }
     end
   end

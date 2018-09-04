@@ -6,12 +6,12 @@
 		<h3> Your booking(s)</h3>
 			<% current_user.bookings.each do |booking| %>
 			<ul>
-			  <li> Booking_id <%= booking.id %> </li> 
+			  <li> Booking_id <%= booking.id %> . See your booking : <%= link_to "voir le booking",  dog_booking_path(booking, booking.dog), class: "btn btn-primary list-inline"%> </li> 
 			  <li> Chien booké : <%= booking.dog.nickname %> </li> 
 			  <li> Maitre : <%= booking.dog.user.email %> </li> 
 			  <li> Start_date : <%= booking.start_date %> </li> 
 			  <li> End_date : <%= booking.end_date %> </li> 
-			  <li> Your dog have already fucked ? Please, <%= link_to "laisse une review",  new_dog_review_path(booking.dog), class: "btn btn-primary list-inline"%> </li> 
+			  <li> Your dog has already fucked ? Please, <%= link_to "laisse une review",  new_dog_review_path(booking.dog), class: "btn btn-primary list-inline"%> </li> 
 			</ul>
 		 
 		  <%end%>
