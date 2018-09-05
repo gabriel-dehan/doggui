@@ -41,21 +41,21 @@
           <div class="grid-caracteristique">
 
             <div class="esthetique">
-              <p>Sous famille : <%= @dog.version %></p>
-              <p> Couleur de la robe : <%= @dog.color %></p>
-              <p> Type de poil : <%= @dog.hair %></p>
-              <p> Couleur des yeux : <%= @dog.eye_color %></p>
+              <p><div class="texte-caracteristique"> Version :</div> <%= @dog.version %></p>
+              <p><div class="texte-caracteristique"> Couleur de la robe :</div><%= @dog.color %></p>
+              <p><div class="texte-caracteristique"> Type de poil :</div><%= @dog.hair %></p>
+              <p><div class="texte-caracteristique"> Couleur des yeux :</div> <%= @dog.eye_color %></p>
+            </div>
+
+             <div class="divers">
+             <p class="texte-caracteristique">Carnet de santé à jour : <%= @dog.medical_analyse %></p>
+             <p class="texte-caracteristique">Prix beauté reçu : <%= @dog.prize %></p>
             </div>
 
             <div class="lof">
               <p>N° Lof de <%= @dog.nickname %> : <%= @dog.lof_number %></p>
              <p> N° Lof de sa Maman: <%= @dog.mother_lof %></p>
              <p> N° Lof de son Papa: <%= @dog.father_lof %></p>
-            </div>
-
-            <div class="divers">
-             <p> Carnet de santé à jour : <%= @dog.medical_analyse %></p>
-             <p> Prix beauté reçu : <%= @dog.prize %></p>
             </div>
 
 
