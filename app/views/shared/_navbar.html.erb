@@ -10,7 +10,7 @@
     <div class="nav-middle">
     <%= link_to "Legislation", legislation_path, class: 'link-to-nav'%>
     <%= link_to "Notre service", quisommesnous_path, class: 'link-to-nav'%>
-     <%= link_to "Communauté", users_path, class: 'link-to-nav'%>
+    <%= link_to "Communauté", users_path, class: 'link-to-nav'%>
     </div>
 
     <div class="navbar-wagon-right">
@@ -23,9 +23,6 @@
         <% else %>
             <img src="<%= image_path "avatar.png" %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
          <% end %>
-
-         <%= link_to "Ajouter votre chien", new_dog_path, class:"btn-orange"%>
-
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li class="menu-profil"><%= link_to 'profile',profile_path%></li>
           <li class="menu-edit-profile"><%= link_to 'edit_profile',edit_user_registration_path%></li>
@@ -41,6 +38,8 @@
              <%= link_to "S'inscrire",new_user_registration_path, class: "btn-sple-or"%>
            <% end %>
          </div>
+
+         <%= link_to "Ajouter votre chien", new_dog_path, class:"btn-orange"%>
       </div>
 
   </div>
