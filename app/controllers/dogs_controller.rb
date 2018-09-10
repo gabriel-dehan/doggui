@@ -90,6 +90,13 @@ def downvote
   redirect_to dogs_path
 end
 
+ def age
+  @dog = Dog.find(params[:id])
+  @age = Date.today.year - @dog.birthday_date.year
+  # @age -= 1 if Date.today < @dogs.birthday_date + @age.years
+   #for days before birthday
+ end
+
   private
   def dog_params
     params.require(:dog).permit(:picture, :address, :video, :nickname, :breed, :size, :hair, :color, :lof_number, :description, :birthday_date, :medical_analyse, :father_lof, :mother_lof, :price, :eye_color, :version, :weight, :prize)
