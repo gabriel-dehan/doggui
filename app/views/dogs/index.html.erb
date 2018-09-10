@@ -54,7 +54,6 @@
                   </div>
             </div>
 
-
              <div class="card-footer">
                  <div class="card-footer-times">
                  <p>Dogs booked : <%= dog.bookings.count %> times</p>
@@ -64,14 +63,11 @@
                 </div>
              </div>
 
-
-
          </div>
         </div>
             <!-- <a class="card-link" href="#" ></a> -->
          <% else %>
            <div class="card">
-
 
             <div class="card-image"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
@@ -85,7 +81,6 @@
                <% end %>
                </div>
 
-
                 <div class="card-description">
                   <div class="card-description-breed"><%= dog.breed %> - </div>
                   <div class="card-description-version"><%= dog.version %> - </div>
@@ -95,7 +90,6 @@
                       <p><%= dog.get_upvotes.size %> <p>
                       <%end%>
                       <%= link_to dislike_dog_path(dog), method: :put do %>
-
                       <p><%= dog.get_downvotes.size %> <p>
                       <%end%>
                 </div>
@@ -109,7 +103,6 @@
                  <%= dog.price %>€ / Saillie
                 </div>
               </div>
-
 
             </div>
             </div>

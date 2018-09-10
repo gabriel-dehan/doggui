@@ -38,25 +38,26 @@
               </div>
 
             <div class="card-description">
-                   <div class="card-description-breed"><%= dog.breed %></div>
-                   <div class="card-description-version"><%= dog.version %> - </div>
-                   <div class="card-description-color"> <%= dog.color %></div>
-                     <%= link_to like_dog_path(dog), method: :put do %>
-
-                   <p><%= dog.get_upvotes.size %> <p>
-                   <%end%>
-                   <%= link_to dislike_dog_path(dog), method: :put do %>
+               <div class="card-description-breed"><%= dog.breed %></div>
+               <div class="card-description-version"><%= dog.version %> - </div>
+               <div class="card-description-color"> <%= dog.color %></div>
+               <div class="card-like">
+                <%= link_to like_dog_path(dog), method: :put do %>
+                  <p><%= dog.get_upvotes.size %> <p>
+                  <%end%>
+                  <%= link_to dislike_dog_path(dog), method: :put do %>
                   <p><%= dog.get_downvotes.size %> <p>
                   <%end%>
+               </div>
             </div>
 
             <div class="card-footer">
-                   <div class="card-footer-times">
-                   <p>Dogs booked : <%= dog.bookings.count %> times</p>
-                   </div>
-                   <div class="card-footer-price">
-                   <%= dog.price %>€ / Saillie
-                  </div>
+               <div class="card-footer-times">
+               <p>Dogs booked : <%= dog.bookings.count %> times</p>
+               </div>
+               <div class="card-footer-price">
+               <%= dog.price %>€ / Saillie
+              </div>
             </div>
           </div>
           </div>
@@ -75,17 +76,17 @@
               </div>
 
               <div class="card-description">
-                  <div class="card-description-breed"><%= dog.breed %></div>
-                  <div class="card-description-version"><%= dog.version %> - </div>
-                 <div class="card-description-color"> <%= dog.color %></div>
-                   <%= link_to like_dog_path(dog), method: :put do %>
-
-                <p><%= dog.get_upvotes.size %> <p>
-                <%end%>
-                <%= link_to dislike_dog_path(dog), method: :put do %>
-
-                <p><%= dog.get_downvotes.size %> <p>
-                <%end%>
+                <div class="card-description-breed"><%= dog.breed %></div>
+                <div class="card-description-version"><%= dog.version %> - </div>
+                <div class="card-description-color"> <%= dog.color %></div>
+                 <div class="card-like">
+                  <%= link_to like_dog_path(dog), method: :put do %>
+                    <p><%= dog.get_upvotes.size %> <p>
+                    <%end%>
+                    <%= link_to dislike_dog_path(dog), method: :put do %>
+                    <p><%= dog.get_downvotes.size %> <p>
+                    <%end%>
+                 </div>
               </div>
 
               <div class="card-footer">
