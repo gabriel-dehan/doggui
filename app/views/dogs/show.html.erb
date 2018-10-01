@@ -29,8 +29,6 @@
           <div class="grid-bouton">
               <% if policy(@dog).update? %>
               <%= link_to 'Edit', edit_dog_path(@dog), class: "btn btn-warning list-inline" %>
-              <% else %>
-              <%= link_to "Reservation", new_dog_booking_path(@dog), class: "btn btn-success list-inline"%>
               <% end %>
               <% if policy(@dog).destroy? %>
               <%= link_to 'supprimer', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger list-inline" %>
@@ -92,13 +90,7 @@
 
           <div class="grid-review">
 
-          Nombre de fois ou le dog à été booké :<%=  @dog.bookings.count %>
-          <p> voici les review de ce chien <p>
-            <% @dog.reviews.each do |review| %>
-            <ul>
-              <li> <%=  review.content %> </li>
-            </ul>
-            <%end%>
+
           </div>
 
         </div>
