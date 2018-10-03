@@ -7,31 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 p "seeding one user"
 
-  User.create!(
-	   email: "guillaume.aa@gmail.com",
-	   password: "azerty"
-	)
+ 12.times do
 
-  User.create!(
-    email: "yannleost@gmail.com",
-    password: "azerty"
-  )
+  version = ["Nain", "Standart", "kaninchen"]
+  picture_url = "chien11.jpeg"
+  price = ["150", "200", "169", "99", "345" ]
+  addresses = ["goncourt, paris", "sentier, paris", "madelaine, paris", "7 rue auguste barbier, paris", "5 rue d'alançon, paris", "1 rue des petits carreaux, paris", "Arc de triomphe, paris", "Tour effeil, paris", "place de l'étoile, Paris"]
 
-p "user created, let's seed dogs"
-
-
-12.times do
- 
-  pictures_array = ["dog1", "dog3", "dog4", "dog5", "dog6" ]
-   addresses = ["goncourt, paris", "sentier, paris", "madelaine, paris", "7 rue auguste barbier, paris", "5 rue d'alançon, paris", "1 rue des petits carreaux, paris", "Arc de triomphe, paris", "Tour effeil, paris", "place de l'étoile, Paris"]
   dog = Dog.new(
-    nickname: Faker::Coffee.variety,
+    nickname: Faker::Dog.name,
+    picture: picture_url,
     size: Faker::Number.between(10, 150),
-    breed: "brown",
+    breed: Faker::Dog.breed,
     user: User.all.sample,
-    picture: pictures_array.shuffle.sample,
-    address: addresses.sample,
-    price: "100"
+    version: version.shuffle.sample,
+    address: addresses.shuffle.sample,
+    price: price.shuffle.sample,
     )
   dog.save
  end
