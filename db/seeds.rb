@@ -7,6 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 p "seeding one user"
 
+  User.create!(
+     email: "guillaume.aa@gmail.com",
+     password: "azerty"
+  )
+
+  User.create!(
+    email: "yannleost@gmail.com",
+    password: "azerty"
+  )
+
+p "user created, let's seed dogs"
+
+
  12.times do
 
   version = ["Nain", "Standart", "kaninchen"]
