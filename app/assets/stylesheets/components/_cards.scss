@@ -120,21 +120,20 @@
 }
 
 .card-description-titre {
- width: 27%;
+ width: 80%;
  display: flex;
- justify-content: space-between;
 }
 
 .card-description-version {
  text-transform :capitalize;
- margin-top: 3px;
- font-size: 85%;
+ font-size: 14px;
+ margin-left: 5px;
  color: #918c8c;
 }
 
 .card-description-breed {
  text-transform :uppercase;
- font-size: 85%;
+ font-size: 14px;
 }
 
 // Footer
