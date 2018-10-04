@@ -13,7 +13,6 @@ resources "contacts", only: [:new, :create]
 
   root 'dogs#index'
   get 'legislation', to: 'pages#', as: :legislation
-  get 'contact', to: 'pages#', as: :contact
   get 'qui-sommes-nous', to: 'pages#', as: :quisommesnous
   get 'index2', to: 'dogs#index2', as: :index_search
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -22,12 +21,6 @@ resources "contacts", only: [:new, :create]
     put "like", to: "dogs#upvote"
     put "dislike", to: "dogs#downvote"
   end
-  resources :reviews, only: [:new, :show, :index] do
-    post 'reviews', to: 'reviews#create', as: :create_review
- 	end
-  resources :bookings, only: [:new, :create, :show] do
-  end
-
 end
 
 end

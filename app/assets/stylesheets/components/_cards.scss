@@ -1,7 +1,7 @@
 .card {
-  margin-top: 5px;
-  width: 360px;
-  height: 280px;
+  margin-top: 5vh;
+  width: 100%;
+  height: 220px;
   background-color: white;
   border-radius: 2px;
   position: relative;
@@ -9,7 +9,7 @@
 }
 
 .card_small {
-  margin-top: 5px;
+  margin-top: 5vh;
   height: 125px;
   width: 180px;
   background-color: white;
@@ -20,7 +20,7 @@
 }
 
 .card-image {
-  margin-right: 5px;
+  margin-right: 5vh;
   height: 180px;
   background-position: center;
   background-size: 390px 180px;
@@ -113,13 +113,28 @@
 .card-description {
   position: absolute;
   width: 100%;
-  display: flex;
-  justify-content: space-bewteen;
   font-size: 16px;
-  text-transform: capitalize;
-  color: #918c8c;
+  font-color: black;
   margin-top: 190px;
   margin-left: 17px;
+}
+
+.card-description-titre {
+ width: 27%;
+ display: flex;
+ justify-content: space-between;
+}
+
+.card-description-version {
+ text-transform :capitalize;
+ margin-top: 3px;
+ font-size: 85%;
+ color: #918c8c;
+}
+
+.card-description-breed {
+ text-transform :uppercase;
+ font-size: 85%;
 }
 
 // Footer
@@ -134,11 +149,11 @@
 
 .card-footer-price {
   position: absolute;
-  margin-left: 240px;
+  margin-left: 250px;
   min-width: 100px;
-  margin-top: -21px;
+  margin-top: -15px;
   color: #ea9632;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 
