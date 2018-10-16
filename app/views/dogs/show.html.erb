@@ -9,10 +9,6 @@
           <%= link_to 'Retour', index_search_path, class: "btn btn-warning" %>
         </div>
 
-        <div class="grid-name">
-          <%=@dog.nickname%> - <%=@dog.breed%> - <%= @age %>
-        </div>
-
         <div class="grid-image">
             <% if @dog.picture_url  %>
               <div class="image-show"
@@ -37,6 +33,9 @@
           </div>
 
           <div class="grid-caracteristique">
+            <div class="grid-titre">
+                <%=@dog.nickname%> - <%=@dog.breed%> - <%= @age %>
+           </div>
 
             <div class="esthetique">
               <p><div class="texte-caracteristique"> Version :</div> <%= @dog.version %></p>
@@ -59,12 +58,8 @@
 
           </div>
 
-          <div class="grid-adresse">
-            <%= @dog.address %>
-          </div>
-
           <div class="grid-description">
-            <p> Description :</p>
+            <div class="grid-titre"><p> Description :</p></div>
             <%= @dog.description %>
           </div>
 
@@ -76,10 +71,12 @@
             <% end %>
 
             <%= @dog.user.first_name %> <%= @dog.user.last_name %>
+            <%= @dog.user.email %>
             <%= @dog.user.introduction %>
           </div>
 
           <div class="grid-map">
+            📍<%= @dog.address %>
              <div
             id="map"
             style="width: 100%;
@@ -95,7 +92,7 @@
 
         </div>
         <div class="chat">
-        Ceci sera un chat
+        <div class="grid-titre">VOS ECHANGES</div>
         </div>
     </div>
  </div>
