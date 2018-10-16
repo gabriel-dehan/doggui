@@ -8,6 +8,16 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15);
 }
 
+.card-image {
+  margin-right: 5vh;
+  height: 180px;
+  background-position: center;
+  background-size: 390px 180px;
+  width: 360px;
+  margin: 0px auto;
+  border-radius: 2px;
+}
+
 .card_small {
   margin-top: 5vh;
   height: 125px;
@@ -19,15 +29,6 @@
   display: flex;
 }
 
-.card-image {
-  margin-right: 5vh;
-  height: 180px;
-  background-position: center;
-  background-size: 390px 180px;
-  width: 360px;
-  margin: 0px auto;
-  border-radius: 2px;
-}
 
 .card-image_small{
   height: 90px;
@@ -41,7 +42,7 @@
 .card-user {
   position: absolute;
   left: -4px;
-  bottom: -168px;
+  bottom: 37px;
   width: 40px;
   border-radius: 50%;
 }
@@ -75,6 +76,8 @@
   position: relative;
   top: 10px;
   left: 10px;
+  background-color: red;
+  z-index:1;
 }
 .card-head h2 {
   font-size: 24px;
@@ -84,7 +87,7 @@
  color: white;
  position: absolute;
  left: -4px;
- top: -5px;
+ top: -205px;
 
 }
 
@@ -110,54 +113,53 @@
 
 // Description
 
-.card-description {
-  position: absolute;
-  width: 100%;
-  font-size: 16px;
-  font-color: black;
-  margin-top: 190px;
-  margin-left: 17px;
-}
 
 .card-description-titre {
  width: 80%;
  display: flex;
 }
 
-.card-description-version {
- text-transform :capitalize;
- font-size: 14px;
- margin-left: 5px;
- color: #918c8c;
-}
-
-.card-description-breed {
- text-transform :uppercase;
- font-size: 14px;
-}
 
 // Footer
 
 .card-footer {
+  height: 30%;
+  width: 100%;
   position: absolute;
-  bottom: 10px;
+  bottom: 1px;
+}
 
+.card-footer-title {
+ display: flex;
+ width: 100%;
+ height: 30%;
+ margin-left: 5px;
+ margin-top: 22px;
+}
+
+.card-footer-breed {
+ text-transform :uppercase;
+ font-size: 14px;
+}
+
+.card-footer-version {
+ text-transform :capitalize;
+ font-size: 14px;
+ color: #918c8c;
+ margin-left: 3px;
 }
 
 .card-footer-price {
   position: absolute;
   margin-left: 275px;
   min-width: 100px;
-  margin-top: -12px;
   color: #ea9632;
   font-size: 12px;
 }
 
 .card-ville {
   position: absolute;
-  margin-left: 15px;
-  min-width: 170px;
-  margin-top: -9px;
+  margin-left: 5px;
   color: black;
   font-size: 10px;
 }
