@@ -15,9 +15,9 @@
             url('<%= cl_image_path dog.picture, height: 300, width: 400, crop: :fill %>')">
                <div class="card-head"><h2><%= link_to dog.nickname, dog_path(dog) %> </h2>
                <% if dog.user.avatar_url %>
-                <%= link_to cl_image_tag(dog.user.avatar_url, class:"card-user"), showprofile_path%>
+                <%= link_to cl_image_tag(dog.user.avatar_url, class:"avatar-index"), showprofile_path%>
                <% else %>
-               <%= link_to image_tag("avatar.png", alt:"logo", class:"card-user"), showprofile_path %>
+               <%= link_to image_tag("avatar.png", alt:"logo", class:"avatar-index"), showprofile_path %>
 
                <% end %>
 
