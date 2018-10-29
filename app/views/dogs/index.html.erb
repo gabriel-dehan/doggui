@@ -1,26 +1,24 @@
 
-<div class="container">
+<div class="banner" style="background-image: url('<%= asset_path'Chien.landing.jpg', height: 200, width: 300%>');">
+    <div class="banner-content">
+      <h1>L'AMOUR AVEC UN GRAND OUAF</h1>
 
-	<div class="banner" style="background-image: url('<%= asset_path'Chien.landing.jpg', height: 200, width: 300%>');">
-	  <div class="banner-content">
-	    <h1>L'AMOUR AVEC UN GRAND OUAF</h1>
-
-	    <%= link_to "INSCRIRE SON MOLOSSE", new_dog_path, class: "big-button btn btn-reverse btn-warning"%>
+      <%= link_to "INSCRIRE SON MOLOSSE", new_dog_path, class: "big-button btn btn-reverse btn-warning"%>
       <div class="search-index2">
       <div class= "search-bar">
       <%= form_tag index_search_path, method: :get do %>
-		  <%= text_field_tag :query,
-   			 	params[:query],
-    			class: "form-control",
-    			placeholder: "Chercher un chien par son pédigrée !" %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Chercher un chien par son pédigrée !" %>
        </div>
           <button class="btn-search-index2"> </button>
-			   <% end %>
-
-
-	    </div>
+         <% end %>
+      </div>
     </div>
-	</div>
+  </div>
+
+<div class="container">
 
   <div class="row">
 
@@ -76,19 +74,39 @@
 
    <div class="logos">
         <div>
-          <img src="https://png.icons8.com/dotty/50/000000/dog.png">
+          <img src="https://png.icons8.com/dotty/50/000000/dog.png", class="image1">
           <h4>1500 Molosses inscrits</h4>
         </div>
         <div>
-        <img src="https://png.icons8.com/wired/50/000000/meeting.png">
+        <img src="https://png.icons8.com/wired/50/000000/meeting.png", class="image2">
            <h4>150 Rencontres respecteuses </h4>
         </div>
         <div>
-        <img src="https://png.icons8.com/dotty/50/000000/flying-stork-with-bundle.png"
+        <img src="https://png.icons8.com/dotty/50/000000/flying-stork-with-bundle.png", , class="image3"
         >
            <h4>65 Mini-molosses </h4>
         </div>
     </div>
 </div>
+
+<div class="container">
+
+  <div class="container-titre">
+      Comment ça marche ?
+  </div>
+
+ <div class="container-cards">
+    <div class="card-explication">
+    Propriétaire MALE
+    </div>
+    <div class="card-explication">
+     Propriétaire FEMMELLE
+    </div>
+    <div class="card-explication">
+     Rencontre Propriétaire
+  </div>
+
+</div>
+
 
 
