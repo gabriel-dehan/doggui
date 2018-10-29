@@ -3,18 +3,21 @@
   background-color: green;
 }
 
-.listing{
- display: flex;
+.flex-container{
  width: 70%;
  background-color: grey;
- border: solid 10px pink;
+ display: flex;
+ flex-wrap: wrap;
+
+
 }
 
 //div Features
 
 .features {
   background-color: red;
-  min-width: 30%;
+  width: 250px;
+  height: 390px;
   border-radius: 2px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
 }
@@ -22,8 +25,10 @@
 //div Card-Show
 
 .card-show {
+  width: 450px;
+  height: 390px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
-  min-width: 70%;
+  width: 200px;
   background-color: orange;
 }
 
@@ -31,8 +36,8 @@
  background-position: center;
  border-radius: 2px;
  background-position: center;
- height: 300px;
- width: 500px;
+ width: 450px;
+  height: 390px;
 }
 
 .card-bouton {
@@ -40,11 +45,16 @@
 }
 
 .info {
-  min-width: 100%;
+  background-color: pink;
+  display: flex;
+  width: 100%;
+  height: 200px;
 }
 
-
-
+.map-show {
+  width: 100%;
+  height: 200px;
+}
 
 
 /////////////////
@@ -79,11 +89,10 @@ text-transform: uppercase;
 
 .grid-description {
   word-wrap: break-word;
-  background-color: #F2F2F2;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
 }
 
-.grid-user {
+.info-user {
+  width: 250px;
   background-color: #F2F2F2;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
 }
@@ -101,9 +110,6 @@ text-transform: uppercase;
   width: 70px;
 }
 
-.grid-review {
-
-}
 
 .icon {
   border-radius: 50%;
@@ -112,7 +118,7 @@ text-transform: uppercase;
   border: solid 1px;
 }
 
-.chat {
+.chat-container {
   margin-top: 19px;
   flex: 0 0 30%;
   position: sticky !important;

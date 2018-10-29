@@ -2,9 +2,8 @@
 
   <div class="view-show">
 
-    <div class="listing">
-      <div class= "row">
-        <div class="features">
+  <div class="flex-container">
+          <div class="features">
             <div class="grid-titre">
                 <%=@dog.nickname%> - <%=@dog.breed%> - <%= @age %>
             </div>
@@ -25,10 +24,8 @@
                <p>N° Lof de <%= @dog.nickname %> : <%= @dog.lof_number %></p>
                <p> N° Lof de sa Maman: <%= @dog.mother_lof %></p>
                <p> N° Lof de son Papa: <%= @dog.father_lof %></p>
-            </div>
-
-          </div>
-
+             </div>
+         </div>
 
            <div class="card-show">
               <div class="image-show"
@@ -45,28 +42,27 @@
               </div>
                <%= link_to 'Retour', index_search_path, class: "btn btn-warning" %>
             </div>
-           </div>
 
-          <div class="info row">
-              <div class="grid-description">
-                <div class="grid-titre"><p> Description :</p></div>
-                <%= @dog.description %>
-              </div>
+            <div class="info">
+                <div class="info-user">
+                  <% if @dog.user.avatar_url %>
+                  <%= cl_image_tag @dog.user.avatar_url, class: "grid-user-avatar" %>
+                  <% else %>
+                  <%= image_tag "avatar.png", alt:"logo", class:"grid-user-avatar"%>
+                  <% end %>
 
-              <div class="grid-user">
-                <% if @dog.user.avatar_url %>
-                <%= cl_image_tag @dog.user.avatar_url, class: "grid-user-avatar" %>
-                <% else %>
-                <%= image_tag "avatar.png", alt:"logo", class:"grid-user-avatar"%>
-                <% end %>
+                  <%= @dog.user.first_name %> <%= @dog.user.last_name %>
+                  <%= @dog.user.email %>
+                  <%= @dog.user.introduction %>
+                </div>
 
-                <%= @dog.user.first_name %> <%= @dog.user.last_name %>
-                <%= @dog.user.email %>
-                <%= @dog.user.introduction %>
-              </div>
-          </div>
+                <div class="grid-description">
+                  <div class="grid-titre"><p> Description :</p></div>
+                  <%= @dog.description %>
+                </div>
+             </div>
 
-          <div class="map-show">
+           <div class="map-show">
             📍<%= @dog.address %>
              <div
             id="map"
@@ -74,22 +70,15 @@
             height: 100%;"
             data-markers="<%= @marker.to_json %>">
             </div>
-          </div>
-      </div>
+         </div>
+    </div>
 
 
-    <div class="chat">
+     <div class="chat-container">
        <div class="grid-titre">VOS ECHANGES</div>
     </div>
+   </div>
  </div>
-
-
-
-
-
-
-
-
 
 
 
