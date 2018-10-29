@@ -45,6 +45,33 @@
   margin-bottom: 30px;
 }
 
+.banner-numbers {
+ height: 35vh;
+ margin-top: 14px;
+ padding-top: 14px;
+ background-color: #EFAC53;
+ color: #F2F2F2;
+ align-items: center;
+}
+
+.logos {
+  display: flex;
+  justify-content: space-around;
+}
+
+.banner-numbers-titre {
+ text-transform: uppercase;
+ font-size: 25px;
+ text-align: center;
+}
+
+.logos img {
+margin-left: 35px;
+width: 75px;
+padding: 8px;
+background-color: white;
+border-radius: 50px;
+}
 
 
 
