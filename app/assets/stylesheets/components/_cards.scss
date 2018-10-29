@@ -10,12 +10,12 @@
 
 .card-image {
   margin-right: 5vh;
-  width: 360px;
+  width: 100%;
   height: 185px;
   background-position: center;
-  background-size: 390px 180px;
   margin: 0px auto;
   border-radius: 2px;
+  border: solid white 4px;
 }
 
 .card-image:hover {
