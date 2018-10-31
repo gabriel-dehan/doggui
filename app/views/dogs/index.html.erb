@@ -64,66 +64,85 @@
     </div>
   </div>
 
-<div class="banner-numbers">
+   <div class="row">
+      <div class="banner-numbers-titre">
+          La 1ère plateforme specialisée toutou
+      </div>
 
-  <div class="banner-numbers-titre">
-      La 1ère plateforme dédiée à nos amis les chiens
-  </div>
+      <br>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="number-card">
+                <img src="https://png.icons8.com/dotty/50/000000/dog.png", class="image-number">
+                <h4>1500 Molosses inscrits</h4>
+              </div>
+            </div>
 
-  <br>
+           <div class="col-xs-12 col-sm-6 col-md-3">
+             <div class="number-card">
+                <img src="https://png.icons8.com/wired/50/000000/meeting.png", class="image-number">
+                   <h4>150 Rencontres respecteuses </h4>
+             </div>
+           </div>
 
-   <div class="logos">
-        <div>
-          <img src="https://png.icons8.com/dotty/50/000000/dog.png", class="image1">
-          <h4>1500 Molosses inscrits</h4>
-        </div>
-        <div>
-        <img src="https://png.icons8.com/wired/50/000000/meeting.png", class="image2">
-           <h4>150 Rencontres respecteuses </h4>
-        </div>
-        <div>
-        <img src="https://png.icons8.com/dotty/50/000000/flying-stork-with-bundle.png", , class="image3"
-        >
-           <h4>65 Mini-molosses </h4>
-        </div>
-    </div>
-</div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="number-card">
+                <img src="https://png.icons8.com/dotty/50/000000/flying-stork-with-bundle.png", class="image-number"
+                >
+                   <h4>65 Mini-molosses </h4>
+             </div>
+           </div>
 
-<div class="container">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="number-card">
+                <img src="https://png.icons8.com/dotty/50/000000/flying-stork-with-bundle.png", class="image-number"
+                >
+                   <h4> Chaque annonce est contrôlée</h4>
+             </div>
+           </div>
+   </div>
 
-  <div class="container-titre">
-      Comment ça marche ?
-  </div>
-<br>
+    <div class="container">
 
- <div class="container-cards">
-
-    <div class="card-explication">
-    <img src="https://png.icons8.com/bubbles/50/000000/male.png", class="image4">
-     <div class="cards-explication-titre">vous avez un chien mâle</div>
-     <br>
-     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam.
-     <br>
-     <%= link_to "INSCRIRE SON MOLOSSE", new_dog_path, class: "small-button btn btn-reverse btn-warning btn-inscrire"%>
-    </div>
-
-    <div class="card-explication">
-     <img src="https://png.icons8.com/bubbles/50/000000/female.png", class="image5">
-     <div class="cards-explication-titre">vous avez un chien femmelle</div>
-     <br>
-     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
-     <br>
-      <%= link_to "PARCOURIR LES MOLOSSES", index_search_path, class: "small-button btn btn-reverse btn-warning btn-parcourir"%>
-    </div>
-    <div class="card-explication">
-     <img src="https://png.icons8.com/dusk/50/000000/gender.png", class="image6">
-    <div class="cards-explication-titre">Rencontre Propriétaire</div>
+      <div class="container-titre">
+          Comment ça marche ?
+      </div>
     <br>
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.
-    <br>
-    <%= link_to "LES PIECES A VALIDER", new_dog_path, class: "small-button btn btn-reverse btn-warning btn-valider"%>
-  </div>
 
+   <div class="row">
+       <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card-explication">
+        <img src="https://png.icons8.com/bubbles/50/000000/male.png", class="image4">
+         <div class="cards-explication-titre">vous avez un chien mâle</div>
+         <br>
+         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam.
+         <br>
+         <%= link_to "INSCRIRE SON MOLOSSE", new_dog_path, class: "small-button btn btn-reverse btn-warning btn-inscrire"%>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card-explication">
+         <img src="https://png.icons8.com/bubbles/50/000000/female.png", class="image5">
+         <div class="cards-explication-titre">vous avez un chien femmelle</div>
+         <br>
+         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+         <br>
+          <%= link_to "PARCOURIR LES MOLOSSES", index_search_path, class: "small-button btn btn-reverse btn-warning btn-parcourir"%>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card-explication">
+         <img src="https://png.icons8.com/dusk/50/000000/gender.png", class="image6">
+        <div class="cards-explication-titre">Rencontre Propriétaire</div>
+        <br>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.
+        <br>
+        <%= link_to "LES PIECES A VALIDER", new_dog_path, class: "small-button btn btn-reverse btn-warning btn-valider"%>
+      </div>
+      </div>
+    </div>
+   </div>
 </div>
 
 
