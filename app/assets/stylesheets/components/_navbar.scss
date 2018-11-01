@@ -1,33 +1,28 @@
 /* Main navbar */
-.navbar-wagon {
+.navbar {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background-color: #F2F2F2;
   transition: all 0.3s ease;
-  height: 50px;
-  padding: 0px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  top: 0;
-  position: fixed;
-  z-index: 1000;
-  width: 100%;
   border-top: 2px solid white;
 }
 
 /* Logo */
-.navbar-wagon-brand img {
-  height: 50px;
-  margin-right: 30px;
-  margin-left: -5px;
+.navbar-brand img {
+ margin-top: -15px;
+ margin-left: -15px;
 }
 
 /* User Avatar */
-.navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
+
+
+.avatar-navbar {
+  width: 49px;
   border-radius: 50%;
-  z-index: 1000;
+  padding: 5px;
+}
+
+.avatar-navbar:hover {
+  border: solid 1px #ea9632;
 }
 
 .nav-middle {
