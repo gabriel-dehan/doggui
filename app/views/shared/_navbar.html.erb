@@ -1,49 +1,60 @@
-<div class="navbar-wagon">
-
-   <div class="nav-left">
-    <a href="/" class="navbar-wagon-brand">
-    <%= image_tag "logo.png", alt: "coworking", size: "150x500" %></a>
-    <!-- <img src="../../assets/images/logo.png" alt="logo"> -->
-  <!-- Right Navigation -->
-   </div>
-
-    <div class="nav-middle">
-    <%= link_to "Legislation", legislation_path, class: 'link-to-nav'%>
-    <%= link_to "Notre service", quisommesnous_path, class: 'link-to-nav'%>
-    <%= link_to "Communauté", users_path, class: 'link-to-nav'%>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+    <%= image_tag "logo.png", alt: "coworking", size: "135x51" %></a>
     </div>
 
-    <div class="navbar-wagon-right">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to "PROTECTION DES ANNIMAUX", legislation_path, class: 'link-to-nav'%><span class="sr-only">(current)</span></li>
+        <li><%= link_to "Notre service", quisommesnous_path, class: 'link-to-nav'%>
+        </li>
+        <li><%= link_to "La Communauté", quisommesnous_path, class: 'link-to-nav'%>
+        </li>
+      </ul>
 
-      <% if current_user%>
+      <ul class="nav navbar-nav navbar-right">
 
-        <div class="dropdown">
-        <% if user_signed_in? && current_user.avatar.present? %>
-          <img src="<%= cl_image_path current_user.avatar %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" role="button">
+
+        <% if current_user%>
+
+          <li class="dropdown">
+            <li><%= link_to "Ajouter votre chien", new_dog_path, class:"btn-orange"%></li>
+
+          <% if user_signed_in? && current_user.avatar.present? %>
+             <img src="<%= cl_image_path current_user.avatar %>" class="avatar-navbar dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
         <% else %>
-            <img src="<%= image_path "avatar.png" %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+            <img src="<%= image_path "avatar.png" %>" class="avatar-navbar dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
          <% end %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li class="menu-profil"><%= link_to 'profile',profile_path%></li>
-          <li class="menu-edit-profile"><%= link_to 'edit_profile',edit_user_registration_path%></li>
-          <li class="menu-logout"><%= link_to 'Logout',destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-          </ul>
-        </div>
+            <ul class="dropdown-menu">
+              <li class="menu-profil"><%= link_to 'Mes coups de coeur',profile_path%></li>
+               <li class="menu-edit-profile"><%= link_to 'Mon profil',edit_user_registration_path%></li>
+              <li class="menu-edit-profile"><%= link_to 'Mes réglages',edit_user_registration_path%></li>
+              <li role="separator" class="divider"></li>
+              <li class="menu-logout"><%= link_to 'Logout',destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            </ul>
+          </li>
 
-          <% else %>
-
-        <div class="nav-connexion">
+            <% else %>
+           <div class="nav-connexion">
            <%= link_to "Se connecter",new_user_session_path, class: "btn-sple-or"%>
            <div><hr class="barre-nav" /></div>
              <%= link_to "S'inscrire",new_user_registration_path, class: "btn-sple-or"%>
            <% end %>
-         </div>
-
-         <%= link_to "Ajouter votre chien", new_dog_path, class:"btn-orange"%>
-      </div>
-
-  </div>
-
+          </div>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
 
 
