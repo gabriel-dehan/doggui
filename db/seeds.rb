@@ -18,7 +18,6 @@ p "seeding one user"
   )
 
 
-
 p "user created, let's seed dogs"
 
 
