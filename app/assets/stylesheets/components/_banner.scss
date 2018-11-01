@@ -65,23 +65,21 @@
  text-align: center;
 }
 
-.logos img {
-width: 75px;
-padding: 8px;
-background-color: white;
-border-radius: 50px;
+.number-card {
+  width: 450px;
+  height: 150px;
+  background-color: #EFAC53;
+  margin-bottom: 25px;
+  padding-top: 20px;
+  color: white;
 }
 
-.image1 {
-  margin-left: 51px;
-}
-
-.image2 {
-  margin-left: 84px;
-}
-
-.image3 {
-  margin-left: 37px;
+.image-number {
+  width: 75px;
+  padding: 8px;
+  background-color: white;
+  border-radius: 50px;
+  margin-left: 120px;
 }
 
 .container-titre {
@@ -89,13 +87,8 @@ border-radius: 50px;
  font-size: 25px;
 }
 
-.container-cards {
-  display: flex;
-  justify-content: space-between;
-}
-
 .card-explication {
-  width: 32%;
+  width: 350px;
   height: 370px;
   background-color: white;
   padding: 6px;
