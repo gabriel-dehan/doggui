@@ -2,65 +2,75 @@
 
     <div class="row">
 
-      <div class="features col-xs-12 col-sm-3 col-md-3">
+      <div class="card-show col-xs-12 col-sm-3 col-md-3">
         <div class="grid-titre">
             <%=@dog.nickname%> - <%=@dog.breed%> - <%= @age %>
         </div>
 
+        <br>
+
         <div class="esthetique">
-          <p><div class="texte-caracteristique"> Version :</div> <%= @dog.version %></p>
-          <p><div class="texte-caracteristique"> Couleur de la robe :</div><%= @dog.color %></p>
-          <p><div class="texte-caracteristique"> Type de poil :</div><%= @dog.hair %></p>
-          <p><div class="texte-caracteristique"> Couleur des yeux :</div> <%= @dog.eye_color %></p>
+          <div class="texte-caracteristique"> Version :<%= @dog.version %></div>
+          <div class="texte-caracteristique"> Couleur de la robe :<%= @dog.color %></div>
+          <div class="texte-caracteristique"> Type de poil :<%= @dog.hair %></div>
+          <div class="texte-caracteristique"> Couleur des yeux :<%= @dog.eye_color %></div>
         </div>
 
-         <div class="divers">
-           <p class="texte-caracteristique">Carnet de santé à jour : <%= @dog.medical_analyse %></p>
-           <p class="texte-caracteristique">Prix beauté reçu : <%= @dog.prize %></p>
-        </div>
+         <br>
 
         <div class="lof">
-           <p>N° Lof de <%= @dog.nickname %> : <%= @dog.lof_number %></p>
-           <p> N° Lof de sa Maman: <%= @dog.mother_lof %></p>
-           <p> N° Lof de son Papa: <%= @dog.father_lof %></p>
-         </div>
-      </div>
+           <div class="texte-caracteristique">N° Lof de <%= @dog.nickname %> : <%= @dog.lof_number %></div>
+           <div class="texte-caracteristique">N° Lof de sa Maman: <%= @dog.mother_lof %></div>
+           <div class="texte-caracteristique">N° Lof de son Papa: <%= @dog.father_lof %>
+          </div>
+        </div>
 
-      <div class="col-xs-12 col-sm-6 col-md-6 card-show">
+         <br>
 
-            <div class="image-show"
+         <div class="divers">
+          <div class="texte-caracteristique">Carnet de santé à jour : <%= @dog.medical_analyse %></div>
+          <div class="texte-caracteristique">Prix beauté reçu : <%= @dog.prize %>
+          </div>
+        </div>
+
+     </div>
+
+      <div class="card-show col-xs-12 col-sm-6 col-md-6">
+          <div class="image-show"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 400, width: 750, crop: :fill%>');">
-            </div>
+          </div>
+       </div>
 
-             <div class="card-bouton">
+       <div class="card-show col-xs-12 col-sm-2 col-md-2">
                 <% if policy(@dog).update? %>
                 <%= link_to 'Edit', edit_dog_path(@dog), class: "btn btn-warning list-inline" %>
                 <% end %>
                 <% if policy(@dog).destroy? %>
                 <%= link_to 'supprimer', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger list-inline" %>
                 <% end %>
-            </div>
              <%= link_to 'Retour', index_search_path, class: "btn btn-warning" %>
-      </div>
+       </div>
      </div>
 
     <div class="row">
 
-      <div class="col-xs-12 col-sm-3 col-md-3 info">
+      <div class="card-show col-xs-12 col-sm-3 col-md-3">
             <div class="info-user">
               <% if @dog.user.avatar_url %>
               <%= cl_image_tag @dog.user.avatar_url, class: "grid-user-avatar" %>
               <% else %>
               <%= image_tag "avatar.png", alt:"logo", class:"grid-user-avatar"%>
               <% end %>
-
               <%= @dog.user.first_name %> <%= @dog.user.last_name %>
               <%= @dog.user.email %>
+            </div>
+
+            <div class="esthetique">
               <%= @dog.user.introduction %>
            </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="card-show col-xs-12 col-sm-6 col-md-6">
             <div class="info-description">
               <div class="grid-titre"><p> Description :</p></div>
               <%= @dog.description %>

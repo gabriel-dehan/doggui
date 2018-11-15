@@ -1,44 +1,33 @@
 
-.features {
-  background-color: #F2F2F2;
-  border-radius: 2px;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
-}
-
 .card-show {
+  margin-left: 10px;
   margin-bottom: 5px;
+  min-height: 350px;
   background-color: white;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
 }
+
+.texte-caracteristique {
+text-transform: uppercase;
+}
+
+
 
 .image-show {
  background-position: center;
  border-radius: 2px;
  width: 100%;
- min-height: 350px;
+ min-height: 330px;
+ margin-top: 10px;
 }
 
-.card-bouton {
-
-}
-
-.info {
-  background-color: #F2F2F2;
-  display: flex;
-  height: 200px;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
-}
-
-.info-user {
-  display: flex;
-}
 
 .info-description {
+ width: 100%;
  word-wrap: break-word;
  min-height: 200px;
- box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
-}
 
+}
 
 .map-show {
   width: 100%;
@@ -67,15 +56,6 @@
 
 }
 
-
-
-.texte-caracteristique {
-text-transform: uppercase;
-}
-
-.grid-adresse {
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
-}
 .map-show{
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
 }
