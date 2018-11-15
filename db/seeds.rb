@@ -9,12 +9,20 @@ p "seeding one user"
 
   User.create!(
      email: "guillaume.aa@gmail.com",
-     password: "azerty"
+     password: "azerty",
+     first_name: "guillaume",
+     last_name: "AA",
+     telephone: "0639493030",
+     introduction: "Salut j'aime les annimaux et je souhaite le meilleur pour mon annimal"
   )
 
   User.create!(
     email: "yannleost@gmail.com",
-    password: "azerty"
+    password: "azerty",
+    first_name: "yann",
+    last_name: "leost",
+    telephone: "0569392843",
+    introduction: "Bonjour, je suis disponible le soir et le WE pour échanger, j'aimerai des rencontres basées sur le respect de l'annimal. Premier contact email merci"
   )
 
 
@@ -30,6 +38,16 @@ p "user created, let's seed dogs"
   picture_url = "chien11.jpeg"
   price = ["150", "200", "169", "99", "345" ]
   addresses = ["goncourt, paris", "sentier, paris", "madelaine, paris", "7 rue auguste barbier, paris", "5 rue d'alançon, paris", "1 rue des petits carreaux, paris", "Arc de triomphe, paris", "Tour effeil, paris", "place de l'étoile, Paris"]
+  description = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum ultricies est ut tincidunt. Vivamus vel turpis eu erat dignissim malesuada. Suspendisse dictum varius scelerisque. Vivamus mi neque, venenatis sed purus ut, feugiat interdum odio. Vivamus efficitur sed augue sed iaculis",
+                  "Duis at sodales eros. Aliquam cursus ipsum et erat sagittis maximus sit amet vel metus. Integer a tincidunt libero. Duis convallis tempus libero sed tristique. Proin in massa nec nisi finibus egestas. Sed sit amet consectetur turpis, at sagittis ligula. Vivamus scelerisque nisl vitae mauris pretium, nec dignissim orci vestibulum. Aenean sagittis quam a metus scelerisque vestibulum. Donec iaculis molestie volutpat. Duis sit amet malesuada lectus. Phasellus a ligula ut lacus ultrices sollicitudin. Fusce a mattis libero, malesuada vehicula arcu. Duis quis risus augue. Nam euismod sit amet nulla bibendum maximus.",
+                  "Praesent faucibus blandit eleifend. Proin justo quam, mollis in vulputate a, vehicula non justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;",
+                  "Sed tristique commodo purus et tempus. Etiam eu porttitor mi, nec euismod erat. Aliquam erat volutpat. Aliquam sit amet odio sed velit laoreet aliquam. In sed posuere tellus. Nam tempor, nisl at molestie scelerisque, turpis lectus vulputate est, a accumsan elit libero at quam. Duis et felis in eros placerat semper. Praesent et ante non odio accumsan porta. Donec dui risus, maximus id mauris ut, tincidunt finibus est. Ut fringilla sapien metus, et laoreet purus laoreet ultrices. Sed feugiat suscipit efficitur. Nulla scelerisque aliquam varius. Nulla scelerisque, magna non lacinia dictum, nibh sem faucibus arcu, ac suscipit lacus lectus eget lectus. Cras eu lacinia velit, vel bibendum leo.
+                  Nam eget justo at mauris venenatis lobortis eget id dui. Pellentesque efficitur quis orci nec bibendum. Donec dui dui, bibendum non neque eget, cursus ullamcorper dolor. Suspendisse vitae nisl leo."]
+  hair = ["frisé", "A poil long", "court", "A poil dur"]
+  eye_color = ["vert", "bleu", "marron", "veyron"]
+  color = ["harlequin", "fauve", "noir", "brun", "roux", "beige", "sable"]
+  lof = ["10290-1BB9", "13490-1AA9", "10230-1039", "1AZ90-1029"]
+  prize = ["2", "12", "5", "1", "0"]
 
   dog = Dog.new(
     nickname: Faker::Dog.name,
@@ -40,6 +58,14 @@ p "user created, let's seed dogs"
     version: version.shuffle.sample,
     address: addresses.shuffle.sample,
     price: price.shuffle.sample,
+    hair: hair.shuffle.sample,
+    color: color.shuffle.sample,
+    eye_color: eye_color.shuffle.sample,
+    lof_number: lof.shuffle.sample,
+    mother_lof: lof.shuffle.sample,
+    father_lof: lof.shuffle.sample,
+    description: description.shuffle.sample,
+    prize: prize.shuffle.sample
     )
   dog.save
  end
