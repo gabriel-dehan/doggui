@@ -42,21 +42,21 @@
        </div>
 
        <div class="col-xs-12 col-sm-10 col-md-2">
-                <% if policy(@dog).update? %>
-                <div class="bouton-show">
-                <%= link_to 'MODIFIER', edit_dog_path(@dog), class: "btn-block" %>
-                <% end %></div>
-                 <div class="bouton-show">
-                 <% if policy(@dog).destroy? %>
-                <%= link_to 'SUPPRIMER', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-block" %>
-                <% end %></div>
-                 <br>
-                <div class="bouton-show-orange">
-                 <%= link_to 'RETOUR LISTE', index_search_path, class: "btn-block" %>
-                </div>
-                <div class="bouton-show-orange">
-                 <%= link_to 'DISCUTER', index_search_path, class: "btn-block" %>
-                </div>
+          <% if policy(@dog).update? %>
+          <div class="bouton-show">
+          <%= link_to 'MODIFIER', edit_dog_path(@dog), class: "btn-block" %>
+          <% end %></div>
+           <div class="bouton-show">
+           <% if policy(@dog).destroy? %>
+          <%= link_to 'SUPPRIMER', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-block" %>
+          <% end %></div>
+           <br>
+          <div class="bouton-show-orange">
+           <%= link_to 'RETOUR LISTE', index_search_path, class: "btn-block" %>
+          </div>
+          <div class="bouton-show-orange">
+           <%= link_to 'DISCUTER', index_search_path, class: "btn-block" %>
+          </div>
        </div>
      </div>
 

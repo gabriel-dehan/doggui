@@ -1,9 +1,14 @@
 <div class="container">
-<% @users.each do |user| %>
- 
-  <%= user.email %><br/>
-<% end %>
-</div>
+
+  <div class="row">
+
+      <div class="card-show-grey col-xs-12 col-sm-3 col-md-3">
+
+          <% @users.each do |user| %>
+            <%= user.email %><br/>
+          <% end %>
+      </div>
+  </div>
 
 
 
