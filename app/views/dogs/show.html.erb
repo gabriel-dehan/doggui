@@ -65,9 +65,9 @@
       <div class="card-show-grey col-xs-12 col-sm-3 col-md-3">
             <div class="info-user">
               <% if @dog.user.avatar_url %>
-              <%= cl_image_tag @dog.user.avatar_url, class: "grid-user-avatar" %>
+              link_to cl_image_tag(dog.user.avatar_url, class:"avatar-show"), showprofile_path(@dog.user)
               <% else %>
-              <%= image_tag "avatar.png", alt:"logo", class:"grid-user-avatar"%>
+              <%= link_to image_tag("avatar.png", alt:"logo", class:"avatar-show"), showprofile_path(@dog.user) %>
               <% end %>
                <div class="show-titre"><%= @dog.user.first_name %> <%= @dog.user.last_name %> </div> (<%= @dog.user.email %> 📲)
 

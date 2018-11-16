@@ -94,10 +94,16 @@ a {
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
 }
 
-.grid-user-avatar {
+.avatar-show {
+  padding: 5px;
   border-radius: 50%;
   width: 70px;
 }
+
+.avatar-show:hover {
+  border: solid 1px #ea9632;
+}
+
 
 
 .icon {
