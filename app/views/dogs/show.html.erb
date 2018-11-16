@@ -35,20 +35,28 @@
 
      </div>
 
-      <div class="card-show col-xs-12 col-sm-6 col-md-6">
+      <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="image-show"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 400, width: 750, crop: :fill%>');">
           </div>
        </div>
 
-       <div class="card-show col-xs-12 col-sm-10 col-md-2">
+       <div class="col-xs-12 col-sm-10 col-md-2">
                 <% if policy(@dog).update? %>
-                <%= link_to 'Edit', edit_dog_path(@dog), class: "btn btn-warning list-inline" %>
-                <% end %>
-                <% if policy(@dog).destroy? %>
-                <%= link_to 'supprimer', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger list-inline" %>
-                <% end %>
-             <%= link_to 'Retour', index_search_path, class: "btn btn-warning" %>
+                <div class="bouton-show">
+                <%= link_to 'MODIFIER', edit_dog_path(@dog), class: "btn-block" %>
+                <% end %></div>
+                 <div class="bouton-show">
+                 <% if policy(@dog).destroy? %>
+                <%= link_to 'SUPPRIMER', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-block" %>
+                <% end %></div>
+                 <br>
+                <div class="bouton-show-orange">
+                 <%= link_to 'RETOUR LISTE', index_search_path, class: "btn-block" %>
+                </div>
+                <div class="bouton-show-orange">
+                 <%= link_to 'DISCUTER', index_search_path, class: "btn-block" %>
+                </div>
        </div>
      </div>
 
