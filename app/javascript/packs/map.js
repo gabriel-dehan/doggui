@@ -1,11 +1,21 @@
 import GMaps from 'gmaps/gmaps.js';
 import { autocomplete } from '../components/autocomplete';
 
+
 const mapElement = document.getElementById('map');
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
   const markers = JSON.parse(mapElement.dataset.markers);
-  map.addMarkers(markers);
+  markers.forEach(function(marker) {
+    let new_marker = map.addMarker(marker);
+    new_marker.addListener('click', function() {
+      console.log("click on marker");
+      window.location.pathname = "lands/" + marker.id;
+    });
+  });
+
+
+  // map.addMarkers(markers);
   if (markers.length === 0) {
     map.setZoom(2);
   } else if (markers.length === 1) {
@@ -17,11 +27,3 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 }
 
 autocomplete();
-
-const styles = [ /* the style copied from https://snazzymaps.com/ */ ];
-
-map.addStyle({
-  styles: styles,
-  mapTypeId: 'map_style'
-});
-map.setStyle('map_style');
