@@ -8,10 +8,10 @@
 p "seeding one user"
 
   User.create!(
-     email: "guillaume.aa@gmail.com",
+     email: "jean.lebon.lbc@gmail.com",
      password: "azerty",
-     first_name: "guillaume",
-     last_name: "AA",
+     first_name: "Jean",
+     last_name: "lebon",
      telephone: "0639493030",
      introduction: "Salut j'aime les annimaux et je souhaite le meilleur pour mon annimal"
   )

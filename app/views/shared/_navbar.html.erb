@@ -1,3 +1,7 @@
+
+<body>
+
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -28,7 +32,7 @@
         <% if current_user%>
 
           <li class="dropdown">
-            <li><%= link_to "Ajouter votre chien", new_dog_path, class:"btn btn-warning"%></li>
+            <li><%= link_to "Ajouter votre chien", new_dog_path, class:"btn-inscription"%></li>
 
           <% if user_signed_in? && current_user.avatar.present? %>
              <img src="<%= cl_image_path current_user.avatar %>" class="avatar-navbar dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -55,6 +59,3 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-
-
