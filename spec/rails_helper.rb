@@ -62,4 +62,13 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include Devise::TestHelpers, type: :controller
   config.include Devise::TestHelpers, type: :view
+
+  Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    # Choose a test framework:
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+
 end

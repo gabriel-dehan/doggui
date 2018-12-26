@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_28_135652) do
+ActiveRecord::Schema.define(version: 2018_12_26_100758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,23 @@ ActiveRecord::Schema.define(version: 2018_09_28_135652) do
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "conversation_messages", force: :cascade do |t|
+    t.bigint "conversation_id"
+    t.bigint "user_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_conversation_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_conversation_messages_on_user_id"
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.bigint "dog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dog_id"], name: "index_conversations_on_dog_id"
   end
 
   create_table "dogs", force: :cascade do |t|
@@ -94,6 +111,9 @@ ActiveRecord::Schema.define(version: 2018_09_28_135652) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
+  add_foreign_key "conversation_messages", "conversations"
+  add_foreign_key "conversation_messages", "users"
+  add_foreign_key "conversations", "dogs"
   add_foreign_key "dogs", "users"
   add_foreign_key "likes", "dogs"
 end

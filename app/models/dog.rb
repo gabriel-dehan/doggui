@@ -5,6 +5,7 @@ class Dog < ApplicationRecord
   has_many :likes
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :conversations, dependent: :destroy
 
 
   geocoded_by :address

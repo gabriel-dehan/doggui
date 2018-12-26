@@ -5,33 +5,35 @@ class DogPolicy < ApplicationPolicy
     end
   end
 
-   	def create? # tous les users peuvent créer un dog
-   	  true
-   	end
+ 	def create? # tous les users peuvent créer un dog
+ 	  true
+ 	end
 
-   	def show? # tous les users peuvent voir les dogs
-   	  true
-   	end
+ 	def show? # tous les users peuvent voir les dogs
+ 	  true
+ 	end
 
-    def index2?
-      true
-    end
+  def index2?
+    true
+  end
 
-   	def update?
-   	record.user == user
-    end
+ 	def update?
+ 	  record.user == user
+  end
 
-    def destroy?
+  def destroy?
     record.user == user
-    end
+  end
 
-    def upvote?
-       true
-    end
+  def can_start_conversation?
+    record.user != user
+  end
 
-    def downvote?
-      true
-    end
+  def upvote?
+    true
+  end
 
-
+  def downvote?
+    true
+  end
 end

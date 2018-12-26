@@ -1,5 +1,9 @@
 
 Rails.application.routes.draw do
+  namespace :conversation do
+    resources :messages
+  end
+  resources :conversations
   get 'contact_form/new'
   get 'contact_form/create'
 devise_for :users, controllers: { registrations: 'registrations' }
