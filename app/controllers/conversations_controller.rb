@@ -1,10 +1,13 @@
 class ConversationsController < ApplicationController
   before_action :set_conversation, only: [:show, :edit, :update, :destroy]
-
+  skip_after_action :verify_authorized
   # GET /conversations
   # GET /conversations.json
   def index
-    @conversations = Conversation.all
+    find_dog
+    if @dog.user == current_user
+      @conversations = policy_scope(@dog.conversations).reverse
+    end
   end
 
   # GET /conversations/1
@@ -24,14 +27,16 @@ class ConversationsController < ApplicationController
   # POST /conversations
   # POST /conversations.json
   def create
-    @conversation = Conversation.new(conversation_params)
-
+    find_dog
+    @conversation = @dog.conversations.build
+    @conversation.save!
+    @message = @conversation.messages.build(params.permit(:content).merge(sender: current_user) )
     respond_to do |format|
-      if @conversation.save
-        format.html { redirect_to @conversation, notice: 'Conversation was successfully created.' }
-        format.json { render :show, status: :created, location: @conversation }
+      if @message.save
+        # format.html { redirect_to @conversation, notice: 'Conversation was successfully created.' }
+        format.json { render 'conversation/messages/show', status: :created }
       else
-        format.html { render :new }
+        # format.html { render :new }
         format.json { render json: @conversation.errors, status: :unprocessable_entity }
       end
     end
@@ -62,6 +67,10 @@ class ConversationsController < ApplicationController
   end
 
   private
+
+    def find_dog
+      @dog = Dog.find(params[:dog_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_conversation
       @conversation = Conversation.find(params[:id])

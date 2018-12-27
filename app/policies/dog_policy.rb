@@ -25,8 +25,8 @@ class DogPolicy < ApplicationPolicy
     record.user == user
   end
 
-  def can_start_conversation?
-    record.user != user
+  def to_user?
+    record.user == user
   end
 
   def upvote?

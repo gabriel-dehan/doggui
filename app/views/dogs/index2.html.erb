@@ -22,7 +22,7 @@
   <div class="index2">
 
    <div class="container-card row">
-      <% @dogs.each do |dog| %>
+      <% @dogs.includes(:user).each do |dog| %>
         <div class="col-xs-12 col-md-6">
           <% if dog.picture_url  %>
      <div class="card">

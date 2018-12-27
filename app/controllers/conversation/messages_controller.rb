@@ -1,10 +1,13 @@
 class Conversation::MessagesController < ApplicationController
   before_action :set_conversation_message, only: [:show, :edit, :update, :destroy]
+  skip_after_action :verify_authorized
 
   # GET /conversation/messages
   # GET /conversation/messages.json
   def index
-    @conversation_messages = Conversation::Message.all
+    find_conversation
+    @conversation_messages = policy_scope(@conversation.messages).includes(:sender)
+    @conversation_messages.not_of_user(current_user).update_all(is_read: true)
   end
 
   # GET /conversation/messages/1
@@ -24,15 +27,16 @@ class Conversation::MessagesController < ApplicationController
   # POST /conversation/messages
   # POST /conversation/messages.json
   def create
-    @conversation_message = Conversation::Message.new(conversation_message_params)
+    find_conversation
+    @message = @conversation.messages.build(params.permit(:content).merge(sender: current_user))
 
     respond_to do |format|
-      if @conversation_message.save
-        format.html { redirect_to @conversation_message, notice: 'Message was successfully created.' }
-        format.json { render :show, status: :created, location: @conversation_message }
+      if @message.save
+        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        format.json { render :show, status: :created }
       else
         format.html { render :new }
-        format.json { render json: @conversation_message.errors, status: :unprocessable_entity }
+        format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -62,6 +66,11 @@ class Conversation::MessagesController < ApplicationController
   end
 
   private
+
+    def find_conversation
+      conversation = Conversation.find(params[:conversation_id])
+      @conversation = conversation if conversation.messages.pluck(:user_id).include?(current_user.id) || conversation.dog.user == current_user
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_conversation_message
       @conversation_message = Conversation::Message.find(params[:id])
