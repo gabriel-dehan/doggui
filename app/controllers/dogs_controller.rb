@@ -70,8 +70,6 @@ class DogsController < ApplicationController
        nickname: dog.nickname
      }
     end
-
-
   end
 
 def upvote
@@ -88,12 +86,6 @@ def downvote
   redirect_to dogs_path
 end
 
- def age
-  @dog = Dog.find(params[:id])
-  @age = Date.today.year - @dog.birthday_date.year
-  # @age -= 1 if Date.today < @dogs.birthday_date + @age.years
-   #for days before birthday
- end
 
   private
   def dog_params
