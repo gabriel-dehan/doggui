@@ -53,7 +53,7 @@ class DogsController < ApplicationController
   def index2
 
     if params[:query].present?
-      @dogs = policy_scope(Dog.where("breed ILIKE ?", "%#{params[:query]}%").page params[:dog])
+      @dogs = policy_scope(Dog.search_by_breed_and_address(params[:query]).page params[:dog])
       # @lands_geo = Land.search_by_title_and_address(params[:query]).where.not(latitude: nil, longitude: nil)
       @dogs_geo = Dog.where.not(latitude: nil, longitude: nil)
     else
