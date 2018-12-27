@@ -68,6 +68,7 @@ p "user created, let's seed dogs"
     prize: prize.shuffle.sample
     )
   dog.save
+  sleep(2)
  end
 
  p "dog & user seeded"
