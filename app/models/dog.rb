@@ -3,13 +3,15 @@ class Dog < ApplicationRecord
   belongs_to :user
   acts_as_votable
   has_many :likes
-  has_many :bookings, dependent: :destroy
-  has_many :reviews, dependent: :destroy
+
 
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  def get_city
+    Geocoder.search("#{self.latitude},#{self.longitude}").first.try(:city)
+  end
 
   mount_uploader :picture, PhotoUploader
- end
+end

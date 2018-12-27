@@ -55,7 +55,7 @@
                  <%= dog.price %>€ / Saillie
                 </div>
                <div class = "card-ville">
-                   📍<%= dog.address.split(",").last %>
+                   📍<%= dog.get_city&.capitalize %>
                </div>
              </div>
          </div>
