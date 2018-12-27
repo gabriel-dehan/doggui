@@ -13,6 +13,17 @@ class Dog < ApplicationRecord
     Geocoder.search("#{self.latitude},#{self.longitude}").first.try(:city)
   end
 
+  def age
+    if birthday_date.present?
+    now = Date.today
+    months = (now.year * 12 + now.month) - (birthday_date.year * 12 + birthday_date.month)
+      if (months < 12)
+        "- #{months} Mois"
+      else
+         "- #{age = (months / 12)} An(s)"
+      end
+    end
+  end
 
 
   include PgSearch
