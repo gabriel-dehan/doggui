@@ -5,7 +5,10 @@
 
       <div class= "row">
         <div class="col-sm-6"><%= f.input :picture, label: 'Photo', placeholder: 'Photo'%> </div>
-        <div class="col-sm-4"><%= f.input :picture_cache, as: :hidden %></div>
+      </div>
+
+       <div class= "row">
+        <div class="col-sm-6"><%= f.input :picture_cache, as: :hidden %></div>
         <div class="col-sm-6"><%= f.input :video %></div>
       </div>
         <br>
@@ -45,12 +48,13 @@
       </div>
 
       <div class="row">
-      <div class="description-form-for"><%= f.input :description, label: " Description", placeholder: 'ex: Annimal très joueur, à remporter un prix canin' %></div>
+      <div class="col-xs-10 col-sm-4 col-md-6"><%= f.input :description, label: " Description", placeholder: 'ex: Annimal joueur, à remporter un prix canin' %> </div>
       </div>
 
       <div class="row">
         <div class="col-sm-6"> <%= f.input :price, label: 'Rétribution', placeholder: '€' %></div>
-        <div class="col-sm-6"> <%= f.submit "add a dog", class: "btn-form-new btn btn-warning " %></div></div>
+        <div class="col-sm-6"> <%= f.submit "Ajouter Votre Doggi", class: "btn-form-new btn btn-warning " %></div>
+      </div>
       <% end %>
 
 
