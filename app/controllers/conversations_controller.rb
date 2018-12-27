@@ -33,7 +33,12 @@ class ConversationsController < ApplicationController
     @message = @conversation.messages.build(params.permit(:content).merge(sender: current_user) )
     respond_to do |format|
       if @message.save
-        # format.html { redirect_to @conversation, notice: 'Conversation was successfully created.' }
+        ChatChannel.broadcast_to(
+          @dog,
+          {
+            conversation: @conversation.id,
+            unread_messages: @conversation.messages.of_user(current_user).not_read.count
+          })
         format.json { render 'conversation/messages/show', status: :created }
       else
         # format.html { render :new }

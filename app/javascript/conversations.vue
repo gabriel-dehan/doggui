@@ -24,7 +24,7 @@ export default {
   components: {
     messages
   },
-  props: ['conversations_url'],
+  props: ['conversations_url', 'dog'],
   data () {
     return {
       conversations: [],
@@ -33,7 +33,22 @@ export default {
     }
   },
   mounted () {
-    this.loadConversations()
+    this.loadConversations();
+    const propState = this
+    App.cable.subscriptions.create({
+      channel: 'ChatChannel',
+      dog_id: `${this.dog}`
+    }, {
+      received (data) {
+        console.log(data)
+        if(propState.conversations.length == 0) {
+          propState.loadConversations()
+        } else {
+          var conversation = propState.conversations.find(obj => obj.id == data.conversation)
+          conversation.number_of_unread_message = data.unread_messages
+        }
+      }
+    })
   },
   methods: {
     loadConversations () {

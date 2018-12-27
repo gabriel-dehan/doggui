@@ -58,6 +58,7 @@
             :post_url="<%= find_dog_post_conversation_path %>"
             :conversations_url="<%= dog_conversations_path(@dog, format: :json).to_json %>"
             :dog_to_user="<%= policy(@dog).to_user? %>"
+            :dog="<%= @dog.id %>"
           ></chat>
         <% end %>
       </div>

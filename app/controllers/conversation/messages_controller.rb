@@ -32,6 +32,12 @@ class Conversation::MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+        ConversationChannel.broadcast_to(
+          @conversation,
+          {
+            conversation: @conversation.id,
+            message: @message
+          })
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created }
       else

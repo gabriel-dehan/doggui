@@ -3,7 +3,6 @@ import Vue from 'vue/dist/vue.esm'
 import Chat from '../chat.vue'
 import axios from 'axios'
 
-
 Vue.use(TurbolinksAdapter)
 
 Vue.component('chat', Chat)

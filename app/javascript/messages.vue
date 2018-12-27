@@ -30,6 +30,7 @@ export default {
     discuss () {
       if(this.discuss) {
         this.loadDiscussion()
+        this.playActionCable()
       }
     },
     get_url () {
@@ -45,6 +46,7 @@ export default {
       })
       .then(response => {
         this.messages.push(response.data)
+        this.post_url = response.data.conversation_url
         this.content = null
       })
     },
@@ -53,6 +55,18 @@ export default {
       .then(response => {
         this.messages = response.data
       })
+    },
+    playActionCable () {
+      if(this.get_url != null) {
+        const propState = this
+        var conversation_id = this.get_url.split('/')[4]
+        App.cable.subscriptions.create({
+          channel: 'ConversationChannel',
+          conversation_id: `${conversation_id}`
+        }, { received (data) {
+          propState.messages.push(data.message)
+        }})
+      }
     }
   }
 }
