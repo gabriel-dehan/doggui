@@ -4,6 +4,10 @@ class Dog < ApplicationRecord
   acts_as_votable
   has_many :likes
 
+
+  has_many :conversations, dependent: :destroy
+
+
   mount_uploader :picture, PhotoUploader
 
   geocoded_by :address

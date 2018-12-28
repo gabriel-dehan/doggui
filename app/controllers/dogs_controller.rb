@@ -2,7 +2,7 @@ class DogsController < ApplicationController
  skip_before_action :authenticate_user!, only: [:index, :show, :create, :edit, :destroy, :index2, :upvote, :downvote]
   def index
   # @dogs = Dog.order(:nickname).page params[:page]
-   @dogs = policy_scope(Dog).page params[:page]
+   @dogs = policy_scope(Dog).includes(:user).page params[:page]
 
   # @records = policy_scope(Record).paginate(params[:page])
   end
@@ -61,6 +61,7 @@ class DogsController < ApplicationController
       @dogs_geo = Dog.where.not(latitude: nil, longitude: nil)
     end
 
+
      authorize @dogs
 
      @markers = @dogs_geo.map do |dog|
@@ -92,5 +93,3 @@ end
     params.require(:dog).permit(:picture, :address, :video, :nickname, :breed, :size, :hair, :color, :lof_number, :description, :birthday_date, :medical_analyse, :father_lof, :mother_lof, :price, :eye_color, :version, :weight, :prize)
   end
 end
-
-
