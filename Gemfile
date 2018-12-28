@@ -41,6 +41,7 @@ gem 'faker'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass' , '~> 3.3'
+gem 'sassc-rails', '>= 2.0.0'
 gem 'simple_form'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

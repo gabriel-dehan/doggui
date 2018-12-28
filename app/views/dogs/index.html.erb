@@ -1,5 +1,5 @@
 
-<div class="banner" style="background-image: url('<%= asset_path'/chien.landing.jpg', height: 200, width: 300%>');">
+<div class="banner" style="background-image: url('<%= asset_path'Chien.landing.jpg', height: 200, width: 300%>');">
     <div class="banner-content">
       <h1>L'AMOUR AVEC UN GRAND OUAF</h1>
 
@@ -55,7 +55,7 @@
                  <%= dog.price %>€ / Saillie
                 </div>
                <div class = "card-ville">
-                   📍<%= dog.address %>
+                   📍<%= dog.get_city&.capitalize %>
                </div>
              </div>
          </div>

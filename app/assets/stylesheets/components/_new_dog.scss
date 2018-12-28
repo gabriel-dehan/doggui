@@ -20,14 +20,6 @@
   padding-bottom: 20px;
 }
 
-.form-group {
-  margin-left: -108px;
-}
-
-
-.form-control {
-text-align: left;
-}
 
 .form-control:focus {
   border-color: #ea9632;
@@ -35,59 +27,11 @@ text-align: left;
 }
 ///Tous les labels du form_for
 
-.form-control-label {
-  margin-left: 118px;
-  text-align: justify;
-  }
-
-
-[for="dog_picture"] {
-  margin-left: 130px;
-}
-
-.form-control-label[for="dog_description"] {
-  margin-left: 133px;
-}
-
-.form-control-label[for="dog_medical_analyse"] {
-  margin-left: 242px;
-}
 
 /// les différents champ //////
 
 
-#dog_picture {
-margin-left: 130px;
-}
 
-#dog_video {
-width: 160px;
-}
-
-#dog_address {
-width: 688px;
-margin-left: 116px;
-}
-
-#dog_description {
-margin-left: 130px;
-width: 688px;
-height: 100px;
-}
-
-#dog_medical_analyse {
- margin-left: 240px;
-}
-
-#dog_lof_number, #dog_father_lof, #dog_mother_lof, #dog_hair, #dog_color, #dog_size, #dog_breed,
-#dog_nickname,#dog_medical_analyse, #dog_price, #dog_prize, #dog_version, #dog_eye_color {
-width: 200px;
-margin-left: 115px;
-}
-
-#dog_birthday_date_1i, #dog_birthday_date_2i, #dog_birthday_date_3i {
-width: 85px;
-}
 
  #dog_birthday_date_1i {
   margin-left: 269px;
@@ -106,12 +50,6 @@ width: 85px;
   width: 112px;
  }
 
-//BTN
-.btn-form-new {
-  width: 195px;
-  margin-top: 22px;
-  height: 50px;
 
-}
 
 

@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="banner2" style="background-image: url('<%= asset_path'chien.landing.jpg'%>');">
+  <div class="banner2" style="background-image: url('<%= asset_path'Chien.landing.jpg'%>');">
     <div class="banner-content">
       <h1> Trouver son molosse </h1>
       <div class="search-index2">
@@ -56,7 +56,7 @@
                  <%= dog.price %>€ / Saillie
                 </div>
                <div class = "card-ville">
-                   📍<%= dog.address %>
+                  📍<%= dog.get_city&.capitalize %>
                </div>
              </div>
          </div>
@@ -68,12 +68,12 @@
           id="map"
           style="
           width: 100%;
-          height: 700px;
+          height: 600px;
           "
-          data-markers="<%= @markers.to_json %>">
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
        </div>
    </div>
     <div> <%= paginate @dogs %></div>
   </div>
-

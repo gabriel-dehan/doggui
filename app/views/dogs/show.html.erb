@@ -5,6 +5,7 @@
       <div class="card-show-grey col-xs-12 col-sm-4 col-md-3">
         <div class="show-titre">
           <%=@dog.nickname%> - <%=@dog.breed%> - <%= @age %>
+
         </div>
 
         <br>
@@ -41,9 +42,10 @@
           </div>
        </div>
 
-       <div class="col-xs-12 col-sm-10 col-md-2">
-          <% if policy(@dog).update? %>
+       <div class="col-xs-12 col-sm-12 col-md-1">
+
           <div class="bouton-show">
+          <% if policy(@dog).update? %>
           <%= link_to 'MODIFIER', edit_dog_path(@dog), class: "btn-block" %>
           <% end %></div>
            <div class="bouton-show">
@@ -57,12 +59,14 @@
           <div class="bouton-show-orange">
            <%= link_to 'DISCUTER', index_search_path, class: "btn-block" %>
           </div>
-       </div>
+
+        </div>
+
      </div>
 
     <div class="row">
 
-      <div class="card-show-grey col-xs-12 col-sm-3 col-md-3">
+      <div class="card-show-grey col-xs-12 col-sm-4 col-md-3">
             <div class="info-user">
               <% if @dog.user.avatar_url %>
               link_to cl_image_tag(dog.user.avatar_url, class:"avatar-show"), showprofile_path(@dog.user)
@@ -70,7 +74,6 @@
               <%= link_to image_tag("avatar.png", alt:"logo", class:"avatar-show"), showprofile_path(@dog.user) %>
               <% end %>
                <div class="show-titre"><%= @dog.user.first_name %> <%= @dog.user.last_name %> </div> (<%= @dog.user.email %> 📲)
-
             </div>
             <br>
 
@@ -88,15 +91,15 @@
 
       </div>
 
-     <div class="row">
-        <div class="col-xs-12 col-sm-9 col-md-9">
-            <div class="map-show">
-          📍<%= @dog.address %>
+    <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-9">
+            <div>📍<%= @dog.address %></div>
            <div
-          id="map"
-          style="min-width: 100%;
-          min-height: 100%;"
-          data-markers="<%= @marker.to_json %>">
+            id="map"
+            style="min-width: 104%;
+            min-height: 300px;"
+            data-markers="<%= [{lat:@dog.latitude, lng:@dog.longitude}].to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
         </div>
       </div>
