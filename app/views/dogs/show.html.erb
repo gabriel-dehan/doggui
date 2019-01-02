@@ -1,7 +1,6 @@
-<div class="container">
+<div class="container-fluid">
 
     <div class="row">
-
       <div class="card-show-grey col-xs-12 col-sm-4 col-md-3">
         <div class="show-titre">
           <%=@dog.nickname%> - <%=@dog.breed%><%= @dog.age %>
@@ -32,20 +31,19 @@
           <div class="texte-caracteristique">🥇Prix beauté reçu :</div><div> <%= @dog.prize %>
           </div>
         </div>
-
-     </div>
-
+      </div>
+      
+      
       <div class="col-xs-12 col-sm-6 col-md-6">
-          <div class="image-show"
-            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 400, width: 750, crop: :fill%>');">
-          </div>
-       </div>
 
-       <div class="col-xs-12 col-sm-12 col-md-1">
-
+        <div class="image-show img-fluid"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 400, width: 750, crop: :fill%>'); width: 100%;">
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-md-3">
+        <% if policy(@dog).update? %>
           <div class="bouton-show">
-          <% if policy(@dog).update? %>
-          <%= link_to 'MODIFIER', edit_dog_path(@dog), class: "btn-block" %>
+            <%= link_to 'MODIFIER', edit_dog_path(@dog), class: "btn-block" %>
           <% end %></div>
            <div class="bouton-show">
            <% if policy(@dog).destroy? %>
@@ -54,14 +52,29 @@
            <br>
           <div class="bouton-show-orange">
            <%= link_to 'RETOUR LISTE', index_search_path, class: "btn-block" %>
-          </div>
-          <div class="bouton-show-orange">
-           <%= link_to 'DISCUTER', index_search_path, class: "btn-block" %>
-          </div>
 
+          </div>
+        <% end %>
+        <% if policy(@dog).destroy? %>
+          <div class="bouton-show">
+            <%= link_to 'SUPPRIMER', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-block" %>
+          </div>
+        <% end %>
+         <br>
+        <div class="bouton-show-orange">
+          <%= link_to 'RETOUR LISTE', index_search_path, class: "btn-block" %>
         </div>
-
-     </div>
+        <% if user_signed_in? %>
+          <chat
+            :get_url="<%= find_messages_index_path %>"
+            :post_url="<%= find_dog_post_conversation_path %>"
+            :conversations_url="<%= dog_conversations_path(@dog, format: :json).to_json %>"
+            :dog_to_user="<%= policy(@dog).to_user? %>"
+            :dog="<%= @dog.id %>"
+          ></chat>
+        <% end %>
+      </div>
+    </div>
 
     <div class="row">
 
@@ -105,12 +118,3 @@
     </div>
 
  </div>
-
-
-
-
-
-
-
-
-

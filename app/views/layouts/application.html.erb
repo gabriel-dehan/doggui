@@ -6,7 +6,10 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'chat' %>
+    <%= stylesheet_pack_tag 'chat' %>
     <%= stylesheet_pack_tag 'application' %>
+
 
     <!-- app/views/layouts/application.html.erb -->
     <%= favicon_link_tag %>
@@ -33,11 +36,15 @@
   <body>
      <%= render 'shared/flashes' %>
      <%= render 'shared/navbar' %>
-    <%= yield %>
+     <div data-behavior='vue'>
+       <%= yield %>
+     </div>
       <%= render 'shared/footer' %>
 
 
+
     <%= javascript_pack_tag 'application' %>
+
 
 
   </body>
