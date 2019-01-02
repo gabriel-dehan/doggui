@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <messages :discuss='discuss' :post_url='messages_url' :get_url='messages_url'></messages>
+    <messages :discuss='discuss' :post_url='messages_url' :get_url='messages_url' :user_id='user_id'></messages>
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
   components: {
     messages
   },
-  props: ['conversations_url', 'dog'],
+  props: ['conversations_url', 'dog', 'user_id'],
   data () {
     return {
       conversations: [],

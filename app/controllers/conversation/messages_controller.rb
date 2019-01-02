@@ -6,8 +6,10 @@ class Conversation::MessagesController < ApplicationController
   # GET /conversation/messages.json
   def index
     find_conversation
-    @conversation_messages = policy_scope(@conversation.messages).includes(:sender)
-    @conversation_messages.not_of_user(current_user).update_all(is_read: true)
+    @conversation_messages = policy_scope(@conversation.messages).includes(:sender).order(:id)
+    @conversation_messages
+      .not_of_user(current_user)
+      .update_all(is_read: true)
   end
 
   # GET /conversation/messages/1
@@ -36,7 +38,8 @@ class Conversation::MessagesController < ApplicationController
           @conversation,
           {
             conversation: @conversation.id,
-            message: @message
+            message: @message,
+            user_id: current_user.id
           })
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created }
