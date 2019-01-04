@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2018_12_27_095956) do
+
+ActiveRecord::Schema.define(version: 2018_12_27_093620) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,8 +65,8 @@ ActiveRecord::Schema.define(version: 2018_12_27_095956) do
     t.integer "weight"
     t.string "version"
     t.string "eye_color"
-    t.boolean "prize"
-    t.boolean "medical_analyse"
+    t.text "prize"
+    t.text "medical_analyse"
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 

@@ -10,13 +10,6 @@ class DogsController < ApplicationController
   def show
     @dog = Dog.find(params[:id])
     authorize @dog
-    if @dog.latitude
-      @marker = [{
-        lat: @dog.latitude,
-        lng: @dog.longitude,
-        label: "#{@dog.nickname}"
-      }]
-    end
   end
 
   def new
@@ -58,21 +51,25 @@ class DogsController < ApplicationController
   end
 
   def index2
-     if params[:query].present?
-        @dogs = Dog.where("breed ILIKE ?", "%#{params[:query]}%").page params[:dog]
-        @dogs_geo = @dogs.where.not(latitude: nil, longitude: nil)
-      else
-        @dogs = Dog.all.page params[:page]
-        @dogs_geo = @dogs.where.not(latitude: nil, longitude: nil)
+
+    if params[:query].present?
+      @dogs = policy_scope(Dog.search_by_breed_and_address(params[:query]).page params[:dog])
+      # @lands_geo = Land.search_by_title_and_address(params[:query]).where.not(latitude: nil, longitude: nil)
+      @dogs_geo = Dog.where.not(latitude: nil, longitude: nil)
+    else
+      @dogs = policy_scope(dog)
+      @dogs_geo = Dog.where.not(latitude: nil, longitude: nil)
     end
 
-    authorize(@dogs)
-    @markers = @dogs_geo.map do |dog|
-      {
-        lat: dog.latitude,
-        lng: dog.longitude,
-        infoWindow: { content: render_to_string(partial: "/dogs/map", locals: { dog: dog }) }
-      }
+
+     authorize @dogs
+
+     @markers = @dogs_geo.map do |dog|
+     {
+       lat: dog.latitude,
+       lng: dog.longitude,
+       nickname: dog.nickname
+     }
     end
   end
 
@@ -90,12 +87,6 @@ def downvote
   redirect_to dogs_path
 end
 
- def age
-  @dog = Dog.find(params[:id])
-  @age = Date.today.year - @dog.birthday_date.year
-  # @age -= 1 if Date.today < @dogs.birthday_date + @age.years
-   #for days before birthday
- end
 
   private
   def dog_params
