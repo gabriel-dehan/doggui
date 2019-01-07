@@ -43,14 +43,23 @@
 
 .card-like {
   position: absolute;
-  background-image: url(heart1.jpg);
-  background-size: cover;
-  height: 35px;
-  width: 35px;
+  color: #f0ad4e;
+  // background-image: url(heart1.jpg);
+  // background-position: center;
+  // background-size: cover;
+  // height: 35px;
+  // width: 35px;
   right: 10px;
   top: 8px;
   display: flex;
   border-radius: 40%;
+  span {
+    position: absolute;
+    color: white;
+    left: 20%;
+    top: 4%;
+    font-size: 14px;
+  }
 }
 
 .avatar-index {
@@ -158,6 +167,3 @@
   color: black;
   font-size: 10px;
 }
-
-
-
