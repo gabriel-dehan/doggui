@@ -1,7 +1,7 @@
 
 Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
-  
+
   get 'contact_form/new'
   get 'contact_form/create'
   devise_for :users, controllers: { registrations: 'registrations' }
