@@ -3,7 +3,7 @@
     <form @keyup.enter='submit'>
       <!-- <div class="form-group"> -->
         <div class="messages" v-for='message in messages'>
-          <div :class="{isSender: message.is_current_user}" class='message'>
+          <div :class="{ isSender: message.is_current_user }" class='message'>
             {{ message.content }}
           </div>
         </div>
@@ -19,7 +19,7 @@
 <script>
 import axios from 'axios';
 export default {
-  props: ['discuss', 'post_url', 'get_url'],
+  props: ['discuss', 'post_url', 'get_url', 'user_id'],
   data: function() {
     return {
       messages: [],
@@ -64,7 +64,11 @@ export default {
           channel: 'ConversationChannel',
           conversation_id: `${conversation_id}`
         }, { received (data) {
-          propState.messages.push(data.message)
+          var is_current_user = data.user_id == propState.user_id
+          if(!is_current_user) {
+            data.message.is_current_user = is_current_user
+            propState.messages.push(data.message)
+          }
         }})
       }
     }

@@ -6,8 +6,10 @@ class Conversation::MessagesController < ApplicationController
   # GET /conversation/messages.json
   def index
     find_conversation
-    @conversation_messages = policy_scope(@conversation.messages).includes(:sender)
-    @conversation_messages.not_of_user(current_user).update_all(is_read: true)
+    @conversation_messages = policy_scope(@conversation.messages).includes(:sender).order(:id)
+    @conversation_messages
+      .not_of_user(current_user)
+      .update_all(is_read: true)
   end
 
   # GET /conversation/messages/1
@@ -32,12 +34,8 @@ class Conversation::MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        ConversationChannel.broadcast_to(
-          @conversation,
-          {
-            conversation: @conversation.id,
-            message: @message
-          })
+        broadcast_conversation
+        broadcast_channel
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created }
       else
@@ -72,6 +70,25 @@ class Conversation::MessagesController < ApplicationController
   end
 
   private
+
+  def broadcast_conversation
+    ConversationChannel.broadcast_to(
+      @conversation,
+      {
+        conversation: @conversation.id,
+        message: @message,
+        user_id: current_user.id
+      })
+  end
+
+  def broadcast_channel
+    ChatChannel.broadcast_to(
+      @conversation.dog,
+      {
+        conversation: @conversation.id,
+        unread_messages: @conversation.messages.of_user(current_user).not_read.count
+      })
+  end
 
     def find_conversation
       conversation = Conversation.find(params[:conversation_id])

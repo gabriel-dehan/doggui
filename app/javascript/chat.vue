@@ -4,10 +4,10 @@
       Discuter
     </div>
     <div v-if='dog_to_user'>
-      <conversations :conversations_url='conversations_url' :dog='dog'></conversations>
+      <conversations :conversations_url='conversations_url' :dog='dog' :user_id='user_id'></conversations>
     </div>
     <div v-else>
-      <messages :discuss='discuss' :post_url='post_url' :get_url='get_url'></messages>
+      <messages :discuss='discuss' :post_url='post_url' :get_url='get_url' :user_id='user_id'></messages>
     </div>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
       content: ''
     }
   },
-  props: ['post_url', 'get_url', 'conversations_url', 'dog_to_user', 'dog'],
+  props: ['post_url', 'get_url', 'conversations_url', 'dog_to_user', 'dog', 'user_id'],
 }
 </script>
 
