@@ -20,49 +20,54 @@
           <div class="esthetique">
             <%= @current_user.introduction %>
          </div>
+
+         <br>
+
+         <%= link_to '(Modifier)',edit_user_registration_path%>
       </div>
 
- <div class="row">
-          <% @dogs.each do |dog| %>
-            <div class="col-xs-12 col-sm-3 col-md-4">
-               <div class="card">
-                <div class="card-head">
-                 <%= link_to cl_image_tag(dog.picture, class:"card-image"), dog_path(dog)%>
-                <div class="card-title">
-                    <h2><%= dog.nickname %> </h2>
-                </div>
-                <div class="card-avatar">
-                <% if dog.user.avatar_url %>
-                <%= link_to cl_image_tag(dog.user.avatar_url, class:"avatar-index"), showprofile_path(dog.user)%>
-                <% else %>
-                  <%= link_to image_tag("avatar.png", alt:"logo", class:"avatar-index"), showprofile_path(dog.user) %>
-                <% end %>
-               </div>
-                <div class="card-like">
-                    <%= link_to like_dog_path(dog), method: :put do %>
-                    <p><%= dog.get_upvotes.size %> <p>
-                    <%end%>
-                    <%= link_to dislike_dog_path(dog), method: :put do %>
-                    <p><%= dog.get_downvotes.size %> <p>
-                    <%end%>
-                </div>
+
+       <div class="col-xs-12 col-sm-8 col-md-9">
+
+      <nav class="navbar-toggleable-md navbar-light bg-faded">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">MES MOLOSSES</a>
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">LES MOLOSSES RECHERCHES</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+           <div class="row">
+                    <% @dogs.each do |dog| %>
+                      <div class="col-xs-12 col-sm-6 col-md-6">
+                         <div class="card">
+                          <div class="card-head">
+                           <%= link_to cl_image_tag(dog.picture, class:"card-image"), dog_path(dog)%>
+                          <div class="card-title">
+                              <h2><%= dog.nickname %> </h2>
+                          </div>
+                        </div>
+                       <div class="card-footer">
+                            <div class="card-footer-title">
+                             <div class="card-footer-breed" style="text-transform :uppercase"> <%= dog.breed %> </div>
+                             <div class="card-footer-version"> <%= dog.version %> </div>
+                           </div>
+                         <div class = "card-ville">
+                              <img src="https://img.icons8.com/small/16/000000/secured-letter.png">
+                               <%= dog.price %>€ / Saillie
+                               3 likes
+                               <%= link_to 'MODIFIER', edit_dog_path(dog), class: "btn-block" %>
+
+                         </div>
+                       </div>
+                     </div>
+                    </div>
+                  <% end %>
               </div>
-             <div class="card-footer">
-                  <div class="card-footer-title">
-                   <div class="card-footer-breed" style="text-transform :uppercase"> <%= dog.breed %> </div>
-                   <div class="card-footer-version"> <%= dog.version %> </div>
-                 </div>
-                <div class="card-footer-price">
-                 <%= dog.price %>€ / Saillie
-                </div>
-               <div class = "card-ville">
-                    <img src="https://img.icons8.com/small/16/000000/secured-letter.png">
-               </div>
-             </div>
-           </div>
-          </div>
-        <% end %>
-    </div>
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">2</div>
+      </div>
+      </div>
 
 
 
