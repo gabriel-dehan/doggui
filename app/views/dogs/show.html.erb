@@ -32,8 +32,8 @@
           </div>
         </div>
       </div>
-      
-      
+
+
       <div class="col-xs-12 col-sm-6 col-md-6">
 
         <div class="image-show img-fluid"
@@ -44,15 +44,6 @@
         <% if policy(@dog).update? %>
           <div class="bouton-show">
             <%= link_to 'MODIFIER', edit_dog_path(@dog), class: "btn-block" %>
-          <% end %></div>
-           <div class="bouton-show">
-           <% if policy(@dog).destroy? %>
-          <%= link_to 'SUPPRIMER', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-block" %>
-          <% end %></div>
-           <br>
-          <div class="bouton-show-orange">
-           <%= link_to 'RETOUR LISTE', index_search_path, class: "btn-block" %>
-
           </div>
         <% end %>
         <% if policy(@dog).destroy? %>
@@ -60,7 +51,16 @@
             <%= link_to 'SUPPRIMER', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-block" %>
           </div>
         <% end %>
-         <br>
+        <br>
+        <div class="bouton-show-orange">
+          <%= link_to 'RETOUR LISTE', index_search_path, class: "btn-block" %>
+        </div>
+        <% if policy(@dog).destroy? %>
+          <div class="bouton-show">
+            <%= link_to 'SUPPRIMER', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-block" %>
+          </div>
+        <% end %>
+        <br>
         <div class="bouton-show-orange">
           <%= link_to 'RETOUR LISTE', index_search_path, class: "btn-block" %>
         </div>
