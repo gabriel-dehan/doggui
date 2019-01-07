@@ -21,6 +21,10 @@ class DogPolicy < ApplicationPolicy
  	  record.user == user
   end
 
+  def index_dogs?
+    true
+  end
+
   def destroy?
     record.user == user
   end
