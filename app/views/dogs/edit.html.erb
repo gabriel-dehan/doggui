@@ -1,11 +1,11 @@
 <div class="container">
 
     <%= simple_form_for (@dog) do |f| %>
-
+        <%= cl_image_tag @dog.picture, class: "edit-avatar" %>
        <div class= "row">
-        <div class="col-sm-6"><%= f.input :picture, placeholder: 'Photo'%> </div>
-        <div class="col-sm-4"><%= f.input :picture_cache, as: :hidden %></div>
-        <div class="col-sm-6"><%= f.input :video %></div>
+        <div class="col-sm-12"><%= f.input :picture, placeholder: 'Photo'%> </div>
+        <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
+        <div class="col-sm-12"><%= f.input :video, placeholder: 'lien Video' %></div>
       </div>
         <br>
 
@@ -40,16 +40,17 @@
        </div>
 
       <div class="row">
-        <div class="col-sm-6"> <%= f.input :address %> </div>
+        <div class="col-sm-12"> <%= f.input :address %> </div>
       </div>
 
       <div class="row">
-      <div class="col-sm-6"><%= f.input :description, label: " Description" %></div>
+      <div class="col-sm-12"><%= f.input :description, label: " Description" %></div>
       </div>
 
       <div class="row">
         <div class="col-sm-6"> <%= f.input :price %></div>
-        <div class="col-sm-6"> <%= f.submit "Modifier", class: "btn-form-new btn btn-warning " %></div></div>
+      </div>
+      <div class="col-sm-6"> <%= f.submit "Modifier", class: "btn-form-new btn btn-warning " %></div>
       <% end %>
     </div>
 
