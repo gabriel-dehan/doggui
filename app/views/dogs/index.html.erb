@@ -24,43 +24,7 @@
   <div class="row">
 
      <% @dogs.each do |dog| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card">
-              <div class="card-head">
-                 <%= link_to cl_image_tag(dog.picture, class:"card-image"), dog_path(dog)%>
-                <div class="card-title">
-                    <h2><%= dog.nickname %> </h2>
-                </div>
-                <div class="card-avatar">
-                <% if dog.user.avatar_url %>
-                <%= link_to cl_image_tag(dog.user.avatar_url, class:"avatar-index"), showprofile_path(dog.user)%>
-                <% else %>
-                  <%= link_to image_tag("avatar.png", alt:"logo", class:"avatar-index"), showprofile_path(dog.user) %>
-                <% end %>
-               </div>
-                <div class="card-like">
-                    <%= link_to like_dog_path(dog), method: :put do %>
-                    <p><%= dog.get_upvotes.size %> <p>
-                    <%end%>
-                    <%= link_to dislike_dog_path(dog), method: :put do %>
-                    <p><%= dog.get_downvotes.size %> <p>
-                    <%end%>
-                </div>
-              </div>
-             <div class="card-footer">
-                  <div class="card-footer-title">
-                   <div class="card-footer-breed" style="text-transform :uppercase"> <%= dog.breed %> </div>
-                   <div class="card-footer-version"> <%= dog.version %> </div>
-                 </div>
-                <div class="card-footer-price">
-                 <%= dog.price %>€ / Saillie
-                </div>
-               <div class = "card-ville">
-                   📍<%= dog.get_city&.capitalize %>
-               </div>
-             </div>
-         </div>
-        </div>
+        <%= render partial: 'dogs/card', locals: { dog: dog } %>
       <% end %>
     </div>
   </div>

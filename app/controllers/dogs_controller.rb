@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
- skip_before_action :authenticate_user!, only: [:index, :show, :create, :edit, :destroy, :index2, :upvote, :downvote]
+ skip_before_action :authenticate_user!, only: [:index, :show, :index2]
   def index
   # @dogs = Dog.order(:nickname).page params[:page]
    @dogs = policy_scope(Dog).includes(:user).page params[:page]
@@ -53,18 +53,19 @@ class DogsController < ApplicationController
   def index2
 
     if params[:query].present?
-      @dogs = policy_scope(Dog.search_by_breed_and_address(params[:query]).page params[:dog])
+      @dogs = policy_scope(Dog.search_by_breed_and_address(params[:query]))
       # @lands_geo = Land.search_by_title_and_address(params[:query]).where.not(latitude: nil, longitude: nil)
       @dogs_geo = Dog.where.not(latitude: nil, longitude: nil)
     else
-      @dogs = policy_scope(dog)
+      @dogs = policy_scope(Dog)
       @dogs_geo = Dog.where.not(latitude: nil, longitude: nil)
     end
 
+    @dogs = @dogs.includes(:user).page(params[:dog])
 
-     authorize @dogs
+   authorize @dogs
 
-     @markers = @dogs_geo.map do |dog|
+   @markers = @dogs_geo.map do |dog|
      {
        lat: dog.latitude,
        lng: dog.longitude,
@@ -73,19 +74,21 @@ class DogsController < ApplicationController
     end
   end
 
-def upvote
-  @dog = Dog.find(params[:id])
-  @dog.upvote_by current_user
-  authorize @dog
-  redirect_to dogs_path
-end
-
-def downvote
-  @dog = Dog.find(params[:id])
-  @dog.downvote_by current_user
+  def upvote
+    @dog = Dog.find(params[:id])
+    @dog.upvote_by current_user
     authorize @dog
-  redirect_to dogs_path
-end
+    render json: { votes: @dog.get_upvotes.size, url: dislike_dog_path(@dog) }
+    # redirect_to dogs_path
+  end
+
+  def downvote
+    @dog = Dog.find(params[:id])
+    @dog.downvote_by current_user
+    authorize @dog
+    render json: { votes: @dog.get_upvotes.size, url: like_dog_path(@dog) }
+    # redirect_to dogs_path
+  end
 
 
   private

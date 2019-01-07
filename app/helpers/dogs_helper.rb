@@ -17,6 +17,14 @@ module DogsHelper
     end.to_json
   end
 
+  def dog_like_path(dog)
+    if current_user.voted_up_on? dog
+      dislike_dog_path(dog)
+    else
+      like_dog_path(dog)
+    end
+  end
+
   private
 
   def get_conversations
