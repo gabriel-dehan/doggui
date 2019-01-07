@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get '/users',   to: 'users#index',   via: 'get'
     get '/users/:user_id', to: 'users#show', as: :showprofile
   end
+  get 'index_dogs', controller: 'users', action: :index_dogs
 
   resources "contacts", only: [:new, :create]
 

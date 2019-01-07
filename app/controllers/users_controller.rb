@@ -9,4 +9,9 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def index_dogs
+    @dogs = current_user.dogs
+    authorize @dogs
+  end
+
 end

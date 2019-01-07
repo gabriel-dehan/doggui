@@ -3,7 +3,7 @@
     <div class="row">
       <div class="card-show-grey col-xs-12 col-sm-4 col-md-3">
         <div class="show-titre">
-          <%=@dog.nickname%> - <%=@dog.breed%><%= @dog.age %>
+          <%=@dog.nickname%> - <%=@dog.breed%><%= @dog.age%>
         </div>
 
         <br>
@@ -13,6 +13,7 @@
           <div class="texte-caracteristique">COULEUR DE LA ROBE : </div><div><%= @dog.color %></div>
           <div class="texte-caracteristique">TYPE DE POIL : </div><div> <%= @dog.hair %></div>
           <div class="texte-caracteristique">COULEUR DES YEUX : </div><div><%= @dog.eye_color %></div>
+          <div class="texte-caracteristique">DATE DE NAISSANCE : </div><div><%= @dog.birthday_date %></div>
         </div>
 
          <br>
