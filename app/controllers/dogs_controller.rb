@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
- skip_before_action :authenticate_user!, only: [:index, :show, :create, :edit, :destroy, :index2, :upvote, :downvote]
+ skip_before_action :authenticate_user!, only: [:index, :show, :index2]
   def index
   # @dogs = Dog.order(:nickname).page params[:page]
    @dogs = policy_scope(Dog).includes(:user).page params[:page]

@@ -12,11 +12,21 @@
             <%= link_to image_tag("avatar.png", alt:"logo", class:"avatar-index"), showprofile_path(dog.user) %>
           <% end %>
         </div>
-        <%= link_to dog_like_path(dog), method: :put, remote: true, class: 'downvote-upvote' do %>
+        <% if user_signed_in? %>
+          <%= link_to dog_like_path(dog), method: :put, remote: true, class: 'downvote-upvote' do %>
+            <div class="card-like">
+              <%= icon('fas', 'heart', class: 'fa-2x') %>
+              <span>
+                <%= dog.get_upvotes.size %>
+              </span>
+            </div>
+          <% end %>
+        <% else %>
           <div class="card-like">
-            <p>
+            <%= icon('fas', 'heart', class: 'fa-2x') %>
+            <span>
               <%= dog.get_upvotes.size %>
-            </p>
+            </span>
           </div>
         <% end %>
       </div>
