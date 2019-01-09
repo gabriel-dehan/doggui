@@ -6,7 +6,7 @@
     </div>
   </div>
 
-   <div class="card-show-grey col-xs-12 col-sm-3 col-md-3">
+   <div class="card-show-user col-xs-12 col-sm-3 col-md-3">
           <div class="info-user">
             <% if current_user.avatar_url %>
             <%= cl_image_tag current_user.avatar_url, class: "grid-user-avatar" %>
@@ -31,8 +31,8 @@
 
       <nav class="navbar-toggleable-md navbar-light bg-faded">
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">MES MOLOSSES</a>
-          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">LES RENCONTRES RECHERCHES</a>
+          <a class="nav-item nav-link active rubrique-profile" id="nav-home-tab" data-toggle="pill" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">MES MOLOSSES |  </a>
+          <a class="nav-item nav-link rubrique-profile" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">LES AUTRES CHIENS  </a>
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
