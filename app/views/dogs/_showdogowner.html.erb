@@ -1,0 +1,35 @@
+<div class="container-fluid">
+
+    <div class="row">
+      <div class="card-show-grey col-xs-12 col-sm-4 col-md-3">
+        <div class="show-titre">
+          <%=@dog.nickname%> - <%=@dog.breed%><%= @dog.age%>
+        </div>
+
+        <br>
+
+        <div class="esthetique">
+          <div class="texte-caracteristique">VERSION : </div><div><%= @dog.version %></div>
+          <div class="texte-caracteristique">COULEUR DE LA ROBE : </div><div><%= @dog.color %></div>
+          <div class="texte-caracteristique">TYPE DE POIL : </div><div> <%= @dog.hair %></div>
+          <div class="texte-caracteristique">COULEUR DES YEUX : </div><div><%= @dog.eye_color %></div>
+          <div class="texte-caracteristique">DATE DE NAISSANCE : </div><div><%= @dog.birthday_date %></div>
+        </div>
+
+         <br>
+
+        <div class="lof">
+           <div class="texte-caracteristique">LOF </div><div><%= @dog.nickname %> : <%= @dog.lof_number %></div>
+           <div class="texte-caracteristique">LOF DE SA MAMAN : </div><div><%= @dog.mother_lof %></div>
+           <div class="texte-caracteristique">LOF DE SON PAPA : </div><div><%= @dog.father_lof %>
+          </div>
+        </div>
+
+         <br>
+
+         <div class="divers">
+          <div class="texte-caracteristique">👩‍⚕️ Carnet de santé à jour :</div><div> <%= @dog.medical_analyse %></div>
+          <div class="texte-caracteristique">🥇Prix beauté reçu :</div><div> <%= @dog.prize %>
+          </div>
+        </div>
+      </div>
