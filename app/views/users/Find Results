@@ -1,0 +1,1094 @@
+Searching 305 files for "hover"
+
+/Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/scaffolds.scss:
+   27    }
+   28
+   29:   &:hover {
+   30      color: #fff;
+   31      background-color: #000;
+
+/Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_button.scss:
+   13  }
+   14
+   15: .btn-orange:hover {
+   16    background-color: #cc822e;
+   17    color: white;
+   ..
+   30  }
+   31
+   32: .btn-inscription:hover {
+   33    background-color: #ec9c32 !important;
+   34    text-decoration: none;
+   ..
+   41  }
+   42
+   43: .btn-sple-or:hover {
+   44    color: #f2d8ba;
+   45    padding-right: 10px;
+   ..
+   55    opacity: 0.6;
+   56  }
+   57: .btn-medium:hover {
+   58    opacity: 1;
+   59    text-decoration: none;
+   ..
+   71
+   72  }
+   73: .btn-new-session-form:hover {
+   74    opacity: 1;
+   75    background: #3ac162;
+
+/Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_cards.scss:
+   19  }
+   20
+   21: .card-image:hover {
+   22    opacity: 0.85;
+   23  }
+   ..
+   71  }
+   72
+   73: .avatar-index:hover {
+   74    border: solid 1px #ea9632;
+   75  }
+   ..
+  115    opacity: 0;
+  116  }
+  117: .card-link:hover {
+  118    opacity: 0.1;
+  119  }
+
+/Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_footer.scss:
+   20    padding: 0px 10px;
+   21  }
+   22: .footer-links a:hover {
+   23    opacity: 1;
+   24  }
+
+/Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_index_dogs.scss:
+    5  }
+    6
+    7: .rubrique-profile:hover {
+    8   text-decoration: none !important;
+    9   text-transform: none !important;
+
+/Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_navbar.scss:
+   21  }
+   22
+   23: .avatar-navbar:hover {
+   24    border: solid 1px #ea9632;
+   25  }
+   ..
+   34  }
+   35
+   36: .link-to-nav:hover {
+   37    color: #423e3e;
+   38    text-decoration: none;
+
+/Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_view_show.scss:
+   56   font-size: 15px;
+   57  }
+   58: .bouton-show:hover {
+   59   text-decoration: none !important;
+   60   background-color: white;
+   ..
+   82  }
+   83
+   84: .dropdow-show:hover {
+   85    color: black !important;
+   86    background-color: white;
+   ..
+   94  }
+   95
+   96: .dropdonw-menu-show:hover {
+   97    color: black !important;
+   98    background-color: white ;
+   ..
+  105  }
+  106
+  107: .bouton-show a :hover {
+  108    background-color: #f5f5f5 !important;
+  109    color:black !important;
+  ...
+  144  }
+  145
+  146: .avatar-show:hover {
+  147    border: solid 1px #ea9632;
+  148  }
+
+/Users/mac/code/guillaumeaa/les-molosses/public/assets/application-4a476c560f780c3a6e0ca74573e00e9834dd64900fd441665aa1e0f24b684b7b.js:
+ 10341
+ 10342  jQuery.fn.extend( {
+ 10343: 	hover: function( fnOver, fnOut ) {
+ 10344  		return this.mouseenter( fnOver ).mouseleave( fnOut || fnOver );
+ 10345  	}
+ .....
+ 13226      this.options.keyboard && this.$element.on('keydown.bs.carousel', $.proxy(this.keydown, this))
+ 13227
+ 13228:     this.options.pause == 'hover' && !('ontouchstart' in document.documentElement) && this.$element
+ 13229        .on('mouseenter.bs.carousel', $.proxy(this.pause, this))
+ 13230        .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
+ .....
+ 13237    Carousel.DEFAULTS = {
+ 13238      interval: 5000,
+ 13239:     pause: 'hover',
+ 13240      wrap: true,
+ 13241      keyboard: true
+ .....
+ 14669      this.enabled    = null
+ 14670      this.timeout    = null
+ 14671:     this.hoverState = null
+ 14672      this.$element   = null
+ 14673      this.inState    = null
+ .....
+ 14685      selector: false,
+ 14686      template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+ 14687:     trigger: 'hover focus',
+ 14688      title: '',
+ 14689      delay: 0,
+ .....
+ 14702      this.options   = this.getOptions(options)
+ 14703      this.$viewport = this.options.viewport && $($.isFunction(this.options.viewport) ? this.options.viewport.call(this, this.$element) : (this.options.viewport.selector || this.options.viewport))
+ 14704:     this.inState   = { click: false, hover: false, focus: false }
+ 14705
+ 14706      if (this.$element[0] instanceof document.constructor && !this.options.selector) {
+ .....
+ 14716          this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.toggle, this))
+ 14717        } else if (trigger != 'manual') {
+ 14718:         var eventIn  = trigger == 'hover' ? 'mouseenter' : 'focusin'
+ 14719:         var eventOut = trigger == 'hover' ? 'mouseleave' : 'focusout'
+ 14720
+ 14721          this.$element.on(eventIn  + '.' + this.type, this.options.selector, $.proxy(this.enter, this))
+ .....
+ 14767
+ 14768      if (obj instanceof $.Event) {
+ 14769:       self.inState[obj.type == 'focusin' ? 'focus' : 'hover'] = true
+ 14770      }
+ 14771
+ 14772:     if (self.tip().hasClass('in') || self.hoverState == 'in') {
+ 14773:       self.hoverState = 'in'
+ 14774        return
+ 14775      }
+ .....
+ 14777      clearTimeout(self.timeout)
+ 14778
+ 14779:     self.hoverState = 'in'
+ 14780
+ 14781      if (!self.options.delay || !self.options.delay.show) return self.show()
+ 14782
+ 14783      self.timeout = setTimeout(function () {
+ 14784:       if (self.hoverState == 'in') self.show()
+ 14785      }, self.options.delay.show)
+ 14786    }
+ .....
+ 14804
+ 14805      if (obj instanceof $.Event) {
+ 14806:       self.inState[obj.type == 'focusout' ? 'focus' : 'hover'] = false
+ 14807      }
+ 14808
+ .....
+ 14811      clearTimeout(self.timeout)
+ 14812
+ 14813:     self.hoverState = 'out'
+ 14814
+ 14815      if (!self.options.delay || !self.options.delay.hide) return self.hide()
+ 14816
+ 14817      self.timeout = setTimeout(function () {
+ 14818:       if (self.hoverState == 'out') self.hide()
+ 14819      }, self.options.delay.hide)
+ 14820    }
+ .....
+ 14881
+ 14882        var complete = function () {
+ 14883:         var prevHoverState = that.hoverState
+ 14884          that.$element.trigger('shown.bs.' + that.type)
+ 14885:         that.hoverState = null
+ 14886
+ 14887:         if (prevHoverState == 'out') that.leave(that)
+ 14888        }
+ 14889
+ .....
+ 14966
+ 14967      function complete() {
+ 14968:       if (that.hoverState != 'in') $tip.detach()
+ 14969        if (that.$element) { // TODO: Check whether guarding this code with this `if` is really necessary.
+ 14970          that.$element
+ .....
+ 14987        complete()
+ 14988
+ 14989:     this.hoverState = null
+ 14990
+ 14991      return this
+
+/Users/mac/code/guillaumeaa/les-molosses/public/assets/application-61f265eb7d32c116d794126a768ab60169209ca31465832ccf39e40ba47b4608.css:
+   21
+   22  /* line 15, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_button.scss */
+   23: .btn-orange:hover {
+   24    background-color: #cc822e;
+   25    color: white;
+   ..
+   39
+   40  /* line 31, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_button.scss */
+   41: .btn-sple-or:hover {
+   42    color: #f2d8ba;
+   43    padding-right: 10px;
+   ..
+   56
+   57  /* line 45, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_button.scss */
+   58: .btn-medium:hover {
+   59    opacity: 1;
+   60    text-decoration: none;
+   ..
+   75
+   76  /* line 61, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_button.scss */
+   77: .btn-new-session-form:hover {
+   78    opacity: 1;
+   79    background: #3ac162;
+   ..
+  106
+  107  /* line 21, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_cards.scss */
+  108: .card-image:hover {
+  109    opacity: 0.85;
+  110  }
+  ...
+  155
+  156  /* line 64, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_cards.scss */
+  157: .avatar-index:hover {
+  158    border: solid 1px #ea9632;
+  159  }
+  ...
+  204
+  205  /* line 108, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_cards.scss */
+  206: .card-link:hover {
+  207    opacity: 0.1;
+  208  }
+  ...
+  313
+  314  /* line 22, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_footer.scss */
+  315: .footer-links a:hover {
+  316    opacity: 1;
+  317  }
+  ...
+  346
+  347  /* line 23, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_navbar.scss */
+  348: .avatar-navbar:hover {
+  349    border: solid 1px #ea9632;
+  350  }
+  ...
+  360
+  361  /* line 36, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_navbar.scss */
+  362: .link-to-nav:hover {
+  363    color: #423e3e;
+  364    text-decoration: none;
+  ...
+  408
+  409  /* line 22, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_footer.scss */
+  410: .footer-links a:hover {
+  411    opacity: 1;
+  412  }
+  ...
+  440
+  441  /* line 21, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_cards.scss */
+  442: .card-image:hover {
+  443    opacity: 0.85;
+  444  }
+  ...
+  489
+  490  /* line 64, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_cards.scss */
+  491: .avatar-index:hover {
+  492    border: solid 1px #ea9632;
+  493  }
+  ...
+  538
+  539  /* line 108, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_cards.scss */
+  540: .card-link:hover {
+  541    opacity: 0.1;
+  542  }
+  ...
+  736
+  737  /* line 15, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_button.scss */
+  738: .btn-orange:hover {
+  739    background-color: #cc822e;
+  740    color: white;
+  ...
+  754
+  755  /* line 31, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_button.scss */
+  756: .btn-sple-or:hover {
+  757    color: #f2d8ba;
+  758    padding-right: 10px;
+  ...
+  771
+  772  /* line 45, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_button.scss */
+  773: .btn-medium:hover {
+  774    opacity: 1;
+  775    text-decoration: none;
+  ...
+  790
+  791  /* line 61, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_button.scss */
+  792: .btn-new-session-form:hover {
+  793    opacity: 1;
+  794    background: #3ac162;
+  ...
+ 1038
+ 1039  /* line 103, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_view_show.scss */
+ 1040: .avatar-show:hover {
+ 1041    border: solid 1px #ea9632;
+ 1042  }
+ ....
+ 1386
+ 1387  /* line 24, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_navbar.scss */
+ 1388: .avatar-navbar:hover {
+ 1389    border: solid 1px #ea9632;
+ 1390  }
+ ....
+ 1400
+ 1401  /* line 37, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_navbar.scss */
+ 1402: .link-to-nav:hover {
+ 1403    color: #423e3e;
+ 1404    text-decoration: none;
+ ....
+ 1715
+ 1716  /* line 103, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_view_show.scss */
+ 1717: .avatar-show:hover {
+ 1718    border: solid 1px #ea9632;
+ 1719  }
+ ....
+ 1805  /* line 98, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
+ 1806  a:active,
+ 1807: a:hover {
+ 1808    outline: 0;
+ 1809  }
+ ....
+ 3483  }
+ 3484  /* line 52, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_scaffolding.scss */
+ 3485: a:hover, a:focus {
+ 3486    color: #23527c;
+ 3487    text-decoration: underline;
+ ....
+ 3751
+ 3752  /* line 8, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
+ 3753: a.text-primary:hover,
+ 3754  a.text-primary:focus {
+ 3755    color: #286090;
+ ....
+ 3762
+ 3763  /* line 8, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
+ 3764: a.text-success:hover,
+ 3765  a.text-success:focus {
+ 3766    color: #2b542c;
+ ....
+ 3773
+ 3774  /* line 8, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
+ 3775: a.text-info:hover,
+ 3776  a.text-info:focus {
+ 3777    color: #245269;
+ ....
+ 3784
+ 3785  /* line 8, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
+ 3786: a.text-warning:hover,
+ 3787  a.text-warning:focus {
+ 3788    color: #66512c;
+ ....
+ 3795
+ 3796  /* line 8, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
+ 3797: a.text-danger:hover,
+ 3798  a.text-danger:focus {
+ 3799    color: #843534;
+ ....
+ 3811
+ 3812  /* line 8, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
+ 3813: a.bg-primary:hover,
+ 3814  a.bg-primary:focus {
+ 3815    background-color: #286090;
+ ....
+ 3822
+ 3823  /* line 8, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
+ 3824: a.bg-success:hover,
+ 3825  a.bg-success:focus {
+ 3826    background-color: #c1e2b3;
+ ....
+ 3833
+ 3834  /* line 8, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
+ 3835: a.bg-info:hover,
+ 3836  a.bg-info:focus {
+ 3837    background-color: #afd9ee;
+ ....
+ 3844
+ 3845  /* line 8, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
+ 3846: a.bg-warning:hover,
+ 3847  a.bg-warning:focus {
+ 3848    background-color: #f7ecb5;
+ ....
+ 3855
+ 3856  /* line 8, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
+ 3857: a.bg-danger:hover,
+ 3858  a.bg-danger:focus {
+ 3859    background-color: #e4b9b9;
+ ....
+ 5300
+ 5301  /* line 125, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_tables.scss */
+ 5302: .table-hover > tbody > tr:hover {
+ 5303    background-color: #f5f5f5;
+ 5304  }
+ ....
+ 5334
+ 5335  /* line 20, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_table-row.scss */
+ 5336: .table-hover > tbody > tr > td.active:hover,
+ 5337: .table-hover > tbody > tr > th.active:hover, .table-hover > tbody > tr.active:hover > td, .table-hover > tbody > tr:hover > .active, .table-hover > tbody > tr.active:hover > th {
+ 5338    background-color: #e8e8e8;
+ 5339  }
+ ....
+ 5354
+ 5355  /* line 20, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_table-row.scss */
+ 5356: .table-hover > tbody > tr > td.success:hover,
+ 5357: .table-hover > tbody > tr > th.success:hover, .table-hover > tbody > tr.success:hover > td, .table-hover > tbody > tr:hover > .success, .table-hover > tbody > tr.success:hover > th {
+ 5358    background-color: #d0e9c6;
+ 5359  }
+ ....
+ 5374
+ 5375  /* line 20, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_table-row.scss */
+ 5376: .table-hover > tbody > tr > td.info:hover,
+ 5377: .table-hover > tbody > tr > th.info:hover, .table-hover > tbody > tr.info:hover > td, .table-hover > tbody > tr:hover > .info, .table-hover > tbody > tr.info:hover > th {
+ 5378    background-color: #c4e3f3;
+ 5379  }
+ ....
+ 5394
+ 5395  /* line 20, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_table-row.scss */
+ 5396: .table-hover > tbody > tr > td.warning:hover,
+ 5397: .table-hover > tbody > tr > th.warning:hover, .table-hover > tbody > tr.warning:hover > td, .table-hover > tbody > tr:hover > .warning, .table-hover > tbody > tr.warning:hover > th {
+ 5398    background-color: #faf2cc;
+ 5399  }
+ ....
+ 5414
+ 5415  /* line 20, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_table-row.scss */
+ 5416: .table-hover > tbody > tr > td.danger:hover,
+ 5417: .table-hover > tbody > tr > th.danger:hover, .table-hover > tbody > tr.danger:hover > td, .table-hover > tbody > tr:hover > .danger, .table-hover > tbody > tr.danger:hover > th {
+ 5418    background-color: #ebcccc;
+ 5419  }
+ ....
+ 6174  }
+ 6175  /* line 32, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_buttons.scss */
+ 6176: .btn:hover, .btn:focus, .btn.focus {
+ 6177    color: #333;
+ 6178    text-decoration: none;
+ ....
+ 6212  }
+ 6213  /* line 17, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6214: .btn-default:hover {
+ 6215    color: #333;
+ 6216    background-color: #e6e6e6;
+ ....
+ 6224  }
+ 6225  /* line 29, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6226: .btn-default:active:hover, .btn-default:active:focus, .btn-default:active.focus, .btn-default.active:hover, .btn-default.active:focus, .btn-default.active.focus, .open > .btn-default.dropdown-toggle:hover, .open > .btn-default.dropdown-toggle:focus, .open > .btn-default.dropdown-toggle.focus {
+ 6227    color: #333;
+ 6228    background-color: #d4d4d4;
+ ....
+ 6234  }
+ 6235  /* line 45, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6236: .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled.focus, .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled].focus, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default.focus {
+ 6237    background-color: #fff;
+ 6238    border-color: #ccc;
+ ....
+ 6257  }
+ 6258  /* line 17, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6259: .btn-primary:hover {
+ 6260    color: #fff;
+ 6261    background-color: #286090;
+ ....
+ 6269  }
+ 6270  /* line 29, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6271: .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus, .open > .btn-primary.dropdown-toggle:hover, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle.focus {
+ 6272    color: #fff;
+ 6273    background-color: #204d74;
+ ....
+ 6279  }
+ 6280  /* line 45, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6281: .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus {
+ 6282    background-color: #337ab7;
+ 6283    border-color: #2e6da4;
+ ....
+ 6302  }
+ 6303  /* line 17, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6304: .btn-success:hover {
+ 6305    color: #fff;
+ 6306    background-color: #449d44;
+ ....
+ 6314  }
+ 6315  /* line 29, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6316: .btn-success:active:hover, .btn-success:active:focus, .btn-success:active.focus, .btn-success.active:hover, .btn-success.active:focus, .btn-success.active.focus, .open > .btn-success.dropdown-toggle:hover, .open > .btn-success.dropdown-toggle:focus, .open > .btn-success.dropdown-toggle.focus {
+ 6317    color: #fff;
+ 6318    background-color: #398439;
+ ....
+ 6324  }
+ 6325  /* line 45, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6326: .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled.focus, .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled].focus, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success.focus {
+ 6327    background-color: #5cb85c;
+ 6328    border-color: #4cae4c;
+ ....
+ 6347  }
+ 6348  /* line 17, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6349: .btn-info:hover {
+ 6350    color: #fff;
+ 6351    background-color: #31b0d5;
+ ....
+ 6359  }
+ 6360  /* line 29, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6361: .btn-info:active:hover, .btn-info:active:focus, .btn-info:active.focus, .btn-info.active:hover, .btn-info.active:focus, .btn-info.active.focus, .open > .btn-info.dropdown-toggle:hover, .open > .btn-info.dropdown-toggle:focus, .open > .btn-info.dropdown-toggle.focus {
+ 6362    color: #fff;
+ 6363    background-color: #269abc;
+ ....
+ 6369  }
+ 6370  /* line 45, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6371: .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled.focus, .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled].focus, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info.focus {
+ 6372    background-color: #5bc0de;
+ 6373    border-color: #46b8da;
+ ....
+ 6392  }
+ 6393  /* line 17, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6394: .btn-warning:hover {
+ 6395    color: #fff;
+ 6396    background-color: #ec971f;
+ ....
+ 6404  }
+ 6405  /* line 29, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6406: .btn-warning:active:hover, .btn-warning:active:focus, .btn-warning:active.focus, .btn-warning.active:hover, .btn-warning.active:focus, .btn-warning.active.focus, .open > .btn-warning.dropdown-toggle:hover, .open > .btn-warning.dropdown-toggle:focus, .open > .btn-warning.dropdown-toggle.focus {
+ 6407    color: #fff;
+ 6408    background-color: #d58512;
+ ....
+ 6414  }
+ 6415  /* line 45, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6416: .btn-warning.disabled:hover, .btn-warning.disabled:focus, .btn-warning.disabled.focus, .btn-warning[disabled]:hover, .btn-warning[disabled]:focus, .btn-warning[disabled].focus, fieldset[disabled] .btn-warning:hover, fieldset[disabled] .btn-warning:focus, fieldset[disabled] .btn-warning.focus {
+ 6417    background-color: #f0ad4e;
+ 6418    border-color: #eea236;
+ ....
+ 6437  }
+ 6438  /* line 17, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6439: .btn-danger:hover {
+ 6440    color: #fff;
+ 6441    background-color: #c9302c;
+ ....
+ 6449  }
+ 6450  /* line 29, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6451: .btn-danger:active:hover, .btn-danger:active:focus, .btn-danger:active.focus, .btn-danger.active:hover, .btn-danger.active:focus, .btn-danger.active.focus, .open > .btn-danger.dropdown-toggle:hover, .open > .btn-danger.dropdown-toggle:focus, .open > .btn-danger.dropdown-toggle.focus {
+ 6452    color: #fff;
+ 6453    background-color: #ac2925;
+ ....
+ 6459  }
+ 6460  /* line 45, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
+ 6461: .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled.focus, .btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled].focus, fieldset[disabled] .btn-danger:hover, fieldset[disabled] .btn-danger:focus, fieldset[disabled] .btn-danger.focus {
+ 6462    background-color: #d9534f;
+ 6463    border-color: #d43f3a;
+ ....
+ 6482  }
+ 6483  /* line 109, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_buttons.scss */
+ 6484: .btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
+ 6485    border-color: transparent;
+ 6486  }
+ 6487  /* line 115, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_buttons.scss */
+ 6488: .btn-link:hover, .btn-link:focus {
+ 6489    color: #23527c;
+ 6490    text-decoration: underline;
+ ....
+ 6492  }
+ 6493  /* line 123, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_buttons.scss */
+ 6494: .btn-link[disabled]:hover, .btn-link[disabled]:focus, fieldset[disabled] .btn-link:hover, fieldset[disabled] .btn-link:focus {
+ 6495    color: #777777;
+ 6496    text-decoration: none;
+ ....
+ 6653
+ 6654  /* line 78, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_dropdowns.scss */
+ 6655: .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+ 6656    text-decoration: none;
+ 6657    color: #262626;
+ ....
+ 6660
+ 6661  /* line 88, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_dropdowns.scss */
+ 6662: .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+ 6663    color: #fff;
+ 6664    text-decoration: none;
+ ....
+ 6668
+ 6669  /* line 103, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_dropdowns.scss */
+ 6670: .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+ 6671    color: #777777;
+ 6672  }
+ 6673  /* line 110, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_dropdowns.scss */
+ 6674: .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+ 6675    text-decoration: none;
+ 6676    background-color: transparent;
+ ....
+ 6769  }
+ 6770  /* line 15, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_button-groups.scss */
+ 6771: .btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
+ 6772: .btn-group-vertical > .btn:hover,
+ 6773  .btn-group-vertical > .btn:focus,
+ 6774  .btn-group-vertical > .btn:active,
+ ....
+ 7131  }
+ 7132  /* line 150, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_input-groups.scss */
+ 7133: .input-group-btn > .btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .btn:active {
+ 7134    z-index: 2;
+ 7135  }
+ ....
+ 7173  }
+ 7174  /* line 23, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navs.scss */
+ 7175: .nav > li > a:hover, .nav > li > a:focus {
+ 7176    text-decoration: none;
+ 7177    background-color: #eeeeee;
+ ....
+ 7182  }
+ 7183  /* line 34, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navs.scss */
+ 7184: .nav > li.disabled > a:hover, .nav > li.disabled > a:focus {
+ 7185    color: #777777;
+ 7186    text-decoration: none;
+ ....
+ 7189  }
+ 7190  /* line 46, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navs.scss */
+ 7191: .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+ 7192    background-color: #eeeeee;
+ 7193    border-color: #337ab7;
+ ....
+ 7222  }
+ 7223  /* line 89, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navs.scss */
+ 7224: .nav-tabs > li > a:hover {
+ 7225    border-color: #eeeeee #eeeeee #ddd;
+ 7226  }
+ 7227  /* line 96, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navs.scss */
+ 7228: .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+ 7229    color: #555555;
+ 7230    background-color: #fff;
+ ....
+ 7247  }
+ 7248  /* line 131, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navs.scss */
+ 7249: .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+ 7250    color: #fff;
+ 7251    background-color: #337ab7;
+ ....
+ 7303  /* line 199, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navs.scss */
+ 7304  .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a,
+ 7305: .nav-tabs-justified > .active > a:hover,
+ 7306: .nav-tabs.nav-justified > .active > a:hover,
+ 7307  .nav-tabs-justified > .active > a:focus,
+ 7308  .nav-tabs.nav-justified > .active > a:focus {
+ ....
+ 7317    /* line 210, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navs.scss */
+ 7318    .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a,
+ 7319:   .nav-tabs-justified > .active > a:hover,
+ 7320:   .nav-tabs.nav-justified > .active > a:hover,
+ 7321    .nav-tabs-justified > .active > a:focus,
+ 7322    .nav-tabs.nav-justified > .active > a:focus {
+ ....
+ 7509  }
+ 7510  /* line 170, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7511: .navbar-brand:hover, .navbar-brand:focus {
+ 7512    text-decoration: none;
+ 7513  }
+ ....
+ 7589    }
+ 7590    /* line 257, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7591:   .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-nav .open .dropdown-menu > li > a:focus {
+ 7592      background-image: none;
+ 7593    }
+ ....
+ 7779  }
+ 7780  /* line 403, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7781: .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+ 7782    color: #5e5e5e;
+ 7783    background-color: transparent;
+ ....
+ 7792  }
+ 7793  /* line 418, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7794: .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+ 7795    color: #333;
+ 7796    background-color: transparent;
+ 7797  }
+ 7798  /* line 425, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7799: .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+ 7800    color: #555;
+ 7801    background-color: #e7e7e7;
+ 7802  }
+ 7803  /* line 433, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7804: .navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus {
+ 7805    color: #ccc;
+ 7806    background-color: transparent;
+ ....
+ 7811  }
+ 7812  /* line 444, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7813: .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+ 7814    background-color: #ddd;
+ 7815  }
+ ....
+ 7824  }
+ 7825  /* line 462, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7826: .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+ 7827    background-color: #e7e7e7;
+ 7828    color: #555;
+ ....
+ 7834    }
+ 7835    /* line 475, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7836:   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+ 7837      color: #333;
+ 7838      background-color: transparent;
+ 7839    }
+ 7840    /* line 482, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7841:   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+ 7842      color: #555;
+ 7843      background-color: #e7e7e7;
+ 7844    }
+ 7845    /* line 490, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7846:   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+ 7847      color: #ccc;
+ 7848      background-color: transparent;
+ ....
+ 7854  }
+ 7855  /* line 508, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7856: .navbar-default .navbar-link:hover {
+ 7857    color: #333;
+ 7858  }
+ ....
+ 7862  }
+ 7863  /* line 515, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7864: .navbar-default .btn-link:hover, .navbar-default .btn-link:focus {
+ 7865    color: #333;
+ 7866  }
+ 7867  /* line 521, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7868: .navbar-default .btn-link[disabled]:hover, .navbar-default .btn-link[disabled]:focus, fieldset[disabled] .navbar-default .btn-link:hover, fieldset[disabled] .navbar-default .btn-link:focus {
+ 7869    color: #ccc;
+ 7870  }
+ ....
+ 7880  }
+ 7881  /* line 537, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7882: .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+ 7883    color: #fff;
+ 7884    background-color: transparent;
+ ....
+ 7893  }
+ 7894  /* line 552, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7895: .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+ 7896    color: #fff;
+ 7897    background-color: transparent;
+ 7898  }
+ 7899  /* line 559, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7900: .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+ 7901    color: #fff;
+ 7902    background-color: #090909;
+ 7903  }
+ 7904  /* line 567, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7905: .navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus {
+ 7906    color: #444;
+ 7907    background-color: transparent;
+ ....
+ 7912  }
+ 7913  /* line 579, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7914: .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+ 7915    background-color: #333;
+ 7916  }
+ ....
+ 7925  }
+ 7926  /* line 596, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7927: .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+ 7928    background-color: #090909;
+ 7929    color: #fff;
+ ....
+ 7943    }
+ 7944    /* line 615, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7945:   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+ 7946      color: #fff;
+ 7947      background-color: transparent;
+ 7948    }
+ 7949    /* line 622, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7950:   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+ 7951      color: #fff;
+ 7952      background-color: #090909;
+ 7953    }
+ 7954    /* line 630, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7955:   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+ 7956      color: #444;
+ 7957      background-color: transparent;
+ ....
+ 7963  }
+ 7964  /* line 643, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7965: .navbar-inverse .navbar-link:hover {
+ 7966    color: #fff;
+ 7967  }
+ ....
+ 7971  }
+ 7972  /* line 650, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7973: .navbar-inverse .btn-link:hover, .navbar-inverse .btn-link:focus {
+ 7974    color: #fff;
+ 7975  }
+ 7976  /* line 656, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
+ 7977: .navbar-inverse .btn-link[disabled]:hover, .navbar-inverse .btn-link[disabled]:focus, fieldset[disabled] .navbar-inverse .btn-link:hover, fieldset[disabled] .navbar-inverse .btn-link:focus {
+ 7978    color: #444;
+ 7979  }
+ ....
+ 8040  }
+ 8041  /* line 41, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_pagination.scss */
+ 8042: .pagination > li > a:hover, .pagination > li > a:focus,
+ 8043: .pagination > li > span:hover,
+ 8044  .pagination > li > span:focus {
+ 8045    z-index: 2;
+ ....
+ 8049  }
+ 8050  /* line 52, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_pagination.scss */
+ 8051: .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus,
+ 8052  .pagination > .active > span,
+ 8053: .pagination > .active > span:hover,
+ 8054  .pagination > .active > span:focus {
+ 8055    z-index: 3;
+ ....
+ 8061  /* line 64, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_pagination.scss */
+ 8062  .pagination > .disabled > span,
+ 8063: .pagination > .disabled > span:hover,
+ 8064  .pagination > .disabled > span:focus,
+ 8065  .pagination > .disabled > a,
+ 8066: .pagination > .disabled > a:hover,
+ 8067  .pagination > .disabled > a:focus {
+ 8068    color: #777777;
+ ....
+ 8142  }
+ 8143  /* line 23, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_pager.scss */
+ 8144: .pager li > a:hover,
+ 8145  .pager li > a:focus {
+ 8146    text-decoration: none;
+ ....
+ 8159  /* line 45, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_pager.scss */
+ 8160  .pager .disabled > a,
+ 8161: .pager .disabled > a:hover,
+ 8162  .pager .disabled > a:focus,
+ 8163  .pager .disabled > span {
+ ....
+ 8191
+ 8192  /* line 33, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_labels.scss */
+ 8193: a.label:hover, a.label:focus {
+ 8194    color: #fff;
+ 8195    text-decoration: none;
+ ....
+ 8202  }
+ 8203  /* line 7, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_labels.scss */
+ 8204: .label-default[href]:hover, .label-default[href]:focus {
+ 8205    background-color: #5e5e5e;
+ 8206  }
+ ....
+ 8211  }
+ 8212  /* line 7, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_labels.scss */
+ 8213: .label-primary[href]:hover, .label-primary[href]:focus {
+ 8214    background-color: #286090;
+ 8215  }
+ ....
+ 8220  }
+ 8221  /* line 7, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_labels.scss */
+ 8222: .label-success[href]:hover, .label-success[href]:focus {
+ 8223    background-color: #449d44;
+ 8224  }
+ ....
+ 8229  }
+ 8230  /* line 7, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_labels.scss */
+ 8231: .label-info[href]:hover, .label-info[href]:focus {
+ 8232    background-color: #31b0d5;
+ 8233  }
+ ....
+ 8238  }
+ 8239  /* line 7, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_labels.scss */
+ 8240: .label-warning[href]:hover, .label-warning[href]:focus {
+ 8241    background-color: #ec971f;
+ 8242  }
+ ....
+ 8247  }
+ 8248  /* line 7, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_labels.scss */
+ 8249: .label-danger[href]:hover, .label-danger[href]:focus {
+ 8250    background-color: #c9302c;
+ 8251  }
+ ....
+ 8299
+ 8300  /* line 62, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_badges.scss */
+ 8301: a.badge:hover, a.badge:focus {
+ 8302    color: #fff;
+ 8303    text-decoration: none;
+ ....
+ 8385
+ 8386  /* line 34, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_thumbnails.scss */
+ 8387: a.thumbnail:hover,
+ 8388  a.thumbnail:focus,
+ 8389  a.thumbnail.active {
+ ....
+ 8706  }
+ 8707  /* line 55, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_list-group.scss */
+ 8708: a.list-group-item:hover, a.list-group-item:focus,
+ 8709: button.list-group-item:hover,
+ 8710  button.list-group-item:focus {
+ 8711    text-decoration: none;
+ ....
+ 8721
+ 8722  /* line 70, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_list-group.scss */
+ 8723: .list-group-item.disabled, .list-group-item.disabled:hover, .list-group-item.disabled:focus {
+ 8724    background-color: #eeeeee;
+ 8725    color: #777777;
+ ....
+ 8727  }
+ 8728  /* line 78, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_list-group.scss */
+ 8729: .list-group-item.disabled .list-group-item-heading, .list-group-item.disabled:hover .list-group-item-heading, .list-group-item.disabled:focus .list-group-item-heading {
+ 8730    color: inherit;
+ 8731  }
+ 8732  /* line 81, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_list-group.scss */
+ 8733: .list-group-item.disabled .list-group-item-text, .list-group-item.disabled:hover .list-group-item-text, .list-group-item.disabled:focus .list-group-item-text {
+ 8734    color: #777777;
+ 8735  }
+ 8736  /* line 87, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_list-group.scss */
+ 8737: .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+ 8738    z-index: 2;
+ 8739    color: #fff;
+ ....
+ 8744  .list-group-item.active .list-group-item-heading,
+ 8745  .list-group-item.active .list-group-item-heading > small,
+ 8746: .list-group-item.active .list-group-item-heading > .small, .list-group-item.active:hover .list-group-item-heading,
+ 8747: .list-group-item.active:hover .list-group-item-heading > small,
+ 8748: .list-group-item.active:hover .list-group-item-heading > .small, .list-group-item.active:focus .list-group-item-heading,
+ 8749  .list-group-item.active:focus .list-group-item-heading > small,
+ 8750  .list-group-item.active:focus .list-group-item-heading > .small {
+ ....
+ 8752  }
+ 8753  /* line 101, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_list-group.scss */
+ 8754: .list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
+ 8755    color: #c7ddef;
+ 8756  }
+ ....
+ 8773  }
+ 8774  /* line 19, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_list-group.scss */
+ 8775: a.list-group-item-success:hover, a.list-group-item-success:focus,
+ 8776: button.list-group-item-success:hover,
+ 8777  button.list-group-item-success:focus {
+ 8778    color: #3c763d;
+ ....
+ 8780  }
+ 8781  /* line 24, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_list-group.scss */
+ 8782: a.list-group-item-success.active, a.list-group-item-success.active:hover, a.list-group-item-success.active:focus,
+ 8783  button.list-group-item-success.active,
+ 8784: button.list-group-item-success.active:hover,
+ 8785  button.list-group-item-success.active:focus {
+ 8786    color: #fff;
+ ....
+ 8806  }
+ 8807  /* line 19, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_list-group.scss */
+ 8808: a.list-group-item-info:hover, a.list-group-item-info:focus,
+ 8809: button.list-group-item-info:hover,
+ 8810  button.list-group-item-info:focus {
+ 8811    color: #31708f;
+ ....
+ 8813  }
+ 8814  /* line 24, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_list-group.scss */
+ 8815: a.list-group-item-info.active, a.list-group-item-info.active:hover, a.list-group-item-info.active:focus,
+ 8816  button.list-group-item-info.active,
+ 8817: button.list-group-item-info.active:hover,
+ 8818  button.list-group-item-info.active:focus {
+ 8819    color: #fff;
+ ....
+ 8839  }
+ 8840  /* line 19, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_list-group.scss */
+ 8841: a.list-group-item-warning:hover, a.list-group-item-warning:focus,
+ 8842: button.list-group-item-warning:hover,
+ 8843  button.list-group-item-warning:focus {
+ 8844    color: #8a6d3b;
+ ....
+ 8846  }
+ 8847  /* line 24, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_list-group.scss */
+ 8848: a.list-group-item-warning.active, a.list-group-item-warning.active:hover, a.list-group-item-warning.active:focus,
+ 8849  button.list-group-item-warning.active,
+ 8850: button.list-group-item-warning.active:hover,
+ 8851  button.list-group-item-warning.active:focus {
+ 8852    color: #fff;
+ ....
+ 8872  }
+ 8873  /* line 19, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_list-group.scss */
+ 8874: a.list-group-item-danger:hover, a.list-group-item-danger:focus,
+ 8875: button.list-group-item-danger:hover,
+ 8876  button.list-group-item-danger:focus {
+ 8877    color: #a94442;
+ ....
+ 8879  }
+ 8880  /* line 24, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_list-group.scss */
+ 8881: a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus,
+ 8882  button.list-group-item-danger.active,
+ 8883: button.list-group-item-danger.active:hover,
+ 8884  button.list-group-item-danger.active:focus {
+ 8885    color: #fff;
+ ....
+ 9411  }
+ 9412  /* line 15, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_close.scss */
+ 9413: .close:hover, .close:focus {
+ 9414    color: #000;
+ 9415    text-decoration: none;
+ ....
+ 10028  }
+ 10029  /* line 119, /Users/mac/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_carousel.scss */
+ 10030: .carousel-control:hover, .carousel-control:focus {
+ 10031    outline: 0;
+ 10032    color: #fff;
+ .....
+ 10547
+ 10548  /* line 23, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_navbar.scss */
+ 10549: .avatar-navbar:hover {
+ 10550    border: solid 1px #ea9632;
+ 10551  }
+ .....
+ 10561
+ 10562  /* line 36, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_navbar.scss */
+ 10563: .link-to-nav:hover {
+ 10564    color: #423e3e;
+ 10565    text-decoration: none;
+ .....
+ 10609
+ 10610  /* line 22, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_footer.scss */
+ 10611: .footer-links a:hover {
+ 10612    opacity: 1;
+ 10613  }
+ .....
+ 10641
+ 10642  /* line 21, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_cards.scss */
+ 10643: .card-image:hover {
+ 10644    opacity: 0.85;
+ 10645  }
+ .....
+ 10690
+ 10691  /* line 64, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_cards.scss */
+ 10692: .avatar-index:hover {
+ 10693    border: solid 1px #ea9632;
+ 10694  }
+ .....
+ 10739
+ 10740  /* line 108, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_cards.scss */
+ 10741: .card-link:hover {
+ 10742    opacity: 0.1;
+ 10743  }
+ .....
+ 10937
+ 10938  /* line 15, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_button.scss */
+ 10939: .btn-orange:hover {
+ 10940    background-color: #cc822e;
+ 10941    color: white;
+ .....
+ 10955
+ 10956  /* line 31, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_button.scss */
+ 10957: .btn-sple-or:hover {
+ 10958    color: #f2d8ba;
+ 10959    padding-right: 10px;
+ .....
+ 10972
+ 10973  /* line 45, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_button.scss */
+ 10974: .btn-medium:hover {
+ 10975    opacity: 1;
+ 10976    text-decoration: none;
+ .....
+ 10991
+ 10992  /* line 61, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_button.scss */
+ 10993: .btn-new-session-form:hover {
+ 10994    opacity: 1;
+ 10995    background: #3ac162;
+ .....
+ 11239
+ 11240  /* line 103, /Users/mac/code/guillaumeaa/les-molosses/app/assets/stylesheets/components/_view_show.scss */
+ 11241: .avatar-show:hover {
+ 11242    border: solid 1px #ea9632;
+ 11243  }
+
+274 matches across 9 files
