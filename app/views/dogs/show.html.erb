@@ -1,5 +1,7 @@
+
 <% if current_user == @dog.user %>
     <%= render partial: 'dogs/showdogowner', locals: {dog: @dog }%>
 <% else %>
    <%= render partial: 'dogs/showdogvisitor', locals: {dog: @dog }%>
 <% end %>
+
