@@ -7,29 +7,24 @@
     </div>
 
     <div class="col-xs-12 col-sm-10 col-md-3">
-      <% if policy(@dog).update? %>
-        <div class="bouton-show">
-          <%= link_to 'MODIFIER', edit_dog_path(@dog), class: "btn-block" %>
-        </div>
-      <% end %>
-      <% if policy(@dog).destroy? %>
-        <div class="bouton-show">
-          <%= link_to 'SUPPRIMER', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-block" %>
-        </div>
-      <% end %>
-      <br>
-      <div class="bouton-show-orange">
-        <%= link_to 'RETOUR LISTE', index_search_path, class: "btn-block" %>
+
+      <div class="dropdown">
+          <a class="dropdown-toggle dropdow-show" data-toggle="dropdown" href="#"><i class="fas fa-cog"></i>
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdonw-menu-show">
+            <li>
+              <% if policy(@dog).update? %>
+              <div class="bouton-show"><%= link_to 'Modifier', edit_dog_path(@dog)%></div>
+              <% end %>
+            </li>
+            <li>
+             <% if policy(@dog).destroy? %>
+             <div class="bouton-show"><%= link_to 'Supprimer', @dog, method: :delete, data: { confirm: 'Are you sure?' }%></div>
+            <% end %>
+            </li>
+          </ul>
       </div>
-      <% if policy(@dog).destroy? %>
-        <div class="bouton-show">
-          <%= link_to 'SUPPRIMER', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-block" %>
-        </div>
-      <% end %>
-      <br>
-      <div class="bouton-show-orange">
-        <%= link_to 'RETOUR LISTE', index_search_path, class: "btn-block" %>
-      </div>
+
       <% if user_signed_in? %>
         <chat
           :get_url="<%= find_messages_index_path %>"
@@ -98,6 +93,10 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
-      </div>
+    </div>
+
+    <div class="bouton-show-orange">
+        <%= link_to 'RETOUR LISTE', index_search_path, class: "btn-block" %>
+    </div>
 
  </div>

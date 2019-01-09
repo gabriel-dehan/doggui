@@ -18,35 +18,19 @@
            </div>
         </div>
 
-
         <div class="col-xs-12 col-sm-4 col-md-6 card-show-image img-fluid"
-          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 400, crop: :fill%>');">
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, height: 400, width:750, crop: :fill%>');">
         </div>
 
       <div class="col-xs-12 col-sm-10 col-md-3">
-        <% if policy(@dog).update? %>
-          <div class="bouton-show">
-            <%= link_to 'MODIFIER', edit_dog_path(@dog), class: "btn-block" %>
-          </div>
-        <% end %>
-        <% if policy(@dog).destroy? %>
-          <div class="bouton-show">
-            <%= link_to 'SUPPRIMER', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-block" %>
-          </div>
-        <% end %>
-        <br>
-        <div class="bouton-show-orange">
-          <%= link_to 'RETOUR LISTE', index_search_path, class: "btn-block" %>
-        </div>
-        <% if policy(@dog).destroy? %>
-          <div class="bouton-show">
-            <%= link_to 'SUPPRIMER', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-block" %>
-          </div>
-        <% end %>
-        <br>
-        <div class="bouton-show-orange">
-          <%= link_to 'RETOUR LISTE', index_search_path, class: "btn-block" %>
-        </div>
+        <!-- <div class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fas fa-cog"></i>
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Signaler</a></li>
+          </ul>
+        </div> -->
+
         <% if user_signed_in? %>
           <chat
             :get_url="<%= find_messages_index_path %>"
