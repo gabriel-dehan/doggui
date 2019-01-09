@@ -14,6 +14,7 @@ class DogsController < ApplicationController
 
   def new
    @dog = Dog.new
+   @dog.images.build
    authorize @dog
   end
 
@@ -22,6 +23,7 @@ class DogsController < ApplicationController
     @dog.user = current_user
     authorize @dog
     if @dog.save
+      upload_images
       redirect_to dog_path(@dog)
     else
       render :new
@@ -30,6 +32,7 @@ class DogsController < ApplicationController
 
   def edit
     @dog = Dog.find(params[:id])
+    @dog.images.build if @dog.images.blank?
     authorize @dog
   end
 
@@ -37,6 +40,8 @@ class DogsController < ApplicationController
     @dog = Dog.find(params[:id])
     authorize @dog
     if @dog.update(dog_params)
+      delete_images
+      upload_images
       redirect_to dog_path(@dog)
     else
       render :edit
@@ -92,7 +97,44 @@ class DogsController < ApplicationController
 
 
   private
+
+  def upload_images
+    if params[:dog][:images].present?
+      params[:dog][:images].each do |image|
+        @dog.images.create(image: image)
+      end
+    end
+  end
+
+  def delete_images
+    @dog.images.each do |image|
+      image.destroy if params[image.id.to_s] == 'delete'
+    end
+  end
+
   def dog_params
-    params.require(:dog).permit(:picture, :address, :video, :nickname, :breed, :size, :hair, :color, :lof_number, :description, :birthday_date, :medical_analyse, :father_lof, :mother_lof, :price, :eye_color, :version, :weight, :prize)
+    params
+      .require(:dog)
+      .permit(
+        :picture,
+        :address,
+        :video,
+        :nickname,
+        :breed,
+        :size,
+        :hair,
+        :color,
+        :lof_number,
+        :description,
+        :birthday_date,
+        :medical_analyse,
+        :father_lof,
+        :mother_lof,
+        :price,
+        :eye_color,
+        :version,
+        :weight,
+        :prize
+      )
   end
 end
