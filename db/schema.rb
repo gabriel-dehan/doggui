@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_27_095956) do
+ActiveRecord::Schema.define(version: 2019_01_09_134058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,14 @@ ActiveRecord::Schema.define(version: 2018_12_27_095956) do
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
+  create_table "images", force: :cascade do |t|
+    t.string "image"
+    t.bigint "dog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dog_id"], name: "index_images_on_dog_id"
+  end
+
   create_table "likes", force: :cascade do |t|
     t.boolean "on"
     t.bigint "dog_id"
@@ -116,5 +124,6 @@ ActiveRecord::Schema.define(version: 2018_12_27_095956) do
   add_foreign_key "conversation_messages", "users"
   add_foreign_key "conversations", "dogs"
   add_foreign_key "dogs", "users"
+  add_foreign_key "images", "dogs"
   add_foreign_key "likes", "dogs"
 end
