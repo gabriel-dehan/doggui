@@ -1,5 +1,10 @@
 
-////// NEW-DOG + EDIT DOG //////
+.form-control-label {
+ color: grey;
+ text-transform: uppercase;
+ font-weight: normal;
+
+}
 
 
 .bloc-new-form {
@@ -12,7 +17,7 @@
 
 .d-flex {
   display: flex;
-  width: 460px;
+  width: 350px;
   justify-content: space-around;
 }
 
