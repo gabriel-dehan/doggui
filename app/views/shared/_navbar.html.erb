@@ -42,7 +42,6 @@
             <ul class="dropdown-menu">
               <li class="menu-edit-profile"><%= link_to 'Mon Profil', index_dogs_path   %></li>
               <li class="menu-edit-profile"><%= link_to 'Paramètres',edit_user_registration_path%></li>
-              <li class="menu-profil"><%= link_to 'Mes coups de coeur',profile_path%></li>
               <li role="separator" class="divider"></li>
               <li class="menu-logout"><%= link_to 'Logout',destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></li>
             </ul>
