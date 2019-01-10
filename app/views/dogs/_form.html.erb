@@ -1,63 +1,177 @@
+
 <%= simple_form_for (@dog), html: { multipart: true } do |f| %>
-    <%#= cl_image_tag @dog.picture, class: "edit-avatar" %>
-   <div class= "row">
-    <div class="col-sm-12"><%= f.input :picture, placeholder: 'Photo'%> </div>
-    <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
-    <div class="col-sm-12">
-      <%= f.input :images, as: :file, input_html: { multiple: true }, name: 'images[]' %>
-      <% @dog.images.each do |image| %>
-        <div class="multiple-images-form">
-          <%= label_tag 'Supprimer' %>
-          <%= check_box_tag image.id, 'delete' %>
-          <%= cl_image_tag(image.image, style: 'width: 150px') %>
-        </div>
-      <% end %>
+
+
+  <div class= "row">
+
+    <div class="hidden-xs col-sm-3">
+      <div class= "row">
+         <div class="col-sm-12">
+           <div class="illu-form-for-photo" style="background-image: url('<%= asset_path'chien.photo.jpg'%>');">
+              <h1> réussir une photo</h1>
+           </div>
+         </div>
+      </div>
     </div>
-    <div class="col-sm-12"><%= f.input :video, placeholder: 'lien Video' %></div>
-  </div>
-    <br>
 
-  <div class="row">
-     <div class="col-sm-5"> <%= f.input :nickname %></div>
-     <div class="col-sm-5"> <%= f.input :birthday_date %> </div>
- </div>
+   <div class="col-xs-12 col-sm-8">
+     <div class= "row">
+       <div class= "bloc-new-form ">
+          <div class="col-sm-12"><%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale'%> </div>
+          <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
+          <div class="col-sm-12">
+            <%= f.input :images, as: :file, input_html: { multiple: true }, name: 'images[]', label:'Photo supplémentaire' %>
+            <% @dog.images.each do |image| %>
+              <div class="multiple-images-form">
+                <%= label_tag 'Supprimer' %>
+                <%= check_box_tag image.id, 'delete' %>
+                <%= cl_image_tag(image.image, style: 'width: 150px') %>
+              </div>
+             <% end %>
+          </div>
+       <div class= "row">
+          <div class="col-xs-12 col-sm-10"> <%= f.input :video, placeholder: 'lien Video' %></div>
+       </div>
+      </div>
+     </div>
 
-   <div class="row">
-     <div class="col-sm-4"> <%= f.input :breed %></div>
-     <div class="col-sm-4"> <%= f.input :version %></div>
-     <div class="col-sm-4"><%= f.input :size %></div>
+    </div>
+
   </div>
 
   <div class= "row">
 
-    <div class="col-sm-4"> <%= f.input :hair %></div>
-    <div class="col-sm-4"> <%= f.input :color %></div>
-     <div class="col-sm-4"> <%= f.input :eye_color %></div>
+    <div class="hidden-xs col-sm-3">
+      <div class= "row">
+         <div class="col-sm-12">
+           <div class="illu-form-for-caracteristique" style="background-image: url('<%= asset_path'chien.description.jpg'%>');">
+              <h1> ses atouts</h1>
+           </div>
+         </div>
+      </div>
+    </div>
+   <div class="col-xs-12 col-sm-8">
+     <div class= "row">
+        <div class= "bloc-new-form ">
 
-  </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-5"> <%= f.input :nickname, label:"Prénom de l'annimal" %></div>
+            <div class="col-xs-12 col-sm-5"><%= f.input :lof_number, label:"Son numéro LOF" %></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-2">  <%= f.input :birthday_date, label:"Date de naissance" %> </div>
+          </div>
 
-  <div class= "row">
-     <div class="col-sm-4"><%= f.input :lof_number %></div>
-     <div class="col-sm-4"><%= f.input :father_lof %></div>
-     <div class="col-sm-4"><%= f.input :mother_lof %></div>
-  </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-5"> <%= f.input :breed, label: "Pédigrée" %></div>
+            <div class="col-xs-12 col-sm-5"> <%= f.input :version %></div>
+          </div>
 
-   <div class="row">
-     <div class="col-sm-6"><%= f.input :medical_analyse %></div>
-     <div class="col-sm-6"><%= f.input :prize, label: "Won prize" %></div>
-   </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-5"> <%= f.input :hair, label:"Forme du poil" %></div>
+            <div class="col-xs-12 col-sm-5"><%= f.input :weight, label:"Poids" %></div>
+          </div>
 
-  <div class="row">
-    <div class="col-sm-12"> <%= f.input :address %> </div>
-  </div>
+          <div class= "row">
+            <div class="col-xs-12 col-sm-5"><%= f.input :color, label:"Robe" %></div>
+            <div class="col-xs-12 col-sm-5"> <%= f.input :eye_color, label:"Couleur des yeux" %></div>
+          </div>
 
-  <div class="row">
-  <div class="col-sm-12"><%= f.input :description, label: " Description" %></div>
-  </div>
+        </div>
+      </div>
+     </div>
 
-  <div class="row">
-    <div class="col-sm-6"> <%= f.input :price %></div>
-  </div>
-  <div class="col-sm-6"> <%= f.submit class: "btn-form-new btn btn-warning " %></div>
-  <% end %>
-</div>
+    <div class= "row">
+
+        <div class="hidden-xs col-sm-3">
+          <div class= "row">
+            <div class="col-sm-12">
+              <div class="illu-form-for-caracteristique" style="background-image: url('<%= asset_path'chien.mesure.jpg'%>');">
+              <h1> Quelques détails</h1>
+           </div>
+         </div>
+          </div>
+        </div>
+       <div class="col-xs-12 col-sm-8">
+         <div class= "row">
+            <div class= "bloc-new-form ">
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-5"> <%= f.input :nickname, label:"Prénom de l'annimal" %></div>
+              <div class="col-xs-12 col-sm-5"><%= f.input :lof_number, label:"Son numéro LOF" %></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-2">  <%= f.input :birthday_date, label:"Date de naissance" %> </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-5"> <%= f.input :breed, label: "Pédigrée" %></div>
+                <div class="col-xs-12 col-sm-5"> <%= f.input :version %></div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-5"> <%= f.input :hair, label:"Forme du poil" %></div>
+                <div class="col-xs-12 col-sm-5"><%= f.input :weight, label:"Poids" %></div>
+              </div>
+
+              <div class= "row">
+                <div class="col-xs-12 col-sm-5"><%= f.input :color, label:"Robe" %></div>
+                <div class="col-xs-12 col-sm-5"> <%= f.input :eye_color, label:"Couleur des yeux" %></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class= "row">
+
+        <div class="hidden-xs col-sm-3">
+          <div class= "row">
+            <div class="col-sm-12">
+              <div class="illu-form-for-description" style="background-image: url('<%= asset_path'chien.veto.jpg'%>');">
+              <h1> Quelques détails</h1>
+           </div>
+         </div>
+          </div>
+        </div>
+       <div class="col-xs-12 col-sm-8">
+         <div class= "row">
+            <div class= "bloc-new-form ">
+
+               <div class="row">
+                <div class="col-xs-12 col-sm-5"><%= f.input :medical_analyse, label:"Analyse(s) médicale réalisée(s)" %></div>
+                <div class="col-xs-12 col-sm-5"><%= f.input :prize, label: "Won prize", label:"Prix beauté reçu" %></div>
+              </div>
+
+              <div class="row">
+                 <div class="col-xs-12 col-sm-10"> <%= f.input :address, label:"Adresse de sa niche" %> </div>
+              </div>
+
+              <div class="row">
+               <div class="col-xs-12 col-sm-10"><%= f.input :description, label: " Description" %></div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-3"> <%= f.input :price, label:"Rétribution" %></div>
+              </div>
+            </div>
+              <div class="col-sm-6"> <%= f.submit class: "btn btn-warning "%></div>
+          </div>
+        </div>
+      </div>
+
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
