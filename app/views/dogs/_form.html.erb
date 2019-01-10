@@ -7,28 +7,32 @@
     <div class="hidden-xs col-sm-3">
       <div class= "row">
          <div class="col-sm-12">
-           <div class="illu-form-for-photo" style="background-image: url('<%= asset_path'chien.photo.jpg'%>');">
+           <div class="illu-form-for-caracteristique" style="background-image: url('<%= asset_path'chien.photo.jpg'%>');">
               <h1> réussir une photo</h1>
            </div>
          </div>
       </div>
     </div>
 
-   <div class="col-xs-12 col-sm-8">
+   <div class="col-xs-12 col-sm-6">
      <div class= "row">
        <div class= "bloc-new-form ">
-          <div class="col-sm-12"><%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale'%> </div>
-          <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
-          <div class="col-sm-12">
-            <%= f.input :images, as: :file, input_html: { multiple: true }, name: 'images[]', label:'Photo supplémentaire' %>
-            <% @dog.images.each do |image| %>
-              <div class="multiple-images-form">
-                <%= label_tag 'Supprimer' %>
-                <%= check_box_tag image.id, 'delete' %>
-                <%= cl_image_tag(image.image, style: 'width: 150px') %>
-              </div>
-             <% end %>
+
+          <div class= "row">
+            <div class="col-sm-12"><%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale'%> </div>
+            <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
+            <div class="col-sm-12">
+              <%= f.input :images, as: :file, input_html: { multiple: true }, name: 'images[]', label:'Photo supplémentaire' %>
+              <% @dog.images.each do |image| %>
+                <div class="multiple-images-form">
+                  <%= label_tag 'Supprimer' %>
+                  <%= check_box_tag image.id, 'delete' %>
+                  <%= cl_image_tag(image.image, style: 'width: 150px') %>
+                </div>
+               <% end %>
+            </div>
           </div>
+
        <div class= "row">
           <div class="col-xs-12 col-sm-10"> <%= f.input :video, placeholder: 'lien Video' %></div>
        </div>
@@ -50,16 +54,16 @@
          </div>
       </div>
     </div>
-   <div class="col-xs-12 col-sm-8">
+   <div class="col-xs-12 col-sm-6">
      <div class= "row">
-        <div class= "bloc-new-form ">
+        <div class= "bloc-new-form">
 
           <div class="row">
             <div class="col-xs-12 col-sm-5"> <%= f.input :nickname, label:"Prénom de l'annimal" %></div>
             <div class="col-xs-12 col-sm-5"><%= f.input :lof_number, label:"Son numéro LOF" %></div>
           </div>
           <div class="row">
-            <div class="col-xs-12 col-sm-2">  <%= f.input :birthday_date, label:"Date de naissance" %> </div>
+            <div class="col-xs-12 col-sm-2">  <%= f.input :birthday_date, label:"Date de naissance", style:"inline-block" %> </div>
           </div>
 
           <div class="row">
@@ -80,6 +84,7 @@
         </div>
       </div>
      </div>
+    </div>
 
     <div class= "row">
 
@@ -87,12 +92,12 @@
           <div class= "row">
             <div class="col-sm-12">
               <div class="illu-form-for-caracteristique" style="background-image: url('<%= asset_path'chien.mesure.jpg'%>');">
-              <h1> Quelques détails</h1>
+              <h1> Quelques</h1>
            </div>
          </div>
           </div>
         </div>
-       <div class="col-xs-12 col-sm-8">
+       <div class="col-xs-12 col-sm-6">
          <div class= "row">
             <div class= "bloc-new-form ">
 
@@ -101,7 +106,7 @@
               <div class="col-xs-12 col-sm-5"><%= f.input :lof_number, label:"Son numéro LOF" %></div>
               </div>
               <div class="row">
-                <div class="col-xs-12 col-sm-2">  <%= f.input :birthday_date, label:"Date de naissance" %> </div>
+                <div class="col-xs-12 col-sm-5">  <%= f.input :birthday_date, label:"Date de naissance" %> </div>
               </div>
 
               <div class="row">
@@ -129,13 +134,13 @@
         <div class="hidden-xs col-sm-3">
           <div class= "row">
             <div class="col-sm-12">
-              <div class="illu-form-for-description" style="background-image: url('<%= asset_path'chien.veto.jpg'%>');">
-              <h1> Quelques détails</h1>
+              <div class="illu-form-for-caracteristique" style="background-image: url('<%= asset_path'chien.veto.jpg'%>');">
+              <h1> détails</h1>
            </div>
          </div>
           </div>
         </div>
-       <div class="col-xs-12 col-sm-8">
+       <div class="col-xs-12 col-sm-6">
          <div class= "row">
             <div class= "bloc-new-form ">
 
