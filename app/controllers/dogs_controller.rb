@@ -1,10 +1,7 @@
 class DogsController < ApplicationController
  skip_before_action :authenticate_user!, only: [:index, :show, :index2]
   def index
-  # @dogs = Dog.order(:nickname).page params[:page]
-   @dogs = policy_scope(Dog).includes(:user).page params[:page]
-
-  # @records = policy_scope(Record).paginate(params[:page])
+   @dogs = policy_scope(Dog).includes(:user).order("Random()").limit(6)
   end
 
   def show
