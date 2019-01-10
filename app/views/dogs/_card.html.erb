@@ -17,7 +17,9 @@
             <div class="card-like">
               <%= icon('fas', 'heart', class: 'fa-2x') %>
               <span>
-                <%= dog.get_upvotes.size %>
+                <% if dog.get_upvotes.size > 0 %>
+                  <%= dog.get_upvotes.size %>
+                <% end %>
               </span>
             </div>
           <% end %>
@@ -25,7 +27,9 @@
           <div class="card-like">
             <%= icon('fas', 'heart', class: 'fa-2x') %>
             <span>
-              <%= dog.get_upvotes.size %>
+              <% if dog.get_upvotes.size > 0 %>
+                <%= dog.get_upvotes.size %>
+              <% end %>
             </span>
           </div>
         <% end %>
