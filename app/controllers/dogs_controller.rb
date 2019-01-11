@@ -19,8 +19,8 @@ class DogsController < ApplicationController
     @dog = Dog.new(dog_params)
     @dog.user = current_user
     authorize @dog
+    upload_images
     if @dog.save
-      upload_images
       redirect_to dog_path(@dog)
     else
       render :new
@@ -36,11 +36,12 @@ class DogsController < ApplicationController
   def update
     @dog = Dog.find(params[:id])
     authorize @dog
+    delete_images
+    upload_images
     if @dog.update(dog_params)
-      delete_images
-      upload_images
       redirect_to dog_path(@dog)
     else
+      byebug
       render :edit
     end
   end
@@ -98,7 +99,7 @@ class DogsController < ApplicationController
   def upload_images
     if params[:dog][:images].present?
       params[:dog][:images].each do |image|
-        @dog.images.create(image: image)
+        @dog.images.build(image: image)
       end
     end
   end

@@ -20,7 +20,7 @@
           <div class="col-sm-12"><%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale'%> </div>
           <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
           <div class="col-sm-12">
-            <%= f.input :images, as: :file, input_html: { multiple: true }, name: 'images[]', label:'Photo supplémentaire' %>
+            <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3' }, name: 'images[]', label:'Photo supplémentaire' %>
             <% @dog.images.each do |image| %>
               <div class="multiple-images-form">
                 <%= label_tag 'Supprimer' %>
@@ -163,15 +163,3 @@
 
 
 <% end %>
-
-
-
-
-
-
-
-
-
-
-
-
