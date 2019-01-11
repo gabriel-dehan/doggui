@@ -5,9 +5,9 @@
       <div class="card-show-user col-xs-12 col-sm-3 col-md-3">
           <div class="info-user">
             <% if @user.avatar_url %>
-            <%= cl_image_tag @user.avatar_url, class: "grid-user-avatar" %>
+            <%= cl_image_tag @user.avatar_url, class: "avatar-show" %>
             <% else %>
-            <%= image_tag "avatar.png", alt:"logo", class:"grid-user-avatar"%>
+            <%= image_tag "avatar.png", alt:"logo", class:"avatar-show"%>
             <% end %>
              <div class="show-titre"><%= @user.first_name %> <%= @user.last_name %> </div> (<%= @user.email %> 📲)
           </div>
