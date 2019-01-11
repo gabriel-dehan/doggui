@@ -1,11 +1,23 @@
 class Dog < ApplicationRecord
 
   belongs_to :user
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :conversations, dependent: :destroy
   has_many :images, dependent: :destroy
   validates_length_of :images, maximum: 4
   accepts_nested_attributes_for :images, allow_destroy: true
+
+  validates :picture,
+            :nickname,
+            :breed,
+            :version,
+            :lof_number,
+            :birthday_date,
+            :color,
+            :price,
+            :address,
+            :eye_color,
+            :description, presence: true
 
   acts_as_votable
 
