@@ -4,6 +4,7 @@ class Dog < ApplicationRecord
   has_many :likes
   has_many :conversations, dependent: :destroy
   has_many :images, dependent: :destroy
+  validates_length_of :images, maximum: 4
   accepts_nested_attributes_for :images, allow_destroy: true
 
   acts_as_votable

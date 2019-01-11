@@ -8,3 +8,9 @@ $(document).on 'turbolinks:load', ->
     else
       $(response.currentTarget).find('span').html('')
     response.currentTarget.href = response.detail[0].url
+
+  $(".multiple-file-limit-3").change ->
+    if this.files.length > 4
+      alert('Vous ne pouvez pas ajouter plus de 4 photos')
+      this.value = null
+      return false
