@@ -1,9 +1,10 @@
 /* Main navbar */
 .navbar {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background-color: #F2F2F2;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   border-top: 1px solid white;
+  margin-bottom: 0px;
+  background-color: white !important;
 }
 
 /* Logo */
@@ -26,15 +27,17 @@
 
 
 .link-to-nav {
-  color: #918c8c !important;
+  color: grey !important;
+  font-weight: 90 !important;
   font-size: 15px;
   text-transform: uppercase;
   margin-right: 15px;
-  background-color: #F2F2F2 !important;
+  background-color: transparent !important;
+  margin-top: 7px;
 }
 
 .link-to-nav:hover {
-  color: #423e3e;
+  color: #423e3e !important;
   text-decoration: none;
 }
 
