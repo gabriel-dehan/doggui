@@ -41,7 +41,7 @@ class DogsController < ApplicationController
     if @dog.update(dog_params)
       redirect_to dog_path(@dog)
     else
-      byebug
+      @dog.images.reload
       render :edit
     end
   end
