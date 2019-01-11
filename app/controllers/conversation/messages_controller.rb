@@ -72,11 +72,13 @@ class Conversation::MessagesController < ApplicationController
   private
 
   def broadcast_conversation
+    hash_message = @message.attributes
+    hash_message[:date_of_creation] = @message.created_at.strftime('%d/%m/%y %Hh%M')
     ConversationChannel.broadcast_to(
       @conversation,
       {
         conversation: @conversation.id,
-        message: @message,
+        message: hash_message,
         user_id: current_user.id
       })
   end
