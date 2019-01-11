@@ -7,8 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom : 10px;
-  margin-top : 10px;
+  margin-bottom : 3px;
   opacity: 0.95;
   //rajouter un lineargraduent?
 }
@@ -41,9 +40,10 @@
 
 
 .banner-numbers-titre {
- margin-bottom: -5px;
+ margin-top: 10px;
  text-transform: uppercase;
- font-size: 25px;
+ padding-bottom: 10px;
+ font-size: 18px;
  text-align: center;
 }
 
@@ -56,7 +56,7 @@
 
 .banner-number {
   margin-bottom: 10px;
-  background-color: #EFAC53;
+  background-color: orange;
   text-align: center;
 }
 
@@ -74,8 +74,8 @@
 }
 
 .container-titre {
- text-transform: capitalize;
- font-size: 25px;
+ text-transform: uppercase;
+ font-size: 20px;
 }
 
 .card-explication {
