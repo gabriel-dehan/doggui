@@ -4,15 +4,13 @@
 .banner2 {
   color: white;
   text-align: center;
-  height: 20%;
+  height: 15%;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius : 5px;
   margin-bottom : 10px;
-  margin-top : 10px;
   opacity: 0.70;
 }
 

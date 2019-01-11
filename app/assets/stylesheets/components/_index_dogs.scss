@@ -1,5 +1,7 @@
 .rubrique-profile {
- color: grey;
+ color: orange;
+ font-size: 20px;
+ font-weight: 150;
  text-decoration: none !important;
  text-transform: none !important;
 }
@@ -7,6 +9,6 @@
 .rubrique-profile:hover {
  text-decoration: none !important;
  text-transform: none !important;
- background-color: white;
- color: black;
+ background-color: transparent;
+ color: #ea9632;
 }
