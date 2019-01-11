@@ -1,5 +1,6 @@
 
 Rails.application.routes.draw do
+  devise_for :admins
   mount ActionCable.server => '/cable'
 
   get 'contact_form/new'
