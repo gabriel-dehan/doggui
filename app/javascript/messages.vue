@@ -5,6 +5,9 @@
         <div class="messages" v-for='message in messages'>
           <div :class="{ isSender: message.is_current_user }" class='message'>
             {{ message.content }}
+            <div class="message-time">
+              Le {{ message.date_of_creation }}
+            </div>
           </div>
         </div>
         <textarea class='form-control' v-model='content' placeholder='Votre message ici'></textarea>
@@ -97,6 +100,11 @@ p {
   margin: 2px;
   width: 90%;
   float: right;
+}
+.message-time {
+  font-size: 9px;
+  display: flex;
+  justify-content: flex-end;
 }
 .isSender {
   background-color: #f9e8c5;
