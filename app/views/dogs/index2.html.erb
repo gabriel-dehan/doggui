@@ -1,4 +1,5 @@
 <div class="banner2" style="background-image: url('<%= asset_path'Chien.landing.jpg'%>');">
+
   <div class="banner-content">
     <h1> Trouver son molosse </h1>
     <div class="search-index2">
@@ -13,25 +14,32 @@
           <% end %>
     </div>
   </div>
+
 </div>
 
-<div class="container">
+<div class="container container-flex">
+
+    <div class="container-card">
+      <% @dogs.includes(:user).each do |dog| %>
+        <div class="col-xs-12 col-sm-5 col-md-5">
+          <%= render partial: 'dogs/card', locals: { dog: dog } %>
+         </div>
+        <% end %>
+    </div>
+
+    <div class="map-container">
+        <div
+          id="map"
+          style="
+          width: 100%;
+          height: 100%;
+          "
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+       </div>
+    </div>
+
+</div>
 
 
-  <div class="container-card row">
-    <% @dogs.includes(:user).each do |dog| %>
-      <%= render partial: 'dogs/card', locals: { dog: dog } %>
-    <% end %>
-  </div>
-        <div class="map-container"
-        id="map"
-        style="
-        width: 100%;
-        height: 600px;
-        "
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-     </div>
-  </div>
   <div> <%= paginate @dogs %></div>

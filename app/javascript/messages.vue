@@ -88,6 +88,7 @@ p {
   font-size: 2em;
   text-align: center;
 }
+
 .chat-message-form {
   width: 100% !important;
   margin-left: 0px;
