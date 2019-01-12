@@ -12,6 +12,7 @@
   //rajouter un lineargraduent?
 }
 
+
 .banner h1 {
   margin-top: 130px; //faire descendre le titre//
   margin-bottom: 100px;
@@ -26,6 +27,31 @@
   color: rgb(255, 255, 255);
   opacity: 0.6;
   margin-bottom: 30px;
+}
+
+.bouton-index {
+  background-color: orange;
+  font-size: 23px;
+  padding: 15px;
+  color: white;
+  border-radius: 2px;
+}
+
+.bouton-index:hover {
+  background-color: #ec9c32;
+  color: white;
+  font-size: 23px;
+  text-transform: none !important;
+}
+
+.form-search {
+ border-radius: 2px;
+ font-size: 15px;
+ width: 160% !important;
+ height: 63px;
+ margin : 0 !important;
+ padding: 0 !important;
+
 }
 
 .banner-numbers {

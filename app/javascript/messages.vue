@@ -89,7 +89,6 @@ p {
   text-align: center;
 }
 .form-control {
-  width: 100% !important;
   margin-left: 0px;
 }
 

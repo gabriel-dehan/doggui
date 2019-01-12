@@ -1,30 +1,39 @@
 <div class="banner" style="background-image: url('<%= asset_path'Chien.landing.jpg', height: 200, width: 300%>');">
-    <div class="banner-content">
-      <%= action_cable_meta_tag %>
-      <h2>L'AMOUR AVEC UN GRAND OUAF</h2>
-
-      <%= link_to "INSCRIRE SON MOLOSSE", new_dog_path, class: "big-button btn btn-reverse"%>
-      <div class="search-index2">
-      <div class= "search-bar">
-      <%= form_tag index_search_path, method: :get do %>
-      <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Chercher un chien par son pédigrée !" %>
-       </div>
-          <button class="btn-search-index2"> </button>
-         <% end %>
-      </div>
-    </div>
+  <div class="row">
+  <div class= "col-xs-12 col-sm-12 col-md-12">
+    <div class="Banner-titre">  L'AMOUR AVEC UN GRAND OUAF </div>
   </div>
+</div>
+</div>
+
+<div class="row">
+
+ <div class="col-xs-12 col-md-6 ">
+  <%= link_to "INSCRIRE SON TOUTOU", new_dog_path, class: "bouton-index pull-right"%>
+</div>
+
+<div class="col-xs-12 col-md-6">
+  <div class= "search-index pull-left">
+  <%= form_tag index_search_path, method: :get do %>
+  <%= text_field_tag :query,
+      params[:query],
+      class: "form-control form-search",
+      placeholder: "Chercher un chien par son pédigrée !" %>
+   </div>
+      <button class="btn"> </button>
+     <% end %>
+  </div>
+
+</div>
 
 <div class="container">
 
-  <div class="row">
-
-     <% @dogs.each do |dog| %>
-        <%= render partial: 'dogs/card', locals: { dog: dog } %>
-      <% end %>
+    <div class="row">
+      <% @dogs.includes(:user).each do |dog| %>
+        <div class="col-xs-12 col-sm-3 col-md-4">
+          <%= render partial: 'dogs/card', locals: { dog: dog } %>
+         </div>
+        <% end %>
     </div>
   </div>
 

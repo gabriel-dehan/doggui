@@ -24,10 +24,6 @@
   text-align: center;
 }
 
-#query {
-  margin-left: 49px;
-  width: 463px;
-}
 
 
 .btn-search-index2{
@@ -42,19 +38,25 @@ background-repeat: no-repeat;
 
 // contenu :
 
-.index2 {
+.container-flex {
   display: flex;
 }
 
 .container-card {
-min-width: 125vh;
+  flex: auto;
 }
 
 .map-container {
-  margin-top: 19px;
-  height: 70vh;
-  flex: 0 0 350px;
+  margin-top: 15px;
+  flex: 0 0 30%;
+  height: 80vh;
   position: sticky !important;
   top: 0 !important;
-  margin-left: 20px;
 }
+
+
+
+
+
+
+
