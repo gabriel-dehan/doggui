@@ -7,7 +7,7 @@
     <div class="hidden-xs col-sm-3">
       <div class= "row">
          <div class="col-sm-12">
-           <div class="illu-form-for-caracteristique" style="background-image: url('<%= asset_path'chien.photo.jpg'%>');">
+           <div class="bloc-new-form illu-form-for-picture" style="background-image: url('<%= asset_path'chien.photo.jpg'%>');">
               <h1> réussir une photo</h1>
            </div>
          </div>
@@ -32,7 +32,7 @@
           </div>
 
        <div class= "row">
-          <div class="col-xs-12 col-sm-10"> <%= f.input :video, placeholder: 'Lien video', label: false %></div>
+          <div class="col-xs-12 col-sm-12"> <%= f.input :video, placeholder: 'Lien video', label: false %></div>
        </div>
       </div>
      </div>
@@ -46,7 +46,7 @@
         <div class="hidden-xs col-sm-3">
           <div class= "row">
             <div class="col-sm-12">
-              <div class="illu-form-for-caracteristique" style="background-image: url('<%= asset_path'chien.mesure.jpg'%>');">
+              <div class="bloc-new-form illu-form-for-detail" style="background-image: url('<%= asset_path'chien.mesure.jpg'%>');">
               <h1> Quelques</h1>
            </div>
          </div>
@@ -57,26 +57,26 @@
             <div class= "bloc-new-form">
 
               <div class="row">
-                <div class="col-xs-12 col-sm-5"> <%= f.input :nickname, label:"Prénom de l'annimal" %></div>
-              <div class="col-xs-12 col-sm-5"><%= f.input :lof_number, label:"Son numéro LOF" %></div>
+                <div class="col-xs-12 col-sm-6"> <%= f.input :nickname, label:"Prénom de l'annimal" %></div>
+              <div class="col-xs-12 col-sm-6"><%= f.input :lof_number, label:"Son numéro LOF" %></div>
               </div>
               <div class="row">
-                <div class="col-xs-12 col-sm-5">  <%= f.input :birthday_date, label:"Date de naissance" %> </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12 col-sm-5"> <%= f.input :breed, label: "Pédigrée" %></div>
-                <div class="col-xs-12 col-sm-5"> <%= f.input :version %></div>
+                <div class="col-xs-12 col-sm-6">  <%= f.input :birthday_date, label:"Date de naissance" %> </div>
               </div>
 
               <div class="row">
-                <div class="col-xs-12 col-sm-5"> <%= f.input :hair, label:"Type du poil" %></div>
-                <div class="col-xs-12 col-sm-5"><%= f.input :weight, label:"Poids" %></div>
+                <div class="col-xs-12 col-sm-6"> <%= f.input :breed, label: "Pédigrée" %></div>
+                <div class="col-xs-12 col-sm-6"> <%= f.input :version %></div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-6"> <%= f.input :hair, label:"Type du poil" %></div>
+                <div class="col-xs-12 col-sm-6"><%= f.input :weight, label:"Poids" %></div>
               </div>
 
               <div class= "row">
-                <div class="col-xs-12 col-sm-5"><%= f.input :color, label:"Robe" %></div>
-                <div class="col-xs-12 col-sm-5"> <%= f.input :eye_color, label:"Couleur des yeux" %></div>
+                <div class="col-xs-12 col-sm-6"><%= f.input :color, label:"Robe" %></div>
+                <div class="col-xs-12 col-sm-6"> <%= f.input :eye_color, label:"Couleur des yeux" %></div>
               </div>
 
             </div>
@@ -89,7 +89,7 @@
         <div class="hidden-xs col-sm-3">
           <div class= "row">
             <div class="col-sm-12">
-              <div class="illu-form-for-caracteristique" style="background-image: url('<%= asset_path'chien.veto.jpg'%>');">
+              <div class="bloc-new-form illu-form-for-description" style="background-image: url('<%= asset_path'chien.veto.jpg'%>');">
               <h1> détails</h1>
            </div>
          </div>
@@ -100,15 +100,15 @@
             <div class= "bloc-new-form ">
 
               <div class="row">
-               <div class="col-xs-12 col-sm-10"><%= f.input :description, placeholder: 'Analyses médicales réalisées, prix beauté reçu ...', label: " Description", :input_html => {:rows => 10}%></div>
+               <div class="col-xs-12 col-sm-12"><%= f.input :description, placeholder: 'Analyses médicales réalisées, prix beauté reçu ...', label: " Description", :input_html => {:rows => 10}%></div>
               </div>
 
               <div class="row">
-                 <div class="col-xs-12 col-sm-10"> <%= f.input :address, label:"Adresse de sa niche" %> </div>
+                 <div class="col-xs-12 col-sm-12"> <%= f.input :address, label:"Adresse de sa niche" %> </div>
               </div>
 
               <div class="row">
-                <div class="col-sm-4"> <%= f.input :price, label:"Rétribution" %></div>
+                <div class="col-sm-6"> <%= f.input :price, label:"Rétribution" %></div>
                 <div class="col-sm-4"> <%= f.submit class: "btn btn-warning "%></div>
               </div>
             </div>
