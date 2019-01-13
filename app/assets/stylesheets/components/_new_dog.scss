@@ -8,8 +8,7 @@
 
 .bloc-new-form {
   border-radius: 5px;
-  margin-bottom: 5px;
-  padding: 15px;
+  margin-bottom: 10px;
   box-shadow: 0 1px 5px 0 #F2F2F2;
 }
 
@@ -22,11 +21,23 @@
 
 
 .form-control:focus {
-  border-color: 2px #ea9632;
+  border-color: 2px orange;
   text-align: left;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px rgba(255, 0, 0, 0.6);
+  box-shadow: inset 0 1px 1px orange, 0 0 2px orange;
 }
 
 
+.illu-form-for-picture {
+  height: 220px;
 
+}
+
+
+.illu-form-for-detail {
+  height: 390px;
+}
+
+.illu-form-for-description {
+  height: 420px;
+}
 

@@ -1,27 +1,30 @@
 <div class="banner" style="background-image: url('<%= asset_path'Chien.landing.jpg', height: 200, width: 300%>');">
   <div class="row">
+
   <div class= "col-xs-12 col-sm-12 col-md-12">
-    <div class="Banner-titre">  L'AMOUR AVEC UN GRAND OUAF </div>
+    <div class="index-titre">L'AMOUR AVEC UN GRAND OUAF </div>
   </div>
-</div>
-</div>
+  </div>
 
-<div class="row">
+  <div class="row row-index">
 
- <div class="col-xs-12 col-md-6 ">
-  <%= link_to "INSCRIRE SON TOUTOU", new_dog_path, class: "bouton-index pull-right"%>
-</div>
+    <div class="col-xs-12 col-md-6 call-to-action">
+      <%= link_to "INSCRIRE SON ETALON", new_dog_path, class: "bouton-index pull-right"%>
+    </div>
 
-<div class="col-xs-12 col-md-6">
-  <div class= "search-index pull-left">
-  <%= form_tag index_search_path, method: :get do %>
-  <%= text_field_tag :query,
-      params[:query],
-      class: "form-control form-search",
-      placeholder: "Chercher un chien par son pédigrée !" %>
-   </div>
-      <button class="btn"> </button>
-     <% end %>
+    <div class="col-xs-12 col-md-5 call-to-action-2">
+      <div class= "search-index pull-left">
+      <%= form_tag index_search_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control form-search",
+          placeholder: "Etalons déjà inscrit ... ex: labrador" %>
+       </div>
+     </div>
+     <div class="col-xs-12 col-md-1">
+         <button class="bouton-search pull-left">Rechercher </button>
+         <% end %>
+    </div>
   </div>
 
 </div>
@@ -129,11 +132,12 @@
 
  </div>
 
-      <div class="container-titre">
+<div class="wrapper-orange-clair">
+      <div class="container-titre-mois">
          Le mini doggui du mois
       </div>
 
      <div class="" style="background-image: url('<%= asset_path'chien.chiot.jpg'%>'); width: 750px; height: 450px; margin: auto; margin-top:10px">
     </div>
-   </div>
 </div>
+
