@@ -17,11 +17,11 @@
 
 </div>
 
-<div class="container container-flex">
+<div class="container-flex">
 
     <div class="container-card">
       <% @dogs.includes(:user).each do |dog| %>
-        <div class="col-xs-12 col-sm-5 col-md-5">
+        <div class="col-xs-12 col-sm-4 col-md-4">
           <%= render partial: 'dogs/card', locals: { dog: dog } %>
          </div>
         <% end %>
