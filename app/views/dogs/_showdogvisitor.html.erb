@@ -1,6 +1,6 @@
 <div class="banner2" style="background-image: url('<%= asset_path'Chien.landing.jpg'%>');">
   <div class="banner-content">
-    <h1>  <%=@dog.nickname%> le <%=@dog.breed%>(<%= @dog.age%>)   </h1>
+    <h1>  <%=@dog.nickname%> le <%=@dog.breed%></h1>
   </div>
 </div>
 
@@ -11,8 +11,8 @@
 
     <div class="row">
 
-      <div class="col-xs-12 col-sm-4 col-md-3 show-card-picture"
-              style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dog.picture, width:300, heigh:250, crop: :fill%>');">
+      <div class="col-xs-12 col-sm-4 col-md-3 show-card-picture">
+            <%= cl_image_tag @dog.picture, class: "image-show-profil" %>
       </div>
 
       <div class="hidden-xs col-sm-4 col-md-3 show-card-picture">
@@ -53,6 +53,7 @@
             <%= image_tag "avatar.png", alt:"logo", class:"avatar-show"%>
             <% end %>
              <div class="show-titre"><%= @dog.user.first_name %> <%= @dog.user.last_name %> </div>
+             Inscrit depuis : <%= @dog.user.created_at%>
       </div>
 
           <% if user_signed_in? %>
@@ -76,14 +77,33 @@
        <div class="col-xs-12 col-sm-8">
 
         <div class="row">
-           <div class="col-xs-6 col-sm-4 carte-caracteristique"><%= @dog.version %> version</div>
-           <div class="col-xs-6 col-sm-4 carte-caracteristique"><%= @dog.color %> COULEUR DE LA ROBE</div>
-           <div class="col-xs-6 col-sm-4  carte-caracteristique"><%= @dog.hair %> TYPE DE POIL</div>
+           <div class="col-xs-6 col-sm-3 carte-caracteristique">
+              <div class="carte-caracteristique-texte"><%= @dog.version%></div>
+              <div class="carte-caracteristique-texte-2">version</div>
+           </div>
+           <div class="col-xs-6 col-sm-3 carte-caracteristique">
+               <div class="carte-caracteristique-texte"><%= @dog.color%></div>
+              <div class="carte-caracteristique-texte-2">Couleur de la robe</div>
+           </div>
+           <div class="col-xs-6 col-sm-3 carte-caracteristique">
+               <div class="carte-caracteristique-texte"><%= @dog.hair%></div>
+              <div class="carte-caracteristique-texte-2">Type de poil</div>
+           </div>
        </div>
-         <div class="row">
-            <div class="col-xs-6 col-sm-4 carte-caracteristique">N°LOF> <%= @dog.lof_number%> </div>
-            <div class="col-xs-6 col-sm-4 carte-caracteristique"><%= @dog.birthday_date %> DATE DE NAISSANCE </div>
-            <div class="col-xs-6 col-sm-4 carte-caracteristique"><%= @dog.eye_color %>COULEUR DES YEUX </div>
+
+       <div class="row">
+           <div class="col-xs-6 col-sm-3 carte-caracteristique">
+               <div class="carte-caracteristique-texte"><%= @dog.lof_number%></div>
+              <div class="carte-caracteristique-texte-2">N° de LOF</div>
+           </div>
+           <div class="col-xs-6 col-sm-3 carte-caracteristique">
+               <div class="carte-caracteristique-texte"><%= @dog.age%></div>
+              <div class="carte-caracteristique-texte-2"><%= @dog.birthday_date %></div>
+           </div>
+           <div class="col-xs-6 col-sm-3 carte-caracteristique">
+               <div class="carte-caracteristique-texte"><%= @dog.eye_color%></div>
+              <div class="carte-caracteristique-texte-2"> Couleur des yeux</div>
+           </div>
        </div>
 
       </div>
@@ -91,21 +111,22 @@
     </div>
 
     <div class="row">
-      <div class="card-show-description col-xs-12 col-sm-8">
+      <div class="card-show-description col-xs-12 col-sm-7">
           <div class="info-description">
             <div class="show-titre">🐕 Description</div>
             <%= @dog.description %>
           </div>
       </div>
-
-      <div class="row">
-         <div class="col-xs-6 col-sm-4  carte-caracteristique">📍<%= @dog.address %></div>
-        <div class="col-xs-6 col-sm-4  carte-caracteristique"><%= @dog.price%> retribution</div>
-     </div>
     </div>
 
+      <div class="row">
+         <div class="col-xs-6 col-sm-3  carte-caracteristique">📍<%= @dog.address %></div>
+        <div class="col-xs-6 col-sm-3  carte-caracteristique"><%= @dog.price%> retribution</div>
+     </div>
+
+
     <div class="row">
-        <div class="card-show-map col-xs-12 col-sm-8">
+        <div class="card-show-map col-xs-12 col-sm-7">
          <div
           id="map"
           style="max-width: 100%;
