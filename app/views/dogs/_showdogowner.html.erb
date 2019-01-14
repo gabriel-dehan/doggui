@@ -19,19 +19,15 @@
 
         <div id="carouselExampleIndicators" class="carousel slide caroussel-size" data-ride="carousel">
           <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <% @dog.images.count.times do |index| %>
               <li data-target="#carouselExampleIndicators" data-slide-to="<%= index + 1 %>"></li>
             <% end %>
           </ol>
           <div class="carousel-inner">
-            <div class="item active">
-              <%= cl_image_tag @dog.picture %>
-            </div>
-            <% @dog.images.each do |dog_image| %>
-              <div class="item">
-                <%= cl_image_tag(dog_image.image) %>
-              </div>
+            <% @dog.images.each_with_index do |dog_image, index| %>
+              <%= content_tag :div, nil, class: "#{index.zero? ? 'item active' : 'item'}" do %>
+                  <%= cl_image_tag(dog_image.image, class: 'carousel-image') %>
+              <% end %>
             <% end %>
           </div>
           <a class="left carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -118,11 +114,3 @@
  </div>
 
 </div>
-
-
-
-
-
-
-
-
