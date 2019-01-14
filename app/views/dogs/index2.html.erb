@@ -3,15 +3,19 @@
   <div class="banner-content">
     <h1> Trouver son molosse </h1>
     <div class="search-index2">
-        <div class= "search-bar">
-        <%= form_tag index_search_path, method: :get do %>
-        <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Chercher un chien par son pédigrée !" %>
-         </div>
-            <button class="btn-search-index2"></button>
-          <% end %>
+     <div class="col-xs-12 col-md-5 call-to-action-2">
+      <div class= "search-index pull-left">
+      <%= form_tag index_search_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control form-search",
+          placeholder: "Doggui déjà inscris ... ex: labrador" %>
+       </div>
+     </div>
+     <div class="col-xs-12 col-md-1">
+         <button class="bouton-search pull-left">Rechercher <i class="fas fa-search"></i></button>
+         <% end %>
+    </div>
     </div>
   </div>
 
