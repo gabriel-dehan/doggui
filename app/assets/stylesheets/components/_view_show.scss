@@ -26,16 +26,20 @@
 
 }
 
+
 .caroussel-size {
  width: 400px;
+  .carousel-image {
+   height: 300px;
+   max-height: 300px;
+   margin-left: auto;
+   margin-right: auto;
+  }
+  .carousel-control {
+    background: none;
+  }
 }
 
-.carousel-image {
-  height: 300px;
-  max-height: 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .dropdownMenuLink {
   color: red;
