@@ -9,7 +9,7 @@
   <div class="row row-index">
 
     <div class="col-xs-12 col-md-6 call-to-action">
-      <%= link_to "INSCRIRE SON ETALON", new_dog_path, class: "bouton-index pull-right"%>
+      <%= link_to "INSCRIRE SON DOGGUI", new_dog_path, class: "bouton-index pull-right"%>
     </div>
 
     <div class="col-xs-12 col-md-5 call-to-action-2">
@@ -18,11 +18,11 @@
       <%= text_field_tag :query,
           params[:query],
           class: "form-control form-search",
-          placeholder: "Etalons déjà inscrit ... ex: labrador" %>
+          placeholder: "Doggui déjà inscris ... ex: labrador" %>
        </div>
      </div>
      <div class="col-xs-12 col-md-1">
-         <button class="bouton-search pull-left">Rechercher </button>
+         <button class="bouton-search pull-left">Rechercher <i class="fas fa-search"></i></button>
          <% end %>
     </div>
   </div>
@@ -41,47 +41,45 @@
 </div>
 
   <br>
-
-   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-      <div class="banner-numbers-titre">
-          Ils méritent aussi une plateforme spécialisée
-      </div>
-     </div>
-       <br>
-      <br>
-     <div class="row banner-number">
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="number-card">
-                <img src="https://png.icons8.com/dotty/50/000000/dog.png", class="image-number">
-                <div class="legende-number-card">1500 Molosses inscrits</div>
-              </div>
+<div class="row">
+   <div class="col-xs-12 col-md-12">
+      <div class="row-tous"> <%= link_to "LES VOIR TOUS", index_search_path, class: "bouton-tous" %> </div>
+   </div>
+</div>
+  <br>
+<div class="row">
+   <div class="row banner-number">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="number-card">
+              <img src="https://png.icons8.com/dotty/50/000000/dog.png", class="image-number">
+              <div class="legende-number-card">1500 Molosses inscrits</div>
             </div>
+          </div>
 
-           <div class="col-xs-12 col-sm-6 col-md-3">
-             <div class="number-card">
-                <img src="https://png.icons8.com/wired/50/000000/meeting.png", class="image-number">
-                   <div class="legende-number-card">150 Rencontres respecteuses </div>
-             </div>
-           </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="number-card">
-                <img src="https://png.icons8.com/dotty/50/000000/flying-stork-with-bundle.png", class="image-number"
-                >
-                   <div class="legende-number-card">65 Mini-molosses </div>
-             </div>
-           </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="number-card">
-                <img src="https://png.icons8.com/dotty/50/000000/flying-stork-with-bundle.png", class="image-number"
-                >
-                   <div class="legende-number-card">Chaque annonce est contrôlée</div>
-             </div>
+         <div class="col-xs-12 col-sm-6 col-md-3">
+           <div class="number-card">
+              <img src="https://png.icons8.com/wired/50/000000/meeting.png", class="image-number">
+                 <div class="legende-number-card">150 Rencontres respecteuses </div>
            </div>
          </div>
-   </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="number-card">
+              <img src="https://png.icons8.com/dotty/50/000000/flying-stork-with-bundle.png", class="image-number"
+              >
+                 <div class="legende-number-card">65 Mini-molosses </div>
+           </div>
+         </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="number-card">
+              <img src="https://png.icons8.com/dotty/50/000000/flying-stork-with-bundle.png", class="image-number"
+              >
+                 <div class="legende-number-card">Chaque annonce est contrôlée</div>
+           </div>
+         </div>
+       </div>
+ </div>
 
 <div class="wrapper-gris">
 
