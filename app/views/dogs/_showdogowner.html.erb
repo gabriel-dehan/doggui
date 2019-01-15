@@ -1,6 +1,6 @@
 <div class="banner2" style="background-image: url('<%= asset_path'Chien.landing.jpg'%>');">
   <div class="banner-content">
-    <h1>  <%=@dog.nickname%> le <%=@dog.breed%></h1>
+    <h1>  <%= @dog.nickname %> le <%= @dog.breed&.name %></h1>
   </div>
 </div>
 
@@ -150,11 +150,3 @@
   </div>
 
 </div>
-
-
-
-
-
-
-
-

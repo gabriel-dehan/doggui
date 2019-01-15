@@ -1,7 +1,7 @@
 class DogsController < ApplicationController
  skip_before_action :authenticate_user!, only: [:index, :show, :index2]
   def index
-   @dogs = policy_scope(Dog).includes(:user).order("Random()").limit(6)
+   @dogs = policy_scope(Dog).includes(:user, :breed).order("Random()").limit(6)
   end
 
   def show
@@ -56,7 +56,7 @@ class DogsController < ApplicationController
   def index2
 
     if params[:query].present?
-      @dogs = policy_scope(Dog.search_by_breed_and_address(params[:query]))
+      @dogs = policy_scope(Dog.search_by_breed(params[:query]))
       # @lands_geo = Land.search_by_title_and_address(params[:query]).where.not(latitude: nil, longitude: nil)
       @dogs_geo = Dog.where.not(latitude: nil, longitude: nil)
     else
@@ -64,7 +64,7 @@ class DogsController < ApplicationController
       @dogs_geo = Dog.where.not(latitude: nil, longitude: nil)
     end
 
-    @dogs = @dogs.includes(:user).page(params[:dog])
+    @dogs = @dogs.includes(:user, :breed).page(params[:dog])
 
    authorize @dogs
 
@@ -118,7 +118,7 @@ class DogsController < ApplicationController
         :address,
         :video,
         :nickname,
-        :breed,
+        :breed_id,
         :size,
         :hair,
         :color,
