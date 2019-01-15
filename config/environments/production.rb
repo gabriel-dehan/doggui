@@ -1,5 +1,9 @@
 Rails.application.configure do
 
+  config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.postmark_settings   = { api_key: ENV['POSTMARK_API_KEY'] }
+  config.action_mailer.default_url_options = { host: "mesmolosses.herokuapp.com" }
+
   config.web_socket_server_url = "wss://mesmolosses.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://mesmolosses.herokuapp.com', 'http://mesmolosses.herokuapp.com']
 
