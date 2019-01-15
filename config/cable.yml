@@ -1,6 +1,6 @@
 development: &development
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:3323b1b0471cc3522fa209165403c1c7@porgy.redistogo.com:10116/
 
 test:
   adapter: async
