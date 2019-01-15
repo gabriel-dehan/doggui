@@ -37,13 +37,11 @@
       <div class="card-footer">
         <div class="card-footer-title">
           <div class="card-footer-breed" style="text-transform :uppercase"> <%= dog.breed %> </div>
-          <div class="card-footer-version"> <%= dog.version %> </div>
+          <div class="card-footer-version"> <%= dog.color %> </div>
         </div>
-        <div class="card-footer-price">
-          <%= dog.price %>€ / Saillie
-        </div>
-       <div class = "card-ville">
-        📍<%= dog.get_city&.capitalize %>
+        <div class="card-footer-info">
+          <div class="card-footer-city">📍<%= dog.get_city&.capitalize %></div>
+          <div class="card-footer-price"><%= dog.price %>€ / Saillie</div>
       </div>
     </div>
   </div>
