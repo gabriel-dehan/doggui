@@ -41,26 +41,29 @@
        </div>
 
       <div class="row">
-          <div class="col-xs-6 col-sm-4">
-            <div class='carte-caracteristique'>
-              <div class="carte-caracteristique-texte"><%= @dog.weight%></div>
-              <div class="carte-caracteristique-texte-2">poids</div>
+            <div class="col-xs-6 col-sm-4">
+              <div class='carte-caracteristique'>
+                <div class="carte-caracteristique-texte"><%= @dog.weight%></div>
+                <div class="carte-caracteristique-texte-2">poids</div>
+              </div>
             </div>
-          </div>
 
-         <div class="col-xs-6 col-sm-4">
-            <div class='carte-caracteristique'>
-              <div class="carte-caracteristique-texte"><%= @dog.color%></div>
-              <div class="carte-caracteristique-texte-2">Couleur de la robe</div>
-            </div>
+           <div class="col-xs-6 col-sm-4">
+              <div class='carte-caracteristique'>
+                <div class="carte-caracteristique-texte"><%= @dog.color%></div>
+                <div class="carte-caracteristique-texte-2">Couleur de la robe</div>
+              </div>
+           </div>
+
+           <div class="col-xs-6 col-sm-3">
+              <div class="carte-caracteristique">
+                <div class="carte-caracteristique-texte"><%= @dog.lof_number%></div>
+                <div class="carte-caracteristique-texte-2">N° de LOF</div>
+              </div>
+           </div>
          </div>
 
-         <div class="col-xs-6 col-sm-4">
-            <div class="carte-caracteristique">
-              <div class="carte-caracteristique-texte"><%= @dog.lof_number%></div>
-              <div class="carte-caracteristique-texte-2">N° de LOF</div>
-            </div>
-         </div>
+         <div class="row">
 
          <div class="col-xs-6 col-sm-4">
             <div class="carte-caracteristique">
@@ -76,7 +79,7 @@
             </div>
          </div>
 
-         <div class="col-xs-6 col-sm-4">
+         <div class="col-xs-6 col-sm-3">
             <div class="carte-caracteristique">
               <div class="carte-caracteristique-texte"> <%= @dog.price%> €</div>
               <div class="carte-caracteristique-texte-2"> Rétribution</div>
@@ -87,7 +90,7 @@
 
 
       <div class="row">
-        <div class="card-show-description col-xs-12 col-sm-12">
+        <div class="card-show-description col-xs-12 col-sm-11">
             <div class="info-description">
               <div class="show-titre">🐕 Description</div>
               <%= @dog.description %>
