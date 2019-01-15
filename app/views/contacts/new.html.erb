@@ -15,7 +15,7 @@
         <div class="form-new-user">
             <%= f.input :name, label:"Votre pénom", :required => true %>
             <%= f.input :email, label:"Votre e-mail", :required => true %>
-            <%= f.input :message, label:"Votre message", :as => :text, :required => true %>
+            <%= f.input :message, label:"Votre message", :input_html => {:rows => 10},:as => :text, :required => true %>
             <div class= "hidden">
               <%= f.input :nickname, :hint => 'Leave this field blank!' %>
             </div>
@@ -31,4 +31,3 @@
 <br>
 <br>
 
-<br>
