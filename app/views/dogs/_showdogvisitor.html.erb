@@ -5,148 +5,143 @@
 </div>
 
 
-<div class="container container-show-visitor">
+<div class="container-show">
 
   <div class="container-list">
 
-    <div class="row">
+     <div class="row">
 
-      <div class="col-xs-12 col-sm-4 col-md-3 show-card-picture">
-            <%= cl_image_tag @dog.picture, class: "image-show-profil" %>
-      </div>
-
-      <div class="hidden-xs col-sm-4 col-md-3 show-card-picture">
-
-        <div id="carouselExampleIndicators" class="carousel slide caroussel-size" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <% @dog.images.count.times do |index| %>
-              <li data-target="#carouselExampleIndicators" data-slide-to="<%= index + 1 %>"></li>
-            <% end %>
-          </ol>
-          <div class="carousel-inner">
-            <div class="item active">
-              <%= cl_image_tag @dog.picture %>
-            </div>
-            <% @dog.images.each do |dog_image| %>
-              <div class="item">
-                <%= cl_image_tag(dog_image.image) %>
-              </div>
-            <% end %>
-          </div>
-          <a class="left carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-          </a>
-          <a class="right carousel-control" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </a>
+        <div class="col-xs-12 col-sm-6 show-card-picture">
+              <%= cl_image_tag @dog.picture, class: "image-show-profil" %>
         </div>
-      </div>
 
+        <div class="hidden-xs-down col-sm-4 col-sm-5 show-card-picture">
 
-     <div class="col-xs-12 col-md-3">
-
-      <div class="card-show-map">
-            <% if @dog.user.avatar_url %>
-            <%= cl_image_tag @user.avatar_url, class: "avatar-show" %>
-            <% else %>
-            <%= image_tag "avatar.png", alt:"logo", class:"avatar-show"%>
-            <% end %>
-             <div class="show-titre"><%= @dog.user.first_name %> <%= @dog.user.last_name %> </div>
-             Inscrit depuis : <%= @dog.user.created_at%>
-      </div>
-
-          <% if user_signed_in? %>
-          <chat
-            :get_url="<%= find_messages_index_path %>"
-            :post_url="<%= find_dog_post_conversation_path %>"
-            :conversations_url="<%= dog_conversations_path(@dog, format: :json).to_json %>"
-            :dog_to_user="<%= policy(@dog).to_user? %>"
-            :dog="<%= @dog.id %>"
-            :user_id="<%= current_user.id %>"
-          ></chat>
-          <% end %>
-     </div>
-
-
-    </div>
-
-
-    <div class="row">
-
-       <div class="col-xs-12 col-sm-8">
-
-        <div class="row">
-           <div class="col-xs-6 col-sm-3 carte-caracteristique">
-              <div class="carte-caracteristique-texte"><%= @dog.version%></div>
-              <div class="carte-caracteristique-texte-2">version</div>
+          <div id="carouselExampleIndicators" class="carousel slide caroussel-size" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <% @dog.images.count.times do |index| %>
+                <li data-target="#carouselExampleIndicators" data-slide-to="<%= index + 1 %>"></li>
+              <% end %>
+            </ol>
+            <div class="carousel-inner">
+              <% @dog.images.each_with_index do |dog_image, index| %>
+                <%= content_tag :div, nil, class: "#{index.zero? ? 'item active' : 'item'}" do %>
+                    <%= cl_image_tag(dog_image.image, class: 'carousel-image') %>
+                <% end %>
+              <% end %>
+            </div>
+            <a class="left carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
            </div>
-           <div class="col-xs-6 col-sm-3 carte-caracteristique">
-               <div class="carte-caracteristique-texte"><%= @dog.color%></div>
-              <div class="carte-caracteristique-texte-2">Couleur de la robe</div>
-           </div>
-           <div class="col-xs-6 col-sm-3 carte-caracteristique">
-               <div class="carte-caracteristique-texte"><%= @dog.hair%></div>
-              <div class="carte-caracteristique-texte-2">Type de poil</div>
-           </div>
+         </div>
        </div>
-
-       <div class="row">
-           <div class="col-xs-6 col-sm-3 carte-caracteristique">
-               <div class="carte-caracteristique-texte"><%= @dog.lof_number%></div>
-              <div class="carte-caracteristique-texte-2">N° de LOF</div>
-           </div>
-           <div class="col-xs-6 col-sm-3 carte-caracteristique">
-               <div class="carte-caracteristique-texte"><%= @dog.age%></div>
-              <div class="carte-caracteristique-texte-2"><%= @dog.birthday_date %></div>
-           </div>
-           <div class="col-xs-6 col-sm-3 carte-caracteristique">
-               <div class="carte-caracteristique-texte"><%= @dog.eye_color%></div>
-              <div class="carte-caracteristique-texte-2"> Couleur des yeux</div>
-           </div>
-       </div>
-
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="card-show-description col-xs-12 col-sm-7">
-          <div class="info-description">
-            <div class="show-titre">🐕 Description</div>
-            <%= @dog.description %>
-          </div>
-      </div>
-    </div>
 
       <div class="row">
-         <div class="col-xs-6 col-sm-3  carte-caracteristique">📍<%= @dog.address %></div>
-        <div class="col-xs-6 col-sm-3  carte-caracteristique"><%= @dog.price%> retribution</div>
-     </div>
+
+         <div class="col-xs-6 col-sm-4">
+            <div class='carte-caracteristique'>
+              <div class="carte-caracteristique-texte"><%= @dog.weight%></div>
+              <div class="carte-caracteristique-texte-2">poids</div>
+            </div>
+         </div>
+
+         <div class="col-xs-6 col-sm-4">
+            <div class='carte-caracteristique'>
+              <div class="carte-caracteristique-texte"><%= @dog.color%></div>
+              <div class="carte-caracteristique-texte-2">Couleur de la robe</div>
+            </div>
+         </div>
+
+         <div class="col-xs-6 col-sm-4">
+            <div class="carte-caracteristique">
+              <div class="carte-caracteristique-texte"><%= @dog.lof_number%></div>
+              <div class="carte-caracteristique-texte-2">N° de LOF</div>
+            </div>
+         </div>
+
+      </div>
+
+      <div class="row">
+
+         <div class="col-xs-6 col-sm-3 carte-caracteristique">
+             <div class="carte-caracteristique-texte"><%= @dog.age%></div>
+            <div class="carte-caracteristique-texte-2"><%= @dog.birthday_date %></div>
+         </div>
+
+         <div class="col-xs-6 col-sm-3 carte-caracteristique">
+             <div class="carte-caracteristique-texte"><%= @dog.eye_color%></div>
+            <div class="carte-caracteristique-texte-2"> Couleur des yeux</div>
+         </div>
+
+         <div class="col-xs-6 col-sm-3 carte-caracteristique">
+            <div class="carte-caracteristique-texte"> <%= @dog.price%> €</div>
+            <div class="carte-caracteristique-texte-2"> Rétribution</div>
+         </div>
+
+      </div>
 
 
-    <div class="row">
-        <div class="card-show-map col-xs-12 col-sm-7">
-         <div
-          id="map"
-          style="max-width: 100%;
-          min-height: 25vh;"
-          data-markers="<%= [{lat:@dog.latitude, lng:@dog.longitude}].to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="row">
+        <div class="card-show-description col-xs-12 col-sm-11">
+            <div class="info-description">
+              <div class="show-titre">🐕 Description</div>
+              <%= @dog.description %>
+            </div>
         </div>
       </div>
-     </div>
+
+
+      <div class="row">
+          <div class="hidden-xs-down col-sm-11 card-show-map ">
+             📍<%= @dog.address %>
+           <div
+            id="map"
+            style="max-width: 100%;
+            min-height: 25vh;"
+            data-markers="<%= [{lat:@dog.latitude, lng:@dog.longitude}].to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+         </div>
+      </div>
 
   </div>
 
 
   <div class="container-chat">
 
-    <div class="bouton-show-orange">
-        <%= link_to 'RETOUR LISTE', index_dogs_path, class: "btn-block" %>
+    Le PROPRIETAIRE
+
+    <div class="card-show-user">
+          <% if @dog.user.avatar_url %>
+          <%= cl_image_tag @user.avatar_url, class: "avatar-show" %>
+          <% else %>
+          <%= image_tag "avatar.png", alt:"logo", class:"avatar-show"%>
+          <% end %>
+           <div class="show-titre"><%= @dog.user.first_name %> <%= @dog.user.last_name %> </div>
+           Inscrit depuis : <%= @dog.user.created_at%>
     </div>
 
- </div>
+    <br>
+
+    <div class="chat">
+
+        <% if user_signed_in? %>
+        <chat
+          :get_url="<%= find_messages_index_path %>"
+          :post_url="<%= find_dog_post_conversation_path %>"
+          :conversations_url="<%= dog_conversations_path(@dog, format: :json).to_json %>"
+          :dog_to_user="<%= policy(@dog).to_user? %>"
+          :dog="<%= @dog.id %>"
+          :user_id="<%= current_user.id %>"
+        ></chat>
+        <% end %>
+    </div>
+
+  </div>
 
 </div>
 

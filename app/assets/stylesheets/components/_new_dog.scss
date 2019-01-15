@@ -7,9 +7,10 @@
 
 
 .bloc-new-form {
+  margin-top: 20px;
   border-radius: 5px;
   margin-bottom: 10px;
-  box-shadow: 0 1px 5px 0 #F2F2F2;
+  box-shadow: 0 3px 5px 0 #F2F2F2;
 }
 
 
@@ -28,16 +29,58 @@
 
 
 .illu-form-for-picture {
-  height: 220px;
-
+  background-color: #FFB973;
+  height: 190px;
+  color: black;
+  font-weight: 300;
+  padding: 15px;
+  opacity: 0.5;
 }
 
 
 .illu-form-for-detail {
-  height: 390px;
+  background: linear-gradient(#FFB973, #FF9226);
+  height: 291px;
+  color: black;
+  font-weight: 300;
+  padding: 15px;
+  opacity: 0.7;
 }
 
 .illu-form-for-description {
-  height: 420px;
+  background-color: #FF9226;
+  height: 388px;
+  color: black;
+  font-weight: 300;
+  padding: 15px;
+  opacity: 0.8;
 }
+
+.btn-form {
+  background-color: #FFB973;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  text-transform: uppercase;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.btn-form:hover {
+  background-color: orange;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  text-transform: uppercase;
+  width: 100%;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+
 
