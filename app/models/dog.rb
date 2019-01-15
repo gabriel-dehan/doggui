@@ -1,6 +1,7 @@
 class Dog < ApplicationRecord
 
   belongs_to :user
+  belongs_to :breed
   has_many :likes
   has_many :conversations, dependent: :destroy
   has_many :images, dependent: :destroy
@@ -13,6 +14,8 @@ class Dog < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  scope :search_by_breed, ->(query) { joins(:breed).where("lower(breeds.name) LIKE ?", "%#{query.downcase}%") }
 
   def get_city
     Geocoder.search("#{self.latitude},#{self.longitude}").first.try(:city)
@@ -29,14 +32,4 @@ class Dog < ApplicationRecord
       end
     end
   end
-
-
-  include PgSearch
-  pg_search_scope :search_by_breed_and_address,
-    against: [ :breed, :address ],
-    using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
-    }
-
-
 end
