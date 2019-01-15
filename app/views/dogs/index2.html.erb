@@ -24,11 +24,13 @@
 <div class="container-flex">
 
     <div class="container-card">
-      <% @dogs.includes(:user).each do |dog| %>
-        <div class="col-xs-12 col-sm-4 col-md-4">
-          <%= render partial: 'dogs/card', locals: { dog: dog } %>
-         </div>
-        <% end %>
+       <div class="row">
+           <% @dogs.includes(:user).each do |dog| %>
+              <div class="col-xs-12 col-sm-12 col-md-5">
+                <%= render partial: 'dogs/card', locals: { dog: dog } %>
+              </div>
+          <% end %>
+       </div>
     </div>
 
     <div class="map-container">
