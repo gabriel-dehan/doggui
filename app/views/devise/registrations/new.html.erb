@@ -1,65 +1,35 @@
 <div class="banner2" style="background-image: url('<%= asset_path'Chien.landing.jpg'%>');">
   <div class="banner-content">
-    <h1> S'inscrire à la plateforme </h1>
+    <h1> <i class="fas fa-user-plus"></i> Inscription en 3 secondes et 3 clics </h1>
   </div>
 </div>
 
-  <div class="form-new-user">
+<div class="containter">
+  <br>
+
+  <div class="row">
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
-     <div class="row bg-grey">
-
-       <div class="col-sm-4">
-        <%= image_tag "avatar.png", class: "edit-avatar" %>
-        <%= f.input :avatar, required: false, autofocus: true %>
-        <%= f.input :avatar_cache, as: :hidden %>
-      </div>
-    </div>
-
-    <div class="row bg-grey">
-      <div class="col-sm-5"><%= f.input :first_name, required: false, autofocus: true%></div>
-      <div class="col-sm-5"><%= f.input :last_name, required: false, autofocus: true%></div>
-    </div>
-
-    <div class="row bg-grey">
-      <div class="col-sm-5" ><%= f.input :email, required: true, autofocus: true, placeholder: 'pierre.paul.jaques@gmail.com' %></div>
-      <div class="col-sm-5"><%= f.input :telephone, required: false, autofocus: true%></div>
-    </div>
-
-    <div class="row bg-grey"">
-      <div class="col-sm-5"> <%= f.input :siret, required: false, autofocus: true %> </div>
-    </div>
-
-    <div class="row bg-grey"">
-      <div class="col-sm-5"> <%= f.input :address, required: false, autofocus: true %></div>
-    </div>
-
-    <div class="row bg-grey">
-      <div class="col-sm-5"><%= f.input :introduction, required: false, autofocus: true %></div>
-    </div>
-
-    <div class="row bg-grey">
-      <div class="col-sm-5"><%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-      </div>
-    </div>
-
-     <div class="row bg-grey">
-      <div class="col-sm-5"><%= f.input :password_confirmation, required: true %>
-      </div>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :button, "Créer", type: :submit, class: :'btn-form-new btn btn-warning' %>
-    </div>
-
+       <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+          <div class="form-new-user">
+            <%= f.input :email, label: "Votre adresse e-mail",required: true, autofocus: true, placeholder: 'jaimelesannimaux@gmail.com' %>
+            <%= f.input :password, required: true, label: "Choix du mot de passe", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password_confirmation,label: "Confirmation du mot de passe", required: true %>
+            <%= f.button :button, "Rejoindre la communauté Doggui", type: :submit, class: :'btn-form-new btn btn-warning' %>
+         </div>
+       </div>
     <% end %>
   </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
 </div>
-  <br>
-  <br>
-
-
 
 
