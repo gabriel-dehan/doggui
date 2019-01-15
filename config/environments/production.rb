@@ -93,4 +93,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Configuration of Postmark to deliver email in production
+  # TODO: Complete this line with postmark and heroku information. Take care to user env Variable
+  config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.postmark_settings   = { api_key: ENV['POSTMARK_API_KEY'] }
+  config.action_mailer.default_url_options = { host: "yourapp.herokuapp.com" }
 end
