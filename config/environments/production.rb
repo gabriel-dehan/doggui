@@ -1,4 +1,8 @@
 Rails.application.configure do
+
+  config.web_socket_server_url = "wss://mesmolosses.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://mesmolosses.herokuapp.com', 'http://mesmolosses.herokuapp.com']
+
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
   # Settings specified here will take precedence over those in config/application.rb.
