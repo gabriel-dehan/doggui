@@ -26,7 +26,7 @@
           <div class="col-sm-12"><%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale'%> </div>
           <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
           <div class="col-sm-12">
-            <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3' }, name: 'images[]', label:'Photo supplémentaire' %>
+            <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3' }, name: 'images[]', label:"Photos supplémentaires", hint:" Ajoutez jusqu'à 4 photos en plus"  %>
             <% @dog.images.each do |image| %>
               <div class="multiple-images-form">
                 <%= label_tag 'Supprimer' %>
@@ -66,7 +66,7 @@
             <div class= "bloc-new-form">
 
               <div class="row">
-                <div class="col-xs-12 col-sm-6"> <%= f.input :nickname, label:"Prénom de l'annimal", placeholder: "Milou" %></div>
+                <div class="col-xs-12 col-sm-6"> <%= f.input :nickname, label:"Prénom de l'annimal", placeholder: "ex : Milou" %></div>
               </div>
               <div class="row">
                 <div class="col-xs-12 col-sm-6">  <%= f.input :birthday_date, label:"Date de naissance" %> </div>
@@ -112,7 +112,7 @@
               </div>
 
               <div class="row">
-                 <div class="col-xs-12 col-sm-12"> <%= f.input :address, label:"Adresse de sa niche",placeholder: "4, Rue Victor Hugo Nantes (Il n'y a que votre ville qui sera affichée sur notre site)" %> </div>
+                 <div class="col-xs-12 col-sm-12"> <%= f.input :address, label:"Adresse de sa niche",placeholder: "4, Rue Victor Hugo Nantes", hint:"Il n'y a que votre ville qui sera affichée sur notre site" %> </div>
               </div>
 
               <div class="row">
