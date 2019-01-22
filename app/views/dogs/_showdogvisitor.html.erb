@@ -9,118 +9,183 @@
 
   <div class="col-xs-12 col-sm-8">
 
-     <div class="row">
-
-        <div class="col-xs-12 col-sm-6 show-card-picture">
-              <%= cl_image_tag @dog.picture, class: "image-show-profil" %>
-        </div>
-
-        <div class="col-sm-4 col-sm-5 show-card-picture">
-
-          <div id="carouselExampleIndicators" class="carousel slide caroussel-size" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <% @dog.images.count.times do |index| %>
-                <li data-target="#carouselExampleIndicators" data-slide-to="<%= index + 1 %>"></li>
-              <% end %>
-            </ol>
-            <div class="carousel-inner">
-              <% @dog.images.each_with_index do |dog_image, index| %>
-                <%= content_tag :div, nil, class: "#{index.zero? ? 'item active' : 'item'}" do %>
-                    <%= cl_image_tag(dog_image.image, class: 'carousel-image') %>
-                <% end %>
-              <% end %>
-            </div>
-            <a class="left carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-           </div>
-         </div>
-       </div>
-
-      <div class="row">
-            <div class="col-xs-6 col-sm-4">
-              <div class='carte-caracteristique'>
-                <div class="carte-caracteristique-texte"><%= @dog.weight%></div>
-                <div class="carte-caracteristique-texte-2">poids</div>
-              </div>
-            </div>
-
-           <div class="col-xs-6 col-sm-4">
-              <div class='carte-caracteristique'>
-                <div class="carte-caracteristique-texte"><%= @dog.color%></div>
-                <div class="carte-caracteristique-texte-2">Couleur de la robe</div>
-              </div>
-           </div>
-
-           <div class="col-xs-6 col-sm-3">
-              <div class="carte-caracteristique">
-                <div class="carte-caracteristique-texte"><%= @dog.lof_number%></div>
-                <div class="carte-caracteristique-texte-2">N° de LOF</div>
-              </div>
-           </div>
-         </div>
-
+    <% if @dog.images.count == 1 %>
          <div class="row">
 
-         <div class="col-xs-6 col-sm-4">
-            <div class="carte-caracteristique">
-              <div class="carte-caracteristique-texte"><%= @dog.age%></div>
-              <div class="carte-caracteristique-texte-2"><%= @dog.birthday_date %></div>
+            <div class="col-xs-12 col-sm-6">
+                  <%= cl_image_tag @dog.picture, class: "image-show-1" %>
             </div>
-         </div>
 
-         <div class="col-xs-6 col-sm-4">
-            <div class="carte-caracteristique">
-             <div class="carte-caracteristique-texte"><%= @dog.eye_color%></div>
-             <div class="carte-caracteristique-texte-2"> Couleur des yeux</div>
+             <div class="col-xs-12 col-sm-6">
+                  <%= cl_image_tag @dog.images.first.image, class: "image-show-2"%>
             </div>
-         </div>
 
-         <div class="col-xs-6 col-sm-3">
-            <div class="carte-caracteristique">
-              <div class="carte-caracteristique-texte"> <%= @dog.price%> €</div>
-              <div class="carte-caracteristique-texte-2"> Rétribution</div>
+          </div>
+      <% end %>
+
+      <% if @dog.images.count == 2 %>
+         <div class="row">
+
+            <div class="col-xs-12 col-sm-6">
+                  <%= cl_image_tag @dog.picture, class: "image-show-1" %>
             </div>
-         </div>
 
-      </div>
+             <div class="col-xs-12 col-sm-6">
+                 <div class="row">
+                   <div class="col-xs-12 col-sm-12">
+                     <%= cl_image_tag @dog.images.first.image, class: "image-show-3"%>
+                   </div>
+                  </div>
 
+                  <div class="row">
+                   <div class="col-xs-12 col-sm-12">
+                     <%= cl_image_tag @dog.images.second.image, class: "image-show-3"%>
+                   </div>
+                 </div>
+              </div>
+           </div>
+      <% end %>
+
+      <% if @dog.images.count == 3 %>
+         <div class="row">
+
+            <div class="col-xs-12 col-sm-6">
+                  <%= cl_image_tag @dog.picture, class: "image-show-1" %>
+            </div>
+
+             <div class="col-xs-12 col-sm-6">
+                 <div class="row">
+                   <div class="col-xs-12 col-sm-12">
+                     <%= cl_image_tag @dog.images.first.image, class: "image-show-3"%>
+                   </div>
+                  </div>
+
+                  <div class="row">
+                   <div class="col-xs-12 col-sm-6">
+                     <%= cl_image_tag @dog.images.second.image, class: "image-show-4"%>
+                   </div>
+                   <div class="col-xs-12 col-sm-6">
+                     <%= cl_image_tag @dog.images.third.image, class: "image-show-4"%>
+                   </div>
+                 </div>
+            </div>
+
+          </div>
+      <% end %>
+
+     <% if @dog.images.count == 4 %>
+         <div class="row">
+
+            <div class="col-xs-12 col-sm-6">
+                  <%= cl_image_tag @dog.picture, class: "image-show-1" %>
+            </div>
+
+             <div class="col-xs-12 col-sm-6">
+                 <div class="row">
+                   <div class="col-xs-12 col-sm-12">
+                     <%= cl_image_tag @dog.images.first.image, class: "image-show-3"%>
+                   </div>
+                  </div>
+
+                  <div class="row">
+                   <div class="hidden-xs col-sm-4">
+                     <%= cl_image_tag @dog.images.second.image, class: "image-show-5"%>
+                   </div>
+                   <div class="hidden-xs col-sm-4">
+                     <%= cl_image_tag @dog.images.third.image, class: "image-show-5"%>
+                   </div>
+                    <div class="hidden-xs col-sm-4">
+                     <%= cl_image_tag @dog.images.fourth.image, class: "image-show-5"%>
+                   </div>
+                 </div>
+            </div>
+
+          </div>
+      <% end %>
 
       <div class="row">
-        <div class="card-show-description col-xs-12 col-sm-11">
-            <div class="info-description">
+
+         <div class="col-xs-12 col-sm-3">
+
+            <div class="row">
+
+                  <div class="col-xs-6 col-sm-12">
+                    <div class='carte-caracteristique'>
+                      <div class="carte-caracteristique-texte"><%= @dog.weight%></div>
+                      <div class="carte-caracteristique-texte-2">poids</div>
+                    </div>
+                  </div>
+
+                 <div class="col-xs-6 col-sm-12">
+                    <div class='carte-caracteristique'>
+                      <div class="carte-caracteristique-texte"><%= @dog.color%></div>
+                      <div class="carte-caracteristique-texte-2">Couleur de la robe</div>
+                    </div>
+                 </div>
+
+                 <div class="col-xs-6 col-sm-12">
+                    <div class="carte-caracteristique">
+                      <div class="carte-caracteristique-texte"><%= @dog.lof_number%></div>
+                      <div class="carte-caracteristique-texte-2">N° de LOF</div>
+                    </div>
+                 </div>
+
+
+               <div class="col-xs-6 col-sm-12">
+                  <div class="carte-caracteristique">
+                    <div class="carte-caracteristique-texte"><%= @dog.age%></div>
+                    <div class="carte-caracteristique-texte-2"><%= @dog.birthday_date %></div>
+                  </div>
+               </div>
+
+               <div class="col-xs-6 col-sm-12">
+                  <div class="carte-caracteristique">
+                   <div class="carte-caracteristique-texte"><%= @dog.eye_color%></div>
+                   <div class="carte-caracteristique-texte-2"> Couleur des yeux</div>
+                  </div>
+               </div>
+
+               <div class="col-xs-6 col-sm-12">
+                  <div class="carte-caracteristique">
+                    <div class="carte-caracteristique-texte"> <%= @dog.price%> €</div>
+                    <div class="carte-caracteristique-texte-2"> Rétribution</div>
+                  </div>
+               </div>
+           </div>
+           </div>
+
+            <div class="col-xs-12 col-sm-9">
+              <div class="info-description">
               <div class="show-titre">🐕 Description</div>
               <%= @dog.description %>
             </div>
-        </div>
+
+            </div>
       </div>
 
-
       <div class="row">
-          <div class="card-show-map col-sm-11">
-             📍<%= @dog.address %>
-           <div
-            id="map"
-            style="max-width: 100%;
-            min-height: 25vh;"
-            data-markers="<%= [{lat:@dog.latitude, lng:@dog.longitude}].to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
+            <div class="card-show-adresse col-xs-12 col-sm-12">
+               <div class="address-map">📍<%= @dog.address %> </div>
+             </div>
+             <div class="hidden-xs col-sm-12">
+               <div
+                id="map"
+                style="width: 104%;
+                min-height: 45vh;"
+                data-markers="<%= [{lat:@dog.latitude, lng:@dog.longitude}].to_json %>"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+              </div>
          </div>
       </div>
 
   </div>
-
 
    <div class="col-xs-12 col-sm-4">
 
           <div class="card-show-user">
             Le PROPRIETAIRE
           <% if @dog.user.avatar_url %>
-          <%= cl_image_tag @user.avatar_url, class: "avatar-show" %>
+          <%= cl_image_tag @dog.user.avatar_url, class: "avatar-show" %>
           <% else %>
           <%= image_tag "avatar.png", alt:"logo", class:"avatar-show"%>
           <% end %>
