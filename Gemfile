@@ -48,8 +48,12 @@ gem 'simple_form'
 # gem 'mini_magick', '~> 4.8'
 gem 'pry-byebug'
 
+
+gem 'rails_admin', '~> 1.3'
+
 # Gem to deliver email in production
 gem 'postmark-rails'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

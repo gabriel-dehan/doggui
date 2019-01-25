@@ -15,7 +15,7 @@
         <% if user_signed_in? %>
           <%= link_to dog_like_path(dog), method: :put, remote: true, class: 'downvote-upvote' do %>
             <div class="card-like">
-              <%= icon('fas', 'heart', class: 'fa-2x') %>
+              <%= icon('fa', 'heart', class: 'fa-2x') %>
               <span>
                 <% if dog.get_upvotes.size > 0 %>
                   <%= dog.get_upvotes.size %>
@@ -25,7 +25,7 @@
           <% end %>
         <% else %>
           <div class="card-like">
-            <%= icon('fas', 'heart', class: 'fa-2x') %>
+            <%= icon('fa', 'heart', class: 'fa-2x') %>
             <span>
               <% if dog.get_upvotes.size > 0 %>
                 <%= dog.get_upvotes.size %>
