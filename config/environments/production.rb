@@ -1,4 +1,12 @@
 Rails.application.configure do
+
+  config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.postmark_settings   = { api_key: ENV['POSTMARK_API_KEY'] }
+  config.action_mailer.default_url_options = { host: "mesmolosses.herokuapp.com" }
+
+  config.web_socket_server_url = "wss://mesmolosses.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://mesmolosses.herokuapp.com', 'http://mesmolosses.herokuapp.com']
+
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
   # Settings specified here will take precedence over those in config/application.rb.

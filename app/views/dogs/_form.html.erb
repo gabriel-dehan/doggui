@@ -7,8 +7,13 @@
     <div class="hidden-xs col-sm-3">
       <div class= "row">
          <div class="col-sm-12">
-           <div class="illu-form-for-caracteristique" style="background-image: url('<%= asset_path'chien.photo.jpg'%>');">
-              <h1> réussir une photo</h1>
+           <div class="bloc-new-form illu-form-for-picture">
+            <br>
+              <h4> <i class="fas fa-camera-retro"></i> Réussir ses photos</h4>
+              <h6>Choisir un fond neutre</h6>
+              <h6>Préférer Une lumière extérireure naturelle</h6>
+              <h6> Eviter les compositions coupées</h6>
+              <h6> Attention aux floues et aux photos en mouvements </h6>
            </div>
          </div>
       </div>
@@ -18,23 +23,21 @@
      <div class= "row">
        <div class= "bloc-new-form ">
 
-          <div class= "row">
-            <div class="col-sm-12"><%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale'%> </div>
-            <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
-            <div class="col-sm-12">
-              <%= f.input :images, as: :file, input_html: { multiple: true }, name: 'images[]', label:'Photo supplémentaire' %>
-              <% @dog.images.each do |image| %>
-                <div class="multiple-images-form">
-                  <%= label_tag 'Supprimer' %>
-                  <%= check_box_tag image.id, 'delete' %>
-                  <%= cl_image_tag(image.image, style: 'width: 150px') %>
-                </div>
-               <% end %>
-            </div>
+          <div class="col-sm-12"><%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale'%> </div>
+          <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
+          <div class="col-sm-12">
+            <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3' }, name: 'images[]', label:"Photos supplémentaires", hint:" Ajoutez jusqu'à 4 photos en plus"  %>
+            <% @dog.images.each do |image| %>
+              <div class="multiple-images-form">
+                <%= label_tag 'Supprimer' %>
+                <%= check_box_tag image.id, 'delete' %>
+                <%= cl_image_tag(image.image, style: 'width: 150px') %>
+              </div>
+             <% end %>
           </div>
 
        <div class= "row">
-          <div class="col-xs-12 col-sm-10"> <%= f.input :video, placeholder: 'Lien video', label: false %></div>
+          <div class="col-xs-12 col-sm-12"> <%= f.input :video, placeholder: 'Lien video', label: false %></div>
        </div>
       </div>
      </div>
@@ -48,8 +51,12 @@
         <div class="hidden-xs col-sm-3">
           <div class= "row">
             <div class="col-sm-12">
-              <div class="illu-form-for-caracteristique" style="background-image: url('<%= asset_path'chien.mesure.jpg'%>');">
-              <h1> Quelques</h1>
+              <div class="bloc-new-form illu-form-for-detail">
+             <h4><i class="fas fa-asterisk"></i> Les informations pour un bon référencement</h4>
+             <br>
+              <h6>Utiliser la liste dans le menu déroulant</h6>
+              <h6> Renseigner les informations physique clés (nous sommes sûrs que vous les connaissez par coeur)</h6>
+              <h6>Vous êtes déjà à la motié du formulaire ! </h6>
            </div>
          </div>
           </div>
@@ -59,26 +66,20 @@
             <div class= "bloc-new-form">
 
               <div class="row">
-                <div class="col-xs-12 col-sm-5"> <%= f.input :nickname, label:"Prénom de l'annimal" %></div>
-              <div class="col-xs-12 col-sm-5"><%= f.input :lof_number, label:"Son numéro LOF" %></div>
+                <div class="col-xs-12 col-sm-6"> <%= f.input :nickname, label:"Prénom de l'annimal", placeholder: "ex : Milou" %></div>
               </div>
               <div class="row">
-                <div class="col-xs-12 col-sm-5">  <%= f.input :birthday_date, label:"Date de naissance" %> </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12 col-sm-5"> <%= f.input :breed, label: "Pédigrée" %></div>
-                <div class="col-xs-12 col-sm-5"> <%= f.input :version %></div>
+                <div class="col-xs-12 col-sm-6">  <%= f.input :birthday_date, label:"Date de naissance" %> </div>
               </div>
 
               <div class="row">
-                <div class="col-xs-12 col-sm-5"> <%= f.input :hair, label:"Type du poil" %></div>
-                <div class="col-xs-12 col-sm-5"><%= f.input :weight, label:"Poids" %></div>
+                <div class="col-xs-12 col-sm-6"> <%= f.association :breed, label: "Pédigrée" %></div>
+                <div class="col-xs-12 col-sm-6"><%= f.input :lof_number, label:"Son numéro LOF", placeholder: "LOF-20150488-2016-1" %>  </div>
               </div>
 
               <div class= "row">
-                <div class="col-xs-12 col-sm-5"><%= f.input :color, label:"Robe" %></div>
-                <div class="col-xs-12 col-sm-5"> <%= f.input :eye_color, label:"Couleur des yeux" %></div>
+                <div class="col-xs-12 col-sm-6"><%= f.input :color, label:"Robe", placeholder: "Fauve" %></div>
+                <div class="col-xs-12 col-sm-6"><%= f.input :weight, label:"Poids",placeholder: "en Kg" %></div>
               </div>
 
             </div>
@@ -91,10 +92,15 @@
         <div class="hidden-xs col-sm-3">
           <div class= "row">
             <div class="col-sm-12">
-              <div class="illu-form-for-caracteristique" style="background-image: url('<%= asset_path'chien.veto.jpg'%>');">
-              <h1> détails</h1>
+              <div class="bloc-new-form illu-form-for-description">
+                <h4><i class="fas fa-list-ul"></i> Les détails pour devancer les questions</h4>
+                <br>
+                <h6>Essayer d'être précis</h6>
+                <h6>Une annonce bien remplie donne confiance</h6>
+                <h6>Les "plus" qui metteront en valeur votre doggui</h6>
+                <h6>Définir la contrinution financière en cohérence avec ses atouts </h6>
+             </div>
            </div>
-         </div>
           </div>
         </div>
        <div class="col-xs-12 col-sm-6">
@@ -102,33 +108,31 @@
             <div class= "bloc-new-form ">
 
               <div class="row">
-               <div class="col-xs-12 col-sm-10"><%= f.input :description, placeholder: 'Analyses médicales réalisées, prix beauté reçu ...', label: " Description", :input_html => {:rows => 10}%></div>
+               <div class="col-xs-12 col-sm-12"><%= f.input :description, placeholder: 'Analyses médicales réalisées, prix beauté reçu ...', label: " Description", :input_html => {:rows => 10}%></div>
               </div>
 
               <div class="row">
-                 <div class="col-xs-12 col-sm-10"> <%= f.input :address, label:"Adresse de sa niche" %> </div>
+                 <div class="col-xs-12 col-sm-12"> <%= f.input :address, label:"Adresse de sa niche",placeholder: "4, Rue Victor Hugo Nantes", hint:"Il n'y a que votre ville qui sera affichée sur notre site" %> </div>
               </div>
 
               <div class="row">
-                <div class="col-sm-4"> <%= f.input :price, label:"Rétribution" %></div>
-                <div class="col-sm-4"> <%= f.submit class: "btn btn-warning "%></div>
+                <div class="col-sm-6"> <%= f.input :price, label:"Rétribution", placeholder: "€" %></div>
               </div>
             </div>
           </div>
         </div>
+        </div>
+         <div class= "row">
+        <div class="col-xs-12 col-sm-3"></div>
+        <div class="col-xs-12 col-sm-2">
+        <%= f.submit "Publier" ,class: "btn-form"%>
+         </div>
+           </div>
       </div>
 
 
 <% end %>
 
-
-
-
-
-
-
-
-
-
-
-
+<br>
+<br>
+<br>

@@ -1,4 +1,3 @@
-
 Rails.application.routes.draw do
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -9,7 +8,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   devise_scope :user do
     get 'user/profile', to: 'devise/registrations#profile', as: :profile
-    get '/users',   to: 'users#index',   via: 'get'
     get '/users/:user_id', to: 'users#show', as: :showprofile
   end
   get 'index_dogs', controller: 'users', action: :index_dogs

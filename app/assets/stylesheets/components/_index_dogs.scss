@@ -1,12 +1,23 @@
 .rubrique-profile {
- color: grey;
+ color: #928C8C;
+ font-size: 20px;
+ font-weight: 150;
  text-decoration: none !important;
  text-transform: none !important;
 }
 
 .rubrique-profile:hover {
+ color: orange;
  text-decoration: none !important;
  text-transform: none !important;
- background-color: white;
- color: black;
+ background-color: transparent;
+
 }
+
+.rubrique-profile:focus {
+ color: orange;
+ text-decoration: none !important;
+ text-transform: none !important;
+ background-color: transparent;
+}
+

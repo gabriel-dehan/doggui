@@ -48,7 +48,12 @@ gem 'simple_form'
 # gem 'mini_magick', '~> 4.8'
 gem 'pry-byebug'
 
+
 gem 'rails_admin', '~> 1.3'
+
+# Gem to deliver email in production
+gem 'postmark-rails'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -71,6 +76,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener'
 end
 
 group :test do

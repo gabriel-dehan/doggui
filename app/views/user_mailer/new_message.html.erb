@@ -1,0 +1,9 @@
+<p>
+  Bonjour <%= @user.first_name %>, <br>
+  Vous avez reçu un message, concernant <%= @dog.nickname %>.
+
+  Pour le consulter, rendez vous <%= link_to('ici', dog_url(@dog)) %>. <br>
+
+  Bonne journée, <br>
+  L'équipe de Doggui
+</p>

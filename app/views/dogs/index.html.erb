@@ -1,75 +1,87 @@
 <div class="banner" style="background-image: url('<%= asset_path'Chien.landing.jpg', height: 200, width: 300%>');">
-    <div class="banner-content">
-      <%= action_cable_meta_tag %>
-      <h1>L'AMOUR AVEC UN GRAND OUAF</h1>
+  <div class="row">
 
-      <%= link_to "INSCRIRE SON MOLOSSE", new_dog_path, class: "big-button btn btn-reverse"%>
-      <div class="search-index2">
-      <div class= "search-bar">
+  <div class= "col-xs-12 col-sm-12 col-md-12">
+    <div class="index-titre">L'AMOUR AVEC UN GRAND OUAF </div>
+    <div class="index-titre-2">(Le meilleur endroit pour trouver le bon étalon) </div>
+  </div>
+  </div>
+
+  <div class="row row-index">
+
+    <div class="col-xs-12 col-md-6 call-to-action">
+      <%= link_to "INSCRIRE SON DOGGUI", new_dog_path, class: "bouton-index pull-right"%>
+    </div>
+
+    <div class="col-xs-12 col-md-7 call-to-action-2">
+      <div class= "search-index pull-left">
       <%= form_tag index_search_path, method: :get do %>
       <%= text_field_tag :query,
           params[:query],
-          class: "form-control",
-          placeholder: "Chercher un chien par son pédigrée !" %>
+          class: "form-control form-search",
+          placeholder: "Doggui déjà inscris ... ex: labrador" %>
        </div>
-          <button class="btn-search-index2"> </button>
+     </div>
+     <div class="col-xs-12 col-md-3">
+         <button class="bouton-search pull-left">Rechercher <i class="fas fa-search"></i></button>
          <% end %>
-      </div>
     </div>
   </div>
+
+</div>
 
 <div class="container">
 
-  <div class="row">
-
-     <% @dogs.each do |dog| %>
-        <%= render partial: 'dogs/card', locals: { dog: dog } %>
-      <% end %>
+    <div class="row">
+      <% @dogs.includes(:user).each do |dog| %>
+        <div class="col-xs-12 col-sm-3 col-md-4">
+          <%= render partial: 'dogs/card', locals: { dog: dog } %>
+         </div>
+        <% end %>
     </div>
-  </div>
+</div>
 
   <br>
-
-   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-      <div class="banner-numbers-titre">
-          Ils méritent aussi une plateforme spécialisée
-      </div>
-     </div>
-       <br>
-      <br>
-     <div class="row banner-number">
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="number-card">
-                <img src="https://png.icons8.com/dotty/50/000000/dog.png", class="image-number">
-                <div class="legende-number-card">1500 Molosses inscrits</div>
-              </div>
+<div class="row">
+   <div class="col-xs-12 col-md-12">
+      <div class="row-tous"> <%= link_to "LES VOIR TOUS", index_search_path, class: "bouton-tous" %> </div>
+   </div>
+</div>
+  <br>
+<div class="row">
+   <div class="row banner-number">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="number-card">
+              <img src="https://png.icons8.com/dotty/50/000000/dog.png", class="image-number">
+              <div class="legende-number-card">1500 Molosses inscrits</div>
             </div>
+          </div>
 
-           <div class="col-xs-12 col-sm-6 col-md-3">
-             <div class="number-card">
-                <img src="https://png.icons8.com/wired/50/000000/meeting.png", class="image-number">
-                   <div class="legende-number-card">150 Rencontres respecteuses </div>
-             </div>
-           </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="number-card">
-                <img src="https://png.icons8.com/dotty/50/000000/flying-stork-with-bundle.png", class="image-number"
-                >
-                   <div class="legende-number-card">65 Mini-molosses </div>
-             </div>
-           </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="number-card">
-                <img src="https://png.icons8.com/dotty/50/000000/flying-stork-with-bundle.png", class="image-number"
-                >
-                   <div class="legende-number-card">Chaque annonce est contrôlée</div>
-             </div>
+         <div class="col-xs-12 col-sm-6 col-md-3">
+           <div class="number-card">
+              <img src="https://png.icons8.com/wired/50/000000/meeting.png", class="image-number">
+                 <div class="legende-number-card">150 Rencontres respecteuses </div>
            </div>
          </div>
-   </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="number-card">
+              <img src="https://png.icons8.com/dotty/50/000000/flying-stork-with-bundle.png", class="image-number"
+              >
+                 <div class="legende-number-card">65 Mini-molosses </div>
+           </div>
+         </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="number-card">
+             <img src="https://img.icons8.com/material-outlined/26/000000/approval.png", class="image-number">
+                 <div class="legende-number-card">Chaque annonce est contrôlée</div>
+           </div>
+         </div>
+       </div>
+ </div>
+
+<div class="wrapper-gris">
 
     <div class="container">
 
@@ -110,10 +122,20 @@
         <br>
         <%= link_to "LES PIECES A VALIDER", new_dog_path, class: "small-button btn btn-reverse btn-warning btn-valider"%>
       </div>
+
       </div>
     </div>
-     <div class="" style="background-image: url('<%= asset_path'chien.chiot.jpg'%>'); width: 750px; height: 450px; margin: auto; color:white">
-              <h1>Le mini molosse du mois</h1>
+
+  </div>
+
+ </div>
+
+<div class="wrapper-orange-clair">
+      <div class="container-titre-mois">
+         Le mini doggui du mois
+      </div>
+
+     <div class="" style="background-image: url('<%= asset_path'chien.chiot.jpg'%>'); width: 750px; height: 450px; margin: auto; margin-top:10px">
     </div>
-   </div>
 </div>
+

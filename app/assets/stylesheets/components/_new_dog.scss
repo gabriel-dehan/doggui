@@ -7,10 +7,11 @@
 
 
 .bloc-new-form {
+  margin-top: 20px;
   border-radius: 5px;
-  margin-bottom: 5px;
-  padding: 15px;
-  box-shadow: 0 1px 5px 0 #F2F2F2;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 5px 0 #F2F2F2;
+  padding: 20px;
 }
 
 
@@ -22,10 +23,64 @@
 
 
 .form-control:focus {
-  border-color: 2px #ea9632;
+  border-color: 2px orange;
   text-align: left;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px rgba(255, 0, 0, 0.6);
+  box-shadow: inset 0 1px 1px orange, 0 0 2px orange;
 }
+
+
+.illu-form-for-picture {
+  background-color: #FFB973;
+  height: 228px;
+  color: black;
+  font-weight: 300;
+  padding: 15px;
+  opacity: 0.5;
+}
+
+
+.illu-form-for-detail {
+  background: linear-gradient(#FFB973, #FF9226);
+  height: 332px;
+  color: black;
+  font-weight: 300;
+  padding: 15px;
+  opacity: 0.7;
+}
+
+.illu-form-for-description {
+  background-color: #FF9226;
+  height: 428px;
+  color: black;
+  font-weight: 300;
+  padding: 15px;
+  opacity: 0.8;
+}
+
+.btn-form {
+  background-color: #FFB973;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  text-transform: uppercase;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.btn-form:hover {
+  background-color: orange;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  text-transform: uppercase;
+  width: 100%;
+  border-radius: 5px;
+}
+
+
+
+
+
 
 
 

@@ -16,6 +16,10 @@ module Blog
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+      # Load the lib file
+    config.eager_load_paths << Rails.root.join('lib')
+    config.autoload_paths << Rails.root.join('lib')
+
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: true,

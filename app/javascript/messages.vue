@@ -10,7 +10,7 @@
             </div>
           </div>
         </div>
-        <textarea class='form-control' v-model='content' placeholder='Votre message ici'></textarea>
+        <textarea class='form-control chat-message-form' v-model='content' placeholder='Votre message ici'></textarea>
       <!-- </div> -->
       <button class='bouton-show-orange' @click.prevent="submit">
         Envoyer
@@ -88,7 +88,8 @@ p {
   font-size: 2em;
   text-align: center;
 }
-.form-control {
+
+.chat-message-form {
   width: 100% !important;
   margin-left: 0px;
 }
