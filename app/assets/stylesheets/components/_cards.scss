@@ -1,3 +1,4 @@
+
 .card {
   position: relative;
   margin-top: 5vh;
@@ -43,23 +44,24 @@
 
 .card-like {
   position: absolute;
-  color: #f7cda1;
-  // background-image: url(heart1.jpg);
-  // background-position: center;
-  // background-size: cover;
-  // height: 35px;
-  // width: 35px;
+  color: #FFB973 ;
   right: 10px;
   top: 8px;
   display: flex;
   border-radius: 40%;
+  opacity: 0.92;
+
   span {
     position: absolute;
-    color: white;
-    left: 20%;
+    color: #FFB973 ;
+    left: -15px;
     top: 4%;
-    font-size: 14px;
+    font-size: 18px;
   }
+}
+
+.card-like:hover {
+  color: #ec9c32 ;
 }
 
 .avatar-index {
