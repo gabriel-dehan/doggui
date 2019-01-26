@@ -11,7 +11,8 @@ class DogsController < ApplicationController
 
   def new
    @dog = Dog.new
-   @dog.images.build
+   # This is not needed and this is why there is a "delete" button even when there are no pictures
+   # @dog.images.build
    authorize @dog
   end
 
@@ -29,7 +30,8 @@ class DogsController < ApplicationController
 
   def edit
     @dog = Dog.find(params[:id])
-    @dog.images.build if @dog.images.blank?
+    # This is not needed and this is why there is a "delete" button even when there are no pictures
+    # @dog.images.build if @dog.images.blank?
     authorize @dog
   end
 
