@@ -24,13 +24,19 @@
        <div class= "bloc-new-form ">
 
           <div class="col-sm-12">
-            <%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale', input_html: { class: "preview" } %>
-            <div class="preview-container"></div>
+          <div class="upload-input-container">
+              <%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale', input_html: { class: "preview" } %>
+              <div class="preview-container"></div>
+              <span class="upload-button">Ajouter une image</span>
+            </div>
           </div>
           <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
           <div class="col-sm-12">
-            <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3 preview' }, name: 'images[]', label:"Photos supplémentaires", hint:" Ajoutez jusqu'à 4 photos en plus"  %>
-            <div class="preview-container"></div>
+            <div class="upload-input-container">
+              <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3 preview' }, name: 'images[]', label:"Photos supplémentaires", hint:" Ajoutez jusqu'à 4 photos en plus"  %>
+              <div class="preview-container"></div>
+              <span class="upload-button">Ajouter une image</span>
+            </div>
             <% @dog.images.each do |image| %>
               <div class="multiple-images-form">
                 <%= label_tag 'Supprimer' %>
