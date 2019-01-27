@@ -24,11 +24,16 @@
        <div class= "bloc-new-form ">
 
           <div class="col-sm-12">
-          <div class="upload-input-container">
+            <div class="upload-input-container">
               <%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale', input_html: { class: "preview" } %>
               <div class="preview-container"></div>
               <span class="upload-button">Ajouter une image</span>
             </div>
+            <% if @dog.picture? %>
+              <div class="simple-image-form">
+                <%= cl_image_tag(@dog.picture, style: 'width: 150px') %>
+              </div>
+             <% end %>
           </div>
           <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
           <div class="col-sm-12">
@@ -39,9 +44,11 @@
             </div>
             <% @dog.images.each do |image| %>
               <div class="multiple-images-form">
-                <%= label_tag 'Supprimer' %>
-                <%= check_box_tag image.id, 'delete' %>
                 <%= cl_image_tag(image.image, style: 'width: 150px') %>
+                <div class="multiples-image-form-delete">
+                  <%= label_tag 'Supprimer' %>
+                  <%= check_box_tag image.id, 'delete' %>
+                </div>
               </div>
              <% end %>
           </div>
