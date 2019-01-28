@@ -167,6 +167,7 @@
   padding: 6px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15);
   text-align: center;
+  padding: 15px;
 }
 
 .image4, .image5, .image6 {
@@ -177,18 +178,55 @@ border: solid, 3px, black;
 }
 
 .cards-explication-titre {
- text-transform: capitalize;
+ margin-top: 10px;
+ margin-bottom: 10px;
+ text-transform: uppercase;
+ color: orange;
  font-size: 18px;
 }
 
-.btn-inscrire .btn-parcourir {
- margin-top: 13px;
+.card-explication-contenu-1 {
+  widows: 100%;
+  margin-bottom: 26px;
 }
 
-
-.btn-valider {
- margin-top: 93px;
+.card-explication-contenu-2 {
+  widows: 100%;
+  margin-bottom: 65px;
 }
+
+.card-explication-contenu-3 {
+  widows: 100%;
+  margin-bottom: 28px;
+}
+
+.btn-explication-1 {
+background-color: orange;
+font-color: white !important;
+width: 200px;
+padding: 10px;
+border-radius: 2px;
+margin: auto;
+}
+
+.btn-explication-2{
+background-color: orange;
+font-color: white !important;
+width: 200px;
+padding: 10px;
+border-radius: 2px;
+margin: auto;
+}
+
+.btn-explication-3{
+background-color: orange;
+font-color: white !important;
+width: 200px;
+padding: 10px;
+border-radius: 2px;
+margin: auto;
+}
+
 
 
 
