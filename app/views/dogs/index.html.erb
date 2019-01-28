@@ -91,38 +91,46 @@
     <br>
 
    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card-explication">
+             <img src="https://png.icons8.com/dusk/50/000000/gender.png", class="image6">
+                <div class="cards-explication-titre">Un concept simple</div>
+                <div class="card-explication-contenu-1">
+                1. Nous ne vendons aucun annimaux, cette plateforme met à l'honneur les plus beaux pédigrées<br>
+                2. Elle permet à une communauté passionnée de faire se reproduire leurs toutous. <br>
+                3. Pour garantir une bonne première expérience de saillie nous vous proposons un guide qui partage les conseils de nos experts !
+                </div>
+                <div class="btn-explication-1">
+                  <%= link_to "LE GUIDE DOGGUI", new_dog_path%>
+                </div>
+           </div>
+         </div>
        <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card-explication">
-        <img src="https://png.icons8.com/bubbles/50/000000/male.png", class="image4">
-         <div class="cards-explication-titre">vous avez un chien mâle</div>
-         <br>
-         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam.
-         <br>
-         <%= link_to "INSCRIRE SON MOLOSSE", new_dog_path, class: "small-button btn btn-reverse btn-warning btn-inscrire"%>
-        </div>
+          <div class="card-explication">
+            <img src="https://png.icons8.com/bubbles/50/000000/male.png", class="image4">
+             <div class="cards-explication-titre">Vous avez un chien mâle</div>
+               <div class="card-explication-contenu-2">
+               Vous pouvez inscrire gratuitement votre doggui grâce au formulaire en ligne.  Photos, décritpiton, chaque détail compte pour mettre à l'honneur votre annimal. N'hésitez pas à mettre autant de coeur et d'amour dans votre annonce :)
+               </div>
+                <div class="btn-explication-2">
+                 <%= link_to "INSCRIRE SON DOGGUI"%>
+               </div>
+          </div>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card-explication">
          <img src="https://png.icons8.com/bubbles/50/000000/female.png", class="image5">
-         <div class="cards-explication-titre">vous avez un chien femmelle</div>
-         <br>
-         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
-         <br>
-          <%= link_to "PARCOURIR LES MOLOSSES", index_search_path, class: "small-button btn btn-reverse btn-warning btn-parcourir"%>
+         <div class="cards-explication-titre">Vous avez un chien femmelle</div>
+        <div class="card-explication-contenu-3">
+          Sur votre téléphone ou votre ordinateur venez découvrir tous nos lovely doggui.
+          Les annonces sont modérées pour ne référencer que des propriétaires passionnés, reponsables et honnêtes. La transparence sur notre plateforme est une priorité.
+          Une séléction par pédigrée vous permettra de cibler vos recherches.
         </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card-explication">
-         <img src="https://png.icons8.com/dusk/50/000000/gender.png", class="image6">
-        <div class="cards-explication-titre">Rencontre Propriétaire</div>
-        <br>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.
-        <br>
-        <%= link_to "LES PIECES A VALIDER", new_dog_path, class: "small-button btn btn-reverse btn-warning btn-valider"%>
-      </div>
-
+          <div class="btn-explication-3">
+             <%= link_to "PARCOURIR LES DOGGUI", index_search_path%>
+          </div>
+        </div>
       </div>
     </div>
 
