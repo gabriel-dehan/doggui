@@ -1,31 +1,29 @@
-<div class="banner" style="background-image: url('<%= asset_path'Chien.landing.jpg', height: 200, width: 300%>');">
-  <div class="row">
 
-  <div class= "col-xs-12 col-sm-12 col-md-12">
-    <div class="index-titre">L'AMOUR AVEC UN GRAND OUAF </div>
-    <div class="index-titre-2">(Le meilleur endroit pour trouver le bon étalon) </div>
-  </div>
-  </div>
+<div class="row">
 
-  <div class="row row-index">
-
-    <div class="col-xs-12 col-md-6 call-to-action">
-      <%= link_to "INSCRIRE SON DOGGUI", new_dog_path, class: "bouton-index pull-right"%>
-    </div>
-
-    <div class="col-xs-12 col-md-7 call-to-action-2">
-      <div class= "search-index pull-left">
+  <div class= "col-xs-12 col-sm-offset-1 col-sm-3 banner-left">
+     <div class="hidden-xs banner-titre">L'AMOUR </div>
+     <div class="banner-titre-2">Le meilleur endroit pour trouver le bon étalon !</div>
+      <div class="banner-titre-3">(Doggui c'est une plateforme qui met en relation des propriétaires cannins pour une saillie)</div>
+     <br>
+      <%= link_to "INSCRIRE SON ETALON SUR DOGGUI ! ", new_dog_path, class: "cta-1"%>
+      <div class="group-search">
       <%= form_tag index_search_path, method: :get do %>
       <%= text_field_tag :query,
-          params[:query],
-          class: "form-control form-search",
-          placeholder: "Doggui déjà inscris ... ex: labrador" %>
-       </div>
+        params[:query],
+        class: "col-xs-10 col-sm-8 cta-2",
+        placeholder: "Rechercher un doggui déjà inscrit" %>
+       <button class="col-xs-2 col-sm-2 search-1"> <i class="fas fa-search"></i></button>
+       <% end %>
      </div>
-     <div class="col-xs-12 col-md-3">
-         <button class="bouton-search pull-left">Rechercher <i class="fas fa-search"></i></button>
-         <% end %>
-    </div>
+  </div>
+
+  <div class= "hidden-xs col-sm-7">
+    <div class="banner" style="background-image: url('<%= asset_path'Chien.landing.jpg', height: 200, width: 300%>');">
+
+       <div class="banner-titre-suite">AVEC UN GRAND OUAF </div>
+
+      </div>
   </div>
 
 </div>

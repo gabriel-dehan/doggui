@@ -1,69 +1,81 @@
 .banner {
+  margin-top: 10px;
   color: white;
+  border-radius: 3px;
   text-align: center;
-  height: 75vh;
+  height: 65vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   opacity: 0.85;
   //rajouter un lineargraduent?
 }
 
-
-.row-index {
- margin-top: 390px;
+.banner-left {
+  margin-top: 10px;
 }
 
-.index-titre {
-  font-size: 45px;
-  margin: auto;
-  margin-top: 20px;
-}
-
-.index-titre-2 {
- font-size: 30px;
- margin: auto;
+.banner-titre {
+ color: orange;
+ font-size: 45px;
+ margin-left: 150px;
+ padding-top: 17px;
 }
 
 
-.call-to-action-2 {
- margin-left: -25px;
- width: 350px;
- border-radius-top-left: 10px;
- border-radius-bottom-left: 10px;
+.banner-titre-suite {
+ color: white;
+ font-size: 45px;
+ padding-top: 17px;
+ margin-left: -280px;
 }
 
-.bouton-search {
-  height: 63px;
-  width: 100px;
-  border-radius-top-right: 10px;
-  border-radius-bottom-right: 10px;
-  color: white;
-  background-color: orange;
+.banner-titre-2 {
+ color: grey;
+ margin-top: 5px;
+ font-size: 35px;
+ margin-left: 21px;
 }
 
-.bouton-index {
-  background-color: orange;
-  font-size: 23px;
-  padding: 15px;
-  color: white;
-  border-radius: 5px;
-  width: 410px;
+.banner-titre-3 {
+ color: #d1d1d1;
+ margin-top: 5px;
+ font-size: 20px;
+ margin-left: 21px;
+ margin-bottom: 10px;
 }
 
-.bouton-index:hover {
-  background-color: #ec9c32;
-  color: white;
-  font-size: 23px;
-  text-transform: none !important;
-}
-
-.form-search {
- border-radius: 2px;
- background-color: white;
+.cta-1 {
+ color: white !important;
  font-size: 15px;
- height: 63px;
- width: 350px;
- z-index: 1;
+ padding-top: 20px;
+ padding-bottom: 20px;
+ padding-left: 20px;
+ padding-right: 23px;
+ border-radius: 3px;
+ background-color: orange;
+ margin-left: 21px;
+
+}
+
+.group-search {
+  margin-top: 30px;
+  margin-left: 21px;
+}
+
+.cta-2 {
+ color: white !important;
+ font-size: 15px;
+ padding: 15px;
+ border-top-right-radius: 3px;
+ border-top-left-radius: 3px;
+ width: 261px;
+}
+
+.search-1 {
+ font-size: 20px;
+ border-radius: 3px;
+ background-color: orange;
+ height: 55px;
 }
 
 
