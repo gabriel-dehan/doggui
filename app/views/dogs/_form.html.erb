@@ -25,7 +25,7 @@
 
           <div class="col-sm-12">
             <div class="upload-input-container">
-              <%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale', input_html: { class: "preview" } %>
+              <%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale',hint:"Son plus beau profil", input_html: { class: "preview" } %>
               <div class="preview-container"></div>
               <span class="upload-button">Ajouter une image</span>
             </div>
@@ -83,7 +83,7 @@
             <div class= "bloc-new-form">
 
               <div class="row">
-                <div class="col-xs-12 col-sm-6"> <%= f.input :nickname, label:"Prénom de l'annimal", placeholder: "ex : Milou" %></div>
+                <div class="col-xs-12 col-sm-6"> <%= f.input :nickname, label:"Prénom de l'annimal", placeholder: "ex : Léonard" %></div>
               </div>
               <div class="row">
                 <div class="col-xs-12 col-sm-6">  <%= f.input :birthday_date, label:"Date de naissance" %> </div>
@@ -91,12 +91,12 @@
 
               <div class="row">
                 <div class="col-xs-12 col-sm-6"> <%= f.association :breed, label: "Pédigrée" %></div>
-                <div class="col-xs-12 col-sm-6"><%= f.input :lof_number, label:"Son numéro LOF", placeholder: "LOF-20150488-2016-1" %>  </div>
+                <div class="col-xs-12 col-sm-6"><%= f.input :lof_number, label:"Son numéro LOF", placeholder: "ex : LOF-20150488-2016-1" %>  </div>
               </div>
 
               <div class= "row">
-                <div class="col-xs-12 col-sm-6"><%= f.input :color, label:"Robe", placeholder: "Fauve" %></div>
-                <div class="col-xs-12 col-sm-6"><%= f.input :weight, label:"Poids",placeholder: "en Kg" %></div>
+                <div class="col-xs-12 col-sm-6"><%= f.input :color, label:"Robe", placeholder: "ex : Fauve" %></div>
+                <div class="col-xs-12 col-sm-6"><%= f.input :weight, label:"Poids (en Kg)",placeholder: "ex : 3,5" %></div>
               </div>
 
             </div>
@@ -133,7 +133,7 @@
               </div>
 
               <div class="row">
-                <div class="col-sm-6"> <%= f.input :price, label:"Rétribution", placeholder: "€" %></div>
+                <div class="col-sm-6"> <%= f.input :price, label:"Rétribution (en €)", placeholder: "ex : 350" %></div>
               </div>
             </div>
           </div>
