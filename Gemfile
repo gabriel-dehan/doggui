@@ -48,6 +48,7 @@ gem 'simple_form'
 # gem 'mini_magick', '~> 4.8'
 gem 'pry-byebug'
 gem 'rails-i18n'
+gem 'devise-i18n'
 
 # Gem to deliver email in production
 gem 'postmark-rails'
