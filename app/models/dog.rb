@@ -15,6 +15,14 @@ class Dog < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  validates :picture, presence: true
+  validates :nickname, presence: true 
+  validates :lof_number, presence: true 
+  validates :weight, presence: true, numericality: true
+  validates :color, presence: true
+  validates :price, presence: true, numericality: true
+  validates :birthday_date, presence: true
+
   scope :search_by_breed, ->(query) { joins(:breed).where("lower(breeds.name) LIKE ?", "%#{query.downcase}%") }
 
   def get_city

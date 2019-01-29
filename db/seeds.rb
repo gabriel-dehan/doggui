@@ -28,10 +28,8 @@ p "seeding one user"
 
 p "user created, let's seed breeds and dogs"
 
-breeds = []
-10.times do 
-  breeds << Breed.create!(name: Faker::Dog.breed)
-end
+Parser.new.save_dogs
+breeds = Breed.all 
 
 12.times do
 
@@ -53,7 +51,7 @@ end
   lof = ["10290-1BB9", "13490-1AA9", "10230-1039", "1AZ90-1029"]
   prize = ["2", "12", "5", "1", "0"]
 
-  dog = Dog.new(
+  dog = Dog.create!(
     nickname: Faker::Dog.name,
     remote_picture_url: images.shuffle.sample,
     size: Faker::Number.between(10, 150),
@@ -61,7 +59,9 @@ end
     user: User.all.sample,
     version: version.shuffle.sample,
     address: addresses.shuffle.sample,
+    birthday_date: Date.today - (1..100).to_a.sample.weeks,
     price: price.shuffle.sample,
+    weight: (3..10).to_a.sample,
     hair: hair.shuffle.sample,
     color: color.shuffle.sample,
     eye_color: eye_color.shuffle.sample,
@@ -71,7 +71,7 @@ end
     description: description.shuffle.sample,
     prize: prize.shuffle.sample
     )
-  dog.save
+ 
   sleep(2)
  end
 
