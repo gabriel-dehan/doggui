@@ -28,10 +28,8 @@ p "seeding one user"
 
 p "user created, let's seed breeds and dogs"
 
-breeds = []
-10.times do 
-  breeds << Breed.create!(name: Faker::Dog.breed)
-end
+Parser.new.save_dogs
+breeds = Breed.all 
 
 12.times do
 

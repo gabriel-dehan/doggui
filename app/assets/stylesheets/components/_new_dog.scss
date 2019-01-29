@@ -5,6 +5,17 @@
  font-weight: normal;
 }
 
+.form-group-invalid {
+  input[type=text] {
+    border-color: #df6359;
+  }
+  
+  .invalid-feedback {
+    color: #df6359;
+    font-size: 0.9em;
+    margin-top: 0.4em;
+  }
+}
 
 .bloc-new-form {
   margin-top: 20px;
