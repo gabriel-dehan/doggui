@@ -1,0 +1,13 @@
+fr:
+  activerecord:
+    models:
+      breed: Race
+    attributes:
+      dog:
+        nickname: Prénom
+        color: Couleur
+        lof_number: Numéro lof
+        weight: Poid
+        picture: Image
+        breed: Race
+        price: Prix
