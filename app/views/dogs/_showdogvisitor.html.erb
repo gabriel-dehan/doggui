@@ -9,99 +9,32 @@
 
   <div class="col-xs-12 col-sm-8">
 
-    <% if @dog.images.count == 1 %>
-         <div class="row">
+     <% if @dog.images.any? %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <%= cl_image_tag @dog.picture, class: "image-show-1" %>
+        </div>
 
-            <div class="col-xs-12 col-sm-6">
-                  <%= cl_image_tag @dog.picture, class: "image-show-1" %>
-            </div>
-
-             <div class="col-xs-12 col-sm-6">
-                  <%= cl_image_tag @dog.images.first.image, class: "image-show-2"%>
-            </div>
-
+        <div class="col-xs-12 col-sm-6">
+          <div class="first-image">
+            <%= cl_image_tag @dog.images.first.image, class: "image-show-2", crop: :fill, width: 495, height: (@dog.images.count > 1) ? 179 : 360 %>
           </div>
-      <% end %>
-
-      <% if @dog.images.count == 2 %>
-         <div class="row">
-
-            <div class="col-xs-12 col-sm-6">
-                  <%= cl_image_tag @dog.picture, class: "image-show-1" %>
+          <% if @dog.images.count > 1 %>
+            <div class="other-images">
+              <% @dog.images[1..-1].each do |img| %>
+                <%= cl_image_tag img.image, height: 179, width: (495 / @dog.images[1..-1].count), crop: :fill, style: "width: #{100 / @dog.images[1..-1].count}%;" %>
+              <% end %>
             </div>
-
-             <div class="col-xs-12 col-sm-6">
-                 <div class="row">
-                   <div class="col-xs-12 col-sm-12">
-                     <%= cl_image_tag @dog.images.first.image, class: "image-show-3"%>
-                   </div>
-                  </div>
-
-                  <div class="row">
-                   <div class="col-xs-12 col-sm-12">
-                     <%= cl_image_tag @dog.images.second.image, class: "image-show-3"%>
-                   </div>
-                 </div>
-              </div>
-           </div>
-      <% end %>
-
-      <% if @dog.images.count == 3 %>
-         <div class="row">
-
-            <div class="col-xs-12 col-sm-6">
-                  <%= cl_image_tag @dog.picture, class: "image-show-1" %>
-            </div>
-
-             <div class="col-xs-12 col-sm-6">
-                 <div class="row">
-                   <div class="col-xs-12 col-sm-12">
-                     <%= cl_image_tag @dog.images.first.image, class: "image-show-3"%>
-                   </div>
-                  </div>
-
-                  <div class="row">
-                   <div class="col-xs-12 col-sm-6">
-                     <%= cl_image_tag @dog.images.second.image, class: "image-show-4"%>
-                   </div>
-                   <div class="col-xs-12 col-sm-6">
-                     <%= cl_image_tag @dog.images.third.image, class: "image-show-4"%>
-                   </div>
-                 </div>
-            </div>
-
-          </div>
-      <% end %>
-
-     <% if @dog.images.count == 4 %>
-         <div class="row">
-
-            <div class="col-xs-12 col-sm-6">
-                  <%= cl_image_tag @dog.picture, class: "image-show-1" %>
-            </div>
-
-             <div class="col-xs-12 col-sm-6">
-                 <div class="row">
-                   <div class="col-xs-12 col-sm-12">
-                     <%= cl_image_tag @dog.images.first.image, class: "image-show-3"%>
-                   </div>
-                  </div>
-
-                  <div class="row">
-                   <div class="hidden-xs col-sm-4">
-                     <%= cl_image_tag @dog.images.second.image, class: "image-show-5"%>
-                   </div>
-                   <div class="hidden-xs col-sm-4">
-                     <%= cl_image_tag @dog.images.third.image, class: "image-show-5"%>
-                   </div>
-                    <div class="hidden-xs col-sm-4">
-                     <%= cl_image_tag @dog.images.fourth.image, class: "image-show-5"%>
-                   </div>
-                 </div>
-            </div>
-
-          </div>
-      <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12">
+          <%= cl_image_tag @dog.picture, class: "image-show-0", width: 1000, height: 380, crop: :fill %>
+        </div>
+      </div>
+    <% end %>
 
       <div class="row">
 
