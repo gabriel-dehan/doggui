@@ -17,14 +17,14 @@
     label {
       margin-right: 0.4em;
     }
-    input { 
+    input {
       margin-right: 1.2em;
     }
   }
 }
 
 .preview-container {
-  img { 
+  img {
     height: 140px;
     border: 1px solid #d4d4d4;
     padding: 5px;
@@ -37,6 +37,7 @@
 .upload-input-container {
   .upload-button {
     border: 1px solid #d4d4d4;
+    background-color: white;
     font-size: 0.95em;
     color: #6b6b6b;
     padding: 0.5em 0.9em;

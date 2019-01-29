@@ -2,17 +2,6 @@
 
   <div class="banner-content">
     <h1> <i class="fas fa-medal"></i> Trouver son molosse </h1>
-     <div class="call-to-action-index-2">
-      <div class= "search-index-2">
-      <%= form_tag index_search_path, method: :get do %>
-      <%= text_field_tag :query,
-          params[:query],
-          class: "form-control form-search",
-          placeholder: "Doggui déjà inscris ... ex: labrador" %>
-       </div>
-         <button class="bouton-search-2">Rechercher <i class="fas fa-search"></i></button>
-         <% end %>
-       </div>
   </div>
 
 
@@ -20,7 +9,21 @@
 
 <div class="container-flex">
 
+
     <div class="container-card">
+
+       <div class="call-to-action-index-2">
+          <div class= "search-index-2">
+          <%= form_tag index_search_path, method: :get do %>
+          <%= text_field_tag :query,
+              params[:query],
+              class: "form-control form-search",
+              placeholder: "Doggui déjà inscris ... ex: labrador" %>
+           </div>
+             <button class="bouton-search-2">Rechercher <i class="fas fa-search"></i></button>
+             <% end %>
+       </div>
+
        <div class="row">
            <% @dogs.includes(:user, :breed).each do |dog| %>
               <div class="col-xs-12 col-sm-12 col-md-5">
