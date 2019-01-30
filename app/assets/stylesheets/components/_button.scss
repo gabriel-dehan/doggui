@@ -27,14 +27,15 @@ color: white;
 ///BTN pour Ajouter votre chien NAV
 
 .btn-inscription {
-  background-color: orange;
-  color: white !important;
+  color: orange !important;
   font-size: 17px;
   padding-right: 10px;
+  margin-right: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15);
 }
 
 .btn-inscription:hover {
-  background-color: #ec9c32 !important;
+  background-color: #f6eee4 !important;
   text-decoration: none;
 }
 
