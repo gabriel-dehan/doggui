@@ -26,14 +26,15 @@
 
         <% if current_user%>
 
-          <li class="dropdown">
-            <li><%= link_to "Ajouter votre doggui", new_dog_path, class:"btn-inscription"%></li>
-
           <% if user_signed_in? && current_user.avatar.present? %>
              <img src="<%= cl_image_path current_user.avatar %>" class="avatar-navbar dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
         <% else %>
             <img src="<%= image_path "avatar.png" %>" class="avatar-navbar dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
          <% end %>
+
+         <li class="dropdown">
+            <li><%= link_to "Ajouter votre doggui", new_dog_path, class:"btn-inscription"%></li>
+
             <ul class="dropdown-menu">
               <li class="menu-edit-profile"><%= link_to 'Mon Profil', index_dogs_path   %></li>
               <li class="menu-edit-profile"><%= link_to 'Mes paramètres',edit_user_registration_path%></li>

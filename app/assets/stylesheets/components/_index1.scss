@@ -29,6 +29,7 @@
  margin-left: -280px;
 }
 
+
 .banner-titre-2 {
  color: grey;
  margin-top: 5px;
@@ -62,6 +63,10 @@
   margin-left: 21px;
 }
 
+.fa-search {
+  color: white;
+}
+
 .cta-2 {
  color: white !important;
  font-size: 15px;
@@ -73,9 +78,11 @@
 
 .search-1 {
  font-size: 20px;
- border-radius: 3px;
+ border-top-right-radius: 3px;
+ border-bottom-right-radius: 3px;
  background-color: orange;
  height: 55px;
+ border: solid transparent;
 }
 
 
@@ -176,7 +183,7 @@
  margin-left : 20px;
  text-transform: uppercase;
  font-size: 25px;
- color: orange;
+ color: grey;
  font-weight: 300;
 }
 

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="bouton-show-orange" @click='discuss = !discuss' v-if='!dog_to_user'>
-      Discuter
+      <i class="fa fa-paper-plane" aria-hidden="true"></i> Discuter
     </div>
     <div v-if='dog_to_user'>
       <conversations :conversations_url='conversations_url' :dog='dog' :user_id='user_id'></conversations>
