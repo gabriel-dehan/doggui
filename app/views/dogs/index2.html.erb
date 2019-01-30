@@ -22,7 +22,7 @@
 
       <div class="row">
           <% @dogs.includes(:user, :breed).each do |dog| %>
-            <div class="col-xs-12 col-sm-12 col-md-5">
+            <div class="col-xs-12 col-sm-12 col-md-6">
               <%= render partial: 'dogs/card', locals: { dog: dog } %>
             </div>
         <% end %>

@@ -21,6 +21,7 @@
 border-top-left-radius: 10px;
 border-bottom-left-radius: 10px;
 height: 45px;
+margin-left: 15px;
 }
 
 .bouton-search-2 {
@@ -36,7 +37,8 @@ height: 45px;
 
 .container-flex {
   display: flex;
-  margin-left: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .container-card {
@@ -45,8 +47,9 @@ height: 45px;
 
 .map-container {
   margin-top: 3px;
-  margin-right: 45px;
-  flex: 0 0 40%;
+  margin-right: 30px;
+  margin-left: 15px;
+  flex: 0 0 35%;
   height: 80vh;
   position: sticky !important;
   top: 0 !important;
