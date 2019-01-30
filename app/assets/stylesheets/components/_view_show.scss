@@ -93,18 +93,6 @@
 
 }
 
-.caroussel-size {
- width: 400px;
-  .carousel-image {
-   height: 300px;
-   max-height: 300px;
-   margin-left: auto;
-   margin-right: auto;
-  }
-  .carousel-control {
-    background: none;
-  }
-}
 
 
 .dropdownMenuLink {
@@ -136,6 +124,10 @@ color: #7a7373;
 .carte-caracteristique-texte-2 {
   font-size: 11px;
   font-weight: 310;
+}
+
+.retribution {
+  color: orange;
 }
 
 

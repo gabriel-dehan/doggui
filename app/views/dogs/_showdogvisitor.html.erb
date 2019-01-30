@@ -1,6 +1,6 @@
 <div class="banner2" style="background-image: url('<%= asset_path'Chien.landing.jpg'%>');">
   <div class="banner-content">
-    <h1>  <%= @dog.nickname %> le <%= @dog.breed.name %></h1>
+    <h2>  <%= "'#{@dog.nickname}'" %> le <%= @dog.breed.name %></h2>
   </div>
 </div>
 
@@ -42,12 +42,19 @@
 
             <div class="row">
 
-                  <div class="col-xs-6 col-sm-12">
-                    <div class='carte-caracteristique'>
-                      <div class="carte-caracteristique-texte"><%= @dog.weight%></div>
-                      <div class="carte-caracteristique-texte-2">poids</div>
+                   <div class="col-xs-6 col-sm-12">
+                    <div class="carte-caracteristique">
+                      <div class="carte-caracteristique-texte"><%= @dog.lof_number%></div>
+                      <div class="carte-caracteristique-texte-2">N° de LOF</div>
                     </div>
+                 </div>
+
+                 <div class="col-xs-6 col-sm-12">
+                  <div class="carte-caracteristique">
+                    <div class="carte-caracteristique-texte"><%= @dog.age%></div>
+                    <div class="carte-caracteristique-texte-2"><%= @dog.birthday_date %></div>
                   </div>
+                 </div>
 
                  <div class="col-xs-6 col-sm-12">
                     <div class='carte-caracteristique'>
@@ -56,20 +63,6 @@
                     </div>
                  </div>
 
-                 <div class="col-xs-6 col-sm-12">
-                    <div class="carte-caracteristique">
-                      <div class="carte-caracteristique-texte"><%= @dog.lof_number%></div>
-                      <div class="carte-caracteristique-texte-2">N° de LOF</div>
-                    </div>
-                 </div>
-
-
-               <div class="col-xs-6 col-sm-12">
-                  <div class="carte-caracteristique">
-                    <div class="carte-caracteristique-texte"><%= @dog.age%></div>
-                    <div class="carte-caracteristique-texte-2"><%= @dog.birthday_date %></div>
-                  </div>
-               </div>
 
                <div class="col-xs-6 col-sm-12">
                   <div class="carte-caracteristique">
@@ -79,9 +72,16 @@
                </div>
 
                <div class="col-xs-6 col-sm-12">
+                    <div class='carte-caracteristique'>
+                      <div class="carte-caracteristique-texte"><%= "#{@dog.weight} kg"%></div>
+                      <div class="carte-caracteristique-texte-2">poids</div>
+                    </div>
+                  </div>
+
+               <div class="col-xs-6 col-sm-12">
                   <div class="carte-caracteristique">
-                    <div class="carte-caracteristique-texte"> <%= @dog.price%> €</div>
-                    <div class="carte-caracteristique-texte-2"> Rétribution</div>
+                    <div class="carte-caracteristique-texte retribution"> <%= @dog.price%> €</div>
+                    <div class="carte-caracteristique-texte-2 "> Rétribution</div>
                   </div>
                </div>
            </div>
