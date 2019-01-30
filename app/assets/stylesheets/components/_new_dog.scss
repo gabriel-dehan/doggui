@@ -1,15 +1,11 @@
 
-.form-control-label {
- color: black;
- text-transform: uppercase;
- font-weight: normal;
-}
+
 
 .form-group-invalid {
   input[type=text] {
     border-color: #df6359;
   }
-  
+
   .invalid-feedback {
     color: #df6359;
     font-size: 0.9em;
@@ -43,7 +39,7 @@
 
 .illu-form-for-picture {
   background-color: #FFB973;
-  height: 293px;
+  height: 243px;
   color: black;
   font-weight: 300;
   padding: 15px;

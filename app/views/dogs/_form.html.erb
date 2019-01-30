@@ -20,12 +20,15 @@
     </div>
 
    <div class="col-xs-12 col-sm-6">
-     <div class= "row">
+
+    <div class= "row">
+
        <div class= "bloc-new-form ">
 
+        <div class="row">
           <div class="col-sm-12">
             <div class="upload-input-container">
-              <%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale',hint:"Son plus beau profil", input_html: { class: "preview" } %>
+              <%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale',hint:"Son plus beau profil", input_html: { class: "preview"} %>
               <div class="preview-container"></div>
               <span class="upload-button">Ajouter une image</span>
             </div>
@@ -36,6 +39,9 @@
              <% end %>
           </div>
           <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
+        </div>
+
+       <div class="row">
           <div class="col-sm-12">
             <div class="upload-input-container">
               <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3 preview' }, name: 'images[]', label:"Photos supplémentaires", hint:" Ajoutez jusqu'à 4 photos en plus"  %>
@@ -52,14 +58,11 @@
               </div>
              <% end %>
           </div>
-
-       <div class= "row">
-          <div class="col-xs-12 col-sm-12"> <%= f.input :video, placeholder: 'Lien video', label: false %></div>
+         </div>
        </div>
       </div>
      </div>
 
-    </div>
 
   </div>
 
