@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
   <head>
-    <title>Les Molosses</title>
+    <title>Doggui</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,7 +11,6 @@
     <%= stylesheet_pack_tag 'application' %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
 
     <!-- app/views/layouts/application.html.erb -->
     <%= favicon_link_tag %>
@@ -35,18 +35,13 @@
   </head>
 
   <body>
-     <%= render 'shared/flashes' %>
-     <%= render 'shared/navbar' %>
-     <div data-behavior='vue'>
-       <%= yield %>
+    <%= render 'shared/flashes' %>
+    <%= render 'shared/navbar' %>
+    <div data-behavior="vue">
+      <%= yield %>
      </div>
-      <%= render 'shared/footer' %>
+    <%= render 'shared/footer' %>
 
-  <%= javascript_pack_tag 'application' %>
-
-
-
-
-
+    <%= javascript_pack_tag 'application' %>
   </body>
 </html>

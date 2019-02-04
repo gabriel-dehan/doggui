@@ -15,6 +15,7 @@
 
 .card-show-user {
   margin-bottom: 7px;
+  margin-left: 10px;
   padding-bottom : 7px;
   margin-bottom: 5px;
   min-height : 150px;
@@ -30,42 +31,72 @@
  margin-bottom: 7px;
 }
 
-.image-show-profil {
-  width: 100%;
-  height: 100%;
+.image-show-0 {
+  width: 103%;
+  height: 380px;
+  border-radius: 2px;
+  margin-bottom: 5px;
 }
+
+.first-image {
+  img {
+    width: 100%;
+    margin-bottom: 7px;
+    border-radius: 2px;
+  }
+}
+
+.other-images {
+  display: flex;
+
+  img {
+    margin-right: 7px;
+  }
+  img:last-child {
+    margin-right: 0;
+  }
+}
+
+.image-show-1 {
+  width: 451px;
+  height: 360px;
+  margin-bottom: 7px;
+  border-radius: 2px;
+}
+
+// .image-show-3 {
+//   width: 451px;
+//   height: 179px;
+//   margin-bottom: 2px;
+//   border-radius: 2px;
+// }
+
+// .image-show-4 {
+//   width: 223.5px;
+//   height: 179px;
+//   margin-bottom: 7px;
+//   border-radius: 2px;
+// }
+
+// .image-show-5 {
+//   width: 146px;
+//   height: 179px;
+//   margin-bottom: 7px;
+//   border-radius: 2px;
+// }
 
 .show-card-picture {
-  width: 400px;
-  height: 300px;
+  width: 355px;
+  height: 280px;
+  margin-bottom: 10px;
+
 
 }
 
-.caroussel-size {
- width: 400px;
-  .carousel-image {
-   height: 300px;
-   max-height: 300px;
-   margin-left: auto;
-   margin-right: auto;
-  }
-  .carousel-control {
-    background: none;
-  }
-}
 
 
 .dropdownMenuLink {
   color: red;
-}
-
-.card-show-caracteristique {
-  margin-left: 7px;
-  margin-bottom: 7px;
-  padding-bottom : 7px;
-  margin-bottom: 5px;
-  background-color: #f2f2f2;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
 }
 
 .texte-caracteristique {
@@ -75,13 +106,13 @@ color: #7a7373;
 }
 
 .carte-caracteristique {
-  background-color: #F4F4F4;
-  width: 100%;
+  background-color: white;
+  margin-bottom: 5px;
   text-align: center;
-  height: 70px;
-  padding: 15px;
-  margin: 5px 0px;
-  border-radius: 3px;
+  width: 110%;
+  height: 60px;
+  padding: 12px;
+  border-radius: 2px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
 }
 
@@ -95,22 +126,23 @@ color: #7a7373;
   font-weight: 310;
 }
 
-.card-show-description {
-  margin-left: 7px;
-  margin-bottom: 7px;
-  padding-bottom : 7px;
-  padding: 25px;
-  background-color: white;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
-  border-radius: 5px;
+.retribution {
+  color: orange;
 }
 
-.card-show-map {
-  margin-left: 7px;
-  height: 200px;
+
+
+.card-show-adresse {
+  margin-top: 3px;
+  margin-left: 12px;
+  margin-bottom: 5px;
+  padding-bottom : 7px;
+  padding: 15px;
+  background-color: white;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
-  border-radius: 5px;
+  border-radius: 3px;
 }
+
 
 
 .bouton-show {
@@ -125,13 +157,20 @@ color: #7a7373;
 
 .bouton-show-orange {
  margin : 3px;
- padding-top: 5px;
- padding-left: 5px;
+ margin-left: 8px;
+ padding-left: 27px;
+ padding-top: 13px;
  background-color: orange;
- width: 130px;
- height: 30px;
+ color: white;
+ width: 150px;
+ height: 45px;
  text-decoration: none;
  border-radius: 3px;
+ text-transform: uppercase;
+}
+
+.bouton-show-orange:hover {
+ color : #F4F4F4;
 }
 
 
@@ -177,8 +216,13 @@ color: #7a7373;
 
 
 .info-description {
- width: 100%;
+ width: 104%;
+ padding: 15px;
+ min-height: 386px;
+ background-color: #F4F4F4;
+ border-radius: 4px;
  word-wrap: break-word;
+ box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
 }
 
 .show-card-name {
@@ -189,15 +233,32 @@ color: #7a7373;
   text-transform: uppercase;
 }
 
-.show-titre {
+.show-titre-description {
+
   color: orange;
+  margin-bottom: 10px;
   text-transform: uppercase;
   font-size: 20px;
 }
 
-
-.map-show{
+.show-titre {
+  color: orange;
+  margin-left: 40px;
+  padding: 15px;
+  width: 350px;
+  margin-top: -28px;
+  text-transform: uppercase;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
+  font-size: 20px;
+}
+
+.adresse-map {
+ color: orange;
+ margin-bottom: 10px;
+}
+
+#map {
+  margin-left: -3px;
 }
 
 .avatar-show {

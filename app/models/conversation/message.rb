@@ -6,4 +6,20 @@ class Conversation::Message < ApplicationRecord
   scope :of_user, ->(user) { where(sender: user) }
   scope :not_read, -> { where(is_read: false) }
   scope :read, -> { where(is_read: true) }
+
+  after_create :send_message_recive_email
+
+
+  def send_message_recive_email
+    UserMailer.new_message(reciver_user, conversation.dog).deliver_now
+  end
+
+  def reciver_user
+    if sender == conversation.dog.user
+      user_id = conversation.messages.uniq(&:user_id).pluck(:user_id).select { |u| u != sender.id }
+      User.find(user_id.first)
+    else
+      conversation.dog.user
+    end
+  end
 end

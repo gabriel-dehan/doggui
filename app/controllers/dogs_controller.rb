@@ -11,7 +11,8 @@ class DogsController < ApplicationController
 
   def new
    @dog = Dog.new
-   @dog.images.build
+   # This is not needed and this is why there is a "delete" button even when there are no pictures
+   # @dog.images.build
    authorize @dog
   end
 
@@ -29,7 +30,8 @@ class DogsController < ApplicationController
 
   def edit
     @dog = Dog.find(params[:id])
-    @dog.images.build if @dog.images.blank?
+    # This is not needed and this is why there is a "delete" button even when there are no pictures
+    # @dog.images.build if @dog.images.blank?
     authorize @dog
   end
 
@@ -54,17 +56,14 @@ class DogsController < ApplicationController
   end
 
   def index2
-
     if params[:query].present?
-      @dogs = policy_scope(Dog.search_by_breed(params[:query]))
+      @dogs = policy_scope(Dog).search_by_breed(params[:query]).page(params[:page]).per(10)
       # @lands_geo = Land.search_by_title_and_address(params[:query]).where.not(latitude: nil, longitude: nil)
       @dogs_geo = Dog.where.not(latitude: nil, longitude: nil)
     else
-      @dogs = policy_scope(Dog)
+      @dogs = policy_scope(Dog).page(params[:page]).per(10)
       @dogs_geo = Dog.where.not(latitude: nil, longitude: nil)
     end
-
-    @dogs = @dogs.includes(:user, :breed).page(params[:dog])
 
    authorize @dogs
 
@@ -125,9 +124,6 @@ class DogsController < ApplicationController
         :lof_number,
         :description,
         :birthday_date,
-        :medical_analyse,
-        :father_lof,
-        :mother_lof,
         :price,
         :eye_color,
         :version,

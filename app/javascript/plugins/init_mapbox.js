@@ -1,8 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 
-const mapElement = document.getElementById('map');
-
-const buildMap = () => {
+// buildMap now takes `mapElement` as an argument because it is not a global constant anymore
+const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
@@ -25,8 +24,11 @@ const fitMapToMarkers = (map, markers) => {
 };
 
 const initMapbox = () => {
+  // Moved mapElement here, because we want to search for the element in the DOM everytime we call the "initMapBox" function
+  const mapElement = document.getElementById('map');
+
   if (mapElement) {
-    const map = buildMap();
+    const map = buildMap(mapElement);
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);

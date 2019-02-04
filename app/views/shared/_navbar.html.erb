@@ -1,7 +1,4 @@
 
-<body>
-
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -29,19 +26,20 @@
 
         <% if current_user%>
 
-          <li class="dropdown">
-            <li><%= link_to "Ajouter votre doggui", new_dog_path, class:"btn-inscription"%></li>
-
           <% if user_signed_in? && current_user.avatar.present? %>
              <img src="<%= cl_image_path current_user.avatar %>" class="avatar-navbar dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
         <% else %>
             <img src="<%= image_path "avatar.png" %>" class="avatar-navbar dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
          <% end %>
+
+         <li class="dropdown">
+            <li><%= link_to "Ajouter votre doggui", new_dog_path, class:"btn-inscription"%></li>
+
             <ul class="dropdown-menu">
               <li class="menu-edit-profile"><%= link_to 'Mon Profil', index_dogs_path   %></li>
               <li class="menu-edit-profile"><%= link_to 'Mes paramètres',edit_user_registration_path%></li>
               <li role="separator" class="divider"></li>
-              <li class="menu-logout"><%= link_to 'Se déconnecter',destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+              <li class="menu-logout"><%= link_to 'Se déconnecter',destroy_user_session_path, method: :delete, data: { confirm: 'Etes-vous sûr?' } %></li>
             </ul>
 
             <% else %>

@@ -1,17 +1,25 @@
 
-.form-control-label {
- color: grey;
- text-transform: uppercase;
- font-weight: normal;
-}
 
+
+.form-group-invalid {
+  input[type=text] {
+    border-color: #df6359;
+  }
+
+  .invalid-feedback {
+    color: #df6359;
+    font-size: 0.9em;
+    margin-top: 0.4em;
+  }
+}
 
 .bloc-new-form {
   margin-top: 20px;
-  border-radius: 5px;
+  border-radius: 2px;
   margin-bottom: 10px;
-  box-shadow: 0 3px 5px 0 #F2F2F2;
+  box-shadow: 0 3px 5px 0 #928C8C;
   padding: 20px;
+  background-color: #F2F2F2;
 }
 
 
@@ -31,7 +39,7 @@
 
 .illu-form-for-picture {
   background-color: #FFB973;
-  height: 228px;
+  height: 243px;
   color: black;
   font-weight: 300;
   padding: 15px;
@@ -50,7 +58,7 @@
 
 .illu-form-for-description {
   background-color: #FF9226;
-  height: 428px;
+  height: 448px;
   color: black;
   font-weight: 300;
   padding: 15px;

@@ -1,6 +1,6 @@
 <div class="banner2" style="background-image: url('<%= asset_path'Chien.landing.jpg'%>');">
   <div class="banner-content">
-    <h1>  <%= @dog.nickname %> le <%= @dog.breed&.name %></h1>
+   <h2>  <%= "'#{@dog.nickname}'" %> le <%= @dog.breed.name %></h2>
   </div>
 </div>
 
@@ -8,107 +8,105 @@
 <div class="row container-show">
 
   <div class="col-xs-12 col-sm-8">
-
-     <div class="row">
-
-        <div class="col-xs-12 col-sm-6 show-card-picture">
-              <%= cl_image_tag @dog.picture, class: "image-show-profil" %>
+    <% if @dog.images.any? %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <%= cl_image_tag @dog.picture, class: "image-show-1" %>
         </div>
 
-        <div class="col-sm-4 col-sm-5 show-card-picture">
-
-          <div id="carouselExampleIndicators" class="carousel slide caroussel-size" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <% @dog.images.count.times do |index| %>
-                <li data-target="#carouselExampleIndicators" data-slide-to="<%= index + 1 %>"></li>
-              <% end %>
-            </ol>
-            <div class="carousel-inner">
-              <% @dog.images.each_with_index do |dog_image, index| %>
-                <%= content_tag :div, nil, class: "#{index.zero? ? 'item active' : 'item'}" do %>
-                    <%= cl_image_tag(dog_image.image, class: 'carousel-image') %>
-                <% end %>
+        <div class="col-xs-12 col-sm-6">
+          <div class="first-image">
+            <%= cl_image_tag @dog.images.first.image, class: "image-show-2", crop: :fill, width: 495, height: (@dog.images.count > 1) ? 179 : 360 %>
+          </div>
+          <% if @dog.images.count > 1 %>
+            <div class="other-images">
+              <% @dog.images[1..-1].each do |img| %>
+                <%= cl_image_tag img.image, height: 179, width: (495 / @dog.images[1..-1].count), crop: :fill, style: "width: #{100 / @dog.images[1..-1].count}%;" %>
               <% end %>
             </div>
-            <a class="left carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-           </div>
-         </div>
-       </div>
-
-      <div class="row">
-            <div class="col-xs-6 col-sm-4">
-              <div class='carte-caracteristique'>
-                <div class="carte-caracteristique-texte"><%= @dog.weight%></div>
-                <div class="carte-caracteristique-texte-2">poids</div>
-              </div>
-            </div>
-
-           <div class="col-xs-6 col-sm-4">
-              <div class='carte-caracteristique'>
-                <div class="carte-caracteristique-texte"><%= @dog.color%></div>
-                <div class="carte-caracteristique-texte-2">Couleur de la robe</div>
-              </div>
-           </div>
-
-           <div class="col-xs-6 col-sm-3">
-              <div class="carte-caracteristique">
-                <div class="carte-caracteristique-texte"><%= @dog.lof_number%></div>
-                <div class="carte-caracteristique-texte-2">N° de LOF</div>
-              </div>
-           </div>
-         </div>
-
-         <div class="row">
-
-         <div class="col-xs-6 col-sm-4">
-            <div class="carte-caracteristique">
-              <div class="carte-caracteristique-texte"><%= @dog.age%></div>
-              <div class="carte-caracteristique-texte-2"><%= @dog.birthday_date %></div>
-            </div>
-         </div>
-
-         <div class="col-xs-6 col-sm-4">
-            <div class="carte-caracteristique">
-             <div class="carte-caracteristique-texte"><%= @dog.eye_color%></div>
-             <div class="carte-caracteristique-texte-2"> Couleur des yeux</div>
-            </div>
-         </div>
-
-         <div class="col-xs-6 col-sm-3">
-            <div class="carte-caracteristique">
-              <div class="carte-caracteristique-texte"> <%= @dog.price%> €</div>
-              <div class="carte-caracteristique-texte-2"> Rétribution</div>
-            </div>
-         </div>
-
+          <% end %>
+        </div>
       </div>
-
+    <% else %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12">
+          <%= cl_image_tag @dog.picture, class: "image-show-0", width: 1000, height: 380, crop: :fill %>
+        </div>
+      </div>
+    <% end %>
 
       <div class="row">
-        <div class="card-show-description col-xs-12 col-sm-11">
-            <div class="info-description">
-              <div class="show-titre">🐕 Description</div>
+
+         <div class="col-xs-12 col-sm-3">
+
+            <div class="row">
+
+                 <div class="col-xs-6 col-sm-12">
+                    <div class="carte-caracteristique">
+                      <div class="carte-caracteristique-texte"><%= @dog.lof_number%></div>
+                      <div class="carte-caracteristique-texte-2">N° de LOF</div>
+                    </div>
+                 </div>
+
+                 <div class="col-xs-6 col-sm-12">
+                  <div class="carte-caracteristique">
+                    <div class="carte-caracteristique-texte"><%= @dog.age%></div>
+                    <div class="carte-caracteristique-texte-2"><%= @dog.birthday_date %></div>
+                  </div>
+                 </div>
+
+                 <div class="col-xs-6 col-sm-12">
+                    <div class='carte-caracteristique'>
+                      <div class="carte-caracteristique-texte"><%= @dog.color%></div>
+                      <div class="carte-caracteristique-texte-2">Couleur de la robe</div>
+                    </div>
+                 </div>
+
+
+               <div class="col-xs-6 col-sm-12">
+                  <div class="carte-caracteristique">
+                   <div class="carte-caracteristique-texte"><%= @dog.eye_color%></div>
+                   <div class="carte-caracteristique-texte-2"> Couleur des yeux</div>
+                  </div>
+               </div>
+
+               <div class="col-xs-6 col-sm-12">
+                    <div class='carte-caracteristique'>
+                      <div class="carte-caracteristique-texte"><%= "#{@dog.weight} kg"%></div>
+                      <div class="carte-caracteristique-texte-2">poids</div>
+                    </div>
+                  </div>
+
+               <div class="col-xs-6 col-sm-12">
+                  <div class="carte-caracteristique">
+                    <div class="carte-caracteristique-texte retribution"> <%= @dog.price%> €</div>
+                    <div class="carte-caracteristique-texte-2 "> Rétribution</div>
+                  </div>
+               </div>
+           </div>
+           </div>
+
+            <div class="col-xs-12 col-sm-9">
+              <div class="info-description">
+              <div class="show-titre-description">🐕 Description</div>
               <%= @dog.description %>
             </div>
-        </div>
+
+            </div>
       </div>
 
-
       <div class="row">
-          <div class="card-show-map col-sm-11">
-             📍<%= @dog.address %>
-           <div
-            id="map"
-            style="max-width: 100%;
-            min-height: 25vh;"
-            data-markers="<%= [{lat:@dog.latitude, lng:@dog.longitude}].to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
+            <div class="card-show-adresse col-xs-12 col-sm-12">
+               <div class="address-map">📍<%= @dog.address %> </div>
+             </div>
+             <div class="hidden-xs col-sm-12">
+               <div
+                id="map"
+                style="width: 104%;
+                min-height: 45vh;"
+                data-markers="<%= [{lat:@dog.latitude, lng:@dog.longitude}].to_json %>"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+              </div>
          </div>
       </div>
 

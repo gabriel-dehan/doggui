@@ -1,31 +1,20 @@
-
-  <div class="card">
-      <div class="card-head">
-        <%= link_to cl_image_tag(dog.picture, class:"card-image"), dog_path(dog)%>
-        <div class="card-title">
-            <h2><%= dog.nickname %> </h2>
-        </div>
-        <div class="card-avatar">
-          <% if dog.user.avatar_url %>
-            <%= link_to cl_image_tag(dog.user.avatar_url, class:"avatar-index"), showprofile_path(dog.user)%>
-          <% else %>
-            <%= link_to image_tag("avatar.png", alt:"logo", class:"avatar-index"), showprofile_path(dog.user) %>
-          <% end %>
-        </div>
-        <% if user_signed_in? %>
-          <%= link_to dog_like_path(dog), method: :put, remote: true, class: 'downvote-upvote' do %>
-            <div class="card-like">
-              <%= icon('fas', 'heart', class: 'fa-2x') %>
-              <span>
-                <% if dog.get_upvotes.size > 0 %>
-                  <%= dog.get_upvotes.size %>
-                <% end %>
-              </span>
-            </div>
-          <% end %>
+<div class="card">
+    <div class="card-head">
+      <%= link_to cl_image_tag(dog.picture, class:"card-image"), dog_path(dog)%>
+      <div class="card-title">
+          <h2><%= dog.nickname %> </h2>
+      </div>
+      <div class="card-avatar">
+        <% if dog.user.avatar_url %>
+          <%= link_to cl_image_tag(dog.user.avatar_url, class:"avatar-index"), showprofile_path(dog.user)%>
         <% else %>
+          <%= link_to image_tag("avatar.png", alt:"logo", class:"avatar-index"), showprofile_path(dog.user) %>
+        <% end %>
+      </div>
+      <% if user_signed_in? %>
+        <%= link_to dog_like_path(dog), method: :put, remote: true, class: 'downvote-upvote' do %>
           <div class="card-like">
-            <%= icon('fas', 'heart', class: 'fa-2x') %>
+            <i class="fas fa-heart fa-2x"></i>
             <span>
               <% if dog.get_upvotes.size > 0 %>
                 <%= dog.get_upvotes.size %>
@@ -33,15 +22,25 @@
             </span>
           </div>
         <% end %>
-      </div>
-      <div class="card-footer">
-        <div class="card-footer-title">
-          <div class="card-footer-breed" style="text-transform :uppercase"> <%= dog.breed&.name %> </div>
-          <div class="card-footer-version"> <%= dog.color %> </div>
+      <% else %>
+        <div class="card-like">
+          <i class="fas fa-heart fa-2x"></i>
+          <span>
+            <% if dog.get_upvotes.size > 0 %>
+              <%= dog.get_upvotes.size %>
+            <% end %>
+          </span>
         </div>
-        <div class="card-footer-info">
-          <div class="card-footer-city">📍<%= dog.get_city&.capitalize %></div>
-          <div class="card-footer-price"><%= dog.price %>€ / Saillie</div>
+      <% end %>
+    </div>
+    <div class="card-footer">
+      <div class="card-footer-title">
+        <div class="card-footer-breed" style="text-transform :uppercase"> <%= dog.breed&.name %> </div>
+        <div class="card-footer-version"> <%= dog.color %> </div>
       </div>
+      <div class="card-footer-info">
+        <div class="card-footer-city">📍<%= dog.get_city&.capitalize %></div>
+        <div class="card-footer-price"><%= dog.price %>€ / Saillie</div>
     </div>
   </div>
+</div>

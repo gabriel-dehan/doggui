@@ -1,0 +1,62 @@
+.multiple-images-form, .simple-image-form {
+  float: left;
+  margin-bottom: 1em;
+
+  img {
+    border: 1px solid #d4d4d4;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+    margin-right: 1em;
+  }
+
+  .multiples-image-form-delete {
+    display: block;
+    text-align: right;
+
+    label {
+      margin-right: 0.4em;
+    }
+    input {
+      margin-right: 1.2em;
+    }
+  }
+}
+
+.preview-container {
+  img {
+    height: 140px;
+    border: 1px solid #d4d4d4;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    margin-right: 1em;
+  }
+}
+
+.upload-input-container {
+  .upload-button {
+    border: 1px solid #d4d4d4;
+    background-color: white;
+    font-size: 0.95em;
+    color: #6b6b6b;
+    padding: 0.5em 0.9em;
+    cursor: pointer;
+    border-radius: 7px;
+    margin-bottom: 1em;
+    display: inline-block;
+
+    &:hover {
+      border-color: darken(#d4d4d4, 15%);
+      color: darken(#6b6b6b, 20%);
+    }
+  }
+
+  .form-text {
+    display: block;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}
