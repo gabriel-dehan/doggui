@@ -15,9 +15,11 @@ document.addEventListener('turbolinks:load', () => {
       .getAttribute('content');
 
   const conversation = document.getElementById('conversation');
-  const app = new Vue({
-    el: '[data-behavior="vue"]',
-  });
+  if(conversation !== null) {
+    const app = new Vue({
+      el: '[data-behavior="vue"]',
+    });
+  }
 
   // Needs to be after the loading of Vue otherwise Vue overwrites it.
   initMapbox();
