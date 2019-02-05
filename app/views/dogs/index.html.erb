@@ -1,57 +1,57 @@
 
 <div class="wrapper-card">
 
-  <div class="row">
+ <div class="row">
 
-    <div class= "col-xs-12 col-sm-offset-1 col-sm-3 banner-left">
-       <div class="hidden-xs banner-titre">L'AMOUR </div>
-       <div class="banner-titre-2">Le meilleur endroit pour trouver le bon étalon !</div>
-        <div class="banner-titre-3">(Doggui c'est une plateforme qui met en relation des propriétaires cannins pour une saillie)</div>
-       <br>
-        <%= link_to "INSCRIRE SON ETALON SUR DOGGUI ! ", new_dog_path, class: "cta-1"%>
-        <div class="group-search">
-          <%= form_tag index_search_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "col-xs-10 col-sm-8 cta-2",
-              placeholder: "Rechercher un doggui déjà inscrit" %>
-            <button class="col-xs-2 col-sm-2 search-1">
-              <i class="fas fa-search"></i>
-            </button>
-          <% end %>
-       </div>
-    </div>
+  <div class= "col-xs-12 col-sm-offset-1 col-sm-3">
+     <div class="banner-titre-2">Le meilleur endroit pour trouver le bon étalon !</div>
+      <div class="banner-titre-3">(Doggui c'est une plateforme qui met en relation des propriétaires cannins pour une saillie)</div>
+     <br>
+      <%= link_to "INSCRIRE SON ETALON SUR DOGGUI ! ", new_dog_path, class: "cta-1"%>
+      <div class="group-search">
+      <%= form_tag index_search_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "col-xs-10 col-sm-8 cta-2",
+        placeholder: "Rechercher un doggui déjà inscrit" %>
+       <button class="col-xs-2 col-sm-2 search-1"> <i class="fas fa-search"></i></button>
+       <% end %>
+     </div>
+  </div>
 
-    <div class= "hidden-xs col-sm-7">
-      <div class="banner" style="background-image: url('<%= asset_path'Chien.landing.jpg', height: 200, width: 300%>');">
-         <div class="banner-titre-suite">AVEC UN GRAND OUAF</div>
-      </div>
-    </div>
+  <div class= "hidden-xs col-sm-7">
+     <%= image_tag "Chien.landing.jpg", alt:"logo", class:"img-index img-thumbnail"%>
+  </div>
 
   </div>
 
 
+  </div>
 
   <div class="container">
-    <div class="row">
-      <% @dogs.includes(:user).each do |dog| %>
-        <div class="col-xs-12 col-sm-3 col-md-4">
-          <%= render partial: 'dogs/card', locals: { dog: dog } %>
-        </div>
-      <% end %>
-    </div>
+
+      <div class="row">
+        <% @dogs.includes(:user).each do |dog| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <%= render partial: 'dogs/card', locals: { dog: dog } %>
+           </div>
+          <% end %>
+      </div>
   </div>
+
   <br>
+
 
 
   <div class="row">
-    <div class="col-xs-12 col-md-12">
-      <div class="row-tous">
-        <%= link_to "LES VOIR TOUS", index_search_path, class: "bouton-tous" %>
-      </div>
-    </div>
+     <div class="col-xs-12 col-md-12">
+        <div class="row-tous"> <%= link_to "LES VOIR TOUS", index_search_path, class: "bouton-tous" %> </div>
+     </div>
   </div>
   <br>
+
+ </div>
+
 </div>
 <div class="row">
   <div class="row banner-number">
@@ -143,12 +143,17 @@
  </div>
 
 
+ <div class="col-xs-12 col-sm-12">
 
-<div class="wrapper-orange-clair">
-      <div class="container-titre-mois">
-         Le mini doggui du mois
-      </div>
+          <div class="container-titre-mois">
+             Le mini doggui du mois
+          </div>
 
-     <div class="" style="background-image: url('<%= asset_path'chien.chiot.jpg'%>'); width: 750px; height: 450px; margin: auto; margin-top:10px">
-    </div>
+         <div class="" style="background-image: url('<%= asset_path'chien.chiot.jpg'%>'); width: 750px; height: 450px; margin: auto; margin-top:10px">
+        </div>
 </div>
+
+
+<br>
+
+

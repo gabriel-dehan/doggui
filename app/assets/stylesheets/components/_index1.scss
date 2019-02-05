@@ -1,26 +1,18 @@
-.banner {
-  margin-top: 10px;
-  color: white;
-  border-radius: 3px;
-  text-align: center;
-  height: 65vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
-  opacity: 0.85;
-  //rajouter un lineargraduent?
+.wrapper-card {
+  background: linear-gradient(white, #F4F4F4);
 }
 
-.banner-left {
-  margin-top: 10px;
+
+
+@media screen and (max-width: 992px) {
+  .img-index {
+    width: 90%;
+  }
 }
 
-.banner-titre {
- color: orange;
- font-size: 45px;
- margin-left: 150px;
- padding-top: 17px;
+.img-index {
+  opacity: 0.90;
 }
-
 
 .banner-titre-suite {
  color: white;
@@ -94,9 +86,6 @@
  color: #928C8C !important;
 }
 
-.wrapper-card {
-  background: linear-gradient(white, #F4F4F4);
-}
 
 
 .banner-numbers {
@@ -145,18 +134,7 @@
   border: solid 1px #928C8C;
 }
 
-.wrapper {
-  height: 280px;
-  padding-top: 30px;
-}
 
-.wrapper-orange-clair {
-  background-color: #fcf0e3;
-  padding-top: 340px;
-  height: 650px;
-  margin-bottom: 250px
-
-}
 
 .inner {
   position:absolute;
