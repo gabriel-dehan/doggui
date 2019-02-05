@@ -26,7 +26,8 @@ export default {
   data: function() {
     return {
       messages: [],
-      content: ''
+      content: '',
+      send_url: this.post_url
     }
   },
   watch: {
@@ -44,20 +45,22 @@ export default {
   },
   methods: {
     submit () {
-      axios.post(this.post_url, {
+      axios.post((this.send_url || this.post_url), {
         content: this.content
       })
       .then(response => {
         this.messages.push(response.data)
-        this.post_url = response.data.conversation_url
+        this.send_url = response.data.conversation_url
         this.content = null
       })
     },
     loadDiscussion () {
-      axios.get(this.get_url)
-      .then(response => {
-        this.messages = response.data
-      })
+      if(this.get_url !== null) {
+        axios.get(this.get_url)
+        .then(response => {
+          this.messages = response.data
+        })
+      }
     },
     playActionCable () {
       if(this.get_url != null) {

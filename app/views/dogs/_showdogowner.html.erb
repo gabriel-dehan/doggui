@@ -124,17 +124,16 @@
 
     <br>
 
-    <div class="chat">
-
+    <div id="conversation">
         <% if user_signed_in? %>
-        <chat
-          :get_url="<%= find_messages_index_path %>"
-          :post_url="<%= find_dog_post_conversation_path %>"
-          :conversations_url="<%= dog_conversations_path(@dog, format: :json).to_json %>"
-          :dog_to_user="<%= policy(@dog).to_user? %>"
-          :dog="<%= @dog.id %>"
-          :user_id="<%= current_user.id %>"
-        ></chat>
+          <chat
+            :get_url="<%= find_messages_index_path %>"
+            :post_url="<%= find_dog_post_conversation_path %>"
+            :conversations_url="<%= dog_conversations_path(@dog, format: :json).to_json %>"
+            :dog_to_user="<%= policy(@dog).to_user? %>"
+            :dog="<%= @dog.id %>"
+            :user_id="<%= current_user.id %>"
+          ></chat>
         <% end %>
     </div>
 

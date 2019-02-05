@@ -22,7 +22,6 @@ export default {
   },
   data: function () {
     return {
-      messages: [],
       discuss: false,
       content: ''
     }
