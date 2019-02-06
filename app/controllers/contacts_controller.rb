@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  skip_before_action :authenticate_user!
 
   def new
     @contact = Contact.new
@@ -12,7 +13,7 @@ class ContactsController < ApplicationController
     if @contact.deliver
       flash.now[:notice] = 'Merci pour votre message. Nous le traiterons dans les meilleurs délais !'
     else
-      flash.now[:error] = 'Nous ne parvenons pas à envoyr votre message.'
+      flash.now[:error] = 'Nous ne parvenons pas à envoyer votre message.'
       render :new
     end
   end
