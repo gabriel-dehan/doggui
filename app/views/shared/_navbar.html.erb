@@ -27,7 +27,7 @@
         <% if current_user%>
 
           <% if user_signed_in? && current_user.avatar.present? %>
-             <img src="<%= cl_image_path current_user.avatar %>" class="avatar-navbar dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+             <img src="<%= cl_image_path current_user.avatar, width: 49, height: 49, crop: :fill, gravity: :face %>" class="avatar-navbar dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
         <% else %>
             <img src="<%= image_path "avatar.png" %>" class="avatar-navbar dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
          <% end %>
