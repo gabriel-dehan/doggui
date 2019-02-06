@@ -3,6 +3,7 @@
   <head>
     <title>Doggui</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -38,9 +39,9 @@
   <body>
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
-    <div data-behavior="vue">
+    <div data-behavior="vue" class="container-fluid">
       <%= yield %>
-     </div>
+    </div>
     <%= render 'shared/footer' %>
 
   </body>
