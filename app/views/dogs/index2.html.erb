@@ -11,12 +11,14 @@
 
      <div class="row">
 
-          <%= form_tag index_search_path, method: :get do %>
+          <%= form_tag index_search_path, method: :get, class: "dog-search" do %>
           <%= text_field_tag :query,
               params[:query],
               class: "search-2 col-xs-10 col-sm-8",
               placeholder: "Doggui déjà inscris ... ex: labrador" %>
-             <button class="col-xs-2 col-sm-2 bouton-search-2">Rechercher <i class="fas fa-search"></i></button>
+             <button class="col-xs-2 col-sm-2 bouton-search-2">
+               <span class="search-button-text">Rechercher</span> <i class="fas fa-search"></i>
+              </button>
              <% end %>
      </div>
 

@@ -30,7 +30,7 @@
       </div>
     <% else %>
       <div class="row">
-        <div class="col-xs-12 col-sm-12">
+        <div class="col-xs-12 col-sm-12 dog-show-image-container">
           <%= cl_image_tag @dog.picture, class: "image-show-0", width: 1000, height: 380, crop: :fill %>
         </div>
       </div>
@@ -97,6 +97,7 @@
                 id="map"
                 style="width: 104%;
                 min-height: 45vh;"
+                data-zoom-out="true"
                 data-markers="<%= [{lat:@dog.latitude, lng:@dog.longitude}].to_json %>"
                 data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
               </div>
