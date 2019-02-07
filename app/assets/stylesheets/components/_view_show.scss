@@ -30,12 +30,20 @@
  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
  margin-bottom: 7px;
 }
+.dog-show-image-container {
+  overflow: hidden;
+}
 
 .image-show-0 {
   width: 103%;
   height: 380px;
   border-radius: 2px;
   margin-bottom: 5px;
+
+  @media (max-width: $screen-xs-max) {
+    width: inherit;
+    height: inherit; 
+  }
 }
 
 .first-image {

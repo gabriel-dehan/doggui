@@ -17,8 +17,15 @@
         <% else %>
         <%= image_tag "avatar.png", class: "edit-avatar" %>
         <% end %>
-        <%= f.input :avatar, required: false, autofocus: true, label: false%>
-        <%= f.input :avatar_cache, as: :hidden %>
+        <div class="upload-input-container">
+          <%= f.input :avatar, required: false, autofocus: true, label: false, input_html: { class: "preview"}%>
+          <div class="preview-container"></div>
+          <span class="upload-button">Modifier votre avatar</span>
+          <%= f.input :avatar_cache, as: :hidden %>
+        </div>
+
+        <div class="preview-container"></div>
+
         <%= f.input :first_name, required: false,label: "Prénom", autofocus: true %>
         <%= f.input :last_name, required: false,label: "Nom", autofocus: true %>
         <%= f.input :email, required: true, autofocus: true %>

@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   end
   get 'index_dogs', controller: 'users', action: :index_dogs
 
+  as :user do
+    get 'index_dogs', :to => 'users#index_dogs', :as => :user_root
+  end
+
   resources "contacts", only: [:new, :create]
 
   root 'dogs#index'

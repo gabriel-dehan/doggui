@@ -17,11 +17,23 @@
   padding-bottom: 18px;
 }
 
+.dog-search {
+  @media (max-width: $screen-xs-max) {
+    margin: 15px;
+  }
+}
+
 .search-2 {
-border-top-left-radius: 10px;
-border-bottom-left-radius: 10px;
-height: 45px;
-margin-left: 15px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 45px;
+  margin-left: 15px;
+  border: 1px solid orange;
+  border-right: none;
+
+  @media (max-width: $screen-xs-max) {
+    margin-left: 0;
+  }
 }
 
 .bouton-search-2 {
@@ -31,6 +43,13 @@ margin-left: 15px;
   border-bottom-right-radius: 10px;
   background-color: orange;
   color: white;
+  border: 1px solid orange;
+
+  .search-button-text {
+    @media (max-width: $screen-xs-max) {
+      display: none;
+    }
+  }
 }
 
 // contenu :
@@ -39,6 +58,10 @@ margin-left: 15px;
   display: flex;
   margin-left: 20px;
   margin-right: 20px;
+
+  @media (max-width: $screen-xs-max) {
+    display: inherit;
+  }
 }
 
 .container-card {
@@ -53,6 +76,11 @@ margin-left: 15px;
   height: 80vh;
   position: sticky !important;
   top: 0 !important;
+
+  @media (max-width: $screen-xs-max) {
+    margin: 3px 0;
+    height: 50vh;
+  }
 }
 
 
