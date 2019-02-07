@@ -1,6 +1,6 @@
 <div class="wrapper-card">
 
-
+ <div class="background-grey"></div>
   <div class="header-container container">
     <div class="row">
       <div class="hidden-xs col-sm-12 col-md-8 header-picture">
@@ -14,7 +14,7 @@
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-4 header-cta">
-        <%= link_to "INSCRIRE SON ETALON SUR DOGGUI ! ", new_dog_path, class: "cta-1"%>
+        <%= link_to "INSCRIRE SON ETALON SUR DOGGUI !", new_dog_path, class: "cta-1"%>
         <div class="group-search">
           <%= form_tag index_search_path, method: :get do %>
           <%= text_field_tag :query,
@@ -25,12 +25,12 @@
           <% end %>
         </div>
       </div>
-      
+
     </div>
   </div>
 </div>
 
-<div class="container">
+<div class="container boddy-container">
   <div class="row">
     <% @dogs.includes(:user).each do |dog| %>
     <div class="col-xs-12 col-sm-6 col-md-4">
