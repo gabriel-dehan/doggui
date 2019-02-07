@@ -6,7 +6,9 @@
       </div>
       <div class="card-avatar">
         <% if dog.user.avatar_url %>
-          <%= link_to cl_image_tag(dog.user.avatar_url, class:"avatar-index"), showprofile_path(dog.user)%>
+          <%= link_to showprofile_path(dog.user) do %>
+           <img src="<%= cl_image_path dog.user.avatar, width: 70, height: 70, crop: :fill, gravity: :face %>" class="avatar-index">
+          <% end %>
         <% else %>
           <%= link_to image_tag("avatar.png", alt:"logo", class:"avatar-index"), showprofile_path(dog.user) %>
         <% end %>

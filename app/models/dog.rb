@@ -1,4 +1,5 @@
 class Dog < ApplicationRecord
+  STATUSES = ["LOF Confirmé", "LOF Non confirmé", "Pas de LOF"]
 
   belongs_to :user
   belongs_to :breed
@@ -17,11 +18,12 @@ class Dog < ApplicationRecord
 
   validates :picture, presence: true
   validates :nickname, presence: true 
-  validates :lof_number, presence: true 
+  validates :status, presence: true, inclusion: { in: STATUSES }
   validates :weight, presence: true, numericality: true
   validates :color, presence: true
   validates :price, presence: true, numericality: true
   validates :birthday_date, presence: true
+
 
   scope :search_by_breed, ->(query) { joins(:breed).where("lower(breeds.name) LIKE ?", "%#{query.downcase}%") }
 
