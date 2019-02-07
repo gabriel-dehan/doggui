@@ -3,7 +3,7 @@ const FormLofHandler = () => {
 
   if (input) {
     input.addEventListener('change', (e) => {
-      if (e.target.value != "Pas de LOF") {
+      if (e.target.value == "LOF Confirmé") {
         document.querySelector('form .lof-number-input').style.display = 'block';
       } else {
         document.querySelector('form .lof-number-input').style.display = 'none';
