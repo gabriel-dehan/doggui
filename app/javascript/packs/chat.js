@@ -4,6 +4,7 @@ import Chat from '../chat.vue';
 import axios from 'axios';
 import { initMapbox } from '../plugins/init_mapbox';
 import { FormImagesPreviewer } from '../components/form_images_previewer';
+import { FormLofHandler } from '../components/form_lof_handler';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
 Vue.use(TurbolinksAdapter);
@@ -25,5 +26,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
   FormImagesPreviewer();
+  FormLofHandler();
 
 });

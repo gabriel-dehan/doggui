@@ -59,10 +59,10 @@ class DogsController < ApplicationController
     if params[:query].present?
       @dogs = policy_scope(Dog).search_by_breed(params[:query]).page(params[:page]).per(10)
       # @lands_geo = Land.search_by_title_and_address(params[:query]).where.not(latitude: nil, longitude: nil)
-      @dogs_geo = Dog.where.not(latitude: nil, longitude: nil)
+      @dogs_geo = @dogs.where.not(latitude: nil, longitude: nil)
     else
       @dogs = policy_scope(Dog).page(params[:page]).per(10)
-      @dogs_geo = Dog.where.not(latitude: nil, longitude: nil)
+      @dogs_geo = @dogs.where.not(latitude: nil, longitude: nil)
     end
 
    authorize @dogs
