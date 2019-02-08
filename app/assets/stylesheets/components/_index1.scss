@@ -1,5 +1,18 @@
+.background-grey {
+  width: 100vw;
+  min-height: 150vh;
+  background: linear-gradient(white, #D3D3D3);
+  position: absolute;
+  z-index: -1;
+  top: 200px;
+  left: -1px;
+  @media (max-width: $screen-md-max) {
+    min-height: 230vh;
+  }
+}
+
+
 .wrapper-card {
-  background: linear-gradient(white, #F4F4F4);
   padding-bottom: 2em;
 }
 
@@ -8,6 +21,7 @@
     width: 95%;
   }
 }
+
 
 .img-index {
   opacity: 0.90;
@@ -20,7 +34,7 @@
  margin-left: -280px;
 }
 
-.header-container { 
+.header-container {
   padding-left: 0;
   padding-right : 0;
   // @media (max-width: $screen-xs-max) {
@@ -35,13 +49,13 @@
     }
 
     @media (min-width: $screen-md-max) {
-      margin-bottom: 155px;
+      margin-top: 155px;
     }
 
   }
-  .header-picture { 
+  .header-picture {
     padding-right: 0;
-    float: right; 
+    float: right;
 
     @media (max-width: 992px) {
       float: left;
@@ -60,8 +74,9 @@
       width: 95%;
     }
 
-    .cta-1, .group-search { 
+    .cta-1, .group-search {
       margin-left: 0;
+      margin-top: 10px;
     }
   }
 }
@@ -199,11 +214,11 @@
 }
 .background-orange {
   width: 100vw;
-  min-height: 60vh;
+  min-height: 70vh;
   background: #ffe3b1;
   position: absolute;
   z-index: -1;
-  top: 200px;
+  top: 260px;
   left: -30px;
 
   @media (max-width: $screen-xs-max) {
@@ -234,6 +249,7 @@
 }
 
 .container-titre-mois {
+ padding-top: 30px;
  margin-left : 20px;
  text-transform: uppercase;
  font-size: 25px;
@@ -252,6 +268,8 @@
   max-width: 750px;
   margin-top: 20px;
   background-repeat: no-repeat;
+  border-radius: 3px;
+  border: 2px solid white;
 
   @media (max-width: $screen-xs-max) {
 	  background-size: cover;

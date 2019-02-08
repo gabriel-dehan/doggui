@@ -93,12 +93,12 @@
               </div>
 
               <div class="row">
-                <div class="col-xs-12 col-sm-6"> <%= f.association :breed, label: "Pédigrée" %></div>
+                <div class="col-xs-12 col-sm-6"> <%= f.association :breed, label: "Race" %></div>
                 <div class="col-xs-12 col-sm-6">
-                  <%= f.input :status, label:"A un numéro LOF ?", collection: Dog::STATUSES %>
+                  <%= f.input :status, label:"Pédigrée?", collection: Dog::STATUSES %>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 lof-number-input"><%= f.input :lof_number, label:"Son numéro LOF", placeholder: "ex : LOF-20150488-2016-1" %>  </div>
+                <div class="col-xs-12 col-sm-6 lof-number-input"><%= f.input :lof_number, label:"Numéro LOF", placeholder: "ex : LOF-20150488-2016-1" %>  </div>
               </div>
 
               <div class= "row">
