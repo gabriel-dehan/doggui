@@ -76,7 +76,22 @@ li
 list-style-type: none;
 }
 
-em {
+
+.legal-titre {
   color: orange;
-  text-transform: none;
+  font-size: 25px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
+
+.legal-contenu {
+  color: grey;
+  font-size: 20px;
+  margin-bottom: 30px;
+
+}
+
+
+
+
