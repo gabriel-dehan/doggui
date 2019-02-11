@@ -1,5 +1,5 @@
 class Dog < ApplicationRecord
-  STATUSES = ["LOF Confirmé", "LOF Non confirmé", "Pas de LOF"]
+  STATUSES = ["LOF Confirmé", "LOF Non confirmé"]
 
   belongs_to :user
   belongs_to :breed
@@ -17,7 +17,7 @@ class Dog < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   validates :picture, presence: true
-  validates :nickname, presence: true 
+  validates :nickname, presence: true
   validates :status, presence: true, inclusion: { in: STATUSES }
   validates :weight, presence: true, numericality: true
   validates :color, presence: true
