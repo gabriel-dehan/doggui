@@ -6,3 +6,7 @@
 @import "components/index";
 
 @import "config/fonts";
+
+body { 
+  font-family: $body-font;
+}

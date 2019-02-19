@@ -78,18 +78,19 @@ class DogsController < ApplicationController
 
   def upvote
     @dog = Dog.find(params[:id])
-    @dog.upvote_by current_user
+    @dog.liked_by current_user
     authorize @dog
-    render json: { votes: @dog.get_upvotes.size, url: dislike_dog_path(@dog) }
+    #render json: { votes: @dog.get_upvotes.size, url: dislike_dog_path(@dog) }
+    redirect_back fallback_location: dogs_path 
     # redirect_to dogs_path
   end
 
   def downvote
     @dog = Dog.find(params[:id])
-    @dog.downvote_by current_user
+    @dog.unliked_by current_user
     authorize @dog
-    render json: { votes: @dog.get_upvotes.size, url: like_dog_path(@dog) }
-    # redirect_to dogs_path
+    # render json: { votes: @dog.get_upvotes.size, url: like_dog_path(@dog) }
+    redirect_back fallback_location: dogs_path 
   end
 
 

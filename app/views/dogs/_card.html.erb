@@ -16,22 +16,20 @@
       <% if user_signed_in? %>
         <%= link_to dog_like_path(dog), method: :put, remote: true, class: 'downvote-upvote' do %>
           <div class="card-like">
-            <i class="fas fa-heart fa-2x"></i>
-            <span>
-              <% if dog.get_upvotes.size > 0 %>
-                <%= dog.get_upvotes.size %>
-              <% end %>
-            </span>
+            <% if current_user.voted_for? dog %>
+              <i class="fas fa-heart fa-2x"></i>
+            <% else %>
+              <i class="far fa-heart fa-2x"></i>
+            <% end %>
           </div>
         <% end %>
       <% else %>
         <div class="card-like">
-          <i class="fas fa-heart fa-2x"></i>
-          <span>
-            <% if dog.get_upvotes.size > 0 %>
-              <%= dog.get_upvotes.size %>
-            <% end %>
-          </span>
+          <% if dog.get_upvotes.size > 0 %>
+            <i class="fas fa-heart fa-2x"></i>
+          <% else %>
+            <i class="far fa-heart fa-2x"></i>
+          <% end %>
         </div>
       <% end %>
     </div>
