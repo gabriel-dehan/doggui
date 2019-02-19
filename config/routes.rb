@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount ActionCable.server => '/cable'
 
+  root 'dogs#index'
+
   get 'contact_form/new'
   get 'contact_form/create'
   devise_for :users, controllers: { registrations: 'registrations' }
@@ -18,10 +20,9 @@ Rails.application.routes.draw do
 
   resources "contacts", only: [:new, :create]
 
-  root 'dogs#index'
   get 'legislation', to: 'pages#', as: :legislation
   get 'qui-sommes-nous', to: 'pages#', as: :quisommesnous
-  get 'index2', to: 'dogs#index2', as: :index_search
+  get 'dogs', to: 'dogs#index2', as: :index_search
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :dogs do
     member do

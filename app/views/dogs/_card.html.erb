@@ -35,7 +35,7 @@
     </div>
     <div class="card-footer">
       <div class="card-footer-title">
-        <div class="card-footer-breed" style="text-transform :uppercase"> <%= dog.breed&.name %> </div>
+        <div class="card-footer-breed" style="text-transform :uppercase"> <%= link_to dog.breed&.name, index_search_path(query: dog.breed&.name) %> </div>
         <div class="card-footer-version"> <%= dog.color %> </div>
       </div>
       <div class="card-footer-info">
