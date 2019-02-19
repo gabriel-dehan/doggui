@@ -1,5 +1,6 @@
 class DogsController < ApplicationController
- skip_before_action :authenticate_user!, only: [:index, :show, :index2]
+  skip_before_action :authenticate_user!, only: [:index, :show, :index2]
+  
   def index
    @dogs = policy_scope(Dog).includes(:user, :breed).order("Random()").limit(6)
   end
@@ -57,11 +58,11 @@ class DogsController < ApplicationController
 
   def index2
     if params[:query].present?
-      @dogs = policy_scope(Dog).search_by_breed(params[:query]).page(params[:page]).per(10)
+      @dogs = policy_scope(Dog).search_by_breed(params[:query]).includes(:breed).page(params[:page]).per(10)
       # @lands_geo = Land.search_by_title_and_address(params[:query]).where.not(latitude: nil, longitude: nil)
       @dogs_geo = @dogs.where.not(latitude: nil, longitude: nil)
     else
-      @dogs = policy_scope(Dog).page(params[:page]).per(10)
+      @dogs = policy_scope(Dog).includes(:breed).page(params[:page]).per(10)
       @dogs_geo = @dogs.where.not(latitude: nil, longitude: nil)
     end
 
@@ -80,17 +81,20 @@ class DogsController < ApplicationController
     @dog = Dog.find(params[:id])
     @dog.liked_by current_user
     authorize @dog
-    #render json: { votes: @dog.get_upvotes.size, url: dislike_dog_path(@dog) }
-    redirect_back fallback_location: dogs_path 
-    # redirect_to dogs_path
+
+    respond_to do |format| 
+      format.js { render 'update_vote' }
+    end
   end
 
   def downvote
     @dog = Dog.find(params[:id])
     @dog.unliked_by current_user
     authorize @dog
-    # render json: { votes: @dog.get_upvotes.size, url: like_dog_path(@dog) }
-    redirect_back fallback_location: dogs_path 
+
+    respond_to do |format| 
+      format.js { render 'update_vote' }
+    end 
   end
 
 
