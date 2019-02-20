@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" id="dog-<%= dog.id %>">
     <div class="card-head">
       <%= link_to cl_image_tag(dog.picture, class:"card-image"), dog_path(dog)%>
       <div class="card-title">
@@ -16,28 +16,26 @@
       <% if user_signed_in? %>
         <%= link_to dog_like_path(dog), method: :put, remote: true, class: 'downvote-upvote' do %>
           <div class="card-like">
-            <i class="fas fa-heart fa-2x"></i>
-            <span>
-              <% if dog.get_upvotes.size > 0 %>
-                <%= dog.get_upvotes.size %>
-              <% end %>
-            </span>
+            <% if current_user.voted_for? dog %>
+              <i class="fas fa-heart fa-2x"></i>
+            <% else %>
+              <i class="far fa-heart fa-2x"></i>
+            <% end %>
           </div>
         <% end %>
       <% else %>
         <div class="card-like">
-          <i class="fas fa-heart fa-2x"></i>
-          <span>
-            <% if dog.get_upvotes.size > 0 %>
-              <%= dog.get_upvotes.size %>
-            <% end %>
-          </span>
+          <% if dog.get_upvotes.size > 0 %>
+            <i class="fas fa-heart fa-2x"></i>
+          <% else %>
+            <i class="far fa-heart fa-2x"></i>
+          <% end %>
         </div>
       <% end %>
     </div>
     <div class="card-footer">
       <div class="card-footer-title">
-        <div class="card-footer-breed" style="text-transform :uppercase"> <%= dog.breed&.name %> </div>
+        <div class="card-footer-breed" style="text-transform :uppercase"> <%= link_to dog.breed&.name, index_search_path(query: dog.breed&.name) %> </div>
         <div class="card-footer-version"> <%= dog.color %> </div>
       </div>
       <div class="card-footer-info">

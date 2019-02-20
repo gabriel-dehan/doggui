@@ -1,0 +1,6 @@
+<% if current_user.voted_for? @dog %>
+  $(".card#dog-<%= @dog.id%> .card-like i").removeClass('far').addClass('fas');
+<% else %>
+  $(".card#dog-<%= @dog.id%> .card-like i").removeClass('fas').addClass('far');
+<% end %>
+  $(".card#dog-<%= @dog.id%> .downvote-upvote").attr('href', "<%= dog_like_path(@dog) %>")
