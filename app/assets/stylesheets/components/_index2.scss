@@ -16,6 +16,14 @@
   font-family: Dosis;
   width: 600px;
   padding-bottom: 18px;
+
+  a {
+    color: white;
+
+    &:hover {
+      color: darken(white, 5%);
+    }
+  }
 }
 
 .dog-search {

@@ -126,6 +126,7 @@ class DogsController < ApplicationController
         :size,
         :hair,
         :color,
+        :status,
         :lof_number,
         :description,
         :birthday_date,

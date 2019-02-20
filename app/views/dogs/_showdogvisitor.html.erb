@@ -1,6 +1,6 @@
 <div class="banner2" style="background-image: url('<%= asset_path'Chien.landing.jpg'%>');">
   <div class="banner-content">
-    <h2>  <%= "'#{@dog.nickname}'" %> le <%= @dog.breed.name %></h2>
+    <h2>  <%= "'#{@dog.nickname}'" %> le <%= link_to dog.breed&.name, index_search_path(query: dog.breed&.name) %> </h2>
   </div>
 </div>
 
@@ -111,12 +111,12 @@
           <div class="card-show-user">
             Le PROPRIETAIRE
           <% if @dog.user.avatar_url %>
-          <%= cl_image_tag @dog.user.avatar_url, class: "avatar-show" %>
+            <img src="<%= cl_image_path @dog.user.avatar, width: 70, height: 70, crop: :fill, gravity: :face %>" class="avatar-navbar dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
           <% else %>
-          <%= image_tag "avatar.png", alt:"logo", class:"avatar-show"%>
+            <%= image_tag "avatar.png", alt:"logo", class:"avatar-show"%>
           <% end %>
            <div class="show-titre-description"><%= @dog.user.first_name %> <%= @dog.user.last_name %> </div>
-           Inscrit depuis : <%= @dog.user.created_at%>
+           Inscrit depuis : <%= l(@dog.user.created_at, format: :date_month_year_concise) %>
          </div>
 
     <br>
