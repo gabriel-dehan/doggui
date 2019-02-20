@@ -1,4 +1,7 @@
 fr:
+  time:
+    formats:
+      date_month_year_concise: '%e %B %Y'
   activerecord:
     models:
       breed: Race
