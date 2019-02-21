@@ -11,10 +11,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   mount_uploader :avatar, PhotoUploader
-
-
-  def find_avatar
-    avatar_url ? avatar_url : 'avatar.png'
-  end
-
 end
