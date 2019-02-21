@@ -12,4 +12,9 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, PhotoUploader
 
+
+  def find_avatar
+    avatar_url ? avatar_url : 'avatar.png'
+  end
+
 end

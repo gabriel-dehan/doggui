@@ -6,7 +6,8 @@
     <div class="senders">
       <div class='conversation' v-for='conversation in conversations' v-if='!discuss'>
         <div class='conversation-name' @click='openMessages(conversation)'>
-          {{ conversation.sender_name }}
+          <div><img :src='conversation.sender_picture' class='conversation-avatar-img'></div>
+          <div>{{ conversation.sender_name }}</div>
           <div class="unread-messages" v-if='conversation.number_of_unread_message > 0'>
             {{ conversation.number_of_unread_message }}
           </div>
@@ -100,5 +101,12 @@ export default {
     margin-left: 2px;
     height: 13px
   }
+}
+
+.conversation-avatar-img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
 }
 </style>
