@@ -14,3 +14,5 @@ fr:
         picture: Image
         breed: Race
         price: Prix
+      user:
+        first_name: Prénom
