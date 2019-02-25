@@ -15,6 +15,7 @@
        <div class="col-xs-12 col-sm-offset-4 col-sm-4">
           <div class="form-new-user">
             <%= f.input :email, label: "Votre adresse e-mail",required: true, autofocus: true, placeholder: 'jaimelesannimaux@gmail.com' %>
+            <%= f.input :first_name %>
             <%= f.input :password, required: true, label: "Choix du mot de passe", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
             <%= f.input :password_confirmation,label: "Confirmation du mot de passe", required: true %>
             <%= f.button :button, "Rejoindre la communauté Doggui", type: :submit, class: :'btn-form-new btn btn-warning' %>
@@ -30,5 +31,3 @@
   <br>
 
 </div>
-
-
