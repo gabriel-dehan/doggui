@@ -29,7 +29,7 @@ p "seeding one user"
 p "user created, let's seed breeds and dogs"
 
 Parser.new.save_dogs
-breeds = Breed.all 
+breeds = Breed.all
 
 12.times do
 
@@ -50,6 +50,7 @@ breeds = Breed.all
   color = ["harlequin", "fauve", "noir", "brun", "roux", "beige", "sable"]
   lof = ["10290-1BB9", "13490-1AA9", "10230-1039", "1AZ90-1029"]
   prize = ["2", "12", "5", "1", "0"]
+  status = ["LOF Confirmé", "LOF Non confirmé"]
 
   dog = Dog.create!(
     nickname: Faker::Dog.name,
@@ -69,9 +70,10 @@ breeds = Breed.all
     mother_lof: lof.shuffle.sample,
     father_lof: lof.shuffle.sample,
     description: description.shuffle.sample,
-    prize: prize.shuffle.sample
+    prize: prize.shuffle.sample,
+    status: status.shuffle.sample
     )
- 
+
   sleep(2)
  end
 
