@@ -1,19 +1,17 @@
-.nous-titre {
-  margin-bottom: 15px;
-  margin-top : 20px;
-  font-size: 25px;
-}
 
-.nous-titre-1 {
-  color: grey;
-  font-size: 33px;
-  margin-bottom: -10px;
-}
-
-.nous-titre-2 {
+.nous-citation {
+margin-top: 60px;
 color: orange;
-letter-spacing: .65rem;
-font-size: 40px;
+letter-spacing: .45rem;
+font-size: 20px;
+float: left;
+}
+
+.nous-signature {
+color: black;
+margin-top: 20px;
+font-size: 13px;
+float: left;
 }
 
 
@@ -92,6 +90,16 @@ list-style-type: none;
 
 }
 
+
+.img-helene {
+  margin-top: 40px;
+  opacity: 0.90;
+  width: 60%;
+  float: right;
+   @media (max-width: $screen-xs-max) {
+    float:left;
+  }
+}
 
 
 
