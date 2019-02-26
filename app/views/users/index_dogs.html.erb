@@ -13,7 +13,7 @@
       <% else %>
         <%= image_tag "avatar.png", alt:"logo", class:"avatar-show"%>
       <% end %>
-       <div class="show-titre-description"><%= current_user.first_name %> <%= current_user.last_name %> </div> (<%= current_user.email %> 📲)
+       <div class="show-titre-description"><%= current_user.first_name %> <%= current_user.last_name %> </div>
     </div>
     <br>
 
@@ -54,9 +54,8 @@
                   </div>
                 </div>
                 <div class = "card-ville">
-                  <img src="https://img.icons8.com/small/16/000000/secured-letter.png">
                   <%= dog.price %>€ / Saillie
-                  3 likes
+                 <i class="far fa-heart"></i> <%= dog.likes.count %>
                   <%= link_to 'MODIFIER', edit_dog_path(dog), class: "btn-block" %>
                </div>
              </div>

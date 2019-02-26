@@ -15,7 +15,7 @@
           <%= text_field_tag :query,
               params[:query],
               class: "search-2 col-xs-10 col-sm-8",
-              placeholder: "Doggui déjà inscris ... ex: labrador" %>
+              placeholder: "Recherchez un doggui par sa race ... ex: labrador" %>
              <button class="col-xs-2 col-sm-2 bouton-search-2">
                <span class="search-button-text">Rechercher</span> <i class="fas fa-search"></i>
               </button>
@@ -23,11 +23,18 @@
      </div>
 
       <div class="row">
-          <% @dogs.includes(:user, :breed).each do |dog| %>
-            <div class="col-xs-12 col-sm-12 col-md-6">
-              <%= render partial: 'dogs/card', locals: { dog: dog } %>
-            </div>
-        <% end %>
+
+         <% if @dogs.includes(:user, :breed) === nil %>
+           <%= Aucun résultat pour cette recherche  %>
+          <% else %>
+
+            <% @dogs.includes(:user, :breed).each do |dog| %>
+              <div class="col-xs-12 col-sm-12 col-md-6">
+                <%= render partial: 'dogs/card', locals: { dog: dog } %>
+              </div>
+          <% end %>
+
+        <%end%>
       </div>
 
       <div> <%= paginate @dogs %></div>

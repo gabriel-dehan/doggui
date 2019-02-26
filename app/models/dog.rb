@@ -19,9 +19,9 @@ class Dog < ApplicationRecord
   validates :picture, presence: true
   validates :nickname, presence: true
   validates :status, presence: true, inclusion: { in: STATUSES }
-  validates :weight, presence: true, numericality: true
+  validates :weight, presence: true, numericality: true, inclusion: { in: (1.. 100).to_a }
   validates :color, presence: true
-  validates :price, presence: true, numericality: true
+  validates :price, presence: true, numericality: true, inclusion: { in: (1.. 2000).to_a }
   validates :birthday_date, presence: true
 
 
