@@ -49,7 +49,7 @@
     }
 
     @media (min-width: $screen-md-max) {
-      margin-top: 155px;
+      margin-top: 89px;
     }
 
   }
@@ -84,9 +84,13 @@
 .banner-titre-2 {
   color: grey;
   margin-top: 5px;
-  font-size: 35px;
+  font-size: 42px;
+   @media (max-width: $screen-md-max) {
+    font-size: 22px;
+  }
   @media (max-width: $screen-xs-max) {
     margin-left: 21px;
+    font-size: 38px;
   }
 }
 
@@ -204,11 +208,11 @@
 }
 
 .image-number {
-  width: 80px;
-  padding: 12px;
+  width: 100px;
+  padding: 15px;
   background-color: white;
   border-radius: 50px;
-  border: solid 1px #928C8C;
+  border: solid 0.5px #928C8C;
 }
 
 .explanations-container {
@@ -247,14 +251,14 @@
  text-transform: uppercase;
  font-size: 20px;
  color: black;
- font-weight: 300;
+ font-weight: 450;
 }
 
 .container-titre-mois {
  padding-top: 30px;
  margin-left : 20px;
  text-transform: uppercase;
- font-size: 25px;
+ font-size: 29px;
  color: grey;
  font-weight: 300;
 }
@@ -382,6 +386,13 @@ margin: auto;
 }
 
 
+.image-number-mini {
+  width: 110px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 50px;
+  border: solid 0.5px #928C8C;
+}
 
 
 
