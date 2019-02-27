@@ -13,12 +13,19 @@
       <% else %>
         <%= image_tag "avatar.png", alt:"logo", class:"avatar-show"%>
       <% end %>
+
+      <br>
+
        <div class="show-titre-description"><%= current_user.first_name %> <%= current_user.last_name %> </div>
+        <div>Inscrit depuis : <%= l(current_user.created_at, format: :date_month_year_concise) %></div>
+        <div>Dernière visite : <%= l(current_user.last_sign_in_at, format: :date_month_year_concise) %></div>
+        <div>profil vérifié <i class="fas fa-user-check"></i></div>
+
     </div>
     <br>
 
     <div class="esthetique">
-      <%= @current_user.introduction %>
+      <%= "' #{@current_user.introduction}' " %>
     </div>
     <br>
       <%= link_to '(Modifier)',edit_user_registration_path%>

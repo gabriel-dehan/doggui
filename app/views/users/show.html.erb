@@ -1,3 +1,11 @@
+
+<div class="banner2" style="background-image: url('<%= asset_path'Chien.landing.jpg'%>');">
+  <div class="banner-content">
+    <h1> <i class="fas fa-user-friends"></i> Profil utilisateur </h1>
+  </div>
+</div>
+
+
 <div class="container">
 
   <div class="row">
@@ -16,8 +24,8 @@
         <br>
 
         <div>Inscrit depuis : <%= l(@user.created_at, format: :date_month_year_concise) %></div>
-           <div>Dernière visite : <%= l(@user.last_sign_in_at, format: :date_month_year_concise) %></div>
-           <div>profil vérifié <i class="fas fa-user-check"></i></div>
+        <div>Dernière visite : <%= l(@user.last_sign_in_at, format: :date_month_year_concise) %></div>
+        <div>profil vérifié <i class="fas fa-user-check"></i></div>
          <br>
         <div class="esthetique">
           <%= @user.introduction %>

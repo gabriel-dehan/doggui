@@ -1,3 +1,5 @@
+
+
 /* Main navbar */
 .navbar {
   margin-bottom: 0px;
@@ -28,19 +30,19 @@
 }
 
 
-.link-to-nav {
+.link-to-nav-1 {
   color: grey !important;
   font-weight: 160 !important;
   font-size: 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-right: 15px;
   background-color: transparent !important;
-  margin-top: 5 px;
+  margin-top: 3px;
 }
 
-.link-to-nav:hover {
-  color: #423e3e !important;
-  text-decoration: none;
+.link-to-nav-1:hover {
+  color: black !important;
+  text-decoration: underline !important ;
 }
 
 

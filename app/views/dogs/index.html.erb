@@ -50,28 +50,28 @@
     <div class="row banner-number">
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="number-card">
-          <img src="https://png.icons8.com/dotty/50/000000/dog.png" , class="image-number">
+         <%= image_tag "dog.logo.png", alt:"logo", class:"image-number"%>
           <div class="legende-number-card">4 Doggui inscrits chaque jour</div>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="number-card">
-          <img src="https://png.icons8.com/wired/50/000000/meeting.png" , class="image-number">
-          <div class="legende-number-card">12 Rencontres respecteuses </div>
+          <%= image_tag "handshake.png", alt:"logo", class:"image-number"%>
+          <div class="legende-number-card">3 Rencontres respecteuses </div>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="number-card">
-          <img src="https://png.icons8.com/dotty/50/000000/flying-stork-with-bundle.png" , class="image-number">
-          <div class="legende-number-card">5 Mini-molosses </div>
+         <%= image_tag "stork.png", alt:"logo", class:"image-number"%>
+          <div class="legende-number-card">2 Mini-doggui </div>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="number-card">
-          <img src="https://img.icons8.com/material-outlined/26/000000/approval.png" , class="image-number">
+         <%= image_tag "validation.png", alt:"logo", class:"image-number"%>
           <div class="legende-number-card">Chaque annonce est contrôlée</div>
         </div>
       </div>
@@ -144,10 +144,11 @@
     <div class="col-xs-12 col-sm-12">
 
       <div class="container-titre-mois">
-        Le mini doggui du mois
+          <%= image_tag "mini-dog.png", alt:"logo", class:"image-number"%> Le mini doggui du mois
       </div>
 
       <div class="month-doggui" style="background-image: url('<%= asset_path'chien.chiot.jpg'%>');"></div>
+
     </div>
   </div>
 </div>
