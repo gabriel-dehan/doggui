@@ -127,7 +127,7 @@
 
            <div class="show-titre-description"><%= @dog.user.first_name %> <%= @dog.user.last_name %> (L'heureux propriétaire) </div>
            <div>Inscrit depuis : <%= l(@dog.user.created_at, format: :date_month_year_concise) %></div>
-           <div>Dernière visite : <%= l(@dog.user.last_sign_in_at, format: :date_month_year_concise) %></div>
+           <div>Dernière visite : <%= l(@dog.user.last_sign_in_at || @dog.user.created_at, format: :date_month_year_concise) %></div>
            <div>profil vérifié <i class="fas fa-user-check"></i></div>
          </div>
 

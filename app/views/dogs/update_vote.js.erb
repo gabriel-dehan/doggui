@@ -1,6 +1,16 @@
-<% if current_user.voted_for? @dog %>
-  $(".card#dog-<%= @dog.id%> .card-like i").removeClass('far').addClass('fas');
-<% else %>
-  $(".card#dog-<%= @dog.id%> .card-like i").removeClass('fas').addClass('far');
-<% end %>
+// If the like comes from a card
+if ($(".card .card-like").length > 0) {
+  <% if current_user.voted_for? @dog %>
+    $(".card#dog-<%= @dog.id%> .card-like i").removeClass('far').addClass('fas');
+  <% else %>
+    $(".card#dog-<%= @dog.id%> .card-like i").removeClass('fas').addClass('far');
+  <% end %>
   $(".card#dog-<%= @dog.id%> .downvote-upvote").attr('href', "<%= dog_like_path(@dog) %>")
+} else if ($(".bouton-show-like").length > 0) { // if the likes come from a button (show page)
+  <% if current_user.voted_for? @dog %>
+    $(".bouton-show-like .show-like i").removeClass('far').addClass('fas');
+  <% else %>
+    $(".bouton-show-like .show-like i").removeClass('fas').addClass('far');
+  <% end %>
+  $(".bouton-show-like .downvote-upvote").attr('href', "<%= dog_like_path(@dog) %>")
+}
