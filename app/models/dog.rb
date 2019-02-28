@@ -22,7 +22,7 @@ class Dog < ApplicationRecord
   validates :weight, presence: true, numericality: true, inclusion: { in: (1.. 100).to_a }
   validates :color, presence: true
   validates :price, presence: true, numericality: true, inclusion: { in: (1.. 2000).to_a }
-  validates :birthday_date, presence: true, inclusion: { in: (2018.. 2000).to_a }
+  validates :birthday_date, presence: true
 
 
   scope :search_by_breed, ->(query) { joins(:breed).where("lower(breeds.name) LIKE ?", "%#{query.downcase}%") }
