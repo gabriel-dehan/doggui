@@ -16,10 +16,22 @@ float: left;
 
 
 .nous-paragraphe-1 {
+  margin-bottom: 25px;
+  color: grey;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: justify;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.nous-titre-1 {
+  text-transform: uppercase;
+  text-align: center;
   margin-top: 35px;
   margin-bottom: 25px;
-  letter-spacing: .2rem;
   color: grey;
+  font-weight: 500;
   font-size: 20px;
   text-align: justify;
   padding-left: 30px;
@@ -28,10 +40,15 @@ float: left;
 
 }
 
+.text-orange {
+ display: inline;
+ color: orange;
+}
+
+
 .nous-paragraphe-2 {
   margin-top: 35px;
   margin-bottom: 25px;
-   letter-spacing: .2rem;
   color: grey;
   text-align: justify;
   padding-left: 30px;
@@ -42,7 +59,6 @@ float: left;
 .nous-paragraphe-3 {
   margin-top: 35px;
   margin-bottom: 15px;
-  letter-spacing: .2rem;
   color: grey;
   text-align: justify;
   padding-left: 30px;
@@ -53,7 +69,6 @@ float: left;
 .nous-paragraphe-4 {
   margin-top: 25px;
   margin-bottom: 15px;
-  letter-spacing: .2rem;
   color: grey;
   font-size: 20px;
   text-align: justify;
@@ -62,7 +77,7 @@ float: left;
 }
 
 .nous-conclusion {
-color: orange;
+  color: orange;
   font-size: 22px;
   margin-bottom: 30px;
   margin-top : 20px;
@@ -87,7 +102,6 @@ list-style-type: none;
   color: grey;
   font-size: 20px;
   margin-bottom: 30px;
-
 }
 
 

@@ -28,7 +28,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="upload-input-container">
-              <%= f.input :picture, placeholder: 'Photo', label: 'Photo princpale',hint:"Son plus beau profil", input_html: { class: "preview"} %>
+              <%= f.input :picture, placeholder: 'Photo', label: 'La photo princpale',hint:"Son plus beau profil", input_html: { class: "preview"} %>
               <div class="preview-container"></div>
               <span class="upload-button">Ajouter une image</span>
             </div>
@@ -44,7 +44,7 @@
        <div class="row">
           <div class="col-sm-12">
             <div class="upload-input-container">
-              <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3 preview' }, name: 'images[]', label:"Photos supplémentaires", hint:" Ajoutez jusqu'à 4 photos en plus"  %>
+              <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3 preview' }, name: 'images[]', label:"+ photos supplémentaires (4 max)"  %>
               <div class="preview-container"></div>
               <span class="upload-button">Ajouter une image</span>
             </div>
