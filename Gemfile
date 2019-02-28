@@ -49,6 +49,7 @@ gem 'simple_form'
 gem 'pry-byebug'
 gem 'rails-i18n'
 gem 'devise-i18n'
+gem 'kaminari-i18n'
 
 # Gem to deliver email in production
 gem 'postmark-rails'
