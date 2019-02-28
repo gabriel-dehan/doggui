@@ -153,6 +153,9 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    kaminari-i18n (0.5.0)
+      kaminari
+      rails
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.7.0)
@@ -387,6 +390,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
+  kaminari-i18n
   letter_opener
   listen (>= 3.0.5, < 3.2)
   mail_form
