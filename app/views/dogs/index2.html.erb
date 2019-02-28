@@ -24,8 +24,10 @@
 
       <div class="row">
 
-         <% if @dogs.includes(:user, :breed) === nil %>
-           <%= Aucun résultat pour cette recherche  %>
+         <% if @dogs.empty? %>
+          <div class="col-xs-12 col-sm-12 col-md-6 no-result">
+            <h3>Désolé, nous n'avons trouvé aucun doggui correspondant à votre recherche !</h3>
+          </div>
           <% else %>
 
             <% @dogs.includes(:user, :breed).each do |dog| %>

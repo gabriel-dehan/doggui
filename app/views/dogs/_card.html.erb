@@ -21,6 +21,11 @@
             <% else %>
               <i class="far fa-heart fa-2x"></i>
             <% end %>
+             <span>	              
+              <% if dog.get_upvotes.size > 0 %>
+                <%= dog.get_upvotes.size %>	
+              <% end %>	  
+            </span>
           </div>
         <% end %>
       <% else %>
@@ -31,6 +36,11 @@
             <i class="far fa-heart fa-2x"></i>
           <% end %>
         </div>
+         <span>	              
+          <% if dog.get_upvotes.size > 0 %>
+            <%= dog.get_upvotes.size %>	
+          <% end %>	  
+        </span>
       <% end %>
     </div>
     <div class="card-footer">
