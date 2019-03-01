@@ -1,0 +1,5 @@
+meta_product_name: "Doggui"
+meta_title: "Doggui - Le meilleur endroit pour trouver le bon étalon"
+meta_description: "Une communauté engagée, des annimaux respectés et aimés pour une saille réussie"
+meta_image: "Chien.landing.jpg" # should exist in `app/assets/images/`
+   # required for Twitter Cards
