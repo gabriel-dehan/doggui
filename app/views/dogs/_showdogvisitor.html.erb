@@ -125,7 +125,7 @@
                 <%= link_to image_tag("avatar.png", alt:"logo", class:"avatar-show"), showprofile_path(dog.user) %>
             <% end %>
 
-           <div class="show-titre-description"><%= @dog.user.first_name %> (L'heureux propriétaire)</div>
+           <div class="show-titre-description"><%= @dog.user.first_name %> - L'heureux(se) propriétaire</div>
            <div>Inscrit depuis : <%= l(@dog.user.created_at, format: :date_month_year_concise) %></div>
            <div>Dernière visite : <%= l(@dog.user.last_sign_in_at || @dog.user.created_at, format: :date_month_year_concise) %></div>
            <div>profil vérifié <i class="fas fa-user-check"></i></div>
