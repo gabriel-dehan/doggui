@@ -25,7 +25,6 @@
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' %>
-     <%= render 'layouts/google_analytics' %>
 
     <!-- app/views/layouts/application.html.erb -->
     <%= favicon_link_tag %>
@@ -56,6 +55,6 @@
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
-
+    <%= render 'layouts/google_analytics' %>
   </body>
 </html>
