@@ -1,0 +1,21 @@
+<div class="card" id="dog-<%= dog.id %>">
+    <div class="card-head">
+      <%= link_to cl_image_tag(dog.picture, class:"card-image"), dog_path(dog)%>
+      <div class="card-title">
+          <h2><%= dog.nickname %> </h2>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="card-footer-title">
+        <div class="card-footer-breed" style="text-transform :uppercase"> <%= link_to dog.breed&.name, index_search_path(query: dog.breed&.name) %> </div>
+        <div class="card-footer-color"> <%= dog.color %> </div>
+      </div>
+        <div class="card-footer-modifier"> <%= link_to 'MODIFIER', edit_dog_path(dog), class: "btn-block" %></div>
+        <div class="card-footer-modifier">  <%= dog.likes.count %><i class="far fa-heart"></i></div>
+      </div>
+      <div class="card-footer-price"><%= dog.price %>€ / Saillie</div>
+</div>
+
+
+
+
