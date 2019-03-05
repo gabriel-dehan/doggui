@@ -3,7 +3,7 @@
   position: relative;
   margin-top: 5vh;
   width: 100%;
-  height: 249px;
+  height: 290px;
   background-color: white;
   border-radius: 2px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15);
@@ -12,7 +12,7 @@
 .card-image {
   margin-right: 5vh;
   width: 100%;
-  height: 185px;
+  height: 220px;
   background-position: center;
   margin: 0px auto;
   border-radius: 2px;
@@ -68,7 +68,7 @@
 .avatar-index {
   position: absolute;
   left: 4px;
-  bottom: -19px;
+  bottom: -25px;
   width: 50px;
   border-radius: 50%;
   background-color: transparent;
@@ -139,6 +139,7 @@
 }
 
 .card-footer-title {
+ padding-top: 9px;
  display: flex;
  width: 100%;
  height: 30%;
@@ -151,7 +152,7 @@
  font-size: 14px;
 }
 
-.card-footer-version {
+.card-footer-color {
  text-transform :capitalize;
  font-size: 14px;
  color: #918c8c;
@@ -159,7 +160,7 @@
 }
 
 .card-footer-info {
- display: flex;
+ margin-top: 9px;
  width: 100%;
  height: 30%;
  margin-left: 5px;
@@ -169,10 +170,9 @@
   position: absolute;
   color: #ea9632;
   font-size: 12px;
-  margin-left: 243px;
+  margin-left: 260px;
+  margin-top: 260px;
+  z-index: 99;
 }
 
-.card-ville {
-  font-size: 10px;
 
-}

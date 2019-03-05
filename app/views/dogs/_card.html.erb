@@ -21,10 +21,10 @@
             <% else %>
               <i class="far fa-heart fa-2x"></i>
             <% end %>
-             <span>	              
+             <span>
               <% if dog.get_upvotes.size > 0 %>
-                <%= dog.get_upvotes.size %>	
-              <% end %>	  
+                <%= dog.get_upvotes.size %>
+              <% end %>
             </span>
           </div>
         <% end %>
@@ -36,21 +36,19 @@
             <i class="far fa-heart fa-2x"></i>
           <% end %>
         </div>
-         <span>	              
+         <span>
           <% if dog.get_upvotes.size > 0 %>
-            <%= dog.get_upvotes.size %>	
-          <% end %>	  
+            <%= dog.get_upvotes.size %>
+          <% end %>
         </span>
       <% end %>
     </div>
     <div class="card-footer">
       <div class="card-footer-title">
         <div class="card-footer-breed" style="text-transform :uppercase"> <%= link_to dog.breed&.name, index_search_path(query: dog.breed&.name) %> </div>
-        <div class="card-footer-version"> <%= dog.color %> </div>
+        <div class="card-footer-color"> <%= dog.color %> </div>
       </div>
-      <div class="card-footer-info">
         <div class="card-footer-city">📍<%= dog.get_city&.capitalize %></div>
-        <div class="card-footer-price"><%= dog.price %>€ / Saillie</div>
-    </div>
-  </div>
+      </div>
+      <div class="card-footer-price"><%= dog.price %>€ / Saillie</div>
 </div>
