@@ -1,4 +1,4 @@
-<div class="card" id="dog-<%= dog.id %>">
+<div class="card dog-user-card" id="dog-<%= dog.id %>">
     <div class="card-head">
       <%= link_to cl_image_tag(dog.picture, class:"card-image"), dog_path(dog)%>
       <div class="card-title">
@@ -11,11 +11,15 @@
         <div class="card-footer-color"> <%= dog.color %> </div>
       </div>
         <div class="card-footer-modifier"> <%= link_to 'MODIFIER', edit_dog_path(dog), class: "btn-block" %></div>
+        <%= link_to dog_path(dog) do %>
+          <div class="dog-unread-message">
+            <i class='far fa-envelope'></i>
+            <div class="number-of-unread-message">
+              <%= Conversation::Message.not_of_user(current_user).not_read.of_dog(dog)&.size || 0 %>
+            </div>
+          </div>
+        <% end %>
         <div class="card-footer-modifier">  <%= dog.likes.count %><i class="far fa-heart"></i></div>
       </div>
       <div class="card-footer-price"><%= dog.price %>€ / Saillie</div>
 </div>
-
-
-
-

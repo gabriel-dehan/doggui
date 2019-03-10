@@ -6,6 +6,7 @@ class Conversation::Message < ApplicationRecord
   scope :of_user, ->(user) { where(sender: user) }
   scope :not_read, -> { where(is_read: false) }
   scope :read, -> { where(is_read: true) }
+  scope :of_dog, ->(dog) { joins(:conversation).where(conversations: { dog: dog })}
 
   after_create :send_message_recive_email
 
