@@ -34,38 +34,38 @@
   <div class="col-xs-12 col-sm-8 col-md-8">
     <nav class="navbar-toggleable-md navbar-light bg-faded">
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link active rubrique-profile" id="nav-home-tab" data-toggle="pill" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-dog"></i> MES DOGGUIS  | </a>
-        <a class="nav-item nav-link rubrique-profile" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="far fa-envelope"></i> MESSAGES ENVOYES | </a>
+        <a class="nav-item nav-link active rubrique-profile" id="nav-home-tab" data-toggle="pill" href="#nav-my-dogs" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-dog"></i> MES DOGGUIS  | </a>
+        <a class="nav-item nav-link rubrique-profile" id="nav-profile-tab" data-toggle="tab" href="#nav-discussions" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="far fa-envelope"></i> MESSAGES ENVOYES | </a>
         <a class="nav-item nav-link rubrique-profile" id="nav-like-tab" data-toggle="tab" href="#nav-like" role="tab" aria-controls="nav-like" aria-selected="false"><i class="far fa-heart"></i> LIKE</a>
       </div>
     </nav>
-    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade active in" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <div class="tab-content" id="nav-navContent">
+      <div class="tab-pane fade active in" id="nav-my-dogs" role="tabpanel" aria-labelledby="nav-home-tab">
         <div class="row">
           <% @dogs.each do |dog| %>
             <div class="col-xs-12 col-sm-5 col-md-6">
               <%= render partial: 'dogs/card-user', locals: { dog: dog } %>
              </div>
-              <% end %>
-           </div>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-      <div class="row">
-        <% @other_dogs.each do |dog| %>
+      <div class="tab-pane fade" id="nav-discussions" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="row">
+          <% @other_dogs.each do |dog| %>
+            <div class="col-xs-12 col-sm-5 col-md-6">
+            <%= render partial: 'dogs/card', locals: { dog: dog } %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-like" role="tabpanel" aria-labelledby="nav-like-tab">
+        <div class="row">
+          <% @liked_dogs.each do |dog| %>
           <div class="col-xs-12 col-sm-5 col-md-6">
-          <%= render partial: 'dogs/card', locals: { dog: dog } %>
-         </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="tab-pane fade" id="nav-like" role="tabpanel" aria-labelledby="nav-like-tab">
-      <div class="row">
-        <% @liked_dogs.each do |dog| %>
-         <div class="col-xs-12 col-sm-5 col-md-6">
-          <%= render partial: 'dogs/card', locals: { dog: dog } %>
-         </div>
-        <% end %>
+            <%= render partial: 'dogs/card', locals: { dog: dog } %>
+          </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
