@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   get 'contact_form/new'
   get 'contact_form/create'
-  devise_for :users, controllers: { registrations: 'registrations' }
+  # devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   devise_scope :user do
     get 'user/profile', to: 'devise/registrations#profile', as: :profile
     get '/users/:user_id', to: 'users#show', as: :showprofile

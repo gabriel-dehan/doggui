@@ -17,4 +17,6 @@ class UsersController < ApplicationController
     authorize @dogs
   end
 
+
+
 end
