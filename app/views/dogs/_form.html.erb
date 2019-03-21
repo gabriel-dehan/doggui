@@ -26,9 +26,9 @@
        <div class= "bloc-new-form ">
 
         <div class="row">
-          <div class="col-sm-12">
+           <div class="col-xs-12 col-sm-6">
             <div class="upload-input-container">
-              <%= f.input :picture, placeholder: 'Photo', label: 'La photo princpale',hint:"Son plus beau profil", input_html: { class: "preview"} %>
+              <%= f.input :picture, placeholder: 'Photo', label: 'Sa photo princpale',hint:"(son plus beau profil)", input_html: { class: "preview"} %>
               <div class="preview-container"></div>
               <span class="upload-button">Ajouter une image</span>
             </div>
@@ -37,12 +37,10 @@
                 <%= cl_image_tag(@dog.picture, style: 'width: 150px') %>
               </div>
              <% end %>
+              <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
           </div>
-          <div class="col-sm-12"><%= f.input :picture_cache, as: :hidden %></div>
-        </div>
 
-       <div class="row">
-          <div class="col-sm-12">
+           <div class="col-xs-12 col-sm-6">
             <div class="upload-input-container">
               <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3 preview' }, name: 'images[]', label:"+ photos supplémentaires (4 max)"  %>
               <div class="preview-container"></div>
