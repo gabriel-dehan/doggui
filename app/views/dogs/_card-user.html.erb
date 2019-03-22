@@ -1,25 +1,40 @@
 <div class="card dog-user-card" id="dog-<%= dog.id %>">
-    <div class="card-head">
-      <%= link_to cl_image_tag(dog.picture, class:"card-image"), dog_path(dog)%>
-      <div class="card-title">
-          <h2><%= dog.nickname %> </h2>
+  <div class="card-head" style="background-image: url('<%= cl_image_path(dog.picture) %>');">
+    <%= link_to dog_path(dog), class: "card-link" do %>
+      <span class="card-title">
+        <h2><%= dog.nickname %></h2>
+      </span>
+    <% end %>
+  </div>
+  <div class="card-footer">
+    <div class="card-footer-row">
+      <div class="footer-left">
+        <div class="card-footer-title">
+          <div class="card-footer-breed" style="text-transform :uppercase"> <%= link_to dog.breed&.name, index_search_path(query: dog.breed&.name) %> </div>
+          <div class="card-footer-color"> <%= dog.color %> </div>
+        </div>
+        <div class="card-footer-city">📍<%= dog.get_city&.capitalize %></div>
+      </div>
+      <div class="footer-left">
+        <div class="card-footer-likes">
+          <% if dog.get_upvotes.size > 0 %>
+            <%= dog.get_upvotes.size %>
+          <% end %>
+          <i class="far fa-heart"></i>
+        </div>
+        <div class="card-footer-price"><%= dog.price %>€ / Saillie</div>
       </div>
     </div>
-    <div class="card-footer">
-      <div class="card-footer-title">
-        <div class="card-footer-breed" style="text-transform :uppercase"> <%= link_to dog.breed&.name, index_search_path(query: dog.breed&.name) %> </div>
-        <div class="card-footer-color"> <%= dog.color %> </div>
-      </div>
-        <div class="card-footer-modifier"> <%= link_to 'MODIFIER', edit_dog_path(dog), class: "btn-block" %></div>
-        <%= link_to dog_path(dog) do %>
-          <div class="dog-unread-message">
-            <i class='far fa-envelope'></i>
-            <div class="number-of-unread-message">
-              <%= Conversation::Message.not_of_user(current_user).not_read.of_dog(dog)&.size || 0 %>
-            </div>
+    <div class="card-footer-row">
+      <div class="card-footer-modifier"> <%= link_to 'MODIFIER', edit_dog_path(dog), class: "btn-block" %></div>
+      <%= link_to dog_path(dog) do %>
+        <div class="dog-unread-message">
+          <i class='far fa-envelope'></i>
+          <div class="number-of-unread-message">
+            <%= Conversation::Message.not_of_user(current_user).not_read.of_dog(dog)&.size || 0 %>
           </div>
-        <% end %>
-        <div class="card-footer-modifier">  <%= dog.likes.count %><i class="far fa-heart"></i></div>
-      </div>
-      <div class="card-footer-price"><%= dog.price %>€ / Saillie</div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
