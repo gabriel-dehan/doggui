@@ -19,8 +19,12 @@
             <%= f.input :password, required: true, label: "Choix du mot de passe", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
             <%= f.input :password_confirmation,label: "Confirmation du mot de passe", required: true %>
             <%= f.button :button, "Rejoindre la communauté Doggui", type: :submit, class: :'btn-form-new btn btn-warning'%>
+            <br>
+              <%= render "devise/shared/links" %>
+
          </div>
        </div>
+
     <% end %>
   </div>
 
