@@ -70,6 +70,7 @@ class DogsController < ApplicationController
 
    @markers = @dogs_geo.map do |dog|
      {
+       id: dog.id,
        lat: dog.latitude,
        lng: dog.longitude,
        nickname: dog.nickname

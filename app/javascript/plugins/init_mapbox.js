@@ -1,5 +1,35 @@
 import mapboxgl from 'mapbox-gl';
 
+window.markers = [];
+window.enteredOtherCard = false; 
+
+function handleCardEnter(e) {
+  let id = e.target.id;
+  let pin = document.querySelector(".dog-marker[data-dog-id='" + id + "']");
+
+  if (pin) {
+    enteredOtherCard = true;
+    document.querySelectorAll(".dog-marker").forEach(function(marker) {
+      marker.style.opacity = 0;
+    });
+    pin.style.opacity = 1;
+  }
+
+}
+
+function handleCardLeave(e) {
+  enteredOtherCard = false;
+  setTimeout(function() {
+    if (!enteredOtherCard) {
+      let id = e.target.id;
+      let pin = document.querySelector(".dog-marker[data-dog-id='" + id + "']");
+      document.querySelectorAll(".dog-marker").forEach(function(marker) {
+        marker.style.opacity = 1;
+      });
+    }
+  }, 100);
+}
+
 // buildMap now takes `mapElement` as an argument because it is not a global constant anymore
 const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -11,9 +41,10 @@ const buildMap = (mapElement) => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
-      .addTo(map);
+    let map_marker = new mapboxgl.Marker().setLngLat([ marker.lng, marker.lat ]);
+    map_marker._element.className += " dog-marker";
+    map_marker._element.setAttribute('data-dog-id', "dog-" + marker.id);
+    map_marker.addTo(map);
   });
 };
 
@@ -33,6 +64,11 @@ const initMapbox = () => {
     const zoomOut = mapElement.dataset.zoomOut == "true";
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers, zoomOut);
+
+    document.querySelectorAll('.card').forEach(function(element) {
+      element.addEventListener('mouseenter', handleCardEnter);
+      element.addEventListener('mouseleave', handleCardLeave);
+    });
   }
 };
 
