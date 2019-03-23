@@ -12,14 +12,15 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
-       <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+       <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4">
           <div class="form-new-user">
             <%= f.input :email, label: "Votre adresse e-mail",required: true, autofocus: true, placeholder: 'jaimelesannimaux@gmail.com' %>
             <%= f.input :first_name, hint:"Vous pourrez compléter votre profil dans 'mes paramètres'"%>
             <%= f.input :password, required: true, label: "Choix du mot de passe", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
             <%= f.input :password_confirmation,label: "Confirmation du mot de passe", required: true %>
-            <%= f.button :button, "Rejoindre la communauté Doggui", type: :submit, class: :'btn-form-new btn btn-warning'%>
+            <%= f.button :button, "Rejoindre Doggui", type: :submit, class: :'btn-communaute'%>
             <br>
+            <br >
               <%= render "devise/shared/links" %>
 
          </div>

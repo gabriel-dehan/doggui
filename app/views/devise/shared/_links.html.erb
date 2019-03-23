@@ -1,9 +1,18 @@
+<%- if devise_mapping.omniauthable? %>
+<div class= "btn-facebook">
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Rejoindre Doggui avec #{OmniAuth::Utils.camelize(provider) }", omniauth_authorize_path(resource_name, provider), class:"lien-facebook" %><br /><br />
+  <% end -%>
+<% end -%>
+</div>
+
+
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Se connecter", new_session_path(resource_name) %><br />
+  <%= link_to "(Ou je suis déjà membre)", new_session_path(resource_name), class:"lien-compte" %><br /><br />
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Créer un compte",  new_user_registration_path %><br />
+  <%= link_to "Je n'ai pas encore de compte",  new_user_registration_path %><br />
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
@@ -18,8 +27,3 @@
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end -%>
 
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
-  <% end -%>
-<% end -%>

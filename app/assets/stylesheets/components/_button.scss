@@ -90,12 +90,77 @@ color: white;
 }
 
 
+///// BTN DEVIS
+
+.btn-communaute {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  background-color: orange;
+  width: 100%;
+  padding: 15px 15px;
+  border-radius: 6px;
+  border: 1px solid white;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.btn-communaute:hover {
+  opacity: 0.9;
+  color: white !important;;
+}
 
 
+.lien-compte {
+ padding: 15px 15px;
+ margin-bottom: 5px !important;
+ margin-top: 10px;
+ margin-left: -11px;
+}
 
 
+.btn-facebook {
+  margin-bottom: 19px;
+  background-color: #3b5998;
+  padding: 7px;
+  border-radius: 6px;
+  border: 1px solid white;
+  text-transform: uppercase;
+  color: white;
+  font-size: 14px;
+  display: flex;
+  letter-spacing: 1px;
+}
+
+.btn-facebook:hover {
+opacity: 0.9;
+}
 
 
+.lien-facebook {
+  color: white;
+  margin: auto;
+}
+
+.lien-facebook:hover {
+  color: white !important;
+  text-decoration: none;
+}
+
+.btn-seconnecter {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: orange;
+  width: 100%;
+  padding: 15px 15px;
+  border-radius: 6px;
+  border: 1px solid white;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
 
 
 
