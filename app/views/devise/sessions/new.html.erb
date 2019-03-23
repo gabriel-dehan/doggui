@@ -16,7 +16,7 @@
             <%= f.input :password, label: "Mot de passe", required: false %>
             <%= f.input :remember_me, label:"Se souvenir de moi", as: :boolean if devise_mapping.rememberable? %>
             <%= f.button :button, "Se connecter", type: :submit, class: :'btn-seconnecter' %>
-
+              <br>
              <%= render "devise/shared/links" %>
             </div>
         <% end %>
