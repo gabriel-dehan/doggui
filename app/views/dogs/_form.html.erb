@@ -10,16 +10,14 @@
            <div class="bloc-new-form illu-form-for-picture">
             <br>
               <h4> <i class="fas fa-camera-retro"></i> Réussir ses photos</h4>
-              <h6>Choisir un fond neutre</h6>
-              <h6>Préférer Une lumière extérireure naturelle</h6>
-              <h6> Eviter les compositions coupées</h6>
-              <h6> Attention aux floues et aux photos en mouvement </h6>
+              <h6>Choisir un fond neutre et préférer une lumière extérireure naturelle</h6>
+              <h6> Eviter les compositions coupées et les photos en mouvement </h6>
            </div>
          </div>
       </div>
     </div>
 
-   <div class="col-xs-12 col-sm-6">
+   <div class="col-xs-12 col-sm-8 col-md-6">
 
     <div class= "row">
 
@@ -28,9 +26,9 @@
         <div class="row">
            <div class="col-xs-12 col-sm-6">
             <div class="upload-input-container">
-              <%= f.input :picture, placeholder: 'Photo', label: 'Sa photo princpale',hint:"(son plus beau profil)", input_html: { class: "preview"} %>
+              <%= f.input :picture, placeholder: 'Photo', label: 'Sa photo princpale',hint:"(1 au minimum)", input_html: { class: "preview"} %>
               <div class="preview-container"></div>
-              <span class="upload-button">Ajouter une image</span>
+              <span class="upload-button"><i class="fas fa-plus"></i></span>
             </div>
             <% if @dog.picture? %>
               <div class="simple-image-form">
@@ -42,9 +40,9 @@
 
            <div class="col-xs-12 col-sm-6">
             <div class="upload-input-container">
-              <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3 preview' }, name: 'images[]', label:"+ photos supplémentaires (4 max)"  %>
+              <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3 preview' }, name: 'images[]', label:"+ photos supplémentaires", hint:"(4 au maximum)" %>
               <div class="preview-container"></div>
-              <span class="upload-button">Ajouter une image</span>
+              <span class="upload-button"><i class="fas fa-plus"></i></span>
             </div>
             <% @dog.images.each do |image| %>
               <div class="multiple-images-form">
@@ -79,12 +77,12 @@
          </div>
           </div>
         </div>
-       <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-8 col-md-6">
          <div class= "row">
             <div class= "bloc-new-form">
 
               <div class="row">
-                <div class="col-xs-12 col-sm-6"> <%= f.input :nickname, label:"Prénom de l'annimal", placeholder: "ex : Léonard" %></div>
+                <div class="col-xs-12 col-sm-6"> <%= f.input :nickname, label:"Prénom de l'animal", placeholder: "ex : Léonard" %></div>
               </div>
               <div class="row">
                 <div class="col-xs-12 col-sm-6">  <%= f.input :birthday_date, as: :date, start_year: 2005, end_year: Date.today.year, label:"Date de naissance" %> </div>
@@ -125,16 +123,16 @@
            </div>
           </div>
         </div>
-       <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-sm-8 col-md-6">
          <div class= "row">
             <div class= "bloc-new-form ">
 
               <div class="row">
-               <div class="col-xs-12 col-sm-12"><%= f.input :description, placeholder: 'Analyses médicales réalisées, prix beauté reçu ...', label: " Description", :input_html => {:rows => 10}%></div>
+               <div class="col-xs-12 col-sm-12"><%= f.input :description, placeholder: 'Analyses médicales réalisées, prix beauté reçu ...',label: " Description (Une phrase au minimum)", :input_html => {:rows => 10}%></div>
               </div>
 
               <div class="row">
-                 <div class="col-xs-12 col-sm-12"> <%= f.input :address, label:"Adresse de sa niche",placeholder: "4, Rue Victor Hugo Nantes", hint:"Il n'y a que votre ville qui sera affichée sur notre site" %> </div>
+                 <div class="col-xs-12 col-sm-12"> <%= f.input :address, label:"Adresse de sa niche   (seule la ville sera affichée)",placeholder: "4, Rue Victor Hugo Nantes"%> </div>
               </div>
 
               <div class="row">
@@ -145,8 +143,8 @@
         </div>
         </div>
          <div class= "row">
-        <div class="col-xs-12 col-sm-3"></div>
-        <div class="col-xs-12 col-sm-2">
+        <div class="col-xs-11 col-sm-3"></div>
+        <div class="col-xs-12 col-sm-3">
         <%= f.submit "Publier" ,class: "btn-form"%>
          </div>
            </div>

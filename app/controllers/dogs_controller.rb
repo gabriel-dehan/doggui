@@ -23,7 +23,7 @@ class DogsController < ApplicationController
     authorize @dog
     upload_images
     if @dog.save
-      flash[:notice] = " MERCI ✨ Votre chien a bien été enregistré ✅ PROMIS il sera entre de bonnes mains 🙌  "
+      flash[:notice] = " MERCI ✨ Votre étalon a bien été enregistré ✅ PROMIS il sera entre de bonnes mains 🙌  "
       redirect_to dog_path(@dog)
     else
       render :new

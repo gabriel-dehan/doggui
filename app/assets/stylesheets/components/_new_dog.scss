@@ -1,6 +1,8 @@
 label {
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
+  opacity: 0.8 !important;
+  letter-spacing: 0.3px;
 }
 
 
@@ -45,10 +47,10 @@ label {
 
 .illu-form-for-picture {
   background-color: #FFB973;
-  height: 243px;
+  height: 160px;
   color: black;
   font-weight: 300;
-  padding: 15px;
+  padding: 0px 15px;
   opacity: 0.5;
 }
 
