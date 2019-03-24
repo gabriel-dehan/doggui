@@ -1,6 +1,6 @@
 class DogsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :index2]
-  
+
   def index
    @dogs = policy_scope(Dog).includes(:user, :breed).order("Random()").limit(6)
   end
@@ -23,6 +23,7 @@ class DogsController < ApplicationController
     authorize @dog
     upload_images
     if @dog.save
+      flash[:notice] = " MERCI ✨ Votre étalon a bien été enregistré ✅ PROMIS il sera entre de bonnes mains 🙌  "
       redirect_to dog_path(@dog)
     else
       render :new
@@ -53,7 +54,7 @@ class DogsController < ApplicationController
     @dog = Dog.find(params[:id])
     authorize @dog
     @dog.destroy
-    redirect_to dogs_path
+    redirect_to index_dogs_path(@user)
   end
 
   def index2
@@ -83,7 +84,7 @@ class DogsController < ApplicationController
     @dog.liked_by current_user
     authorize @dog
 
-    respond_to do |format| 
+    respond_to do |format|
       format.js { render 'update_vote' }
     end
   end
@@ -93,9 +94,9 @@ class DogsController < ApplicationController
     @dog.unliked_by current_user
     authorize @dog
 
-    respond_to do |format| 
+    respond_to do |format|
       format.js { render 'update_vote' }
-    end 
+    end
   end
 
 

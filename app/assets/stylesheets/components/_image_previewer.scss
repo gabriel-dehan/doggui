@@ -37,18 +37,20 @@
 .upload-input-container {
   .upload-button {
     border: 1px solid #d4d4d4;
+    margin-left: 50px;
     background-color: white;
-    font-size: 0.95em;
+    font-size: 1em;
     color: #6b6b6b;
-    padding: 0.5em 0.9em;
+    padding: 1em 2em;
     cursor: pointer;
-    border-radius: 7px;
+    border-radius: 30px;
     margin-bottom: 1em;
     display: inline-block;
 
+
     &:hover {
       border-color: darken(#d4d4d4, 15%);
-      color: darken(#6b6b6b, 20%);
+      color: orange;
     }
   }
 
