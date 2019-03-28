@@ -12,6 +12,18 @@
   opacity: 0.70;
 }
 
+.banner-show {
+  color: white;
+  text-align: center;
+  height: 15%;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.70;
+}
+
 .banner-content {
   font-family: Dosis;
   width: 600px;

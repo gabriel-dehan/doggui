@@ -1,7 +1,7 @@
 .container-show {
   margin-left: 35px;
   margin-right: 30px;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .container-list {
@@ -24,7 +24,7 @@
 }
 
 .image-gallery {
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
 
@@ -77,7 +77,7 @@
         display: none;
       }
     }
-    
+
     &.images-count-2 {
       .fourth-image, .fifth-image {
         display: none;
