@@ -1,4 +1,4 @@
-<div class="banner2" style="background-image: url('<%= asset_path'Chien.landing.jpg'%>');">
+<div class="banner-show" style="background-image: url('<%= asset_path'Chien.landing.jpg'%>');">
   <div class="banner-content">
    <h2>  <%= "'#{@dog.nickname}'" %> le <%= link_to dog.breed&.name, index_search_path(query: dog.breed&.name) %> </h2>
   </div>
@@ -19,9 +19,6 @@
               <% end %>
               <% if @dog.images[2] %>
                 <div class="fourth-image" style="background-image: url('<%= cl_image_path @dog.images[2]&.image %>');"></div>
-              <% end %>
-              <% if @dog.images[3] %>
-                <div class="fifth-image" style="background-image: url('<%= cl_image_path @dog.images[3]&.image %>');"></div>
               <% end %>
             </div>
           <% end %>
