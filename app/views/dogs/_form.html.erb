@@ -40,7 +40,7 @@
 
            <div class="col-xs-12 col-sm-6">
             <div class="upload-input-container">
-              <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3 preview' }, name: 'images[]', label:"+ photos supplémentaires", hint:"(4 au maximum)" %>
+              <%= f.input :images, as: :file, input_html: { multiple: true, class: 'multiple-file-limit-3 preview' }, name: 'images[]', label:"+ photos supplémentaires", hint:"(Sélectionner de 1 à 4 photos d'un seul coup)" %>
               <div class="preview-container"></div>
               <span class="upload-button"><i class="fas fa-plus"></i></span>
             </div>
@@ -82,7 +82,7 @@
             <div class= "bloc-new-form">
 
               <div class="row">
-                <div class="col-xs-12 col-sm-6"> <%= f.input :nickname, label:"Prénom de l'animal", placeholder: "ex : Léonard" %></div>
+                <div class="col-xs-12 col-sm-6"> <%= f.input :nickname, label:"Prénom de l'animal", placeholder: "ex : Léonard"  %></div>
               </div>
               <div class="row">
                 <div class="col-xs-12 col-sm-6">  <%= f.input :birthday_date, as: :date, start_year: 2005, end_year: Date.today.year, label:"Date de naissance" %> </div>
@@ -91,7 +91,7 @@
               <div class="row">
                 <div class="col-xs-12 col-sm-6"> <%= f.association :breed, label: "Race" %></div>
                 <div class="col-xs-12 col-sm-6">
-                  <%= f.input :status, label:"Pédigrée?", collection: Dog::STATUSES %>
+                  <%= f.input :status, label:"STATUT LOF", collection: Dog::STATUSES %>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 lof-number-input"><%= f.input :lof_number, label:"Numéro LOF", placeholder: "ex : LOF-20150488-2016-1" %>  </div>
