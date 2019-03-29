@@ -109,9 +109,11 @@
 }
 
 .cta-1 {
-  font-family: Dosis;
+ text-align: center;
+ font-family: Dosis;
  color: white !important;
- font-size: 15px;
+ font-size: 16px;
+ letter-spacing : 2px;
  padding-top: 20px;
  padding-bottom: 20px;
  padding-left: 20px;
@@ -120,7 +122,7 @@
  background-color: orange;
  margin-left: 21px;
  margin-right: 21px;
-  display: block;
+ display: block;
 }
 
 .group-search {
