@@ -20,9 +20,6 @@ Rails.application.routes.draw do
     get 'index_dogs', :to => 'users#index_dogs', :as => :user_root
   end
 
-  get 'sitemap.xml', :to => 'sitemap#index', :defaults => {:format => 'xml'}
-
-
   resources "contacts", only: [:new, :create]
 
   get 'legislation', to: 'pages#', as: :legislation
