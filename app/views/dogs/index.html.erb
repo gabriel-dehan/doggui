@@ -7,13 +7,13 @@
           <%= image_tag "Chien.landing.jpg", alt:"logo", class:"img-index img-thumbnail"%>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 header-slogan">
-        <div class="banner-titre-2">Le meilleur endroit pour trouver un étalon bien-aimé </div>
-        <div class="banner-titre-3">(Doggui c'est une plateforme <span style="color:orange">engagée</span> qui référence des mâles L.O.F pour une <span style="color:orange">saillie sécurisée</span>)</div>
+        <div class="banner-titre-2">Le meilleur endroit pour trouver un étalon <span style="color:orange; font-weight: 700; letter-spacing: 8px">LOF</span>  bien-aimé </div>
+        <div class="banner-titre-3">doggui c'est la 1ère plateforme <span style="color:orange">engagée</span> qui référence des chiens mâles pour une <span style="color:orange">saillie sécurisée</span></div>
         <br>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-4 header-cta">
-        <%= link_to "INSCRIRE SON ETALON SUR DOGGUI !", new_dog_path, class: "cta-1"%>
+        <%= link_to "INSCRIRE SON ETALON SUR DOGGUI ", new_dog_path, class: "cta-1"%>
         <div class="group-search">
           <%= form_tag index_search_path, method: :get do %>
           <%= text_field_tag :query,
@@ -50,7 +50,7 @@
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="number-card">
          <%= image_tag "dog.logo.png", alt:"logo", class:"image-number"%>
-          <div class="legende-number-card">1 Doggui inscrit chaque jour</div>
+          <div class="legende-number-card">3 Doggui's inscrits chaque jour</div>
         </div>
       </div>
 
