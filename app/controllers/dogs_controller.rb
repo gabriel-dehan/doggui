@@ -74,7 +74,8 @@ class DogsController < ApplicationController
        id: dog.id,
        lat: dog.latitude,
        lng: dog.longitude,
-       nickname: dog.nickname
+       nickname: dog.nickname,
+       image_url: helpers.asset_url('dog.logo.png')
      }
     end
   end

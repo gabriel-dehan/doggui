@@ -1,7 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 
 window.markers = [];
-window.enteredOtherCard = false; 
+window.enteredOtherCard = false;
 
 function handleCardEnter(e) {
   let id = e.target.id;
@@ -41,11 +41,18 @@ const buildMap = (mapElement) => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    let map_marker = new mapboxgl.Marker().setLngLat([ marker.lng, marker.lat ]);
-    map_marker._element.className += " dog-marker";
-    map_marker._element.setAttribute('data-dog-id', "dog-" + marker.id);
-    map_marker.addTo(map);
-  });
+   const element = document.createElement('div');
+    element.className = 'marker';
+    element.style.backgroundImage = `url('${marker.image_url}')`;
+    element.style.backgroundSize = 'contain';
+    element.style.width = '35px';
+    element.style.height = '35px';
+
+    // Pass the element as an argument to the new marker
+    new mapboxgl.Marker(element)
+      .setLngLat([marker.lng, marker.lat])
+      .addTo(map);
+    });
 };
 
 const fitMapToMarkers = (map, markers, zoomOut) => {
