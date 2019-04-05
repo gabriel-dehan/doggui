@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 gem 'mail_form'
 
+gem 'forest_liana'
 gem 'figaro'
 gem 'cloudinary'
 gem 'geocoder'
