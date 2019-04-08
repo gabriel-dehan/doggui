@@ -9,14 +9,8 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15);
 }
 
-.card-image {
-  // margin-right: 5vh;
-  // width: 100%;
-  // height: 220px;
-  // background-position: center;
-  // margin: 0px auto;
-  // border-radius: 2px;
-  // border: solid white 4px;
+.card:hover {
+opacity: 0.92;
 }
 
 .card-avatar {
@@ -30,9 +24,7 @@
   display: block;
 }
 
-.card-image:hover {
-  opacity: 0.85;
-}
+
 
 .card-head {
   background-size: cover;
@@ -220,12 +212,12 @@ margin-left: 5px;
 
   .card-footer {
     height: 40%;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
 
-  .card-footer-likes { 
+  .card-footer-likes {
     text-align: right;
   }
 
@@ -243,7 +235,7 @@ margin-left: 5px;
     }
   }
 
-  .card-footer-title { 
+  .card-footer-title {
     padding-top: 0;
     margin-bottom: 4px;
   }
