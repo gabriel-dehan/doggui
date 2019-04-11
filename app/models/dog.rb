@@ -21,10 +21,10 @@ class Dog < ApplicationRecord
   validates :status, presence: true, inclusion: { in: STATUSES }
   validates :weight, presence: true, numericality: true, inclusion: { in: (1.. 100).to_a }
   validates :color, presence: true
-  validates :price, presence: true, numericality: true, inclusion: { in: (1.. 2000).to_a }
+  validates :price, presence: true, numericality: true, inclusion: { in: (100.. 2000).to_a }
   validates :birthday_date, presence: true
   validates :description, presence: true
-  validates_length_of :description, :minimum=>15
+  validates_length_of :description, :minimum=>12
 
 
   scope :search_by_breed, ->(query) { joins(:breed).where("lower(breeds.name) LIKE ?", "%#{query.downcase}%") }
