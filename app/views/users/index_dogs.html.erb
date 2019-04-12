@@ -34,7 +34,7 @@
   <div class="col-xs-12 col-sm-8 col-md-8">
     <nav class="navbar-toggleable-md navbar-light bg-faded">
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link active rubrique-profile" id="nav-home-tab" data-toggle="pill" href="#nav-my-dogs" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-dog"></i> MES DOGGUIS  | </a>
+        <a class="nav-item nav-link active rubrique-profile" id="nav-home-tab" data-toggle="pill" href="#nav-my-dogs" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-dog"></i> MON DOGGUI  | </a>
         <a class="nav-item nav-link rubrique-profile" id="nav-profile-tab" data-toggle="tab" href="#nav-discussions" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="far fa-envelope"></i> MESSAGES ENVOYES | </a>
         <a class="nav-item nav-link rubrique-profile" id="nav-like-tab" data-toggle="tab" href="#nav-like" role="tab" aria-controls="nav-like" aria-selected="false"><i class="far fa-heart"></i> LIKE</a>
       </div>
@@ -42,11 +42,23 @@
     <div class="tab-content" id="nav-navContent">
       <div class="tab-pane fade active in" id="nav-my-dogs" role="tabpanel" aria-labelledby="nav-home-tab">
         <div class="row">
-          <% @dogs.each do |dog| %>
+          <% if @dogs.empty? %>
+          <div class="col-xs-12 col-sm-5 card-structure">
+              <div class="card-new" style="background-image: url('<%= asset_path'dogempty.png'%>');">
+                <%= link_to new_dog_path, class: "card-new-lien" do %>
+                 <span class="card-new-title">
+                    <h4> + Ajouter votre chien </h4>
+                 <span>
+                <% end %>
+             </div>
+          </div>
+          <% else %>
+           <% @dogs.each do |dog| %>
             <div class="col-xs-12 col-sm-5 col-md-6">
               <%= render partial: 'dogs/card-user', locals: { dog: dog } %>
              </div>
           <% end %>
+        <%end%>
         </div>
       </div>
       <div class="tab-pane fade" id="nav-discussions" role="tabpanel" aria-labelledby="nav-profile-tab">
