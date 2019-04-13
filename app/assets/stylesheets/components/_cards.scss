@@ -9,14 +9,8 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15);
 }
 
-.card-image {
-  // margin-right: 5vh;
-  // width: 100%;
-  // height: 220px;
-  // background-position: center;
-  // margin: 0px auto;
-  // border-radius: 2px;
-  // border: solid white 4px;
+.card:hover {
+opacity: 0.92;
 }
 
 .card-avatar {
@@ -30,21 +24,12 @@
   display: block;
 }
 
-.card-image:hover {
-  opacity: 0.85;
-}
 
 .card-head {
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   height: 75%;
   border: solid white 4px;
-  // position: absolute;
-  // width: 100%;
-  // height: 70%;
-  // top: 1px;
-  // z-index:2;
-
 }
 
 .card-title{
@@ -126,19 +111,6 @@
   text-transform: uppercase;
 }
 
-.card-link {
-  // position: absolute;
-  // top: 0;
-  // bottom: 0;
-  // right: 0;
-  // width: 100%;
-  // z-index: 2;
-  // background: black;
-  // opacity: 0;
-}
-.card-link:hover {
-  // opacity: 0.1;
-}
 
 .card-description-titre {
  width: 80%;
@@ -220,12 +192,12 @@ margin-left: 5px;
 
   .card-footer {
     height: 40%;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
 
-  .card-footer-likes { 
+  .card-footer-likes {
     text-align: right;
   }
 
@@ -243,7 +215,7 @@ margin-left: 5px;
     }
   }
 
-  .card-footer-title { 
+  .card-footer-title {
     padding-top: 0;
     margin-bottom: 4px;
   }
@@ -251,3 +223,40 @@ margin-left: 5px;
     margin-top: 7px;
   }
 }
+
+
+/// Vue User ///
+
+.card-structure {
+  margin-left: 3vh;
+  height: 290px;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15);
+}
+
+.card-new {
+  border: solid 2px white;
+  height: 250px;
+  background-repeat: no-repeat;
+}
+
+.card-new-title {
+  color: grey;
+}
+.card-new-title h3 {
+  margin-top: 6px;
+  margin: auto;
+}
+
+.card-new-lien {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.card-new-lien:hover {
+  opacity: 0.80;
+}
+
+

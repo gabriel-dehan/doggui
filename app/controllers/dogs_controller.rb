@@ -137,7 +137,8 @@ class DogsController < ApplicationController
         :eye_color,
         :version,
         :weight,
-        :prize
+        :prize,
+        :experience
       )
   end
 end

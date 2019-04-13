@@ -18,14 +18,33 @@ label {
   }
 }
 
-.bloc-new-form {
-  margin-top: 20px;
-  border-radius: 2px;
-  margin-bottom: 10px;
-  box-shadow: 0 3px 5px 0 #928C8C;
+.bloc-new-form-picture {
+  border-radius: 0px 15px 0px 0px;
+  margin-bottom: 15px;
+  opacity: 0.90;
+  box-shadow: 0 3px 5px 0 #b7b7b7;
   padding: 20px;
-  background-color: #F2F2F2;
+  background: #fcfcfc;
 }
+
+.bloc-new-form-detail {
+  border-radius: 0px 15px 0px 0px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 5px 0 #b7b7b7;
+  padding: 20px;
+  background : linear-gradient(#fcfcfc, #F2F2F2);
+}
+
+.bloc-new-form-description {
+  border-radius: 0px 15px 0px 0px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 5px 0 #b7b7b7;
+  padding: 20px;
+  background-color: #e5e5e5;
+}
+
+
+
 
 .lof-number-input {
   display: none;
@@ -52,6 +71,7 @@ label {
   font-weight: 300;
   padding: 0px 15px;
   opacity: 0.5;
+  border-radius: 0px 0px 0px 15px;
 }
 
 
@@ -62,36 +82,30 @@ label {
   font-weight: 300;
   padding: 15px;
   opacity: 0.7;
+  border-radius: 0px 0px 0px 15px;
 }
 
 .illu-form-for-description {
   background-color: #FF9226;
-  height: 448px;
+  height: 430px;
   color: black;
   font-weight: 300;
   padding: 15px;
   opacity: 0.8;
+  border-radius: 0px 0px 0px 15px;
 }
 
 .btn-form {
-  background-color: #FFB973;
-  color: white;
+  background-color: white;
+  color: grey;
   padding: 15px;
   font-size: 20px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 3px;
+  box-shadow: 0 3px 5px 0 #928C8C;
 }
 
-.btn-form:hover {
-  background-color: orange;
-  color: white;
-  padding: 15px;
-  font-size: 20px;
-  text-transform: uppercase;
-  width: 100%;
-  border-radius: 5px;
-}
 
 
 
