@@ -25,6 +25,7 @@ class Dog < ApplicationRecord
   validates :birthday_date, presence: true
   validates :description, presence: true
   validates_length_of :description, :minimum=>12
+  validates :experience, presence: true
 
 
   scope :search_by_breed, ->(query) { joins(:breed).where("lower(breeds.name) LIKE ?", "%#{query.downcase}%") }

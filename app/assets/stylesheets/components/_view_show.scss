@@ -194,7 +194,8 @@ color: #7a7373;
   background-color: white;
   margin-bottom: 5px;
   text-align: center;
-  width: 100%;
+  width: 90%;
+  margin-left: 15px;
   height: 30vh;
   padding: 12px;
   border-radius: 2px;
@@ -202,6 +203,8 @@ color: #7a7373;
 
   @media (max-width: $screen-sm-max) {
       height: 9vh;
+      width: 100%;
+      margin-left: 0%;
     }
 }
 

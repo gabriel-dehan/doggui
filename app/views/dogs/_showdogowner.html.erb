@@ -66,10 +66,12 @@
 
               <div class="col-xs-6 col-sm-4 info-card">
                 <div class="carte-caracteristique">
-                  <div class="carte-caracteristique-texte"> 📍<%= dog.get_city&.capitalize %> </div>
-                  <div class="carte-caracteristique-texte-2 "> Ville </div>
+                  <div class="carte-caracteristique-texte"><%= dog.experience %> </div>
+                  <div class="carte-caracteristique-texte-2 "> Experience saillie </div>
                 </div>
               </div>
+
+
           </div>
           </div>
 
@@ -91,20 +93,20 @@
                   <div class="carte-caracteristique-ville"> 📍<%= dog.get_city&.capitalize %>
                     <div class="carte-caracteristique-ville-2"> Ville </div>
                   </div>
-            </div>
-         </div>
+          </div>
+        </div>
 
-          <div class="col-sm-12 col-md-9">
+        <div class="col-sm-12 col-md-9">
               <div
               id="map"
-              style="width: 100%;
+              style="width: 104%;
               min-height: 30vh;
               border-radius: 5px;"
               data-zoom-out="true"
               data-markers="<%= [{lat:@dog.latitude, lng:@dog.longitude}].to_json %>"
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
             </div>
-        </div>
+       </div>
      </div>
 
   </div>
