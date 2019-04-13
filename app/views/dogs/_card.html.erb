@@ -1,5 +1,5 @@
 <div class="card" id="dog-<%= dog.id %>">
-  <div class="card-head" style="background-image: url('<%= cl_image_path(dog.picture) %>');">
+  <div class="card-head" style="background-image: url('<%= cl_image_path(dog.picture, :gravity=>"face") %>');">
     <%= link_to dog_path(dog), class: "card-link" do %>
       <span class="card-title">
         <h2><%= dog.nickname %></h2>
