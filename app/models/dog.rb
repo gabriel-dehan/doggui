@@ -1,11 +1,13 @@
 class Dog < ApplicationRecord
+  attr_accessor :images_cache 
+  
   STATUSES = ["LOF Confirmé", "LOF Non confirmé"]
 
   belongs_to :user
   belongs_to :breed
   has_many :likes
   has_many :conversations, dependent: :destroy
-  has_many :images, dependent: :destroy
+  has_many :images, -> { limit(4) }, dependent: :destroy
   validates_length_of :images, maximum: 4
   accepts_nested_attributes_for :images, allow_destroy: true
 

@@ -8,17 +8,22 @@
 
   <div class="col-xs-12 col-sm-8">
     <div class="row image-gallery">
-      <div class="main-image" style="background-image: url('<%= cl_image_path @dog.picture %>');"></div>
+      <div class="main-image image-item" style="background-image: url('<%= cl_image_path @dog.picture %>');"></div>
       <% if @dog.images.any? %>
         <div class="secondary-images images-count-<%= @dog.images.count %>">
-          <div class="banner-secondary-image" style="background-image: url('<%= cl_image_path @dog.images&.first.image %>');"></div>
-          <% if @dog.images.count > 1 %>
-            <div class="tertiary-images">
-              <% if @dog.images[1] %>
-                <div class="third-image" style="background-image: url('<%= cl_image_path @dog.images[1]&.image %>');"></div>
-              <% end %>
+          <div class="secondary-images-row">
+            <div class="first-image image-item" style="background-image: url('<%= cl_image_path @dog.images[0]&.image %>');"></div>
+            <% if @dog.images[1] %>
+              <div class="second-image image-item" style="background-image: url('<%= cl_image_path @dog.images[1]&.image %>');"></div>
+            <% end %>
+          </div>
+          <% if @dog.images.count > 2 %>
+            <div class="tertiary-images-row">
               <% if @dog.images[2] %>
-                <div class="fourth-image" style="background-image: url('<%= cl_image_path @dog.images[2]&.image %>');"></div>
+                <div class="third-image image-item" style="background-image: url('<%= cl_image_path @dog.images[1]&.image %>');"></div>
+              <% end %>
+              <% if @dog.images[3] %>
+                <div class="fourth-image image-item" style="background-image: url('<%= cl_image_path @dog.images[2]&.image %>');"></div>
               <% end %>
             </div>
           <% end %>

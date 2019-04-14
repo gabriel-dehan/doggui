@@ -138,7 +138,9 @@ class DogsController < ApplicationController
         :version,
         :weight,
         :prize,
-        :experience
+        :experience,
+        :images_cache,
+        :picture_cache
       )
   end
 end
