@@ -7,6 +7,8 @@ function handleCardEnter(e) {
   let id = e.target.id;
   let pin = document.querySelector(".dog-marker[data-dog-id='" + id + "']");
 
+  console.log(id, pin)
+
   if (pin) {
     enteredOtherCard = true;
     document.querySelectorAll(".dog-marker").forEach(function(marker) {
@@ -42,11 +44,12 @@ const buildMap = (mapElement) => {
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
    const element = document.createElement('div');
-    element.className = 'marker';
+    element.className = 'dog-marker';
     element.style.backgroundImage = `url('${marker.image_url}')`;
     element.style.backgroundSize = 'contain';
     element.style.width = '35px';
     element.style.height = '35px';
+    element.setAttribute('data-dog-id', "dog-" + marker.id);
 
     // Pass the element as an argument to the new marker
     new mapboxgl.Marker(element)
