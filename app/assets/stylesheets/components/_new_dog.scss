@@ -18,6 +18,15 @@ label {
   }
 }
 
+.form-check {
+  display: inline-block;
+  margin-right: 1.5em;
+
+  label {
+    margin-left: 0.5em;
+  }
+}
+
 .bloc-new-form-picture {
   border-radius: 0px 15px 0px 0px;
   margin-bottom: 15px;

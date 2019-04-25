@@ -20,10 +20,10 @@
           <% if @dog.images.count > 2 %>
             <div class="tertiary-images-row">
               <% if @dog.images[2] %>
-                <div class="third-image image-item" style="background-image: url('<%= cl_image_path @dog.images[1]&.image %>');"></div>
+                <div class="third-image image-item" style="background-image: url('<%= cl_image_path @dog.images[2]&.image %>');"></div>
               <% end %>
               <% if @dog.images[3] %>
-                <div class="fourth-image image-item" style="background-image: url('<%= cl_image_path @dog.images[2]&.image %>');"></div>
+                <div class="fourth-image image-item" style="background-image: url('<%= cl_image_path @dog.images[3]&.image %>');"></div>
               <% end %>
             </div>
           <% end %>

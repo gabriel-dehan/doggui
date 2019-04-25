@@ -27,7 +27,10 @@ Rails.application.routes.draw do
   get 'qui-sommes-nous', to: 'pages#', as: :quisommesnous
   get 'dogs', to: 'dogs#index2', as: :index_search
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :dogs do
+
+  
+  get '/dogs/:slug', to: "dogs#show", as: :dog
+  resources :dogs, except: [:show] do
     member do
       put "like", to: "dogs#upvote"
       put "dislike", to: "dogs#downvote"

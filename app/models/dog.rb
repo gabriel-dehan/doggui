@@ -2,7 +2,7 @@ class Dog < ApplicationRecord
   attr_accessor :images_cache 
   
   STATUSES = ["LOF Confirmé", "LOF Non confirmé"]
-
+  
   belongs_to :user
   belongs_to :breed
   has_many :likes
@@ -17,6 +17,7 @@ class Dog < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  after_save :generate_slug
 
   validates :picture, presence: true
   validates :nickname, presence: true
@@ -27,8 +28,7 @@ class Dog < ApplicationRecord
   validates :birthday_date, presence: true
   validates :description, presence: true
   validates_length_of :description, :minimum=>12
-  validates :experience, presence: true
-
+  validates :experience, inclusion: { in: [ true, false ] }
 
   scope :search_by_breed, ->(query) { joins(:breed).where("lower(breeds.name) LIKE ?", "%#{query.downcase}%") }
 
@@ -46,5 +46,9 @@ class Dog < ApplicationRecord
          "#{age = (months / 12)} An(s)"
       end
     end
+  end
+
+  def generate_slug
+    self.slug = "#{id}-#{nickname}-#{breed.name}-#{color}-#{hair}".parameterize
   end
 end

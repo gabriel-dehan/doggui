@@ -6,7 +6,7 @@ class DogsController < ApplicationController
   end
 
   def show
-    @dog = Dog.find(params[:id])
+    @dog = Dog.find_by(slug: params[:slug])
     authorize @dog
   end
 
@@ -24,7 +24,7 @@ class DogsController < ApplicationController
     upload_images
     if @dog.save
       flash[:notice] = " MERCI ✨ Votre étalon a bien été enregistré ✅ PROMIS il sera entre de bonnes mains 🙌  "
-      redirect_to dog_path(@dog)
+      redirect_to dog_path(slug: @dog.slug)
     else
       render :new
     end
@@ -43,7 +43,7 @@ class DogsController < ApplicationController
     delete_images
     upload_images
     if @dog.update(dog_params)
-      redirect_to dog_path(@dog)
+      redirect_to dog_path(slug: @dog.slug)
     else
       @dog.images.reload
       render :edit

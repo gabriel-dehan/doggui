@@ -1,7 +1,5 @@
 
 <%= simple_form_for (@dog), html: { multipart: true } do |f| %>
-
-
   <div class= "row">
 
     <div class="hidden-xs col-sm-3">
@@ -46,7 +44,7 @@
               <div class="preview-container"></div>
               <span class="upload-button"><i class="fas fa-plus"></i></span>
             </div>
-            <% @dog.images.each do |image| %>
+            <% @dog.images.take(4).each do |image| %>
               <div class="multiple-images-form">
                 <%= cl_image_tag(image.image, style: 'width: 150px') %>
                 <div class="multiples-image-form-delete">
@@ -138,7 +136,7 @@
               </div>
 
               <div class="row">
-                <div class="col-sm-6"> <%= f.input :experience, as: :radio_buttons, label:"A t-il déjà saillie ?", value: "oui non" %></div>
+                <div class="col-sm-6"> <%= f.input :experience, as: :radio_buttons, collection: [["Oui", true], ["Non", false]], label:"A t-il déjà saillie ?" %></div>
               </div>
                <div class="row">
                 <div class="col-sm-6"> <%= f.input :price, label:"Rétribution (en €)", placeholder: "ex : 350" %></div>
