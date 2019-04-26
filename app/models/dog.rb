@@ -7,7 +7,7 @@ class Dog < ApplicationRecord
   belongs_to :breed
   has_many :likes
   has_many :conversations, dependent: :destroy
-  has_many :images, -> { limit(4) }, dependent: :destroy
+  has_many :images, dependent: :destroy
   validates_length_of :images, maximum: 4
   accepts_nested_attributes_for :images, allow_destroy: true
 
