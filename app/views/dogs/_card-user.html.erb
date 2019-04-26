@@ -1,6 +1,6 @@
 <div class="card dog-user-card" id="dog-<%= dog.id %>">
   <div class="card-head" style="background-image: url('<%= cl_image_path(dog.picture) %>');">
-    <%= link_to dog_path(slug: dog.slug), class: "card-link" do %>
+    <%= link_to dog_show_path(slug: dog.slug), class: "card-link" do %>
       <span class="card-title">
         <h2><%= dog.nickname %></h2>
       </span>
@@ -27,7 +27,7 @@
     </div>
     <div class="card-footer-row">
       <div class="card-footer-modifier"> <%= link_to 'MODIFIER', edit_dog_path(dog), class: "btn-block" %></div>
-      <%= link_to dog_path(slug: dog.slug) do %>
+      <%= link_to dog_show_path(slug: dog.slug) do %>
         <div class="dog-unread-message">
           <i class='far fa-envelope'></i>
           <div class="number-of-unread-message">

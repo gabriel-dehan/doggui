@@ -25,6 +25,6 @@ SitemapGenerator::Sitemap.create do
   # Add all articles:
   #
   Dog.all.each do |dog|
-    add dog_path(slug: dog.slug), :lastmod => dog.updated_at
+    add dog_show_path(slug: dog.slug), :lastmod => dog.updated_at
   end
 end

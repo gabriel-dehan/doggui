@@ -28,8 +28,6 @@ Rails.application.routes.draw do
   get 'dogs', to: 'dogs#index2', as: :index_search
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  
-  get '/dogs/:slug', to: "dogs#show", as: :dog
   resources :dogs, except: [:show] do
     member do
       put "like", to: "dogs#upvote"
@@ -39,4 +37,6 @@ Rails.application.routes.draw do
       resources :messages, controller: 'conversation/messages'
     end
   end
+  get '/dogs/:slug', to: "dogs#show", as: :dog_show
+
 end
