@@ -17,7 +17,7 @@ class Dog < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-  after_save :generate_slug
+  before_save :generate_slug
 
   validates :picture, presence: true
   validates :nickname, presence: true

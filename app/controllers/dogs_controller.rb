@@ -20,6 +20,7 @@ class DogsController < ApplicationController
   def create
     @dog = Dog.new(dog_params)
     @dog.user = current_user
+
     authorize @dog
     upload_images
     if @dog.save
